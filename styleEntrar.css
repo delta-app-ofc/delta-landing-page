@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("Fontes/Montserrat-VariableFont_wght.ttf")
+}
+
+.gota{
+    position: absolute;
+    top: 0;
+    align-items: center;
+}
+
+.titulo{
+    font-size: 52px;
+    font-weight: 400;
+    padding-top: 60%;
+    padding-left: 30px;
+}
+
+.titulo1{
+    font-size: 52px;
+    font-weight: 400;
+    padding-left: 30px;
+}
+
+.inteligentemente{
+    font-size:51px;
+    font-weight: 900;
+    padding-left: 30px;
+}
+
+.fundo-svg{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: fill;
+}
+
+.Crie-sua-conta{
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: absolute;
+    font-size: 45px;
+    font-weight: 740;
+    z-index: 10;
+    top: 5rem; 
+    right: 15.5rem; 
+    transform: scaleY(0.93);
+}
+
+.tituloEmail {
+    top: 0;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 15;
+    top: 11rem;
+    right: 37.7rem;
+}
+
+.tituloSenha {
+    top: 0;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 15;
+    top: 18.5rem;
+    right: 37.3rem;
+}
+
+.titulo, .titulo1, .inteligentemente {
+    color: #FAFAFA;
+}
+
+#email,#senha{
+    position: absolute;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+#email::placeholder,#senha::placeholder{
+    color:#427bec;
+    vertical-align: middle;
+    opacity: 0.5;
+}
+
+#email {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 200;
+    z-index: 15;
+    top: 13rem; 
+    right: 10rem; 
+    width: 500px;
+    height: 60px;
+    border-radius: 16px;
+    border:2px solid #a0a0a0;
+    outline: none;
+}
+
+#senha {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 200;
+    z-index: 15;
+    top: 20.5rem; 
+    right: 10rem; 
+    width: 500px;
+    height: 60px;
+    border-radius: 16px;
+    border: 2px solid #a0a0a0;
+    outline: none;
+}
+
+#email:focus, #senha:focus {
+    border-color: #0B5BF9;
+}
+
+.esqueceu{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 25.5rem;
+    right: 31.2rem;
+    z-index: 15;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.esqueceu:hover {
+    text-decoration: underline;
+}
+
+.criar-conta{
+    background-color: #0B5BF9;
+    position: absolute;
+    font-size: 25px;
+    font-weight: 600;
+    z-index: 15;
+    top: 28rem; 
+    right: 10rem; 
+    width: 500px;
+    height: 60px;
+    border-radius: 16px;
+    color:#FAFAFA;
+    cursor:pointer;
+    border: solid #0B5BF9;
+}
+
+#texto-azul{
+    color:#0B5BF9;
+}
+
+.criar{
+    position: absolute;
+    font-size: 18px;
+    font-weight: 700;
+    z-index: 15;
+    right: 17rem; 
+    color: #6C9CFA;
+    top: 32.5rem;
+}
+
+.criar strong, .criar u{
+    color: #0B5BF9;
+    font-weight: 800;
+    opacity: 1;
+}
