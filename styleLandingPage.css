@@ -749,7 +749,7 @@ html {
   display: flex;
   width: max-content; 
   padding: 10px 0;
-  animation: rolarCarrossel 15s linear infinite;
+  animation: rolarCarrossel 30s linear infinite;
   will-change: transform; 
 }
 
