@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar sua conta</title>
+    <link rel="stylesheet" href="../assets/css/criar.css">
+    <script src="../assets/js/cadastro.js"></script>
+</head>
+<body>
+    <img src="../assets/img/login.svg" class="fundo-svg">
+    <img src="../assets/img/gluh-run.svg" class="glub">
+    <a href="../pages/index.html"><img src="../assets/img/voltar.svg" class="voltar"></a>
+
+    <div class="gota">
+        <div class="titulo">Cada gota</div>
+        <div class="inteligentemente"><strong>inteligentemente</strong></div>
+        <div class="titulo1">controlada</div>
+    </div>
+    
+    <div class="crie-sua-conta">Crie sua conta</div>
+
+    <form id="form-cadastro">
+        <div class="tituloNome">Nome completo</div>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <div class="tituloEmail">Email</div>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+        <div class="tituloSenha">Senha</div>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+        <button type="button" id="olho"><img src="../assets/img/olho-fechado.svg" id="olho-fechado"></button>
+        <div class="password-field">
+            <input type="password" id="senha" placeholder="Digite sua senha">
+            <button type="button" id="btn-eye" aria-label="Alternar visibilidade da senha"><img id="eye-icon" src="olho-fechado.png"></button>
+        </div>
+        
+        <div class="container-lembrar">
+            <input type="checkbox" id="lembrar-mim" name="lembrar">
+            <label for="lembrar-mim">Lembrar de mim</label>
+        </div>
+
+        <button type="submit" class="criar-conta">
+            Criar
+        </button>
+    </form>
+
+    <p class="login">Já tem uma conta? Faça <a href="../pages/entrar-conta.html"><u><strong>login</strong></u></a></p>
+    <script src="../assets/js/landing-script.js"></script>
+</body>
+</html>
