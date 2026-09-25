@@ -1,0 +1,256 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+.gota{
+    position: absolute;
+    top: 0;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+}
+
+.titulo{
+    font-size: 51px;
+    font-weight: 400;
+    padding-top: 15%;
+    padding-left: 30px;
+}
+
+.titulo1{
+    font-size: 51px;
+    font-weight: 400;
+    padding-left: 30px;
+    
+}
+
+.inteligentemente{
+    font-size:50px;
+    font-weight: 900;
+    padding-left: 30px;
+}
+
+.fundo-svg{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: fill;
+}
+
+.crie-sua-conta{
+    position: absolute;
+    z-index: 10;
+    top: 5rem; 
+    right: 13rem; 
+    transform: scaleY(0.93);
+    color: #003E9B;
+    font-family: 'Unbounded';
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.tituloNome {
+    top: 0;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 15;
+    top: 11rem;
+    right: 31.6rem;
+    color:#003E9B;
+}
+
+.tituloEmail {
+    top: 0;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 15;
+    top: 18.5rem;
+    right: 37.7rem;
+    color:#003E9B;
+}
+
+.tituloSenha {
+    top: 0;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 15;
+    top: 26rem;
+    right: 37.3rem;
+    color:#003E9B;
+}
+
+.titulo, .titulo1, .inteligentemente {
+    color: #FAFAFA;
+}
+
+#nome,#email,#senha{
+    position: absolute;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+#nome::placeholder,#email::placeholder,#senha::placeholder{
+    color:#003E9B;
+    vertical-align: middle;
+    opacity: 0.5;
+}
+
+#nome {
+    font-size: 22px;
+    font-weight: 200;
+    z-index: 15;
+    top: 13rem; 
+    right: 10rem; 
+    width: 500px;
+    height: 60px;
+    border-radius: 16px;
+    border:2px solid #a0a0a0;
+    outline: none;
+}
+
+#email {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 200;
+    z-index: 15;
+    top: 20.5rem; 
+    right: 10rem; 
+    width: 500px;
+    height: 60px;
+    border-radius: 16px;
+    border:2px solid #a0a0a0;
+    outline: none;
+}
+
+#senha {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 200;
+    z-index: 15;
+    top: 28rem; 
+    right: 10rem; 
+    width: 500px;
+    height: 60px;
+    border-radius: 16px;
+    border: 2px solid #a0a0a0;
+    outline: none;
+}
+
+#nome:focus, #email:focus, #senha:focus {
+    border-color: #003E9B;
+}
+
+.container-lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 33.1rem;
+    right: 30.8rem;
+    z-index: 15;
+    font-size: 16px;
+    font-weight: 700;
+    color:#003E9B;
+}
+
+.container-lembrar input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #a0a0a0; 
+    border-radius: 4px;     
+    cursor: pointer;
+    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.container-lembrar input[type="checkbox"]:checked {
+    background-color: #003E9B; 
+    border-color: #003E9B;
+}
+
+.container-lembrar input[type="checkbox"]:checked::before{
+    content: "";
+    width: 6px;
+    height: 13px;
+    border: solid #FAFAFA;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin-bottom: 4.5px;
+    margin-right: 1.5px;
+}
+
+.criar-conta{
+    font-family: Montserrat, sans-serif;
+    background-color: #003E9B;
+    position: absolute;
+    font-size: 25px;
+    font-weight: 600;
+    z-index: 15;
+    top: 36rem; 
+    right: 10rem; 
+    width: 500px;
+    height: 60px;
+    border-radius: 16px;
+    color:#FAFAFA;
+    cursor:pointer;
+    border: solid #003E9B;
+}
+
+.login{
+    position: absolute;
+    font-size: 18px;
+    font-weight: 200;
+    z-index: 15;
+    top: 44rem; 
+    right: 18.5rem; 
+    color: #003E9B;
+    top: 40.7rem;
+}
+
+.login strong, .login u{
+    color: #003E9B;
+    font-weight: 800;
+    opacity: 1;
+}
+
+.glub{
+    position:absolute;
+    left:50px;
+    top:16rem;
+    z-index: 3;
+}
+
+.voltar{
+    position: absolute;
+    z-index: 3;
+    right:2rem;
+    top:2rem;
+}
+
+#olho{
+    position: absolute;
+    z-index: 30;
+    top:466px;
+    right:180px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
