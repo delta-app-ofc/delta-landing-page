@@ -24,7 +24,7 @@
                 <p class="topico active"data-secao="subtitulo-perfil">Perfil</p>
                 <p class="topico"data-secao="subtitulo-seguranca">Segurança</p>
                 <p class="topico"data-secao="subtitulo-notificacoes">Notificações</p>
-                <p class="sair-da-conta">Sair da conta</p>
+                <p class="sair-da-conta" id="sair-da-conta">Sair da conta</p>
                 <img src="../assets/img/lixeira.svg" class="lixeira">
             </div>
 
@@ -36,9 +36,9 @@
                         <p class="sub-perfil">Altere suas informações</p>
                         <form id="config-perfil">
                             <p class="nome-modal">Nome</p>
-                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                            <input type="text" id="nome" name="nome" placeholder="">
                             <p class="email-modal">Email</p>
-                            <input type="email" id="email" name="email" placeholder="Digite seu email">
+                            <input type="email" id="email" name="email" placeholder="">
                             <button class="salvar">Salvar alterações</button>
                         </form>
                     </div>
@@ -48,6 +48,20 @@
                     <h2 class="titulo-config">Segurança</h2>
                     <div class="modal-body" id="modal-body-seguranca">
                         <p>Gerencie suas credenciais e os métodos de acesso à sua conta.</p>
+                        <form>
+                            <p class="senha-nova-modal">Digite sua senha nova</p>
+                            <input type="text" id="senha-nova" name="senha-nova" placeholder="">
+                            <p p class="texto-senha-nova">Senhas fortes ajudam a manter sua conta protegida</p>
+                            <p class="minimo-senha">Mínimo de 8 caracteres</p>
+                            <p class="confirmar-senha-nova-modal">Confirmar senha nova</p>
+                            <input type="text" id="confirmar-senha-nova" name="senha-nova" placeholder="">
+                            <p class="titulo-autentificaca">Autentificação de dois fatores</p>
+                            <p class="texto-autentificacao">Adicione uma camada extra de segurança à sua conta</p>
+                            <p class="autentificacao">Autentificação por aplicativo</p>
+                            <button class="ativar">Ativar</button>
+                            <button class="configurar">Configurar</button>
+                            <button class="salvar-senha">Salvar senha</button>
+                        </form>
                     </div>                    
                 </div>
 
@@ -56,7 +70,53 @@
                     <div class="modal-body" id="modal-body-notificacoes">
                         <p>Escolha quais novidades, estudos e comunicados você deseja receber por e-mail.</p>
                     </div>
+
+                    <p class="subtitulo-email">Email cadastrado</p>
+                    <p class="email-cadastrado">EmaildoUsuário@gmail.com</p>
+                    <p class="tipos-not">Tipos de conteúdo e comunicação</p>
+                    <p class="texto-not">Selecione os assuntos do seu interesse</p>
+
+                    <div class="container-caixas">
+                        <div class="linha">
+                        <input type="checkbox" id="relatorio" name="relatorio">
+                        <label for="relatorio">
+                            Relatórios e Estudos sobre Gestão Hídrica:<br>
+                            Artigos, pesquisas e cases sobre sustentabilidade e consumo.
+                        </label>
+                        </div>
+                        <div class="linha">
+                        <input type="checkbox" id="novidade" name="novidade">
+                        <label for="novidade">
+                            Novidades do Projeto e Lançamentos:<br>
+                            visos em primeira mão sobre novas funções da plataforma.
+                        </label>
+                        </div>
+                        <div class="linha">
+                        <input type="checkbox" id="evento" name="evento">
+                        <label for="evento">
+                            Convites para Webinars e Eventos:<br>
+                            Alertas sobre apresentações ao vivo e discussões técnicas.
+                        </label>
+                        </div>
+                    </div>
+                    <button class="salvar-not">Salvar alterações</button>
                 </div>
+            </div>
+        </div>
+
+        <div class="hide" id="fade-menor" ></div>
+        <div class="hide" id="modal-menor">
+            <button id="close-modal-menor">&times;</button>
+            <div class="conteudo-modal-menor">
+                <p class="sair-conta-titulo">Sair da sua conta?</p>   
+                <p class="texto-sair">Você precisará fazer login novamente para acessar a plataforma</p>
+                <div class="fundo-vermelho"></div>
+                <p class="excluir">Deseja encerrar permanentemente?</p>
+                <p class="texto-excluir">Se você quer apagar todos os seus dados, você pode
+                    <u><strong>Excluir minha conta definitivamente</strong></u>
+                </p>
+                <button id="botao-cancelar" class="botao-cancelar">Cancelar</button>
+                <button id="botao-sair" class="botao-sair">Sair</button>    
             </div>
         </div>
 

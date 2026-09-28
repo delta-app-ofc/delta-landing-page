@@ -98,13 +98,35 @@ document.addEventListener('DOMContentLoaded', () => {
   btnVoltar.addEventListener('click', () => executarTrocaComFade('voltar'));
   btnAvancar.addEventListener('click', () => executarTrocaComFade('avancar'));
 
-  const inputSenha = document.getElementById('senha');
-  const btnEye = document.getElementById('olho');
+  const fadeMenor = document.getElementById('fade-menor');
+  const modalMenor = document.getElementById('modal-menor');
+  const botaoCloseMenor = document.getElementById('close-modal-menor');
+  const botaoCancelar = document.getElementById('botao-cancelar');
+  const botaoSair = document.getElementById('botao-sair');
+  const botaoAbrir = document.getElementById('sair-da-conta');
 
-  btnEye.addEventListener('click', () => {
-    const isPassword = inputSenha.type === 'password';
-    
-    inputSenha.type = isPassword ? 'text' : 'password';
- 
-  });
+  function toggleModalMenor() {
+    fadeMenor.classList.toggle('hide');
+    modalMenor.classList.toggle('hide');
+  }
+
+  if (botaoAbrir) {
+    botaoAbrir.addEventListener('click', toggleModalMenor);
+  }
+
+  if (botaoSair) {
+    botaoSair.addEventListener('click', toggleModalMenor); 
+  }
+
+  if (botaoCloseMenor) {
+    botaoCloseMenor.addEventListener('click', toggleModalMenor);
+  }
+
+  if (botaoCancelar) {
+    botaoCancelar.addEventListener('click', toggleModalMenor);
+  }
+
+  if (fadeMenor) {
+    fadeMenor.addEventListener('click', toggleModalMenor);
+  }
 });
