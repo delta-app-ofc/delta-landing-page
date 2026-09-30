@@ -26,6 +26,7 @@ body {
 html {
   scrollbar-color: #0088ff transparent;
   scrollbar-width: thin; 
+  scroll-behavior: smooth;
 }
 
 .barra-fixa {
@@ -922,7 +923,7 @@ html {
 }
 
 .card img {
-  width: 90%;
+  width: 97%;
   height: auto;
   display: block;
   margin: 0 auto;
