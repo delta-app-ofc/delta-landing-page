@@ -1,34 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
   const lista = document.getElementById('lista-card');
   const cards = document.querySelectorAll('.card');
+  const totalCardsOriginais = cards.length;
   const botaoVoltar = document.getElementById('botao-voltar');
   const botaoAvancar = document.getElementById('botao-avancar');
 
-  let contador = 0;
-  const totalCards = cards.length;
+  const clone1 = cards[0].cloneNode(true);
+  const clone2 = cards[cards.length-1].cloneNode(true);
+
+  lista.appendChild(clone1);
+  lista.insertBefore(clone2, cards[0]);
+  const totalCardsComClones = document.querySelectorAll('.card').length;
+
+  let contador = 1;
+  let isAnimating = false;
+
+  lista.style.transition = 'transform 0.4s ease-in-out ';
+  lista.style.transform = `translateX(-${contador * 100}%)`;
 
   function atualizarCarrossel() {
+    isAnimating = true;
+    lista.style.transition = 'transform 0.4s ease-in-out ';
     lista.style.transform = `translateX(-${contador * 100}%)`;
   }
 
   botaoAvancar.addEventListener('click', () => {
-    if (contador < totalCards - 1) {
-      contador++;
-      atualizarCarrossel();
-    } else {
-      contador = 0;
-      atualizarCarrossel();
-    }
+  if (isAnimating) return;
+  if (contador >= totalCardsComClones - 1) return;
+  
+  contador++;
+  atualizarCarrossel();
   });
 
   botaoVoltar.addEventListener('click', () => {
-    if (contador > 0) {
-      contador--;
-      atualizarCarrossel();
-    } else {
-      contador = totalCards - 1;
-      atualizarCarrossel();
-    }
+    if (isAnimating) return;
+    if (contador <= 0) return;
+    
+    contador--;
+    atualizarCarrossel();
+  });
+
+  lista.addEventListener('transitionend', (e) => {
+  if (e.target !== lista) return;
+  
+  if (contador === totalCardsComClones - 1) {
+    lista.style.transition = 'none';
+    contador = 1; 
+    lista.style.transform = `translateX(-${contador * 100}%)`;
+  }
+
+  if (contador === 0) {
+    lista.style.transition = 'none';
+    contador = totalCardsOriginais; 
+    lista.style.transform = `translateX(-${contador * 100}%)`;
+  }
+
+  isAnimating = false; 
   });
 
   const abrirModalBtn = document.querySelector('#minha-conta');
@@ -80,23 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById(getIdSecao(topico)).style.display = 'block';
     });
   });
-  const btnVoltar = document.getElementById('botao-voltar');
-  const btnAvancar = document.getElementById('botao-avancar');
-  const listaCard = document.getElementById('lista-card');
-
-  function executarTrocaComFade(direcao) {
-    listaCard.style.opacity = '0.1';
-    listaCard.classList.remove('card-fade-in');
-
-    setTimeout(() => {
-
-      listaCard.style.opacity = '1';
-      listaCard.classList.add('card-fade-in');
-    }, 50); 
-  }
-
-  btnVoltar.addEventListener('click', () => executarTrocaComFade('voltar'));
-  btnAvancar.addEventListener('click', () => executarTrocaComFade('avancar'));
 
   const fadeMenor = document.getElementById('fade-menor');
   const modalMenor = document.getElementById('modal-menor');
