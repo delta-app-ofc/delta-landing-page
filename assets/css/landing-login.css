@@ -144,6 +144,24 @@ html {
   top:1.8rem;
 }
 
+.Conceito::after, .Objetivos::after, .Funcionalidades::after,
+.Inicio::after, .Sobre_Nos::after, .valores::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  height: 2px;
+  background-color: #FAFAFA;
+  transition: width 0.2s ease-in-out;
+}
+
+.Conceito:hover::after, .Objetivos:hover::after, .Funcionalidades:hover::after, .Inicio:hover::after, .Sobre_Nos:hover::after, .valores:hover::after{
+  width: 100%;
+}
+
 .Inicio { 
   width: 35px; 
   left: 404px; 
@@ -424,7 +442,7 @@ html {
 }
 
 .retanguloCenario {
-  position: relative;
+  position: absolute;
   left: 0;
   border-radius: 0 44.5px 0 0;
   background: #306AE5;
@@ -1557,6 +1575,7 @@ html {
   height: 50px;
   font-size: 20px;
   padding-left: 15px;
+  outline: none;
 }
 
 #confirmar-senha-nova{
@@ -1569,6 +1588,7 @@ html {
   height: 50px;
   font-size: 20px;
   padding-left: 15px;
+  outline: none;
 }
 
 .titulo-autentificaca{
@@ -1627,6 +1647,7 @@ html {
   top:391px;
   left:280px;
   cursor:pointer;
+  transition: ease-in-out 0.25s;
 }
 
 .configurar{
@@ -1646,6 +1667,7 @@ html {
   top:391px;
   left:410px;
   cursor: pointer;
+  transition: ease-in-out 0.25s;
 }
 
 .ativar:hover{
@@ -1802,7 +1824,7 @@ html {
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 121.882%; /* 24.376px */
+  line-height: 121.882%;
   letter-spacing: -0.2px;
   width: 100%;
   z-index: 2;
@@ -1822,6 +1844,11 @@ html {
   width: 80%;
   top:205px;
   left:48px;
+}
+
+.texto-excluir a {
+  color: inherit;          
+  text-decoration: none;   
 }
 
 .texto-excluir u,.texto-excluir strong{
@@ -1871,4 +1898,32 @@ a{
 
 .sobreNos{
   scroll-margin-top:150px;
+}
+
+#botaoOlho{
+    position: absolute;
+    z-index:50;
+    top:134px;
+    right:-17px;
+    border:none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#botaoOlho1{
+    position: absolute;
+    z-index:50;
+    top:264px;
+    right:-17px;
+    border:none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#nome:focus, #email:focus, #nova-senha:focus,#confirmar-nova-senha:focus {
+  border-color: #003E9B;
+}
+
+#senha-nova:focus, #confirmar-senha-nova:focus {
+  border-color: #003E9B;
 }

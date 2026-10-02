@@ -58,6 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
   isAnimating = false; 
   });
 
+
+
+
+
+
+
+  
   const abrirModalBtn = document.querySelector('#minha-conta');
   const fecharModalBtn = document.querySelector('#close-modal');
   const modal = document.querySelector("#modal");
@@ -75,6 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener("click", (e) => {
       e.stopPropagation();
     });
+
+
+
+
+
+
 
   const indicador = document.querySelector('.indicador');
   const topicos = document.querySelectorAll('.topico');
@@ -108,6 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+
+
+
+
   const fadeMenor = document.getElementById('fade-menor');
   const modalMenor = document.getElementById('modal-menor');
   const botaoCloseMenor = document.getElementById('close-modal-menor');
@@ -139,4 +157,40 @@ document.addEventListener('DOMContentLoaded', () => {
   if (fadeMenor) {
     fadeMenor.addEventListener('click', toggleModalMenor);
   }
+  
+  const botaoOlho = document.getElementById('botaoOlho');
+  const inputSenha = document.getElementById('senha-nova');
+  const iconeOlho = document.getElementById('iconeOlho')
+
+    botaoOlho.addEventListener('click',()=>{
+        if(inputSenha.type === 'password'){
+            inputSenha.type = 'text';
+
+            iconeOlho.src = '../assets/img/olho-aberto.svg';
+            iconeOlho.alt = 'Ocultar senha';
+        }else{
+            inputSenha.type = 'password';
+
+            iconeOlho.src = '../assets/img/olho-fechado.svg';
+            iconeOlho.alt = 'Mostrar senha';
+        }
+    })
+
+  const botaoOlho1 = document.getElementById('botaoOlho1');
+  const inputSenha1 = document.getElementById('confirmar-senha-nova');
+  const iconeOlho1 = document.getElementById('iconeOlho1')
+
+    botaoOlho1.addEventListener('click',()=>{
+        if(inputSenha1.type === 'password'){
+            inputSenha1.type = 'text';
+
+            iconeOlho1.src = '../assets/img/olho-aberto.svg';
+            iconeOlho1.alt = 'Ocultar senha';
+        }else{
+            inputSenha1.type = 'password';
+
+            iconeOlho1.src = '../assets/img/olho-fechado.svg';
+            iconeOlho1.alt = 'Mostrar senha';
+        }
+    })
 });

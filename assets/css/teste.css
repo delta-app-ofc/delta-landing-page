@@ -300,13 +300,12 @@ body {
         flex-direction: column;
         padding: 64px 28px 0;
         overflow: hidden;
-        border-radius: 0 0 40px 40px;
 
         background-color: #02245B;
         background-image: url('../img/login.svg');
         background-repeat: no-repeat;
         background-position: left top;
-        background-size: 250% auto;
+        background-size: 100% auto;
     }
 
     .titulo, .titulo1, .inteligentemente {
@@ -319,7 +318,7 @@ body {
         display: block;
         width: min(70vw, 300px);
         height: auto;
-        margin: 16px auto 0;
+        margin: 15px auto 10px;
     }
 
     .crie-sua-conta {

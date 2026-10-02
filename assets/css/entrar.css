@@ -92,6 +92,7 @@ html {
     position: absolute;
     padding-left: 15px;
     font-size: 20px;
+    background-color: #E0E8F6;
 }
 
 #email::placeholder,#senha::placeholder{
@@ -196,11 +197,11 @@ html {
     top:2rem;
 }
 
-#olho{
+#botaoOlho{
     position: absolute;
     z-index: 30;
-    top:345px;
-    right:180px;
+    top:348px;
+    right:185px;
     background: transparent;
     border: none;
     cursor: pointer;
