@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Delta</title>
     <link rel="stylesheet" href="../assets/css/landing.css">
-    <script src="../assets/js/landing-script.js"></script>
+    <script src="../assets/js/script-landing.js"></script>
 </head>
 <body>
     <div class="barra-fixa">
@@ -20,15 +20,15 @@
         </a>
 
         <a href="entrar-conta.html"><p class="Entrar">Entrar</p></a>
-        <p class="Inicio">Início</p>
-        <p class="Conceito">Conceito</p>
-        <p class="Objetivos">Objetivos</p>
-        <p class="Funcionalidades">Funcionalidades</p>
-        <p class="Sobre_Nos">Sobre nós</p>
-        <p class="valores">Nossos Valores</p>
+        <p class="Inicio"><a href="#topico1">Início</a></p>
+        <p class="Conceito"><a href="#topico2">Conceito</a></p>
+        <p class="Objetivos"><a href="#topico3">Objetivos</a></p>
+        <p class="Funcionalidades"><a href="#topico4">Funcionalidades</a></p>
+        <p class="Sobre_Nos"><a href="#topico5">Sobre nós</a></p>
+        <p class="valores"><a href="#topico6">Nossos Valores</a></p>
     </div>
 
-    <div class="FundoGradiente"></div>
+    <div class="FundoGradiente" id="topico1"></div>
 
     <p class="titulo1">CADA GOTA</p>
     <p class="tituloPrincipal">INTELIGENTEMENTE</p>
@@ -93,10 +93,9 @@
     </div>
     
     <div>
-        <img src="../assets/img/FundoAzulClaroOnda.svg" id="FundoAzulClaroOnda">
+        <img src="../assets/img/FundoAzulClaroOnda.svg" class="FundoAzulClaroOnda" >
         
-        <p class="tituloConceito">CONCEITO</p>
-
+        <p class="tituloConceito" id="topico2">CONCEITO</p>
         <div class="retanguloCenario">
             <p class="miniTituloCenario">Cenário</p>
         </div>
@@ -115,7 +114,7 @@
     </div>
 
     <div> <img src="../assets/img/FundoAzulCurvadoGradiente.svg" id="FundoAzulCurvado">
-        <p class="tituloObjetivos">OBJETIVOS</p>
+        <p class="tituloObjetivos" id="topico3">OBJETIVOS</p>
         <div class="cartaoReducao">
             <img src="../assets/img/Hidrometro.svg" id="hidrometro">
             <p class="tituloReducao">Redução de Consumo</p>
@@ -147,7 +146,7 @@
 
     <div>
         <img src="../assets/img/FundoAzulClaroOnda2.svg" id="FundoAzulClaroOnda2">
-        <p class="tituloFuncionalidades">FUNCIONALIDADES</p>
+        <p class="tituloFuncionalidades" id="topico4">FUNCIONALIDADES</p>
 
         <div>
             <img src="../assets/img/frame1.svg" id="frame1">
@@ -246,7 +245,7 @@
 
     <div class="FundoAzulCurvadoGradiente">
         <img src="../assets/img/FundoCurvaGradiente.svg" id="fundoCurvadoGradiente">
-        <p class="sobreNos">SOBRE NÓS</p>
+        <p class="sobreNos" id="topico5">SOBRE NÓS</p>
         <p class="textoSobreNos">
             Somos estudantes do Instituto J&F, onde<br>
             aprendemos por meio da prática, do trabalho em<br>
@@ -265,7 +264,7 @@
         <img src="../assets/img/corpoGlub.svg" id="corpoGlub">
     </div>
 
-    <p class="NossosValores">NOSSOS VALORES</p>
+    <p class="NossosValores" id="topico6">NOSSOS VALORES</p>
 
     
     <div class="card-section">
@@ -283,9 +282,9 @@
                 <li class="card"><img src="../assets/img/determinacao.svg" id="determinacao"></li>
                 <li class="card"><img src="../assets/img/disciplina.svg" id="disciplina"></li>
                 <li class="card"><img src="../assets/img/disponibilidade.svg" id="disponibilidade"></li>
-                <li class="card"><img src="../assets/img/simplicidade.svg" id="simplicidade"></li>
                 <li class="card"><img src="../assets/img/franqueza.svg" id="franqueza"></li>
                 <li class="card"><img src="../assets/img/humilde.svg" id="humilde"></li>
+                <li class="card"><img src="../assets/img/simplicidade.svg" id="simplicidade"></li>
             </ul>
         </div>
     </div>
@@ -303,12 +302,12 @@
         
         <ul class="coluna1">
             <h3>Navegações</h3>
-            <li>Início</li>
-            <li>Conceito</li>
-            <li>Objetivos</li>
-            <li>Funcionalidades</li>
-            <li>Sobre nós</li>
-            <li>Nossos Valores</li>
+            <li><a href="#topico1">Início</a></li>
+            <li><a href="#topico2">Conceito</a></li>
+            <li><a href="#topico3">Objetivos</a></li>
+            <li><a href="#topico4">Funcionalidades</a></li>
+            <li><a href="#topico5">Sobre nós</a></li>
+            <li><a href="#topico6">Nossos Valores</a></li>
         </ul>
 
         <ul class="coluna2">
@@ -323,9 +322,6 @@
         </ul>
     </div>
 
-    <h3 class="redesSociais">Redes Sociais</h3>
-
     <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
-    <img src="../assets/img/apps.svg" id="apps">
 </body>
 </html>
