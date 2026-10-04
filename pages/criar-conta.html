@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar sua conta</title>
     <link rel="stylesheet" href="../assets/css/criar.css">
-    <script src="../assets/js/cadastro.js"></script>
 </head>
 <body>
     <img src="../assets/img/login.svg" class="fundo-svg">
@@ -19,6 +18,16 @@
     </div>
 
     <div class="crie-sua-conta">Crie sua conta</div>
+    
+    <div class="tipo-conta">
+    <button type="button" class="retangulo-usuario">
+        <div class="usuario">Usuário</div>
+    </button>
+
+    <button type="button" class="retangulo-adm">
+        <div class="adm">Administrador</div>
+    </button>
+    </div>
 
     <form id="form-cadastro">
         <div class="tituloNome">Nome completo</div>
@@ -31,8 +40,8 @@
         <div class="campo-senha">
             <input type="password" id="senha" placeholder="Digite sua senha">
             <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button>
+            <p id="mensagemSenha"></p>
         </div>
-        
         <div class="container-lembrar">
             <input type="checkbox" id="lembrar-mim" name="lembrar">
             <label for="lembrar-mim">Lembrar de mim</label>
