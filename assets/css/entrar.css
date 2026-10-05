@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+:root {
+  --u: clamp(0.5px, calc(100vw / 1440), 1.2px);
+}
 
 * {
   margin: 0;
@@ -9,200 +11,395 @@
 }
 
 html {
-    overflow: hidden;
+  overflow-x: hidden;
+  min-height: 100%;
+  background: linear-gradient(to right, #00296B 0, #00296B 47%, #E0E8F6 47%);
 }
 
-.fundo{
-    position: absolute;
-    top: 0;
-    align-items: center;
-    font-family:Montserrat,sans-serif;
+body {
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-.titulo{
-    font-size: 51px;
-    font-weight: 400;
-    padding-top: 15%;
-    padding-left: 30px;
+.gota {
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  font-family: Montserrat, sans-serif;
+  z-index: 5;
 }
 
-.titulo1{
-    font-size: 51px;
-    font-weight: 400;
-    padding-left: 30px;
+.titulo {
+  font-size: calc(51 * var(--u));
+  font-weight: 400;
+  padding-top: calc(80 * var(--u));
+  padding-left: calc(30 * var(--u));
 }
 
-.inteligentemente{
-    font-size:50px;
-    font-weight: 900;
-    padding-left: 30px;
+.inteligentemente {
+  font-size: calc(50 * var(--u));
+  font-weight: 900;
+  padding-left: calc(30 * var(--u));
 }
 
-.fundo-svg{
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: fill;
-}
-
-.entrar{
-    position: absolute;
-    font-size: 45px;
-    font-weight: 700;
-    z-index: 10;
-    top: 5rem; 
-    right: 20rem; 
-    color: #003E9B;
-    text-align: center;
-    font-family: 'Unbounded';
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 123.981%;
-    letter-spacing: -0.5px;
-}
-
-.tituloEmail {
-    top: 0;
-    position: absolute;
-    font-size: 20px;
-    font-weight: 600;
-    z-index: 15;
-    top: 11rem;
-    right: 37.7rem;
-    color: #003E9B;
-}
-
-.tituloSenha {
-    top: 0;
-    position: absolute;
-    font-size: 20px;
-    font-weight: 600;
-    z-index: 15;
-    top: 18.5rem;
-    right: 37.3rem;
-    color: #003E9B;
+.titulo1 {
+  font-size: calc(51 * var(--u));
+  font-weight: 400;
+  padding-left: calc(30 * var(--u));
 }
 
 .titulo, .titulo1, .inteligentemente {
-    color: #FAFAFA;
+  color: #FAFAFA;
 }
 
-#email,#senha{
-    position: absolute;
-    padding-left: 15px;
-    font-size: 20px;
-    background-color: #E0E8F6;
+.glub {
+  position: absolute;
+  left: calc(50 * var(--u));
+  top: calc(256 * var(--u));
+  width: calc(520 * var(--u));
+  height: auto;
+  z-index: 3;
 }
 
-#email::placeholder,#senha::placeholder{
-    color: #003E9B;
-    vertical-align: middle;
-    opacity: 0.5;
+.fundo-svg {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.voltar {
+  position: absolute;
+  z-index: 30;
+  right: calc(32 * var(--u));
+  top: calc(32 * var(--u));
+}
+
+.entrar {
+  position: absolute;
+  z-index: 10;
+  top: calc(100 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  text-align: center;
+  color: #003E9B;
+  font-family: 'Unbounded', sans-serif;
+  font-size: calc(45 * var(--u));
+  font-weight: 700;
+}
+
+.tipo-conta {
+  position: absolute;
+  z-index: 15;
+  top: calc(190 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  display: flex;
+  gap: calc(20 * var(--u));
+}
+
+.retangulo-usuario,.retangulo-adm {
+  flex: 1;                             
+  height: calc(60 * var(--u));
+  background-color: #306BE5;
+  border-radius: calc(20 * var(--u));
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAFAFA;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: -0.22px;
+}
+
+.tituloEmail {
+  position: absolute;
+  font-family: Montserrat, sans-serif;
+  font-size: calc(20 * var(--u));
+  font-weight: 600;
+  z-index: 15;
+  top: calc(290 * var(--u));
+  left: calc(822 * var(--u));
+  color: #003E9B;
 }
 
 #email {
-    position: absolute;
-    font-size: 22px;
-    font-weight: 200;
-    z-index: 15;
-    top: 13rem; 
-    right: 10rem; 
-    width: 500px;
-    height: 60px;
-    border-radius: 16px;
-    border:2px solid #a0a0a0;
-    outline: none;
+  position: absolute;
+  font-size: calc(18 * var(--u));
+  font-weight: 500;
+  z-index: 15;
+  top: calc(320 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  height: calc(48 * var(--u));
+  border-radius: calc(12 * var(--u));
+  border: 2px solid #a0a0a0;
+  outline: none;
+  padding-left: calc(14 * var(--u));
+  background-color: #E0E8F6;
+  font-family: Montserrat, sans-serif;
+}
+
+.tituloSenha {
+  position: absolute;
+  font-family: Montserrat, sans-serif;
+  font-size: calc(20 * var(--u));
+  font-weight: 600;
+  z-index: 15;
+  top: calc(390 * var(--u));
+  left: calc(822 * var(--u));
+  color: #003E9B;
+}
+
+.campo-senha {
+  position: absolute;
+  z-index: 15;
+  top: calc(420 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  height: calc(48 * var(--u));
 }
 
 #senha {
-    position: absolute;
-    font-size: 22px;
-    font-weight: 200;
-    z-index: 15;
-    top: 20.5rem; 
-    right: 10rem; 
-    width: 500px;
-    height: 60px;
-    border-radius: 16px;
-    border: 2px solid #a0a0a0;
-    outline: none;
+  position: static;
+  width: 100%;
+  height: 100%;
+  padding-left: calc(14 * var(--u));
+  padding-right: calc(52 * var(--u));
+  font-size: calc(18 * var(--u));
+  font-weight: 500;
+  border-radius: calc(12 * var(--u));
+  border: 2px solid #a0a0a0;
+  outline: none;
+  background-color: #E0E8F6;
+  font-family: Montserrat, sans-serif;
+}
+
+#email::placeholder, #senha::placeholder {
+  color: #003E9B;
+  vertical-align: middle;
+  opacity: 0.5;
+  font-weight: 400;
 }
 
 #email:focus, #senha:focus {
-    border-color:#003E9B;;
+  border-color: #003E9B;
 }
 
-.esqueceu{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: absolute;
-    top: 25.5rem;
-    right: 32rem;
-    z-index: 15;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    color: #003E9B;
+#botaoOlho {
+  position: absolute;
+  top: 50%;
+  right: calc(16 * var(--u));
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+#iconeOlho {
+  width: calc(26 * var(--u));
+  height: auto;
+  display: block;
+}
+
+.esqueceu {
+  position: absolute;
+  top: calc(485 * var(--u));
+  left: calc(822 * var(--u));
+  z-index: 15;
+  font-family: Montserrat, sans-serif;
+  font-size: calc(15 * var(--u));
+  font-weight: 700;
+  color: #003E9B;
+  text-decoration: none;
 }
 
 .esqueceu:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.criar-conta{
-    background-color: #003E9B;
-    position: absolute;
-    font-size: 25px;
-    font-weight: 600;
-    z-index: 15;
-    top: 28rem; 
-    right: 10rem; 
-    width: 500px;
-    height: 60px;
-    border-radius: 16px;
-    color:#FAFAFA;
-    cursor:pointer;
-    border: solid #003E9B;;
+.criar-conta {
+  font-family: Montserrat, sans-serif;
+  background-color: #003E9B;
+  position: absolute;
+  font-size: calc(21 * var(--u));
+  font-weight: 600;
+  z-index: 15;
+  top: calc(525 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  height: calc(48 * var(--u));
+  border-radius: calc(12 * var(--u));
+  color: #FAFAFA;
+  cursor: pointer;
+  border: solid #003E9B;
 }
 
-.criar{
-    position: absolute;
+.criar {
+  position: absolute;
+  font-size: calc(16 * var(--u));
+  font-weight: 200;
+  z-index: 15;
+  top: calc(585 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  text-align: center;
+  color: #003E9B;
+  font-family: Montserrat, sans-serif;
+}
+
+.criar strong, .criar u {
+  color: #003E9B;
+  font-weight: 800;
+  opacity: 1;
+}
+
+/* --- REGRAS PARA CELULAR / DISPOSITIVOS MÓVEIS --- */
+@media (max-width: 480px), (max-aspect-ratio: 4/3) {
+  html {
+    overflow-y: auto;
+    background: #E0E8F6;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    background: #E0E8F6;
+  }
+
+  .fundo-svg {
+    display: none;
+  }
+
+  .voltar {
+    top: 16px;
+    right: 16px;
+  }
+
+  .gota {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 28px 0;
+    overflow: hidden;
+    background-color: #02245B;
+    background-image: url('../assets/img/login.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 250% auto;
+  }
+
+  .titulo, .titulo1, .inteligentemente {
+    font-size: clamp(26px, 8vw, 40px);
+    padding: 0;
+  }
+
+  .glub {
+    position: static;
+    display: block;
+    width: min(70vw, 300px);
+    height: auto;
+    margin: 15px auto 10px;
+  }
+
+  .entrar {
+    position: static;
+    width: auto;
+    transform: none;
+    margin: 24px 24px 4px;
+    font-size: clamp(26px, 8vw, 36px);
+    text-align: center;
+  }
+
+  .tipo-conta {
+    position: static;
+    width: 100%;
+    max-width: 400px;
+    margin: 8px auto 4px;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .retangulo-usuario,
+  .retangulo-adm {
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .usuario, .adm {
+    font-size: 14px;
+  }
+
+  #form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .tituloEmail, .tituloSenha, .esqueceu {
+    position: static;
+    font-size: 15px;
+    margin-top: 6px;
+  }
+
+  #email, .criar-conta {
+    position: static;
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .campo-senha {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  #senha {
+    height: 44px;
+  }
+
+  #botaoOlho {
+    top: 50%;
+    right: 12px;
+  }
+
+  #iconeOlho {
+    width: 22px;
+  }
+
+  .criar-conta {
+    margin-top: 10px;
     font-size: 18px;
-    font-weight: 200;
-    z-index: 15;
-    right: 17rem; 
-    color: #003E9B;
-    top: 32.5rem;
-}
+  }
 
-.criar strong, .criar u{
-    color: #003E9B;
-    font-weight: 800;
-    opacity: 1;
-}
-
-.glub{
-    position:absolute;
-    left:50px;
-    top:16rem;
-    z-index: 3;
-}
-
-.voltar{
-    position: absolute;
-    z-index: 3;
-    right:2rem;
-    top:2rem;
-}
-
-#botaoOlho{
-    position: absolute;
-    z-index: 30;
-    top:348px;
-    right:185px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+  .criar {
+    position: static;
+    width: auto;
+    text-align: center;
+    font-size: 16px;
+    margin: 16px 0 32px;
+  }
 }

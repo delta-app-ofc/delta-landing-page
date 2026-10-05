@@ -7,36 +7,50 @@
     <link rel="stylesheet" href="../assets/css/entrar.css">
 </head>
 <body>
-    <img src="../assets/img/login.svg" class="fundo-svg">
-    <img src="../assets/img/gluh-run.svg" class="glub">
-    <a href="../pages/index.html"><img src="../assets/img/voltar.svg" class="voltar"></a>
+    <img src="../assets/img/login.svg" class="fundo-svg" alt="Fundo">
+    <a href="../pages/index.html"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
 
-    <div class="fundo">
+    <div class="gota">
         <div class="titulo">Cada gota</div>
-        <div class="inteligentemente"><strong>inteligentemente</strong></div>
+        <div class="inteligentemente">inteligentemente</div>
         <div class="titulo1">controlada</div>
+        <img src="../assets/img/gluh-run.svg" class="glub" alt="Mascote Glub">
     </div>
-    
+
     <div class="entrar">Entrar</div>
 
-    <div class="tituloEmail">Email</div>
-    <div class="tituloSenha">Senha</div>
+    <form id="form-login">
+        <div class="tipo-conta">
+            <button type="button" class="retangulo-usuario">
+                <span class="usuario">Usuário</span>
+            </button>
+            <button type="button" class="retangulo-adm">
+                <span class="adm">Administrador</span>
+            </button>
+        </div>
 
-    <input type="text" id="email" placeholder="Digite seu email">
-    <input type="password" id="senha" placeholder="Digite sua senha">
-    <button type="button" id="botaoOlho"><img src="../assets/img/olho-fechado.svg" id="iconeOlho"></button>
-    
-    
-    <p class="esqueceu" id="texto-azul">Esqueceu a senha?</p>    
-     
-    
-    <a href="landing-login.html">
-    <button type="submit" class="criar-conta">
-        Entrar
-    </button>
-    </a>
+        <label for="email" class="tituloEmail">Email</label>
+        <input type="text" id="email" placeholder="Digite seu email">
 
-    <p class="criar">Não possui uma conta? <a href="criar-conta.html"><u><strong>Registre-se </strong></u></a></p>
-    <script src="../assets/js/script-conta.js"></script>
+        <label for="senha" class="tituloSenha">Senha</label>
+        <div class="campo-senha">
+            <input type="password" id="senha" placeholder="Digite sua senha">
+            <button type="button" id="botaoOlho">
+                <img src="../assets/img/olho-fechado.svg" id="iconeOlho" alt="Mostrar/Ocultar Senha">
+            </button>
+        </div>
+
+        <a href="#" class="esqueceu" id="texto-azul">Esqueceu a senha?</a>
+
+        <a href="landing-login.html" style="width: 100%; text-decoration: none;">
+            <button type="submit" class="criar-conta">
+                Entrar
+            </button>
+        </a>
+
+        <p class="criar">Não possui uma conta? <a href="criar-conta.html"><u><strong>Registre-se</strong></u></a></p>
+    </form>
+
+    <script src="../assets/js/script-login-conta.js"></script>
 </body>
 </html>
