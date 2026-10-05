@@ -123,6 +123,11 @@ body {
   font-weight: 700;
   line-height: 123.981%; 
   letter-spacing: -0.22px;
+  transition: ease-in-out 0.3s;
+}
+
+.retangulo-usuario:hover,.retangulo-adm:hover{
+    background-color: #618de4;
 }
 
 .tituloEmail {

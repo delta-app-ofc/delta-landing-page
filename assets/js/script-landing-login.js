@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  
   const abrirModalBtn = document.querySelector('#minha-conta');
   const fecharModalBtn = document.querySelector('#close-modal');
   const modal = document.querySelector("#modal");
