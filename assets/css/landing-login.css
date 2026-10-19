@@ -128,8 +128,6 @@ html {
   opacity: 0.85;
 } 
 
-
-
 .Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores{
   position: fixed;
   cursor: pointer;
@@ -365,6 +363,13 @@ html {
   color: #FAFAFA; 
 }
 
+/* Estado inicial das cartas: o JS controla o resto conforme o scroll */
+.carta1, .carta2, .carta3 {
+  opacity: 0;
+  transform: translateY(220px);
+  will-change: transform, opacity;
+}
+
 #FundoAzulOndaGradiente {
   position: absolute;
   height: 1250px;
@@ -432,6 +437,8 @@ html {
   transform: translateX(-50%);
 }
 
+/* ===== Cenário e Solução (estado inicial da animação de entrada) ===== */
+
 .retanguloCenario, .retanguloSolucao {
   position: absolute;
   width: 279px;
@@ -439,6 +446,8 @@ html {
   top: 1750px;
   z-index: 3;
   display: flex;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .retanguloCenario {
@@ -446,6 +455,7 @@ html {
   left: 0;
   border-radius: 0 44.5px 0 0;
   background: #306AE5;
+  transform: translateX(-120%);   /* começa fora da tela, à esquerda */
 }
 
 .retanguloSolucao {
@@ -453,6 +463,7 @@ html {
   top: 1950px;
   border-radius: 44.5px 0 0 0;
   background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
+  transform: translateX(120%);    /* começa fora da tela, à direita */
 }
 
 .retanguloCenario2, .retanguloSolucao2 {
@@ -463,6 +474,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .retanguloCenario2 {
@@ -470,6 +483,7 @@ html {
   top: 1835px;
   border-radius: 0 90px 90px 0;
   background: linear-gradient(88deg, #306AE5 37.24%, #003E9B 91.25%);
+  transform: translateX(-120%);
 }
 
 .retanguloSolucao2 {
@@ -477,6 +491,7 @@ html {
   top: 2035px;
   border-radius: 90px 0 0 90px;
   background: linear-gradient(140deg, #306AE5 38%, #003E9B 100%);
+  transform: translateX(120%);
 }
 
 .miniTituloCenario, .miniTituloSolucao {
@@ -635,60 +650,71 @@ html {
   width: 100%;
 }
 
-#frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
+/* ===== Cartões de Funcionalidades ===== */
+/* Cada cartão é um contêiner (.cartao1 a .cartao6) e tudo dentro é posicionado em relação a ele */
+
+.cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
   position: absolute;
-  z-index: 4;
   width: 411px;
+  z-index: 4;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.cartao1 { left: 79px;  top: 3260px; }
+.cartao2 { left: 514px; top: 3260px; }
+.cartao3 { left: 949px; top: 3260px; }
+.cartao4 { left: 79px;  top: 3450px; }
+.cartao5 { left: 514px; top: 3450px; }
+.cartao6 { left: 949px; top: 3450px; }
+
+/* Borda desenhada em volta do cartão inteiro (aparece no hover) */
+.cartao1::after, .cartao2::after, .cartao3::after,.cartao4::after, .cartao5::after, .cartao6::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 4px solid transparent;
+  border-radius: 25px;
+  z-index: 10;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+}
+
+.cartao1:hover, .cartao2:hover, .cartao3:hover,
+.cartao4:hover, .cartao5:hover, .cartao6:hover {
+  transform: scale(1.08);
+  z-index: 20;
+}
+
+.cartao1:hover::after, .cartao2:hover::after, .cartao3:hover::after,.cartao4:hover::after, .cartao5:hover::after, .cartao6:hover::after {
+  border-color: #306AE5;
+}
+
+#frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
+  position: relative;
+  display: block;
+  width: 100%;
   height: auto;
+  z-index: 4;
 }
 
-#frame1 { left: 79px; top: 3260px; }
-#frame2 { left: 514px; top: 3260px; }
-#frame3 { left: 949px; top: 3260px; }
-#frame4 { left: 79px; top: 3450px; }
-#frame5 { left: 514px; top: 3450px; }
-#frame6 { left: 949px; top: 3450px; }
+/* Ícones (posições relativas ao cartão) */
+#relogio, #sino, #grafico, #lista, #robo, #papel {
+  position: absolute;
+  z-index: 5;
+  top: 60px;
+}
+#relogio { left: 25px; }
+#sino    { left: 25px; }
+#grafico { left: 22px; }
+#lista   { left: 25px; }
+#robo    { left: 25px; }
+#papel   { left: 22px; }
 
-
-#relogio { 
-  position: absolute; 
-  z-index: 5; 
-  left: 104px; 
-  top: 3320px; 
-}
-#sino { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3320px;
-  left: 539px; 
-}
-#grafico { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3320px; 
-  left: 971px; 
-}
-#lista { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3510px; 
-  left: 104px; 
-}
-#robo { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3510px; 
-  left: 539px; 
-}
-#papel { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3510px; 
-  left: 971px; 
-}
-
+/* Títulos dos cartões */
 .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,.tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
   position: absolute;
+  top: 40px;
   color: #0B2156;
   font-family: Poppins;
   font-size: 18px;
@@ -698,33 +724,17 @@ html {
   z-index: 5;
 }
 
-.tituloCardMonitoramento { 
-  top: 3300px; 
-  left: 165px; 
-}
-.tituloCardAlerta { 
-  top: 3300px; 
-  left: 605px; 
-}
-.tituloCardPrevisao { 
-  top: 3300px; 
-  left: 1045px; 
-}
-.tituloCardMetas { 
-  top: 3490px; 
-  left: 165px; 
-}
-.tituloCardChatbot { 
-  top: 3490px; 
-  left: 605px; 
-}
-.tituloCardHistorico { 
-  top: 3490px; 
-  left: 1045px; 
-}
+.tituloCardMonitoramento { left: 86px; }
+.tituloCardAlerta        { left: 91px; }
+.tituloCardPrevisao      { left: 96px; }
+.tituloCardMetas         { left: 86px; }
+.tituloCardChatbot       { left: 91px; }
+.tituloCardHistorico     { left: 96px; }
 
+/* Textos dos cartões */
 .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,.informacoesCardMetas, .informacoesCardChatbot,.informacoesCardHistorico {
   position: absolute;
+  top: 70px;
   color: #616E80;
   font-family: Poppins;
   font-size: 16px;
@@ -734,30 +744,12 @@ html {
   z-index: 5;
 }
 
-.informacoesCardMonitoramento { 
-  top: 3330px;
-  left: 165px; 
-}
-.informacoesCardAlerta { 
-  top: 3330px; 
-  left: 605px; 
-}
-.informacoesCardPrevisao { 
-  top: 3330px; 
-  left: 1045px; 
-}
-.informacoesCardMetas { 
-  top: 3520px; 
-  left: 165px; 
-}
-.informacoesCardChatbot { 
-  top: 3520px; 
-  left: 605px; 
-}
-.informacoesCardHistorico { 
-  top: 3520px; 
-  left: 1045px; 
-}
+.informacoesCardMonitoramento { left: 86px; }
+.informacoesCardAlerta        { left: 91px; }
+.informacoesCardPrevisao      { left: 96px; }
+.informacoesCardMetas         { left: 86px; }
+.informacoesCardChatbot       { left: 91px; }
+.informacoesCardHistorico     { left: 96px; }
 
 .tituloNossaEquipe {
   position: absolute;
@@ -911,7 +903,7 @@ html {
   right: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  top:5250px;
+  top:5150px;
 }
 
 .card-section{
@@ -1113,7 +1105,7 @@ html {
 .direitos{
   position: absolute;
   z-index: 5;
-  top:6980px;
+  top:6900px;
   right:60px;
   margin-bottom: 10px;
   color:#FAFAFA;
@@ -1926,4 +1918,90 @@ a{
 
 #senha-nova:focus, #confirmar-senha-nova:focus {
   border-color: #003E9B;
+}
+
+/* ==========================================================
+   Estado inicial dos cartões de Objetivos e Funcionalidades
+   (o JS controla a opacidade e o "translate" conforme o scroll)
+   ========================================================== */
+.cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia,
+.cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
+  opacity: 0;
+  will-change: translate, opacity;
+}
+
+/* ==========================================================
+   CARROSSEL DE VALORES: animações
+   (fica no final para sobrescrever as regras .card e .card img acima)
+   ========================================================== */
+
+.lista-card {
+  will-change: transform;
+}
+
+/* Cartões inativos ficam menores, apagados e levemente desfocados */
+.card {
+  opacity: 0.25;
+  transform: scale(0.82);
+  filter: blur(4px);
+  perspective: 1200px;
+  transition: opacity 0.7s ease,
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.7s ease;
+}
+
+.card.ativo {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.card img {
+  transition: transform 0.25s ease-out, filter 0.7s ease;
+  will-change: transform;
+}
+
+.lista-card.sem-transicao .card,
+.lista-card.sem-transicao .card img {
+  transition: none;
+}
+
+.card-section .Valores {
+  opacity: 0;
+  transform: translateY(80px) scale(0.94);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-section .botao-voltar,
+.card-section .botao-avancar {
+  opacity: 0;
+  transition: opacity 0.9s ease 0.3s, scale 0.2s ease;
+}
+
+.card-section.visivel .Valores {
+  opacity: 1;
+  transform: none;
+}
+
+.card-section.visivel .botao-voltar,
+.card-section.visivel .botao-avancar {
+  opacity: 1;
+}
+
+.botao-voltar:hover, .botao-avancar:hover {
+  scale: 1.12;
+}
+
+.botao-voltar:active, .botao-avancar:active {
+  scale: 0.92;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card img,
+  .card-section .Valores,
+  .card-section .botao-voltar,
+  .card-section .botao-avancar {
+    transition-duration: 0.01s;
+  }
 }

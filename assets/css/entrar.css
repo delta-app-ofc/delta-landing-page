@@ -95,48 +95,13 @@ body {
   font-weight: 700;
 }
 
-.tipo-conta {
-  position: absolute;
-  z-index: 15;
-  top: calc(190 * var(--u));
-  left: calc(820 * var(--u));
-  width: calc(420 * var(--u));
-  display: flex;
-  gap: calc(20 * var(--u));
-}
-
-.retangulo-usuario,.retangulo-adm {
-  flex: 1;                             
-  height: calc(60 * var(--u));
-  background-color: #306BE5;
-  border-radius: calc(20 * var(--u));
-  cursor: pointer;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FAFAFA;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: -0.22px;
-  transition: ease-in-out 0.3s;
-}
-
-.retangulo-usuario:hover,.retangulo-adm:hover{
-    background-color: #618de4;
-}
-
 .tituloEmail {
   position: absolute;
   font-family: Montserrat, sans-serif;
   font-size: calc(20 * var(--u));
-  font-weight: 600;
+  font-weight: 700;
   z-index: 15;
-  top: calc(290 * var(--u));
+  top: calc(220 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -146,7 +111,7 @@ body {
   font-size: calc(18 * var(--u));
   font-weight: 500;
   z-index: 15;
-  top: calc(320 * var(--u));
+  top: calc(250 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -162,9 +127,9 @@ body {
   position: absolute;
   font-family: Montserrat, sans-serif;
   font-size: calc(20 * var(--u));
-  font-weight: 600;
+  font-weight: 700;
   z-index: 15;
-  top: calc(390 * var(--u));
+  top: calc(320 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -172,7 +137,7 @@ body {
 .campo-senha {
   position: absolute;
   z-index: 15;
-  top: calc(420 * var(--u));
+  top: calc(350 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -224,7 +189,7 @@ body {
 
 .esqueceu {
   position: absolute;
-  top: calc(485 * var(--u));
+  top: calc(415 * var(--u));
   left: calc(822 * var(--u));
   z-index: 15;
   font-family: Montserrat, sans-serif;
@@ -245,7 +210,7 @@ body {
   font-size: calc(21 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(525 * var(--u));
+  top: calc(450 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -253,14 +218,24 @@ body {
   color: #FAFAFA;
   cursor: pointer;
   border: solid #003E9B;
+  text-decoration: none;
+}
+
+a {
+  color:#FAFAFA;
+  text-decoration: none;  
+}
+a:visited {
+  color:#FAFAFA;
+  text-decoration: none;  
 }
 
 .criar {
   position: absolute;
   font-size: calc(16 * var(--u));
-  font-weight: 200;
+  font-weight: 400;
   z-index: 15;
-  top: calc(585 * var(--u));
+  top: calc(520 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   text-align: center;
@@ -274,7 +249,6 @@ body {
   opacity: 1;
 }
 
-/* --- REGRAS PARA CELULAR / DISPOSITIVOS MÓVEIS --- */
 @media (max-width: 480px), (max-aspect-ratio: 4/3) {
   html {
     overflow-y: auto;
@@ -303,7 +277,7 @@ body {
     padding: 64px 28px 0;
     overflow: hidden;
     background-color: #02245B;
-    background-image: url('../assets/img/login.svg');
+    background-image: url('../img/login.svg');
     background-repeat: no-repeat;
     background-position: left top;
     background-size: 250% auto;
@@ -331,47 +305,47 @@ body {
     text-align: center;
   }
 
-  .tipo-conta {
-    position: static;
-    width: 100%;
-    max-width: 400px;
-    margin: 8px auto 4px;
-    padding: 0;
-    gap: 10px;
-  }
-
-  .retangulo-usuario,
-  .retangulo-adm {
-    height: 44px;
-    border-radius: 12px;
-  }
-
-  .usuario, .adm {
-    font-size: 14px;
-  }
-
   #form-login {
     display: flex;
     flex-direction: column;
-    gap: 6px;
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
-  .tituloEmail, .tituloSenha, .esqueceu {
+  .tituloEmail {
     position: static;
-    font-size: 15px;
-    margin-top: 6px;
+    font-family: Montserrat, sans-serif;
+    width: 100%;
+    font-size: calc(30 * var(--u));
+    font-weight: 700;
+    z-index: 15;
+    top: calc(220 * var(--u));
+    left: calc(822 * var(--u));
+    color: #003E9B;
   }
 
-  #email, .criar-conta {
+  #email {
     position: static;
     width: 100%;
     height: 44px;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 10px;
+    padding-left: 12px;
+
+  }
+
+  .tituloSenha {
+    position: static;
+    font-family: Montserrat, sans-serif;
+    font-size: calc(30 * var(--u));
+    font-weight: 700;
+    z-index: 15;
+    top: calc(320 * var(--u));
+    left: calc(822 * var(--u));
+    color: #003E9B;
+    padding-top: 20px;
   }
 
   .campo-senha {
@@ -379,32 +353,60 @@ body {
     top: auto;
     left: auto;
     width: 100%;
-    height: auto;
+    height: 44px;
+    margin-top: 0;
   }
 
   #senha {
-    height: 44px;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    border-radius: 10px;
+    padding-left: 12px;
+    padding-right: 44px;
   }
 
   #botaoOlho {
+    position: absolute;
     top: 50%;
     right: 12px;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
   }
 
   #iconeOlho {
     width: 22px;
+    height: auto;
+  }
+
+  .esqueceu {
+    position: static;
+    display: block;
+    font-size: 13px;
+    margin-top: 8px;
+    text-align: left;
   }
 
   .criar-conta {
-    margin-top: 10px;
-    font-size: 18px;
+    position: static;
+    width: 100%;
+    height: 46px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 10px;
   }
 
   .criar {
     position: static;
-    width: auto;
+    width: 100%;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     margin: 16px 0 32px;
   }
 }

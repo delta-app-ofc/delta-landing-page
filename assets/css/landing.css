@@ -363,6 +363,12 @@ html {
   color: #FAFAFA; 
 }
 
+.carta1, .carta2, .carta3 {
+  opacity: 0;
+  transform: translateY(220px);
+  will-change: transform, opacity;
+}
+
 #FundoAzulOndaGradiente {
   position: absolute;
   height: 1250px;
@@ -437,13 +443,30 @@ html {
   top: 1750px;
   z-index: 10;
   display: flex;
+  opacity: 0;
+  will-change: transform;
+  justify-content: center;
+  align-content: center;
 }
+
+.miniTituloCenario,.miniTituloSolucao{
+  color: #FAFAFA;
+  font-family: Unbounded;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  align-content: center;
+  }
 
 .retanguloCenario {
   position: relative;
   left: 0;
   border-radius: 0 44.5px 0 0;
   background: #306AE5;
+  transform: translateX(-120%);
+  align-content: center;
 }
 
 .retanguloSolucao {
@@ -451,6 +474,7 @@ html {
   top: 1950px;
   border-radius: 44.5px 0 0 0;
   background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
+  transform: translateX(120%);
 }
 
 .retanguloCenario2, .retanguloSolucao2 {
@@ -461,6 +485,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .retanguloCenario2 {
@@ -468,6 +494,7 @@ html {
   top: 1835px;
   border-radius: 0 90px 90px 0;
   background: linear-gradient(88deg, #306AE5 37.24%, #003E9B 91.25%);
+  transform: translateX(-120%);
 }
 
 .retanguloSolucao2 {
@@ -475,24 +502,7 @@ html {
   top: 2035px;
   border-radius: 90px 0 0 90px;
   background: linear-gradient(140deg, #306AE5 38%, #003E9B 100%);
-}
-
-.miniTituloCenario, .miniTituloSolucao {
-  position: absolute;
-  font-family: Unbounded;
-  color: #FAFAFA;
-  font-weight: 800;
-  font-size: 40px;
-  z-index: 11;
-  top: 50%;
-  left: 50%;
-}
-
-.miniTituloCenario { 
-  transform: translate(-55%, -45%); 
-}
-.miniTituloSolucao { 
-  transform: translate(-45%, -40%); 
+  transform: translateX(120%);
 }
 
 .conteudoCenario {
@@ -606,6 +616,12 @@ html {
   margin-top: 140px;
 }
 
+.cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia,
+.cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
+  will-change: transform, opacity;
+  transform: translateZ(0); 
+}
+
 #FundoAzulClaroOnda2 {
   position: absolute;
   z-index: 3;
@@ -633,128 +649,93 @@ html {
   width: 100%;
 }
 
-#frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
+.cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
   position: absolute;
+  width: 411px;              
   z-index: 4;
-  width: 411px;
+  cursor: default;           
+  transition: transform 0.3s ease;
+}
+
+.cartao1 { left: 79px;
+  top: 3260px;
+}
+.cartao2 { left: 514px;
+  top: 3260px;
+}
+.cartao3 { left: 949px;
+  top: 3260px;
+}
+.cartao4 { left: 79px;
+  top: 3450px;
+}
+.cartao5 { left: 514px;
+  top: 3450px;
+}
+.cartao6 { left: 949px;
+  top: 3450px;
+}
+
+.cartao1::after, .cartao2::after, .cartao3::after,.cartao4::after, .cartao5::after, .cartao6::after {
+  content: '';
+  position: absolute;
+  inset: -5px;                    
+  border: 4px solid transparent;
+  border-radius: 25px;            
+  z-index: 10;
+  pointer-events: none;
+  transition: border-color 0.3s  ease;
+}
+
+.cartao1:hover, .cartao2:hover, .cartao3:hover,
+.cartao4:hover, .cartao5:hover, .cartao6:hover {
+  transform: scale(1.08);
+  z-index: 20;
+}
+
+.cartao1:hover::after, .cartao2:hover::after, .cartao3:hover::after,.cartao4:hover::after, .cartao5:hover::after, .cartao6:hover::after {
+  border-color: #306AE5;
+}
+
+#frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
+  position: relative;
+  display: block;
+  width: 100%;
   height: auto;
+  z-index: 4;
 }
 
-#frame1 { left: 79px; top: 3260px; }
-#frame2 { left: 514px; top: 3260px; }
-#frame3 { left: 949px; top: 3260px; }
-#frame4 { left: 79px; top: 3450px; }
-#frame5 { left: 514px; top: 3450px; }
-#frame6 { left: 949px; top: 3450px; }
-
-
-#relogio { 
-  position: absolute; 
-  z-index: 5; 
-  left: 104px; 
-  top: 3320px; 
-}
-#sino { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3320px;
-  left: 539px; 
-}
-#grafico { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3320px; 
-  left: 971px; 
-}
-#lista { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3510px; 
-  left: 104px; 
-}
-#robo { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3510px; 
-  left: 539px; 
-}
-#papel { 
-  position: absolute; 
-  z-index: 5; 
-  top: 3510px; 
-  left: 971px; 
+#relogio, #sino, #grafico, #lista, #robo, #papel {
+  position: absolute;
+  z-index: 5;
+  left: 25px;
+  top: 60px;
 }
 
 .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,.tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
   position: absolute;
+  left: 86px;
+  top: 40px;
+  z-index: 5;
   color: #0B2156;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  z-index: 5;
 }
 
-.tituloCardMonitoramento { 
-  top: 3300px; 
-  left: 165px; 
-}
-.tituloCardAlerta { 
-  top: 3300px; 
-  left: 605px; 
-}
-.tituloCardPrevisao { 
-  top: 3300px; 
-  left: 1045px; 
-}
-.tituloCardMetas { 
-  top: 3490px; 
-  left: 165px; 
-}
-.tituloCardChatbot { 
-  top: 3490px; 
-  left: 605px; 
-}
-.tituloCardHistorico { 
-  top: 3490px; 
-  left: 1045px; 
-}
-
-.informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,.informacoesCardMetas, .informacoesCardChatbot,.informacoesCardHistorico {
+.informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,.informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
   position: absolute;
+  left: 86px;
+  top: 70px;
+  z-index: 5;
   color: #616E80;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  z-index: 5;
-}
-
-.informacoesCardMonitoramento { 
-  top: 3330px;
-  left: 165px; 
-}
-.informacoesCardAlerta { 
-  top: 3330px; 
-  left: 605px; 
-}
-.informacoesCardPrevisao { 
-  top: 3330px; 
-  left: 1045px; 
-}
-.informacoesCardMetas { 
-  top: 3520px; 
-  left: 165px; 
-}
-.informacoesCardChatbot { 
-  top: 3520px; 
-  left: 605px; 
-}
-.informacoesCardHistorico { 
-  top: 3520px; 
-  left: 1045px; 
 }
 
 .tituloNossaEquipe {
@@ -1083,7 +1064,7 @@ html {
 .direitos{
   position: absolute;
   z-index: 5;
-  top:6980px;
+  top:7040px;
   right:60px;
   margin-bottom: 10px;
   color:#FAFAFA;
@@ -1121,11 +1102,88 @@ a{
   scroll-margin-top:150px;
 }
 #botaoOlho{
-    position: absolute;
-    z-index:20;
-    top:468px;
-    right:180px;
-    border:none;
-    background: transparent;
-    cursor: pointer;
+  position: absolute;
+  z-index:20;
+  top:468px;
+  right:180px;
+  border:none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lista-card {
+  will-change: transform;
+}
+
+.card {
+  opacity: 0.25;
+  transform: scale(0.82);
+  filter: blur(4px);
+  perspective: 1200px;
+  transition: opacity 0.7s ease,
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.7s ease;
+}
+
+/* O cartão em destaque cresce, ganha nitidez e uma sombra */
+.card.ativo {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.card img {
+  transition: transform 0.25s ease-out, filter 0.7s ease;
+  will-change: transform;
+}
+
+
+/* Usada pelo JS para "pular" dos clones sem animar */
+.lista-card.sem-transicao .card,
+.lista-card.sem-transicao .card img {
+  transition: none;
+}
+
+/* ----- Entrada da seção quando ela aparece na tela ----- */
+.card-section .Valores {
+  opacity: 0;
+  transform: translateY(80px) scale(0.94);
+  transition: opacity 0.9s ease,
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-section .botao-voltar,
+.card-section .botao-avancar {
+  opacity: 0;
+  transition: opacity 0.9s ease 0.3s, scale 0.2s ease;
+}
+
+.card-section.visivel .Valores {
+  opacity: 1;
+  transform: none;
+}
+
+.card-section.visivel .botao-voltar,
+.card-section.visivel .botao-avancar {
+  opacity: 1;
+}
+
+/* Botões reagem ao mouse (usa "scale" para não brigar com o translateY dos botões) */
+.botao-voltar:hover, .botao-avancar:hover {
+  scale: 1.12;
+}
+
+.botao-voltar:active, .botao-avancar:active {
+  scale: 0.92;
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card img,
+  .card-section .Valores,
+  .card-section .botao-voltar,
+  .card-section .botao-avancar {
+    transition-duration: 0.01s;
+  }
 }
