@@ -234,9 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ==========================================================
    4 e 5) ANIMAÇÃO: OBJETIVOS E FUNCIONALIDADES (Unificado)
    ========================================================== */
-/* ==========================================================
-   4 E 5) ANIMAÇÃO DOS CARTÕES (Versão de Alta Performance - Loop Único)
-   ========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const limitar = (v) => Math.min(Math.max(v, 0), 1);
   const suavizar = (t) => t < 0.5
@@ -278,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Registra os grupos
   registrarGrupo({
     gatilho: '.tituloObjetivos',
     itens: '.cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia',
@@ -303,7 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const bruto = limitar((progressoAlvo - i * grupo.atraso) / grupo.janela);
         const p = suavizar(bruto);
 
-        // Usar transform em vez de translate isolado melhora a compatibilidade e performance na GPU
         el.style.opacity = p;
         el.style.transform = `translate3d(0, ${(1 - p) * grupo.deslocamento}px, 0)`;
       });
@@ -311,7 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function loop() {
-    // Interpolação suave (lerp)
     atual += (alvo - atual) * 0.1;
 
     if (Math.abs(alvo - atual) < 0.001) {
@@ -334,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', aoRolar, { passive: true });
   
-  // Executa uma vez no carregamento para posicionar corretamente
   alvo = window.scrollY;
   atual = alvo;
   desenhar();
