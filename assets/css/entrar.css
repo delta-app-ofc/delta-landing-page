@@ -85,7 +85,7 @@ body {
 .entrar {
   position: absolute;
   z-index: 10;
-  top: calc(100 * var(--u));
+  top: calc(80 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   text-align: center;

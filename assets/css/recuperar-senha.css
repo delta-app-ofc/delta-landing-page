@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+:root {
+  --u: clamp(0.5px, calc(100vw / 1440), 1.2px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  min-height: 100%;
+  background: linear-gradient(to right, #00296B 0, #00296B 47%, #E0E8F6 47%);
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.gota {
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  font-family: Montserrat, sans-serif;
+  z-index: 5;
+}
+
+.titulo {
+  font-size: calc(51 * var(--u));
+  font-weight: 400;
+  padding-top: calc(80 * var(--u));
+  padding-left: calc(30 * var(--u));
+}
+
+.titulo1 {
+  font-size: calc(51 * var(--u));
+  font-weight: 400;
+  padding-left: calc(30 * var(--u));
+}
+
+.inteligentemente {
+  font-size: calc(50 * var(--u));
+  font-weight: 900;
+  padding-left: calc(30 * var(--u));
+}
+
+.titulo, .titulo1, .inteligentemente {
+  color: #FAFAFA;
+}
+
+.fundo-svg {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.recupere-sua-senha {
+  position: absolute;
+  z-index: 10;
+  top: calc(80 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  text-align: center;
+  color: #003E9B;
+  font-family: 'Unbounded', sans-serif;
+  font-size: calc(40 * var(--u));
+  font-weight: 700;
+}
+
+.senha-nova {
+  position: absolute;
+  font-size: calc(20 * var(--u));
+  font-weight: 600;
+  z-index: 15;
+  top: calc(240 * var(--u));
+  left: calc(822 * var(--u));
+  color: #003E9B;
+}
+
+.confirmar-senha {
+  position: absolute;
+  font-size: calc(20 * var(--u));
+  font-weight: 600;
+  z-index: 15;
+  top: calc(340 * var(--u));
+  left: calc(822 * var(--u));
+  color: #003E9B;
+}
+
+#senha-nova, #confirmar-senha{
+  position: absolute;
+  padding-left: calc(14 * var(--u));
+  background-color: #E0E8F6;
+  font-family: Montserrat, sans-serif;
+}
+
+#senha-nova::placeholder, #confirmar-senha::placeholder{
+  color: #003E9B;
+  vertical-align: middle;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+#senha-nova {
+  font-size: calc(18 * var(--u));
+  font-weight: 500;
+  z-index: 15;
+  top: calc(270 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  height: calc(48 * var(--u));
+  border-radius: calc(12 * var(--u));
+  border: 2px solid #a0a0a0;
+  outline: none;
+}
+
+#confirmar-senha {
+  font-size: calc(18 * var(--u));
+  font-weight: 500;
+  z-index: 15;
+  top: calc(370 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  height: calc(48 * var(--u));
+  border-radius: calc(12 * var(--u));
+  border: 2px solid #a0a0a0;
+  outline: none;
+}
+
+#senha-nova:focus, #confirmar-senha:focus {
+  border-color: #003E9B;
+}
+
+.avancar {
+  font-family: Montserrat, sans-serif;
+  background-color: #003E9B;
+  position: absolute;
+  font-size: calc(21 * var(--u));
+  font-weight: 600;
+  z-index: 15;
+  top: calc(450 * var(--u));
+  left: calc(820 * var(--u));
+  width: calc(420 * var(--u));
+  height: calc(48 * var(--u));
+  border-radius: calc(12 * var(--u));
+  color: #FAFAFA;
+  cursor: pointer;
+  border: solid #003E9B;
+  text-decoration: none;
+}

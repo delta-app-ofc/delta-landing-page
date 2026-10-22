@@ -84,7 +84,7 @@ body {
   font-size: calc(20 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(190 * var(--u));
+  top: calc(240 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -94,7 +94,7 @@ body {
   font-size: calc(20 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(290 * var(--u));
+  top: calc(340 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -104,7 +104,7 @@ body {
   font-size: calc(20 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(390 * var(--u));
+  top: calc(440 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -127,7 +127,7 @@ body {
   font-size: calc(18 * var(--u));
   font-weight: 500;
   z-index: 15;
-  top: calc(220 * var(--u));
+  top: calc(270 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -140,7 +140,7 @@ body {
   font-size: calc(18 * var(--u));
   font-weight: 500;
   z-index: 15;
-  top: calc(320 * var(--u));
+  top: calc(370 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -152,7 +152,7 @@ body {
 .campo-senha {
   position: absolute;
   z-index: 15;
-  top: calc(420 * var(--u));
+  top: calc(470 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -168,6 +168,7 @@ body {
   border-radius: calc(12 * var(--u));
   border: 2px solid #a0a0a0;
   outline: none;
+  background: #E0E8F6; 
 }
 
 #nome:focus, #email:focus, #senha:focus {
@@ -197,7 +198,7 @@ body {
   align-items: center;
   gap: calc(8 * var(--u));
   position: absolute;
-  top: calc(515 * var(--u));
+  top: calc(565 * var(--u));
   left: calc(822 * var(--u));
   z-index: 15;
   font-size: calc(15 * var(--u));
@@ -242,7 +243,7 @@ body {
   font-size: calc(21 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(550 * var(--u));
+  top: calc(600 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -257,7 +258,7 @@ body {
   font-size: calc(16 * var(--u));
   font-weight: 200;
   z-index: 15;
-  top: calc(610 * var(--u));
+  top: calc(660 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   text-align: center;
@@ -286,7 +287,6 @@ body {
   top: calc(32 * var(--u));
 }
 
-
 #mensagemSenha {
   position: absolute;
   top: calc(100% + 4px);
@@ -299,13 +299,93 @@ body {
   color: red;
 }
 
-a {
-  color:#FAFAFA;
-  text-decoration: none;  
+.usuario{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(820 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(200 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #306BE5;
+  border-style:none;
+  cursor:pointer;
 }
-a:visited {
-  color:#FAFAFA;
-  text-decoration: none;  
+
+.usuario1{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(820 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(200 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #6d9ede;
+  border-style:none;
+  cursor:pointer;
+}
+
+.adm{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(1025 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(220 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #306BE5;
+  border-style:none;
+  cursor:pointer;
+}
+
+.adm1{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(1025 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(220 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #6d9ede;
+  border-style:none;
+  cursor:pointer;
+}
+
+.usuario:hover, .adm:hover {
+  background: #6d9ede;
+  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 480px), (max-aspect-ratio: 4/3) {
@@ -364,12 +444,30 @@ a:visited {
   text-align: center;
   }
 
-  .retangulo-usuario,
-  .retangulo-adm,.retangulo-usuario1,
-  .retangulo-adm1 {
-  height: 40px;
+  .botoes {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 12px auto 0;
+  padding: 0 24px;
+  }
+
+  .botoes a {
+  flex: 1;
+  min-width: 0;
+  }
+
+  .usuario,
+  .adm,.usuario1,
+  .adm1 {
+  position: static;
+  width: 100%;
+  height: 44px;
+  padding: 0 4px;
   border-radius: 12px;
-  width: calc(300 * var(--u));
+  font-size: clamp(11px, 3.4vw, 15px);
+  letter-spacing: 0;
   }
 
   #form-cadastro {
@@ -408,12 +506,12 @@ a:visited {
     font-size: 16px;
     width: 100%;
     height: 44px;
-    font-size: 16px;
     border-radius: 10px;
+    background: #E0E8F6; /* Garantido também no responsivo */
   }
 
   #botaoOlho {
-    top: 22px;                
+    top: 22px;              
     right: 12px;
   }
     
@@ -426,7 +524,7 @@ a:visited {
     width: 100%;
     margin-top: 6px;
     margin-bottom:-2px;   
-    font-size: 13px;           
+    font-size: 13px;              
     line-height: 1.35;
   }
 

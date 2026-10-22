@@ -1125,7 +1125,6 @@ a{
               filter 0.7s ease;
 }
 
-/* O cartão em destaque cresce, ganha nitidez e uma sombra */
 .card.ativo {
   opacity: 1;
   transform: scale(1);
@@ -1138,13 +1137,11 @@ a{
 }
 
 
-/* Usada pelo JS para "pular" dos clones sem animar */
 .lista-card.sem-transicao .card,
 .lista-card.sem-transicao .card img {
   transition: none;
 }
 
-/* ----- Entrada da seção quando ela aparece na tela ----- */
 .card-section .Valores {
   opacity: 0;
   transform: translateY(80px) scale(0.94);
@@ -1168,7 +1165,6 @@ a{
   opacity: 1;
 }
 
-/* Botões reagem ao mouse (usa "scale" para não brigar com o translateY dos botões) */
 .botao-voltar:hover, .botao-avancar:hover {
   scale: 1.12;
 }
@@ -1177,7 +1173,6 @@ a{
   scale: 0.92;
 }
 
-/* Respeita quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
   .card,
   .card img,

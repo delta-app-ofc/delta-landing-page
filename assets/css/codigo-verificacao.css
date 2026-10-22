@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+:root {
+  --u: clamp(0.5px, calc(100vw / 1440), 1.2px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+}
+
+.fundo-svg {
+  width: 100%;
+  height: 105vh;
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-position: center top;
+  transform: translateY(-40px);
+}
+
+.titulo{
+  color: #003E9B;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: -0.5px;
+  z-index: 15;
+  position: absolute;
+  top: calc(200 * var(--u));
+  left: calc(350 * var(--u));
+}
+
+.informacoes{
+    position: absolute;
+    width: 1007px;
+    height: 28px;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 121.882%; 
+    letter-spacing: -0.24px;
+    z-index: 15;
+    top: calc(270 * var(--u));
+    left: calc(220 * var(--u));
+}
+
+#email {
+    position: absolute;
+    font-size: calc(18 * var(--u));
+    font-weight: 500;
+    z-index: 15;
+    top: calc(320 * var(--u));
+    left: calc(230 * var(--u));
+    width: calc(952 * var(--u));
+    height: calc(70 * var(--u));
+    border-radius: calc(12 * var(--u));
+    border: 2px solid #a0a0a0;
+    outline: none;
+}
+
+#email::placeholder{
+  color: #003E9B;
+  vertical-align: middle;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+#email:focus{
+  border-color: #003E9B;
+}
+
+#email{
+  position: absolute;
+  padding-left: calc(14 * var(--u));
+  background-color: #E0E8F6;
+  font-family: Montserrat, sans-serif;
+}
+
+.enviar-codigo{
+  position: absolute;
+  top: calc(430*var(--u));
+  left: calc(450*var(--u));
+  width: calc(484.113*var(--u));
+  height: calc(69*var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: -0.25px;
+  border-radius: 15px;
+  background: #003E9B;
+  border-style:none;
+  cursor: pointer;
+}
+
+.codigo-email1,.codigo-email2,.codigo-email3,.codigo-email4{
+  position:absolute;
+  z-index:15;
+  width:calc(182*var(--u));
+  height: calc(268*var(--u));
+  border-radius: 41px;
+  border: 5px solid #a0a0a0;
+  background: #FAFAFA;
+  top: calc(320*var(--u));
+  font-size:calc(100*var(--u));
+  font-family: Montserrat, sans-serif;
+  transition: 0.3s ease-in;
+  outline: none;
+  text-align: center;
+}
+
+.codigo-email1{
+  left: calc(250*var(--u));
+}
+
+.codigo-email2{
+  left: calc(500*var(--u));
+}
+
+.codigo-email3{
+  left: calc(750*var(--u));
+}
+
+.codigo-email4{
+  left: calc(1000*var(--u));
+}
+
+.codigo-email1:focus,.codigo-email2:focus,.codigo-email3:focus,.codigo-email4:focus{
+  border: 5px solid #003E9B;
+}
+
+.confirmar{
+  position: absolute;
+  z-index: 15;
+  width: calc(343*var(--u));
+  height: calc(69*var(--u));
+  border-radius: 20px;
+  background: #003E9B;
+  color: #FAFAFA;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: -0.25px;
+  border:none;
+  top:calc(620*var(--u));
+  left:calc(550*var(--u));
+  cursor:pointer;
+}
