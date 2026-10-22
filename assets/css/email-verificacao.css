@@ -1,120 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
 
-:root {
-  --u: clamp(0.5px, calc(100vw / 1440), 1.2px);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
+html, body {
+  width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
-  min-height: 100%;
 }
 
 body {
-  min-height: 100vh;
   position: relative;
-  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0f4f8;
 }
 
 .fundo-svg {
-  width: 100%;
-  height: 105vh;
-  display: block;
-  object-fit: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 1;
-  object-position: center top;
-  transform: translateY(-40px);
 }
 
-.titulo{
-    color: #003E9B;
-    text-align: center;
-    font-family: Unbounded;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 123.981%; 
-    letter-spacing: -0.5px;
-    z-index: 15;
-    position: absolute;
-    top: calc(250 * var(--u));
-    left: calc(350 * var(--u));
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
 }
 
-.informacoes{
-    position: absolute;
-    width: 1007px;
-    height: 28px;
-    color: #000;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 121.882%; 
-    letter-spacing: -0.24px;
-    z-index: 15;
-    top: calc(310 * var(--u));
-    left: calc(220 * var(--u));
+.titulo {
+  color: #003E9B;
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(24px, 4vw, 45px); 
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.informacoes {
+  color: #000;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 500;
+  margin-bottom: 30px;
+  max-width: 600px;
+  line-height: 1.4;
 }
 
 #email {
-    position: absolute;
-    font-size: calc(18 * var(--u));
-    font-weight: 500;
-    z-index: 15;
-    top: calc(360 * var(--u));
-    left: calc(230 * var(--u));
-    width: calc(952 * var(--u));
-    height: calc(70 * var(--u));
-    border-radius: calc(12 * var(--u));
-    border: 2px solid #a0a0a0;
-    outline: none;
+  width: 100%;
+  max-width: 650px;
+  height: 60px;
+  padding-left: 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 12px;
+  border: 2px solid #a0a0a0;
+  background-color: #E0E8F6;
+  outline: none;
+  margin-bottom: 25px;
+  transition: border-color 0.3s;
 }
 
-#email::placeholder{
+#email::placeholder {
   color: #003E9B;
-  vertical-align: middle;
   opacity: 0.5;
-  font-weight: 400;
 }
 
-#email:focus{
+#email:focus {
   border-color: #003E9B;
 }
 
-#email{
-  position: absolute;
-  padding-left: calc(14 * var(--u));
-  background-color: #E0E8F6;
-  font-family: Montserrat, sans-serif;
-}
-
-.enviar-codigo{
-  position: absolute;
-  top: calc(470*var(--u));
-  left: calc(450*var(--u));
-  width: calc(484.113*var(--u));
-  height: calc(69*var(--u));
-  z-index: 15;
+.enviar-codigo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  height: 60px;
   color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: 25px;
-  font-style: normal;
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: -0.25px;
   border-radius: 15px;
   background: #003E9B;
-  border-style:none;
+  border: none;
+  text-decoration: none;
   cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.enviar-codigo:hover {
+  background: #002b6b;
 }

@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recuperar Senha - E-mail</title>
     <link rel="stylesheet" href="../assets/css/email-verificacao.css">
 </head>
 <body>
-    <img src="../assets/img/codigo.svg" class="fundo-svg">
+    <img src="../assets/img/codigo.svg" class="fundo-svg" alt="Fundo decorativo">
 
-    <div class="titulo">Qual é o e-mail da conta?</div>
-    <p class="informacoes">Digite o e-mail cadastrado para receber as instruções de recuperação de senha</p>
+    <div class="container">
+        <h1 class="titulo">Qual é o e-mail da conta?</h1>
+        <p class="informacoes">Digite o e-mail cadastrado para receber as instruções de recuperação de senha.</p>
 
-    <input type="text" id="email" name="email" placeholder="Email">
+        <input type="email" id="email" name="email" placeholder="Email" required>
 
-    <a href="codigo-verificacao.html"><button class="enviar-codigo">Enviar código</button></a>
+        <a href="codigo-verificacao.html" class="enviar-codigo">Enviar código</a>
+    </div>
 </body>
 </html>

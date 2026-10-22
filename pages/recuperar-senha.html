@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recupere sua Senha</title>
     <link rel="stylesheet" href="../assets/css/recuperar-senha.css">
 </head>
 <body>
-    <img src="../assets/img/login.svg" class="fundo-svg">
-    <a href="../pages/index.html"><img src="../assets/img/voltar.svg" class="voltar"></a>
+    <img src="../assets/img/login.svg" class="fundo-svg" alt="Fundo">
+    <a href="../pages/index.html"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
 
     <div class="gota">
         <div class="titulo">Cada gota</div>
-        <div class="inteligentemente"><strong>inteligentemente</strong></div>
+        <div class="inteligentemente">inteligentemente</div>
         <div class="titulo1">controlada</div>
-        <img src="../assets/img/gluh-run.svg" class="glub">
+        <img src="../assets/img/gluh-run.svg" class="glub" alt="Mascote Glub">
     </div>
 
-    <div class="recupere-sua-senha">Recupere sua senha</div>
+    <div class="recuperar-titulo">Recupere sua senha</div>
 
-    <div class="senha-nova">Senha nova</div>
-    <input type="text" id="senha-nova" name="nome" placeholder="Digite sua senha nova" >
+        <label for="senha-nova" class="tituloSenhaNova">Senha nova</label>
+        <div class="campo-senha1">
+            <input type="password" id="senha-nova" placeholder="Digite sua senha nova">
+            <button type="button" id="botaoOlho1" class="botaoOlho">
+                <img src="../assets/img/olho-fechado.svg" id="iconeOlho1" class="iconeOlho" alt="Mostrar/Ocultar Senha">
+            </button>
+        </div>
 
-    <div class="confirmar-senha">Confirme sua senha nova</div>
-    <input type="email" id="confirmar-senha" name="email" placeholder="Digite a senha novamente" >
+        <label for="confirmar-senha" class="tituloConfirmarSenha">Confirme sua senha nova</label>
+        <div class="campo-senha2">
+            <input type="password" id="confirmar-senha" placeholder="Digite a senha novamente">
+            <button type="button" id="botaoOlho2" class="botaoOlho">
+                <img src="../assets/img/olho-fechado.svg" id="iconeOlho2" class="iconeOlho" alt="Mostrar/Ocultar Senha">
+            </button>
+        </div>
 
-    <a href="email-verificacao.html">
-        <button type="submit" class="avancar">Avançar</button>
-    </a>
+        <a href="email-verificacao.html">
+            <button type="submit" class="avancar">Avançar</button>
+        </a>
+
+    <script src="../assets/js/script-recuperar-conta.js"></script>
 </body>
 </html>
