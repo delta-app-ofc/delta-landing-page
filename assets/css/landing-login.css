@@ -650,9 +650,6 @@ html {
   width: 100%;
 }
 
-/* ===== Cartões de Funcionalidades ===== */
-/* Cada cartão é um contêiner (.cartao1 a .cartao6) e tudo dentro é posicionado em relação a ele */
-
 .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
   position: absolute;
   width: 411px;
@@ -668,7 +665,6 @@ html {
 .cartao5 { left: 514px; top: 3450px; }
 .cartao6 { left: 949px; top: 3450px; }
 
-/* Borda desenhada em volta do cartão inteiro (aparece no hover) */
 .cartao1::after, .cartao2::after, .cartao3::after,.cartao4::after, .cartao5::after, .cartao6::after {
   content: '';
   position: absolute;
