@@ -1,0 +1,1032 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #282e68;
+    --azul-card: #30389b;
+    --borda: #252d70;
+    --texto: #292c36;
+    --cinza: #747b8b;
+    --fundo-icone: #eef1fb;
+}
+
+body {
+    min-height: 100vh;
+    background: #ffffff;
+    font-family: "Poppins", sans-serif;
+    color: var(--texto);
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    position: fixed;
+    left: 20px;
+    top: 30px;
+
+    width: 230px;
+    height: calc(94vh - 26px);
+
+    padding: 22px 18px 19px;
+    margin-left: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 20px;
+
+    background: var(--azul);
+    color: #ffffff;
+}
+
+.logo-area {
+    position: relative;
+
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-area::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 110px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.logo {
+    color: #ffffff;
+
+    font-size: 31px;
+    font-weight: 800;
+
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    display: inline-block;
+
+    margin-left: 1px;
+
+    color: #ffffff;
+
+    font-size: 27px;
+
+    transform: rotate(12deg);
+}
+
+#logo {
+    width: 100px;
+    height: auto;
+
+    max-width: 150px;
+
+    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin-top: 19px;
+}
+
+.menu-item {
+    height: 36px;
+
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.menu-item.active {
+    background: var(--azul-card);
+}
+
+.menu-item:hover {
+    background: rgba(48, 56, 155, 0.75);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding-bottom: 10px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f4f5f8;
+    color: #8b94a6;
+}
+
+.avatar svg {
+    width: 13px;
+    height: 13px;
+
+    stroke-width: 2.7;
+}
+
+.logout {
+    width: 100%;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 0 7px;
+
+    border-radius: 5px;
+
+    background: var(--azul-card);
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.logout svg {
+    width: 14px;
+    height: 14px;
+
+    stroke-width: 2;
+}
+
+
+/* ================================
+   CONTEÚDO PRINCIPAL
+================================ */
+
+.main {
+    width: calc(100% - 240px);
+
+    margin-left: 240px;
+
+    padding: 55px 40px 30px 55px;
+}
+
+.crud-page {
+    width: 100%;
+}
+
+
+/* ================================
+   CABEÇALHO DA TABELA
+================================ */
+
+.crud-header {
+    width: 100%;
+
+    margin-bottom: 16px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.crud-title h1 {
+    color: #050505;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    line-height: 1.05;
+    letter-spacing: -0.8px;
+}
+
+.crud-title p {
+    margin-top: 3px;
+
+    color: #777777;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* ================================
+   TOTAL DE REGISTROS
+================================ */
+
+.crud-total {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: -30px;
+}
+
+.crud-total span {
+    color: #080808;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.crud-total strong {
+    width: 122px;
+    height: 83px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #30389b;
+    color: #ffffff;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+
+/* ================================
+   BARRA DE FERRAMENTAS
+================================ */
+
+.crud-toolbar {
+    width: 100%;
+
+    margin-bottom: 19px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.crud-search-area {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    flex: 1;
+}
+
+.crud-search {
+    position: relative;
+
+    width: 253px;
+}
+
+.crud-search input {
+    width: 253px;
+    height: 40px;
+
+    padding: 0 14px 0 34px;
+
+    border: 1.5px solid #30389b;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #292c36;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.crud-search input::placeholder {
+    color: #a1a1a1;
+}
+
+.crud-search input:focus {
+    border-color: #252d70;
+}
+
+.crud-search svg {
+    position: absolute;
+
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 16px;
+    height: 16px;
+
+    color: #969696;
+}
+
+
+/* ================================
+   FILTRO
+================================ */
+
+.crud-filter {
+    width: 25px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+    color: #30389b;
+
+    cursor: pointer;
+}
+
+.crud-filter svg {
+    width: 23px;
+    height: 23px;
+
+    stroke-width: 1.8;
+}
+
+.crud-filter:hover {
+    color: #252d70;
+}
+
+
+/* ================================
+   ADICIONAR
+================================ */
+
+.crud-add {
+    width: 186px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 10px;
+
+    border: 1.5px solid #252d70;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #252d70;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.crud-add:hover {
+    background: #f5f6fc;
+}
+
+.crud-add svg {
+    width: 20px;
+    height: 20px;
+
+    stroke-width: 2;
+}
+
+
+/* ================================
+   TABELA
+================================ */
+
+.crud-table-wrap {
+    width: 100%;
+
+    margin-top: 16px;
+
+    overflow-x: auto;
+}
+
+.crud-table {
+    width: 100%;
+    min-width: 1050px;
+
+    border-collapse: separate;
+    border-spacing: 0 12px;
+
+    table-layout: fixed;
+}
+
+
+/* Cabeçalho */
+
+.crud-table thead tr {
+    height: 43px;
+}
+
+.crud-table thead th {
+    height: 43px;
+    padding: 0 6px;
+    border-top: 1px solid #30389b;
+    border-bottom: 1px solid #30389b;
+    color: #292c36;
+    background: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.crud-table thead th:first-child {
+    border-left: 1px solid #30389b;
+    border-radius: 22px 0 0 22px;
+}
+
+.crud-table thead th:last-child {
+    border-right: 1px solid #30389b;
+    border-radius: 0 22px 22px 0;
+}
+
+
+/* Larguras */
+
+.crud-table th:nth-child(1) {
+    width: 100px;
+}
+
+.crud-table th:nth-child(2) {
+    width: 150px;
+}
+
+.crud-table th:nth-child(3) {
+    width: 150px;
+}
+
+.crud-table th:nth-child(4) {
+    width: 100px;
+}
+
+.crud-table th:nth-child(5) {
+    width: 100px;
+}
+
+.crud-table th:nth-child(6) {
+    width: 100px;
+}
+
+.crud-table th:nth-child(7) {
+    width: 100px;
+}
+
+.crud-table th:nth-child(8) {
+    width: 100px;
+}
+
+.crud-table th:nth-child(9) {
+    width: 100px;
+}
+
+.crud-table th:nth-child(10) {
+    width: 100px;
+}
+
+
+/* Linhas */
+
+.crud-table tbody tr {
+    height: 52px;
+}
+
+.crud-table tbody td {
+    height: 52px;
+
+    padding: 0 6px;
+
+    background: #777dbc;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    text-align: center;
+
+    white-space: nowrap;
+    vertical-align: middle;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.crud-table tbody td:first-child {
+    border-radius: 14px 0 0 14px;
+}
+
+.crud-table tbody td:nth-child(10) {
+    border-radius: 0 14px 14px 0;
+}
+
+
+/* ================================
+   BOTÕES DE AÇÃO
+================================ */
+
+.crud-table tbody td.crud-actions-cell,
+.crud-table tbody td:last-child {
+    width: 80px;
+
+    padding: 0 0 0 8px;
+
+    background: transparent;
+
+    border-radius: 0;
+
+    text-align: center !important;
+}
+
+.crud-action {
+    width: 28px;
+    height: 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 2px;
+
+    border: 1px solid #30389b;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #30389b;
+
+    cursor: pointer;
+    vertical-align: middle;
+
+    transition: 0.2s ease;
+}
+
+.crud-action:hover {
+    background: #eef0fa;
+}
+
+.crud-action svg {
+    width: 14px;
+    height: 14px;
+
+    stroke-width: 2;
+}
+
+.crud-action.delete {
+    color: #252d70;
+    border-color: #252d70;
+}
+
+.crud-empty {
+    height: 80px !important;
+
+    background: transparent !important;
+
+    color: #747b8b !important;
+
+    font-size: 13px !important;
+
+    text-align: center !important;
+}
+
+
+/* =====================================================
+   TELA DE ADICIONAR / EDITAR USUÁRIO
+===================================================== */
+
+.crud-form-page {
+    width: 100%;
+}
+
+
+/* Cabeçalho do formulário */
+
+.crud-form-header {
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.crud-form-header h1 {
+    margin: 0;
+
+    color: #050505;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.8px;
+}
+
+.crud-form-header p {
+    margin-top: 5px;
+
+    color: #777777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* Card do formulário */
+
+.crud-form-card {
+    width: 100%;
+
+    padding: 30px 32px 32px;
+
+    border: 1.5px solid #252d70;
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+
+/* Título dentro do card */
+
+.crud-form-card .form-title {
+    margin-bottom: 28px;
+
+    color: #252d70;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+/* Grid */
+
+.crud-form-card .form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 42px;
+    row-gap: 20px;
+
+    width: 100%;
+}
+
+
+/* Campo */
+
+.crud-form-card .crud-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.crud-form-card .crud-field label {
+    margin: 0;
+
+    color: #252d70;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Inputs */
+
+.crud-form-card .crud-field input,
+.crud-form-card .crud-field select {
+    width: 100%;
+    height: 44px;
+
+    box-sizing: border-box;
+
+    padding: 0 13px;
+
+    border: 1.5px solid #252d70;
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #292c36;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+.crud-form-card .crud-field input:focus,
+.crud-form-card .crud-field select:focus {
+    border-color: #30389b;
+
+    box-shadow: 0 0 0 2px rgba(48, 56, 155, 0.08);
+}
+
+
+/* Data */
+
+.crud-form-card .crud-field input[type="date"] {
+    cursor: pointer;
+}
+
+
+/* Botões do formulário */
+
+.crud-form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 80px;
+}
+
+.crud-cancel,
+.crud-save {
+    height: 44px;
+
+    padding: 0 24px;
+
+    border-radius: 7px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* Cancelar */
+
+.crud-cancel {
+    border: 1.5px solid #252d70;
+
+    background: #ffffff;
+    color: #252d70;
+}
+
+.crud-cancel:hover {
+    background: #f4f5f9;
+}
+
+
+/* Salvar / Adicionar */
+
+.crud-save {
+    border: 1.5px solid #30389b;
+
+    background: #30389b;
+    color: #ffffff;
+}
+
+.crud-save:hover {
+    background: #252d70;
+    border-color: #252d70;
+}
+
+
+/* =====================================================
+   ESCONDER ESTILOS ANTIGOS DO MODAL
+===================================================== */
+
+/*
+   O cadastro agora é uma página dentro do .crud-page.
+   Estes estilos garantem que qualquer modal antigo
+   não interfira na nova tela.
+*/
+
+.crud-overlay,
+.crud-modal {
+    display: none !important;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        left: 25px;
+        width: 210px;
+    }
+
+    .main {
+        width: calc(100% - 250px);
+
+        margin-left: 250px;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 210px;
+
+        height: calc(100vh - 40px);
+
+        margin: 20px;
+    }
+
+    .main {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 30px 20px;
+    }
+
+    .crud-header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .crud-total {
+        margin-top: 0;
+    }
+
+    .crud-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .crud-search-area {
+        width: 100%;
+
+        flex-basis: 100%;
+    }
+
+
+    /* Formulário */
+
+    .crud-form-card .form-grid {
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+    }
+
+    .crud-form-actions {
+        margin-top: 40px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        position: relative;
+
+        width: calc(100% - 30px);
+
+        height: auto;
+
+        min-height: 0;
+
+        margin: 15px;
+
+        border-radius: 30px;
+    }
+
+    .sidebar-bottom {
+        margin-top: 30px;
+    }
+
+    .crud-title h1,
+    .crud-form-header h1 {
+        font-size: 28px;
+    }
+
+    .crud-title p,
+    .crud-form-header p {
+        font-size: 14px;
+    }
+
+    .crud-total strong {
+        width: 90px;
+        height: 60px;
+
+        font-size: 28px;
+    }
+
+    .crud-add {
+        width: 100%;
+    }
+
+    .crud-search {
+        width: calc(100% - 45px);
+    }
+
+    .crud-search input {
+        width: 100%;
+    }
+
+
+    /* Formulário */
+
+    .crud-form-card {
+        padding: 22px 18px 25px;
+    }
+
+    .crud-form-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        margin-top: 35px;
+    }
+
+    .crud-cancel,
+    .crud-save {
+        width: 100%;
+    }
+
+}
