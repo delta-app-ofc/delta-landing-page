@@ -1203,3 +1203,14 @@ a{
   display: block;
   margin-left: -50px;
 }
+
+.retangulo-comecar-parte-final{
+  position: absolute;
+  width: 323px;
+  height: 50.319px;
+  border-radius: 18px;
+  cursor:pointer;
+  z-index: 30;
+  top: 6134.5px;
+  left:261.5px;
+}
