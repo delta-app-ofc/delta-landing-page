@@ -107,3 +107,11 @@ body {
 .enviar-codigo:hover {
   background: #002b6b;
 }
+
+.voltar {
+  position: absolute;
+  z-index: 10;
+  right: 70px;
+  top: 70px;
+  width: 5%;
+}
