@@ -1174,3 +1174,32 @@ a{
     transition-duration: 0.01s;
   }
 }
+
+.botao-topo {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.botao-logo {
+  display: flex;
+  align-items: center; 
+  position: relative; 
+  margin-left: 50px;
+}
+
+.Delta {
+  color: #FEFEFE;
+  font-family: "Talina DEMO", sans-serif;
+  font-size: 47.998px;
+  font-weight: 400;
+  z-index: 1000;
+}
+
+#LogoDelta {
+  width: 36.001px;
+  height: 33.861px;
+  z-index: 1002;
+  display: block;
+  margin-left: -50px;
+}
