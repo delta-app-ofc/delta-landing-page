@@ -607,7 +607,7 @@ html {
   height: 163px;
   color: #616E80;
   font-family: Poppins;
-  font-size: 15px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 149.978%;
@@ -651,49 +651,41 @@ html {
 
 .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
   position: absolute;
-  width: 411px;              
+  width: 411px;
   z-index: 4;
-  cursor: default;           
-  transition: transform 0.3s ease;
+  cursor: default;
+  transition: transform 0.3s ease, scale 0.3s ease, z-index 0.3s ease;
+  transform-origin: center center;
 }
 
-.cartao1 { left: 79px;
-  top: 3260px;
-}
-.cartao2 { left: 514px;
-  top: 3260px;
-}
-.cartao3 { left: 949px;
-  top: 3260px;
-}
-.cartao4 { left: 79px;
-  top: 3450px;
-}
-.cartao5 { left: 514px;
-  top: 3450px;
-}
-.cartao6 { left: 949px;
-  top: 3450px;
-}
+.cartao1 { left: 79px;  top: 3260px; }
+.cartao2 { left: 514px; top: 3260px; }
+.cartao3 { left: 949px; top: 3260px; }
+.cartao4 { left: 79px;  top: 3450px; }
+.cartao5 { left: 514px; top: 3450px; }
+.cartao6 { left: 949px; top: 3450px; }
 
-.cartao1::after, .cartao2::after, .cartao3::after,.cartao4::after, .cartao5::after, .cartao6::after {
+.cartao1::after, .cartao2::after, .cartao3::after,
+.cartao4::after, .cartao5::after, .cartao6::after {
   content: '';
   position: absolute;
-  inset: -5px;                    
+  inset: -5px;
   border: 4px solid transparent;
-  border-radius: 25px;            
+  border-radius: 25px;
   z-index: 10;
   pointer-events: none;
-  transition: border-color 0.3s  ease;
+  transition: border-color 0.3s ease;
 }
 
 .cartao1:hover, .cartao2:hover, .cartao3:hover,
 .cartao4:hover, .cartao5:hover, .cartao6:hover {
-  transform: scale(1.08);
-  z-index: 20;
+  scale: 1.08;
+  z-index: 20; 
 }
 
-.cartao1:hover::after, .cartao2:hover::after, .cartao3:hover::after,.cartao4:hover::after, .cartao5:hover::after, .cartao6:hover::after {
+/* Hover da borda */
+.cartao1:hover::after, .cartao2:hover::after, .cartao3:hover::after,
+.cartao4:hover::after, .cartao5:hover::after, .cartao6:hover::after {
   border-color: #306AE5;
 }
 

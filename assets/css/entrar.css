@@ -187,7 +187,7 @@ body {
   display: block;
 }
 
-.esqueceu {
+.esqueceu,.esqueceu:visited {
   position: absolute;
   top: calc(415 * var(--u));
   left: calc(822 * var(--u));

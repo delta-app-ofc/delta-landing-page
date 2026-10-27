@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Código de Verificação</title>
     <link rel="stylesheet" href="../assets/css/codigo-verificacao.css">
 </head>
 <body>
-    <img src="../assets/img/codigo.svg" class="fundo-svg">
+    <img src="../assets/img/codigo.svg" class="fundo-svg" alt="Fundo decorativo">
 
-    <div class="titulo">Insira o código abaixo:</div>
-    <p class="informacoes">Confira o código que enviamos no seu email</p>
+    <div class="container">
+        <h1 class="titulo">Insira o código abaixo:</h1>
+        <p class="informacoes">Confira o código que enviamos no seu email</p>
 
-    <input type="text" maxlength="1" class="codigo-email1">
-    <input type="text" maxlength="1" class="codigo-email2">
-    <input type="text" maxlength="1" class="codigo-email3">
-    <input type="text" maxlength="1" class="codigo-email4">
+        <div class="grupo-inputs">
+            <input type="text" maxlength="1"  class="codigo-input">
+            <input type="text" maxlength="1"  class="codigo-input">
+            <input type="text" maxlength="1"  class="codigo-input">
+            <input type="text" maxlength="1"  class="codigo-input">
+        </div>
 
-    <button class="confirmar">Confirmar</button>
+        <a href="#" class="reenviar-codigo">Reenviar código</a>
+        <button class="confirmar">Confirmar</button>
+    </div>
 </body>
 </html>

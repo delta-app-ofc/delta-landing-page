@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+@import url('https://fonts.bunny.net/css?family=poppins:400,500,700');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Talina DEMO';
+  src: url('../fontes/talina-demo.regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scrollbar-color: #0088ff transparent;
+  scrollbar-width: thin; 
+  scroll-behavior: smooth;
+}
+
+.barra-fixa {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #397FFC;
+  width: 100%;
+  height: 78px;
+  align-items: center;
+  display: flex;
+}
+
+.Delta {
+  position: sticky;
+  color: #FEFEFE;
+  font-family: "Talina DEMO", sans-serif;
+  font-size: 47.998px;
+  font-weight: 400;
+  z-index: 1000;
+  left: 50px;
+}
+
+#LogoDelta {
+  position: absolute;
+  left: 148px;
+  width: 36.001px;
+  height: 33.861px;
+  z-index: 1002;
+  display: block;
+}
+
+.Cadastrar {
+  position: absolute;
+  right: 44px;
+  width: 119px;
+  height: 29px;
+  background-color: #FAFAFA;
+  border-radius: 25px;
+  z-index: 1001;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  top:1.5rem;
+}
+
+#cadastrar {
+  color: #306AE5;
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: bolder;
+  letter-spacing: 0.39px;
+  z-index: 1001;
+}
+
+.Entrar {
+  position: absolute;
+  width: 44px;
+  height: 19px;
+  z-index: 1001;
+  color: #FAFAFA;
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: bolder;
+  align-items: center;
+  display: flex;
+  right: 183px;
+  top:1.9rem;
+}
+
+.Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores{
+  position: fixed;
+  cursor: pointer;
+  color: #FAFAFA;
+  z-index: 1001;
+  font-family: Poppins;
+  font-weight: normal;
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  height: 20px;
+  top:1.8rem;
+}
+
+.Conceito::after, .Objetivos::after, .Funcionalidades::after,
+.Inicio::after, .Sobre_Nos::after, .valores::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  height: 2px;
+  background-color: #FAFAFA;
+  transition: width 0.2s ease-in-out;
+}
+
+.Conceito:hover::after, .Objetivos:hover::after, .Funcionalidades:hover::after, .Inicio:hover::after, .Sobre_Nos:hover::after, .valores:hover::after{
+  width: 100%;
+}
+
+.Inicio { 
+  width: 35px; 
+  left: 404px; 
+}
+.Conceito { 
+  width: 60px; 
+  left: 479px; 
+}
+.Objetivos { 
+  width: 62px; 
+  left: 579px; 
+}
+.Funcionalidades { 
+  width: 109px; 
+  left: 681px; 
+}
+.Sobre_Nos{
+  width: 66px; 
+  left: 830px; 
+}
+.valores{
+  width: 100px; 
+  left: 936px; 
+}
+
+#footer{
+  position: absolute;
+  right: 0;
+  left:-100px;
+  height: 650px;
+  margin-top:3850px;
+}
+
+.Footer{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.coluna1, .coluna2, .coluna3{
+  position: absolute;
+  z-index: 5;
+  margin-top:4000px;
+  left:503px;
+  margin-bottom: 10px;
+  color:#FAFAFA;
+  line-height: 2;
+  list-style: none;
+}
+
+.coluna2{
+  left: 778px;
+}
+
+.coluna3{
+  left: 1129px;
+}
+
+.coluna1 li,.coluna2 li,.coluna3 li{
+  white-space: nowrap;
+}
+
+#logo{
+  position: absolute;
+  z-index: 5;
+  width: auto;
+  height: auto;
+  left:37px;
+  margin-top: 3950px;
+}
+
+.textoFooter{
+  position: absolute;
+  width: 291px;
+  z-index: 5;
+  left:40px;
+  margin-top:4050px;
+  color:#FAFAFA;
+}
+
+.redesSociais{
+  position: absolute;
+  z-index: 5;
+  top:4290px;
+  color:#FAFAFA;
+  left:20px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.icones-redes{
+  position: absolute;
+  z-index: 5;
+  top:4325px;
+  left:20px;
+  display: flex;
+  gap: 12px;
+}
+
+.icones-redes img{
+  width: 32px;
+  height: 32px;
+}
+
+.direitos{
+  position: absolute;
+  z-index: 5;
+  top:4460px;
+  right:60px;
+  margin-bottom: 10px;
+  color:#FAFAFA;
+}
+
+a:visited {
+  color: #FAFAFA;
+  text-decoration: none;
+}
+a{
+  color: #FAFAFA;
+  text-decoration: none;
+}
+
+.fundo-degrade{
+    position: absolute;
+    z-index: 1;
+    top:75px;
+    width: 100%;
+    left:0;
+}
+
+.titulo{
+  position: absolute;
+  z-index: 15;
+  color: #FAFAFA;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%; 
+  letter-spacing: -1.4px;
+  text-transform: uppercase;
+  width: 100%;
+  top:160px;
+  left:50%;
+  right:50%;
+  transform: translate(-50%,-50%);
+}
+
+.informacoes{
+  position: absolute;
+  z-index: 15;
+  color: #FAFAFA;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  top:210px;
+  width: 100%;
+  left:50%;
+  right:50%;
+  transform: translate(-50%,-50%);
+}
+
+.retangulo-termo{
+  position: absolute;
+  z-index: 15;
+  width: 960px;
+  height: 3363px;
+  border-radius: 28px;
+  background: #FAFAFA;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+  top:1950px;
+  left:50%;
+  right:50%;
+  transform: translate(-50%,-50%);
+}
+
+.resumo{
+  color: #0B2156;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%;
+  align-self: stretch;
+}
+
+.retangulo-resumo{
+  position: absolute;
+  display: flex;
+  width: 832px;
+  padding: 22px 26px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 12px;
+  background: #ECF2FB;
+  left:50%;
+  right:50%;
+  transform: translate(-50%,-50%);
+  margin-top: 120px;
+}
+
+.atualizacao{
+  color: #616E80;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; 
+}
+
+.titulo-indice{
+  color: #0B2156;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+  margin-top:238px;
+  margin-left:64px;
+}
+
+#topicos-indice{
+  color: #306AE5;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+  column-count: 2;        
+  column-gap: 40px;        
+  list-style-position: inside;
+  margin-left:64px;
+  margin-top:10px;
+}
+
+#topicos-indice li {
+  margin-bottom: 5px;
+}
+
+#topicos-indice a,
+#topicos-indice a:visited{
+  color: #306AE5;
+  text-decoration: none;
+}
+
+#topicos-indice a{
+  cursor: pointer;
+}
+
+#topicos-indice a:hover{
+  text-decoration: underline;
+}
+
+.topico1, .topico2, .topico3, .topico4, .topico5, .topico6, .topico7,
+.topico8, .topico9, .topico10, .topico11, .topico12, .topico13{
+  color: #003E9B;
+  font-family: Unbounded;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  margin-left:64px;
+  margin-top:36px;
+  scroll-margin-top:100px;
+}
+
+.informacoes-topico1, .informacoes-topico2, .informacoes-topico3, .informacoes-topico4,
+.informacoes-topico5, .informacoes-topico6, .informacoes-topico7, .informacoes-topico8,
+.informacoes-topico9, .informacoes-topico10, .informacoes-topico11, .informacoes-topico12,
+.informacoes-topico13{
+  align-self: stretch;
+  color: #616E80;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  width: 834px;
+  margin-left:64px;
+  margin-top:12px;
+}
+
+.informacoes-topico1 strong, .informacoes-topico2 strong, .informacoes-topico3 strong,
+.informacoes-topico4 strong, .informacoes-topico5 strong, .informacoes-topico6 strong,
+.informacoes-topico7 strong, .informacoes-topico8 strong, .informacoes-topico9 strong,
+.informacoes-topico10 strong, .informacoes-topico11 strong, .informacoes-topico12 strong,
+.informacoes-topico13 strong{
+  color: #0B2156;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%;
+}
+
+.retangulo-termo ul{
+  color: #616E80;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  width: 810px;
+  margin-left:88px;
+  margin-top:12px;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.retangulo-termo br + ul{
+  margin-top:0;
+}
+
+.logo1{
+  position: absolute;
+  z-index: 15;
+  margin-top:130px;
+  margin-left:90px;
+}
+
+.logo2{
+  position: absolute;
+  z-index: 15;
+  margin-top:90px;
+  margin-left:1100px;
+}
