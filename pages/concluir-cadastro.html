@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +8,17 @@
 </head>
 <body>
     <img src="../assets/img/codigo.svg" class="fundo-svg" alt="Fundo decorativo">
-    <a href="javascript:history.back()"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
+    <a href="codigo-verificacao.html"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
 
     <div class="container">
         <h1 class="titulo">Quase lá!</h1>
         <p class="informacoes">Seu e-mail ja foi confirmado. Complete os dados necessários para criar sua conta.</p>
 
-        <input type="text" id="telefone" name="telefone" placeholder="Telefone" required>
-        <input type="date" id="data" name="data" placeholder="dd/mm/aaaa" required>
+        <input type="text" id="telefone" name="telefone" placeholder="Telefone" required data-required>
+        <input type="date" id="data" name="data" placeholder="dd/mm/aaaa" required data-required>
 
-        <a href="login-concluido.html" class="concluir-cadastro">Concluir cadastro</a>
+        <button type="button" class="concluir-cadastro" data-next="login-concluido.html" data-profile-form>Concluir cadastro</button>
     </div>
+    <script src="../assets/js/script-recuperar-conta.js"></script>
 </body>
 </html>

@@ -20,19 +20,19 @@
     <div class="crie-sua-conta">Crie sua conta</div>
 
     <div class="botoes">
-        <a href="criar-conta-usuario.html"><button class="usuario1">Usuário</button></a>
-        <a href="criar-conta-admin.html"><button class="adm">Administrador</button></a>
+        <a href="criar-conta-usuario.html" class="usuario1">Usuário</a>
+        <a href="criar-conta-admin.html" class="adm">Administrador</a>
     </div>
 
         <div class="tituloNome">Nome completo</div>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" >
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required data-required>
 
         <div class="tituloEmail">Email</div>
-        <input type="email" id="email" name="email" placeholder="Digite seu email" >
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required data-required>
 
         <div class="tituloSenha">Senha</div>
         <div class="campo-senha">
-            <input type="password" id="senha" placeholder="Digite sua senha">
+            <input type="password" id="senha" placeholder="Digite sua senha" required data-required>
             <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button>
             <p id="mensagemSenha"></p>
         </div>
@@ -41,9 +41,7 @@
             <label for="lembrar-mim">Lembrar de mim</label>
         </div>
 
-        <a href="landing-login.html">
-        <button type="submit" class="criar-conta">Criar</button>
-        </a>
+        <button type="button" class="criar-conta" data-next="landing-login.html" data-validate-password>Criar</button>
 
     <p class="login">Já tem uma conta? Faça <a href="../pages/entrar-conta.html"><u><strong>login</strong></u></a></p>
     <script src="../assets/js/script-criar-conta.js"></script>

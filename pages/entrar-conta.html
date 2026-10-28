@@ -20,23 +20,19 @@
     <div class="entrar">Entrar</div>
 
         <label for="email" class="tituloEmail">Email</label>
-        <input type="text" id="email" placeholder="Digite seu email">
+        <input type="email" id="email" placeholder="Digite seu email" required data-required>
 
         <label for="senha" class="tituloSenha">Senha</label>
         <div class="campo-senha">
-            <input type="password" id="senha" placeholder="Digite sua senha">
+            <input type="password" id="senha" placeholder="Digite sua senha" required data-required>
             <button type="button" id="botaoOlho">
                 <img src="../assets/img/olho-fechado.svg" id="iconeOlho" alt="Mostrar/Ocultar Senha">
             </button>
         </div>
 
-        <a href="recuperar-senha.html" class="esqueceu" id="texto-azul">Esqueceu a senha?</a>
+        <a href="email-verificacao.html" class="esqueceu" id="texto-azul">Esqueceu a senha?</a>
 
-        <a href="landing-login.html">
-        <button type="submit" class="criar-conta">Entrar</button>
-        </a>
-    </div>
-    
+        <button type="button" class="criar-conta" data-next="landing-login.html">Entrar</button>
     <p class="criar">Não possui uma conta? <a href="../pages/criar-conta.html"><u><strong>Registre-se</strong></u></a></p>
 
     <script src="../assets/js/script-criar-conta.js"></script>

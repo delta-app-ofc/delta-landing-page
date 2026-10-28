@@ -43,7 +43,8 @@
                             <input type="text" id="nome" name="nome" placeholder="">
                             <p class="email-modal">Email</p>
                             <input type="email" id="email" name="email" placeholder="">
-                            <button class="salvar">Salvar alterações</button>
+                            <button type="submit" class="salvar">Salvar alterações</button>
+                        <p id="perfil-status" role="status"></p>
                         </form>
                     </div>
                 </div>
@@ -64,9 +65,10 @@
                             <p class="titulo-autentificaca">Autentificação de dois fatores</p>
                             <p class="texto-autentificacao">Adicione uma camada extra de segurança à sua conta</p>
                             <p class="autentificacao">Autentificação por aplicativo</p>
-                            <button class="ativar">Ativar</button>
-                            <button class="configurar">Configurar</button>
-                            <button class="salvar-senha">Salvar senha</button>
+                            <button type="button" class="ativar">Ativar</button>
+                            <button type="button" class="configurar">Configurar</button>
+                            <button type="button" class="salvar-senha">Salvar senha</button>
+                            <p id="seguranca-status" role="status"></p>
                         </form>
                     </div>                    
                 </div>
@@ -105,7 +107,8 @@
                         </label>
                         </div>
                     </div>
-                    <button class="salvar-not">Salvar alterações</button>
+                    <button type="button" class="salvar-not">Salvar alterações</button>
+                    <p id="notificacoes-status" role="status"></p>
                 </div>
             </div>
         </div>
@@ -118,11 +121,10 @@
                 <div class="fundo-vermelho"></div>
                 <p class="excluir">Deseja encerrar permanentemente?</p>
                 <p class="texto-excluir">Se você quer apagar todos os seus dados, você pode
-                    <a href="../pages/index.html"> <u><strong>Excluir minha conta definitivamente</strong></u></a></p>
+                    <a href="#" id="excluir-conta"> <u><strong>Excluir minha conta definitivamente</strong></u></a></p>
+                <p id="excluir-conta-status" role="status"></p>
                 <button id="botao-cancelar" class="botao-cancelar">Cancelar</button>
-                <a href="../pages/index.html">
-                <button id="botao-sair" class="botao-sair">Sair</button> 
-                </a>   
+                <a href="../pages/index.html" id="botao-sair" class="botao-sair">Sair</a>
             </div>
         </div>
 
@@ -130,7 +132,7 @@
         <p class="Conceito"><a href="#topico2">Conceito</a></p>
         <p class="Objetivos"><a href="#topico3">Objetivos</a></p>
         <p class="Funcionalidades"><a href="#topico4">Funcionalidades</a></p>
-        <p class="Sobre_Nos"><a href="#topico5">Sobre nós</p>
+        <p class="Sobre_Nos"><a href="#topico5">Sobre nós</a></p>
         <p class="valores"><a href="#topico6">Nossos Valores</a></p>
     </div>
 
