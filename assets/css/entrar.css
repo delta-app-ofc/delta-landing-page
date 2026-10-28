@@ -101,7 +101,7 @@ body {
   font-size: calc(20 * var(--u));
   font-weight: 700;
   z-index: 15;
-  top: calc(220 * var(--u));
+  top: calc(250 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -111,7 +111,7 @@ body {
   font-size: calc(18 * var(--u));
   font-weight: 500;
   z-index: 15;
-  top: calc(250 * var(--u));
+  top: calc(280 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -129,7 +129,7 @@ body {
   font-size: calc(20 * var(--u));
   font-weight: 700;
   z-index: 15;
-  top: calc(320 * var(--u));
+  top: calc(350 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -137,7 +137,7 @@ body {
 .campo-senha {
   position: absolute;
   z-index: 15;
-  top: calc(350 * var(--u));
+  top: calc(380 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -189,7 +189,7 @@ body {
 
 .esqueceu,.esqueceu:visited {
   position: absolute;
-  top: calc(415 * var(--u));
+  top: calc(445 * var(--u));
   left: calc(822 * var(--u));
   z-index: 15;
   font-family: Montserrat, sans-serif;
@@ -210,7 +210,7 @@ body {
   font-size: calc(21 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(450 * var(--u));
+  top: calc(480 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -235,7 +235,7 @@ a:visited {
   font-size: calc(16 * var(--u));
   font-weight: 400;
   z-index: 15;
-  top: calc(520 * var(--u));
+  top: calc(550 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   text-align: center;
@@ -409,4 +409,95 @@ a:visited {
     font-size: 14px;
     margin: 16px 0 32px;
   }
+}
+
+.usuario{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(820 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(200 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #306BE5;
+  border-style:none;
+  cursor:pointer;
+}
+
+.usuario1{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(820 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(200 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #6d9ede;
+  border-style:none;
+  cursor:pointer;
+}
+
+.adm{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(1025 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(220 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #306BE5;
+  border-style:none;
+  cursor:pointer;
+}
+
+.adm1{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(1025 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(220 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #6d9ede;
+  border-style:none;
+  cursor:pointer;
+}
+
+.botoes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
