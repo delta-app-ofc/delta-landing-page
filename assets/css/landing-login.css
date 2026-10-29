@@ -659,7 +659,7 @@ html {
 
 .cartao1:hover, .cartao2:hover, .cartao3:hover,
 .cartao4:hover, .cartao5:hover, .cartao6:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   z-index: 20;
 }
 
