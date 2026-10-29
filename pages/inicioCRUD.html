@@ -3,361 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ 
     <title>Delta - Início</title>
-
+ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+ 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+ 
     <link rel="stylesheet" href="../assets/css/inicioCRUD.css">
-
+ 
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
+ 
 <body>
-
+ 
     <!-- MENU LATERAL -->
     <aside class="sidebar">
-
+ 
         <div class="logo-area">
             <img src="../assets/img/LogoDeltaCRUD.png" alt="Logo Delta" id="logo">
         </div>
-
+ 
         <nav class="menu">
-
+ 
             <a href="inicioCRUD.html" class="menu-item active">
                 Início
             </a>
-
+ 
             <a href="userCRUD.html" class="menu-item">
                 Usuários
             </a>
-
+ 
             <a href="regionCRUD.html" class="menu-item">
                 Região
             </a>
-
+ 
             <a href="regionrateCRUD.html" class="menu-item">
                 Taxa Regional
             </a>
-
+ 
             <a href="propertyCRUD.html" class="menu-item">
                 Propriedades
             </a>
-
+ 
             <a href="deviceCRUD.html" class="menu-item">
                 Dispositivos
             </a>
-
+ 
             <a href="adressCRUD.html" class="menu-item">
                 Endereço
             </a>
-
+ 
         </nav>
-
+ 
         <div class="sidebar-bottom">
-
+ 
             <div class="account">
-
+ 
                 <div class="avatar">
                     <i data-lucide="user"></i>
                 </div>
                 <span>admin123</span>
-
+ 
             </div>
-
-            <a href="inicioCRUD.html" class="logout">
+ 
+            <a href="index.html" class="logout">
                 <i data-lucide="log-out"></i>
                 <span>Sair</span>
             </a>
-
+ 
         </div>
-
+ 
     </aside>
-
-
+ 
+ 
     <!-- CONTEÚDO -->
     <main class="main">
-
+ 
         <!-- CABEÇALHO -->
         <header class="page-header">
-
+ 
             <h1>Início</h1>
-
+ 
             <p>
                 Acesso aos registros e dados do sistema
             </p>
 
+            <img class="header-gluh" src="../assets/img/gluh3.svg" alt="Gluh">
+ 
         </header>
-
+ 
         <div class="divider"></div>
-
-
+ 
+ 
         <!-- ESTATÍSTICAS -->
         <section class="stats">
-
-            <div class="stat-card">
-
-                <span class="stat-label">
-                    Usuários
-                </span>
-
-                <strong>
-                    243
-                </strong>
-
-                <span class="stat-description">
-                    cadastros
-                </span>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <span class="stat-label">
-                    Propriedades
-                </span>
-
-                <strong>
-                    142
-                </strong>
-
-                <span class="stat-description">
-                    cadastradas
-                </span>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <span class="stat-label">
-                    Dispositivos
-                </span>
-
-                <strong>
-                    118
-                </strong>
-
-                <span class="stat-description">
-                    41 ativos
-                </span>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <span class="stat-label">
-                    Total de registros
-                </span>
-
-                <strong>
-                    252
-                </strong>
-
-                <span class="stat-description">
-                    no sistema
-                </span>
-
-            </div>
-
-        </section>
-
-
+    <article class="stat-card"><strong data-record-count="delta_usuarios">243</strong><span>Usuários<br>cadastrados</span></article>
+    <article class="stat-card"><strong data-record-count="delta_propriedades">142</strong><span>Propriedades<br>cadastradas</span></article>
+    <article class="stat-card"><strong data-record-count="delta_dispositivos">118</strong><span>Dispositivos<br>cadastrados</span></article>
+    <article class="stat-card"><strong data-record-count="delta_regioes">02</strong><span>Regiões<br>cadastradas</span></article>
+</section>
+ 
+ 
         <!-- ACESSO RÁPIDO -->
         <section class="quick-access">
-
+ 
             <div class="section-title">
-
+ 
                 <h2>
                     Acesso rápido
                 </h2>
-
+ 
                 <p>
                     Acesse diretamente cada tabela do sistema.
                 </p>
-
+ 
             </div>
-
-
-            <div class="quick-grid">
-
-
-                <!-- USUÁRIOS -->
-                <a href="userCRUD.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        <i data-lucide="users"></i>
-                    </div>
-
-                    <div class="quick-text">
-
-                        <h3>
-                            Usuários
-                        </h3>
-
-                        <p>
-                            Registros e Dados dos Usuários
-                        </p>
-
-                    </div>
-
-                    <i
-                        class="arrow"
-                        data-lucide="arrow-right">
-                    </i>
-
-                </a>
-
-
-                <!-- REGIÃO -->
-                <a href="regionCRUD.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        <i data-lucide="map-pin"></i>
-                    </div>
-
-                    <div class="quick-text">
-
-                        <h3>
-                            Região
-                        </h3>
-
-                        <p>
-                            Registros e Dados das Regiões
-                        </p>
-
-                    </div>
-
-                    <i
-                        class="arrow"
-                        data-lucide="arrow-right">
-                    </i>
-
-                </a>
-
-
-                <!-- TAXA REGIONAL -->
-                <a href="regionrateCRUD.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        <i data-lucide="circle-dollar-sign"></i>
-                    </div>
-
-                    <div class="quick-text">
-
-                        <h3>
-                            Taxa Regional
-                        </h3>
-
-                        <p>
-                            Registros e Valores das Taxas Regionais
-                        </p>
-
-                    </div>
-
-                    <i
-                        class="arrow"
-                        data-lucide="arrow-right">
-                    </i>
-
-                </a>
-
-
-                <!-- PROPRIEDADES -->
-                <a href="propertyCRUD.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        <i data-lucide="house"></i>
-                    </div>
-
-                    <div class="quick-text">
-
-                        <h3>
-                            Propriedades
-                        </h3>
-
-                        <p>
-                            Registros e Dados das Propriedades
-                        </p>
-
-                    </div>
-
-                    <i
-                        class="arrow"
-                        data-lucide="arrow-right">
-                    </i>
-
-                </a>
-
-
-                <!-- DISPOSITIVOS -->
-                <a href="deviceCRUD.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        <i data-lucide="settings-2"></i>
-                    </div>
-
-                    <div class="quick-text">
-
-                        <h3>
-                            Dispositivos
-                        </h3>
-
-                        <p>
-                            Registros e Dados dos Dispositivos
-                        </p>
-
-                    </div>
-
-                    <i
-                        class="arrow"
-                        data-lucide="arrow-right">
-                    </i>
-
-                </a>
-
-
-                <!-- ENDEREÇOS -->
-                <a href="adressCRUD.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        <i data-lucide="map-pin-house"></i>
-                    </div>
-
-                    <div class="quick-text">
-
-                        <h3>
-                            Endereços
-                        </h3>
-
-                        <p>
-                            Registros e Dados dos Endereços
-                        </p>
-
-                    </div>
-
-                    <i
-                        class="arrow"
-                        data-lucide="arrow-right">
-                    </i>
-
-                </a>
-
-            </div>
-
-        </section>
-
+ 
+ 
+            <div class="quick-grid"><a href="userCRUD.html" class="quick-card"><div class="quick-icon"><i data-lucide="users"></i></div><div class="quick-text"><h3>Usuários</h3><p>Registros e Dados dos Usuários</p></div><i class="arrow" data-lucide="arrow-right"></i></a><article class="overview-card"><div class="overview-heading"><div class="quick-icon"><i data-lucide="droplet"></i></div><div><h3>Visão geral do sistema</h3><p>Total de cadastros por tabela</p></div></div><div class="chart" role="img" aria-label="Quantidade de registros cadastrados por tabela"><div class="chart-y" aria-hidden="true"><span data-chart-tick="5">550</span><span data-chart-tick="4">440</span><span data-chart-tick="3">330</span><span data-chart-tick="2">220</span><span data-chart-tick="1">110</span><span data-chart-tick="0">0</span></div><div class="chart-plot"><div class="chart-column"><strong data-record-count="delta_usuarios">243</strong><i data-record-bar="delta_usuarios" style="--value:92%;--bar:#252b66"></i><span>Usuários<br>cadastrados</span></div><div class="chart-column"><strong data-record-count="delta_propriedades">142</strong><i data-record-bar="delta_propriedades" style="--value:92%;--bar:#30389b"></i><span>Propriedades<br>cadastradas</span></div><div class="chart-column"><strong data-record-count="delta_dispositivos">118</strong><i data-record-bar="delta_dispositivos" style="--value:92%;--bar:#416ee8"></i><span>Dispositivos<br>cadastrados</span></div><div class="chart-column"><strong data-record-count="delta_regioes">02</strong><i data-record-bar="delta_regioes" style="--value:92%;--bar:#24b6e8"></i><span>Regiões<br>cadastradas</span></div></div></div></article><a href="regionCRUD.html" class="quick-card"><div class="quick-icon"><i data-lucide="map-pin"></i></div><div class="quick-text"><h3>Região</h3><p>Registros e Dados das Regiões</p></div><i class="arrow" data-lucide="arrow-right"></i></a><a href="regionrateCRUD.html" class="quick-card"><div class="quick-icon"><i data-lucide="circle-dollar-sign"></i></div><div class="quick-text"><h3>Taxa Regional</h3><p>Registros e Valores das Taxas Regionais</p></div><i class="arrow" data-lucide="arrow-right"></i></a><a href="propertyCRUD.html" class="quick-card"><div class="quick-icon"><i data-lucide="house"></i></div><div class="quick-text"><h3>Propriedades</h3><p>Registros e Dados das Propriedades</p></div><i class="arrow" data-lucide="arrow-right"></i></a><a href="deviceCRUD.html" class="quick-card"><div class="quick-icon"><i data-lucide="settings-2"></i></div><div class="quick-text"><h3>Dispositivos</h3><p>Registros e Dados dos Dispositivos</p></div><i class="arrow" data-lucide="arrow-right"></i></a><a href="adressCRUD.html" class="quick-card"><div class="quick-icon"><i data-lucide="map-pin-house"></i></div><div class="quick-text"><h3>Endereços</h3><p>Registros e Dados dos Endereços</p></div><i class="arrow" data-lucide="arrow-right"></i></a></div></section>
+ 
     </main>
-
-
+ 
+ 
     <script>
-        lucide.createIcons();
-    </script>
-
+    lucide.createIcons();
+ 
+    const chartTables = [
+        { key: "delta_usuarios", defaultCount: 243 },
+        { key: "delta_propriedades", defaultCount: 142 },
+        { key: "delta_dispositivos", defaultCount: 118 },
+        { key: "delta_regioes", defaultCount: 2 }
+    ];
+ 
+    function getRecordCount(key, defaultCount) {
+        try {
+            const savedRecords = localStorage.getItem(key);
+            if (savedRecords === null) return defaultCount;
+            const records = JSON.parse(savedRecords);
+            return Array.isArray(records) ? records.length : defaultCount;
+        } catch {
+            return defaultCount;
+        }
+    }
+ 
+    function updateDashboardChart() {
+        const values = chartTables.map(({ key, defaultCount }) => ({ key, count: getRecordCount(key, defaultCount) }));
+        const largestCount = Math.max(0, ...values.map(({ count }) => count));
+        const axisMaximum = Math.max(50, Math.ceil(largestCount / 50) * 50);
+ 
+        values.forEach(({ key, count }) => {
+            document.querySelectorAll(`[data-record-count="${key}"]`).forEach((counter) => {
+                counter.textContent = key === "delta_regioes" && count < 10 ? `0${count}` : count;
+            });
+            const bar = document.querySelector(`[data-record-bar="${key}"]`);
+            if (bar) bar.style.setProperty("--value", `${(count / axisMaximum) * 100}%`);
+        });
+ 
+        document.querySelectorAll("[data-chart-tick]").forEach((tick) => {
+            tick.textContent = Math.round(axisMaximum * Number(tick.dataset.chartTick) / 5);
+        });
+    }
+ 
+    updateDashboardChart();
+    window.addEventListener("storage", updateDashboardChart);
+</script>
+ 
 </body>
 </html>
