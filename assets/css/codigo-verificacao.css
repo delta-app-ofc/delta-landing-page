@@ -57,8 +57,20 @@ body {
   font-size: clamp(14px, 2vw, 20px);
   font-weight: 500;
   margin-bottom: 30px;
-  max-width: 600px;
+  width: 100%;
   line-height: 1.4;
+}
+
+.informacoes strong {
+  color:#004EC4;
+  cursor:pointer;
+  text-decoration: none;
+}
+
+a {
+  color:#004EC4;
+  cursor:pointer;
+  text-decoration: none;
 }
 
 .grupo-inputs {
@@ -95,13 +107,10 @@ body {
   font-size: clamp(14px, 2vw, 18px);
   font-weight: 500;
   text-decoration: none;
-  margin-bottom: 20px;
-  transition: opacity 0.2s;
 }
 
-.reenviar-codigo:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+.reenviar-codigo strong{
+  cursor:pointer;
 }
 
 .confirmar {
@@ -120,6 +129,7 @@ body {
   border: none;
   cursor: pointer;
   transition: 0.3s ease-in;
+  margin-bottom: 20px;
 }
 
 .confirmar:hover {
