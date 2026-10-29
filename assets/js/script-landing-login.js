@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const botaoCloseMenor = document.getElementById('close-modal-menor');
   const botaoCancelar = document.getElementById('botao-cancelar');
   const botaoSair = document.getElementById('botao-sair');
-  const botaoAbrir = document.getElementById('sair-da-conta');
+  const botaoAbrir = document.getElementById('borda');
 
   function toggleModalMenor() {
     fadeMenor.classList.toggle('hide');

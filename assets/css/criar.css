@@ -299,100 +299,11 @@ body {
   color: red;
 }
 
-.usuario{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(820 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(200 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #306BE5;
-  border-style:none;
-  cursor:pointer;
-}
-
-.usuario1{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(820 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(200 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #6d9ede;
-  border-style:none;
-  cursor:pointer;
-}
-
-.adm{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(1025 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(220 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #306BE5;
-  border-style:none;
-  cursor:pointer;
-}
-
-.adm1{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(1025 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(220 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #6d9ede;
-  border-style:none;
-  cursor:pointer;
-}
-
 .botoes a {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-}
-
-.usuario:hover, .adm:hover {
-  background: #6d9ede;
-  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 480px), (max-aspect-ratio: 4/3) {

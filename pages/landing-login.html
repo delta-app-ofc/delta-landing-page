@@ -21,6 +21,7 @@
         <div id="fade" class="hide"></div>
         <div id="modal" class="hide">
             <button id="close-modal">&times;</button>
+            <img id="modal-svg" src="../assets/img/Configura%C3%A7%C3%B5es%20-%20Perfil.svg" alt="Configurações da conta: perfil">
             <div class="titulo-minha-conta">Minha conta</div>
             <div class="retangulo-modal"></div>
             <div class="subtitulos-modal">
@@ -28,6 +29,7 @@
                 <p class="topico active"data-secao="subtitulo-perfil">Perfil</p>
                 <p class="topico"data-secao="subtitulo-seguranca">Segurança</p>
                 <p class="topico"data-secao="subtitulo-notificacoes">Notificações</p>
+                <p id="borda"></p>
                 <p class="sair-da-conta" id="sair-da-conta">Sair da conta</p>
                 <img src="../assets/img/lixeira.svg" class="lixeira">
             </div>
@@ -37,7 +39,6 @@
                     <h2 class="titulo-config">Perfil</h2>
                     <div class="modal-body" id="modal-body-perfil">
                         <p>Gerencie suas informações pessoais e dados cadastrais.</p>
-                        <p class="sub-perfil">Altere suas informações</p>
                         <form id="config-perfil">
                             <p class="nome-modal">Nome</p>
                             <input type="text" id="nome" name="nome" placeholder="">
@@ -50,21 +51,20 @@
                 </div>
 
                 <div class="secao" id="secao-seguranca" style="display: none;">
-                    <h2 class="titulo-config">Segurança</h2>
+                    <h2 class="titulo-seguranca">Segurança</h2>
                     <div class="modal-body" id="modal-body-seguranca">
                         <p>Gerencie suas credenciais e os métodos de acesso à sua conta.</p>
                         <form>
                             <p class="senha-nova-modal">Digite sua senha nova</p>
                             <input type="password" id="senha-nova" name="senha-nova" placeholder="">
-                            <p class="texto-senha-nova">Senhas fortes ajudam a manter sua conta protegida</p>
                             <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button>
-                            <p class="minimo-senha">Mínimo de 8 caracteres</p>
+                            <p class="minimo-senha">Mínimo de 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial.</p>
                             <p class="confirmar-senha-nova-modal">Confirmar senha nova</p>
                             <input type="password" id="confirmar-senha-nova" name="senha-nova" placeholder="">
                             <button type="button" id="botaoOlho1" aria-label="Alternar visibilidade da senha"><img id="iconeOlho1" src="../assets/img/olho-fechado.svg"></button>
                             <p class="titulo-autentificaca">Autentificação de dois fatores</p>
                             <p class="texto-autentificacao">Adicione uma camada extra de segurança à sua conta</p>
-                            <p class="autentificacao">Autentificação por aplicativo</p>
+                            <p class="autentificacao">Autentificação por aplicativo:</p>
                             <button type="button" class="ativar">Ativar</button>
                             <button type="button" class="configurar">Configurar</button>
                             <button type="button" class="salvar-senha">Salvar senha</button>
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="secao" id="secao-notificacoes" style="display: none;">
-                    <h2 class="titulo-config">Notificações</h2>
+                    <h2 class="titulo-notificacoes">Notificações</h2>
                     <div class="modal-body" id="modal-body-notificacoes">
                         <p>Escolha quais novidades, estudos e comunicados você deseja receber por e-mail.</p>
                     </div>
