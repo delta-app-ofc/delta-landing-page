@@ -679,11 +679,10 @@ html {
 
 .cartao1:hover, .cartao2:hover, .cartao3:hover,
 .cartao4:hover, .cartao5:hover, .cartao6:hover {
-  scale: 1.08;
+  scale: 1.05;
   z-index: 20; 
 }
 
-/* Hover da borda */
 .cartao1:hover::after, .cartao2:hover::after, .cartao3:hover::after,
 .cartao4:hover::after, .cartao5:hover::after, .cartao6:hover::after {
   border-color: #306AE5;
@@ -741,7 +740,7 @@ html {
   line-height: normal;
   letter-spacing: -1.4px;
   z-index: 5;
-  top: 3750px;
+  top: 4600px;
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
@@ -758,7 +757,7 @@ html {
   display: flex;
   align-items: center;
   z-index: 5;
-  top: 3800px; 
+  top: 4600px; 
   overflow: hidden; 
 }
 
@@ -817,14 +816,14 @@ html {
   right: 0px;
   left: -60px;
   height: 1400px;
-  top: 4150px;
+  top: 4950px;
 }
 
 #corpoGlub{
   position: absolute;
   right:100px;
   height: auto;
-  top:4500px;
+  top:5320px;
   z-index:2;
   opacity: 1;
 }
@@ -833,7 +832,7 @@ html {
   position: absolute;
   right:520px;
   height: auto;
-  top:4575px;
+  top:5380px;
   z-index:1;
   opacity: 1;
   transform-origin: 80% 90%;
@@ -854,7 +853,7 @@ html {
   position: absolute;
   right:602px;
   height: auto;
-  top:4685px;
+  top:5550px;
   z-index:2;
 }
 
@@ -862,7 +861,7 @@ html {
   position: absolute;
   right:613px;
   height: auto;
-  top:4722px;
+  top:5605px;
   z-index:2;
 }
 
@@ -881,7 +880,7 @@ html {
   right: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  top:5250px;
+  top:6000px;
 }
 
 .card-section{
@@ -889,14 +888,13 @@ html {
   width: 100%;
   max-width: 100vw; 
   margin:0 auto;
-  margin-top:4810px;
+  margin-top:5610px;
   
 }
 
 .Valores {
   overflow: hidden;
   width: 100%;
-
 }
 
 .lista-card{
@@ -952,7 +950,7 @@ html {
   line-height: normal;
   letter-spacing: -1.8px;
   z-index: 2;
-  top: 4480px;
+  top: 5300px;
   left: 87px;
 }
 
@@ -966,7 +964,7 @@ html {
   line-height: 149.978%;
   letter-spacing: 0.72px;
   left: 87px;
-  top: 4650px;
+  top: 5460px;
   z-index: 3;
   width: 680px;
   height: 273px;
@@ -976,7 +974,7 @@ html {
   position: absolute;
   height: 283px;
   width: 1376px;
-  top: 6150px;
+  top: 6900px;
   right: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -987,7 +985,7 @@ html {
   right: 0;
   left:-100px;
   height: 650px;
-  margin-top:500px;
+  margin-top:400px;
 }
 
 .Footer{
@@ -1000,7 +998,7 @@ html {
 .coluna1, .coluna2, .coluna3{
   position: absolute;
   z-index: 5;
-  margin-top:650px;
+  margin-top:570px;
   left:503px;
   margin-bottom: 10px;
   color:#FAFAFA;
@@ -1026,7 +1024,7 @@ html {
   width: auto;
   height: auto;
   left:37px;
-  margin-top: 590px;
+  margin-top: 480px;
 }
 
 .textoFooter{
@@ -1034,29 +1032,14 @@ html {
   width: 291px;
   z-index: 5;
   left:40px;
-  margin-top:680px;
+  margin-top:570px;
   color:#FAFAFA;
-}
-
-.redesSociais{
-  position: absolute;
-  z-index: 5;
-  top:6940px;
-  color:#FAFAFA;
-  left:20px;
-}
-
-#apps{
-  position: absolute;
-  z-index: 5;
-  top: 6970px;;
-  left:25px;
 }
 
 .direitos{
   position: absolute;
   z-index: 5;
-  top:7040px;
+  top:7735px;
   right:60px;
   margin-bottom: 10px;
   color:#FAFAFA;
@@ -1173,4 +1156,307 @@ a{
   .card-section .botao-avancar {
     transition-duration: 0.01s;
   }
+}
+
+.botao-topo {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.botao-logo {
+  display: flex;
+  align-items: center; 
+  position: relative; 
+  margin-left: 50px;
+}
+
+.Delta {
+  color: #FEFEFE;
+  font-family: "Talina DEMO", sans-serif;
+  font-size: 47.998px;
+  font-weight: 400;
+  z-index: 1000;
+}
+
+#LogoDelta {
+  width: 36.001px;
+  height: 33.861px;
+  z-index: 1002;
+  display: block;
+  margin-left: -50px;
+}
+
+.retangulo-comecar-parte-final{
+  position: absolute;
+  width: 323px;
+  height: 50.319px;
+  border-radius: 18px;
+  cursor:pointer;
+  z-index: 30;
+  top: 6134.5px;
+  left:261.5px;
+}
+
+.fundo-planos{
+  position:absolute;
+  z-index:2;
+  top:3500px;
+  width: 100%;
+  left:0;
+}
+
+.titulo-planos{
+  position: absolute;
+  z-index: 3;
+  top:3800px;
+  width: 100%;
+  color: #FAFAFA;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -1.4px;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.retangulo1 {
+  position: absolute;
+  z-index: 3;
+  width: 423px;
+  height: 556px;
+  border-radius: 12px;
+  background: #FAFAFA;
+  top: 3890px;
+  left: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 35px; /* Espaçamento interno perfeito para as bordas */
+  box-sizing: border-box;
+  gap: 20px; /* Espaço uniforme entre os blocos */
+}
+
+.parte-cima {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gluh1 {
+  width: 64.862px;
+  height: 58.792px;
+  object-fit: contain;
+}
+
+.titulo-essencial {
+  color: #306BE5;
+  font-family: Unbounded, sans-serif;
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  margin: 0;
+}
+
+.texto-retangulo1 {
+  color: #494A4C;
+  text-wrap-style: balance;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  padding-left: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.texto-retangulo1 li {
+  margin-bottom: 6px;
+}
+
+.preco1 {
+  color: #0B2156;
+  font-family: Unbounded, sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin-top: auto; /* Joga o preço automaticamente para a parte inferior do card se necessário */
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.mensal {
+  color: #306BE5;
+  font-family: Unbounded, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  margin-top: -10px;
+  text-align: center;
+  width: 100%;
+}
+
+.retangulo2 {
+  position: absolute;
+  z-index: 3;
+  width: 423px;
+  height: 556px;
+  border-radius: 12px;
+  background: #FAFAFA;
+  top: 3890px;
+  left: 530px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 35px; /* Espaçamento interno perfeito para as bordas */
+  box-sizing: border-box;
+  gap: 20px; /* Espaço uniforme entre os blocos */
+}
+
+.parte-cima {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gluh2 {
+  width: 64.862px;
+  height: 58.792px;
+  object-fit: contain;
+}
+
+.titulo-gestao {
+  color: #306BE5;
+  font-family: Unbounded, sans-serif;
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  margin: 0;
+}
+
+.texto-retangulo2 {
+  color: #494A4C;
+  text-wrap-style: balance;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  padding-left: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.texto-retangulo1 li {
+  margin-bottom: 6px;
+}
+
+.preco2 {
+  color: #0B2156;
+  font-family: Unbounded, sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin-top: auto; /* Joga o preço automaticamente para a parte inferior do card se necessário */
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.mensal {
+  color: #306BE5;
+  font-family: Unbounded, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  margin-top: -10px;
+  text-align: center;
+  width: 100%;
+}
+
+.retangulo3 {
+  position: absolute;
+  z-index: 3;
+  width: 423px;
+  height: 556px;
+  border-radius: 12px;
+  background: #FAFAFA;
+  top: 3890px;
+  left: 990px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 35px; /* Espaçamento interno perfeito para as bordas */
+  box-sizing: border-box;
+  gap: 20px; /* Espaço uniforme entre os blocos */
+}
+
+.parte-cima {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gluh3 {
+  width: 64.862px;
+  height: 58.792px;
+  object-fit: contain;
+}
+
+.titulo-premium {
+  color: #306BE5;
+  font-family: Unbounded, sans-serif;
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  margin: 0;
+}
+
+.texto-retangulo3 {
+  color: #494A4C;
+  text-wrap-style: balance;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  padding-left: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.texto-retangulo3 li {
+  margin-bottom: 6px;
+}
+
+.preco3 {
+  color: #0B2156;
+  font-family: Unbounded, sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin-top: auto; /* Joga o preço automaticamente para a parte inferior do card se necessário */
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.mensal {
+  color: #306BE5;
+  font-family: Unbounded, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  margin-top: -10px;
+  text-align: center;
+  width: 100%;
 }

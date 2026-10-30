@@ -6,6 +6,12 @@ const suavizar = (t) => t < 0.5
   ? 4 * t * t * t
   : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
+window.addEventListener('pageshow', function(event) {
+  if (event.persisted || (performance.navigation && performance.navigation.type === 2)) {
+    window.scrollTo(0, 0);
+  }
+});
+
 
 /* ==========================================================
    1) CARROSSEL DE VALORES

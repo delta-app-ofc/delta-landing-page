@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0f4f8;
+}
+
+.fundo-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.retangulo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  width: 715px;
+  height: 415px;
+  border-radius: 34px;
+  border: 8px solid #306BE5;
+  background: #FFF;
+  box-shadow: 10px 15px 12px 0 rgba(0, 0, 0, 0.25);
+}
+
+.voltar {
+  position: absolute;
+  z-index: 10;
+  right: 70px;
+  top: 70px;
+  width: 5%;
+}
+
+.texto{
+    color: #0a0a0a;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top:20px;
+}
+
+.texto span{
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.login{
+    margin-top:40px;
+}
+
+.sair{
+  width: 484.113px;
+  height: 69px;
+  border-radius: 15px;
+  background: #003E9B;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%;
+  letter-spacing: -0.25px;
+  border:none;
+  margin-top:50px;
+  cursor:pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.sair:hover{
+    background: #002b6b;
+}

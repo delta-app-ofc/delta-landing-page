@@ -4,20 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Delta</title>
+
+    <script>
+      try {
+        if (sessionStorage.getItem('vindoDaIntro')) {
+          sessionStorage.removeItem('vindoDaIntro');
+          document.documentElement.classList.add('vem-da-intro');
+          setTimeout(function () {
+            document.documentElement.classList.remove('vem-da-intro', 'intro-pronta');
+            var p = document.querySelector('.ponte'); if (p) p.remove();
+          }, 4000);
+        }
+      } catch (e) {}
+    </script>
+
+    <!-- NOVO: carrega fonte e imagens antes, para o primeiro frame sair certo -->
+    <link rel="preload" as="font" type="font/otf" href="../assets/fontes/talina-demo.regular.otf" crossorigin>
+    <link rel="preload" as="image" href="../assets/img/triangulo.svg">
+    <link rel="preload" as="image" href="../assets/img/gota.svg">
+
     <link rel="stylesheet" href="../assets/css/landing-login.css">
+    <!-- NOVO: precisa vir DEPOIS do landing-login.css -->
+    <link rel="stylesheet" href="../assets/css/transicao-intro.css">
+
     <script src="../assets/js/script-landing-login.js"></script>
 </head>
 <body>
-    <div class="barra-fixa">
-        <p class="Delta">DELT</p>
 
-        <img src="../assets/img/LogoDelta.svg" id="LogoDelta">
+    <!-- NOVO: cópia da logo da intro (usada só na transição) -->
+    <div class="ponte" aria-hidden="true">
+        <div class="pm-marca">
+            <div class="pm-texto">DELT</div>
+            <div class="pm-logo">
+                <div class="pm-triangulo"></div>
+                <div class="pm-gota"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="barra-fixa">
+        <a href="#topico1" class="botao-topo">
+            <div class="botao-logo">
+                <p class="Delta">DELT</p>
+                <img src="../assets/img/LogoDelta.svg" id="LogoDelta" alt="Logo Delta">
+            </div>
+        </a>
 
         <button id="minha-conta" class="minha-conta">Minha Conta</button>
 
         <div id="fade" class="hide"></div>
         <div id="modal" class="hide">
             <button id="close-modal">&times;</button>
+            <img id="modal-svg" src="../assets/img/Configura%C3%A7%C3%B5es%20-%20Perfil.svg" alt="Configurações da conta: perfil">
             <div class="titulo-minha-conta">Minha conta</div>
             <div class="retangulo-modal"></div>
             <div class="subtitulos-modal">
@@ -25,6 +63,7 @@
                 <p class="topico active"data-secao="subtitulo-perfil">Perfil</p>
                 <p class="topico"data-secao="subtitulo-seguranca">Segurança</p>
                 <p class="topico"data-secao="subtitulo-notificacoes">Notificações</p>
+                <p id="borda"></p>
                 <p class="sair-da-conta" id="sair-da-conta">Sair da conta</p>
                 <img src="../assets/img/lixeira.svg" class="lixeira">
             </div>
@@ -34,42 +73,42 @@
                     <h2 class="titulo-config">Perfil</h2>
                     <div class="modal-body" id="modal-body-perfil">
                         <p>Gerencie suas informações pessoais e dados cadastrais.</p>
-                        <p class="sub-perfil">Altere suas informações</p>
                         <form id="config-perfil">
                             <p class="nome-modal">Nome</p>
                             <input type="text" id="nome" name="nome" placeholder="">
                             <p class="email-modal">Email</p>
                             <input type="email" id="email" name="email" placeholder="">
-                            <button class="salvar">Salvar alterações</button>
+                            <button type="submit" class="salvar">Salvar alterações</button>
+                        <p id="perfil-status" role="status"></p>
                         </form>
                     </div>
                 </div>
 
                 <div class="secao" id="secao-seguranca" style="display: none;">
-                    <h2 class="titulo-config">Segurança</h2>
+                    <h2 class="titulo-seguranca">Segurança</h2>
                     <div class="modal-body" id="modal-body-seguranca">
                         <p>Gerencie suas credenciais e os métodos de acesso à sua conta.</p>
                         <form>
                             <p class="senha-nova-modal">Digite sua senha nova</p>
                             <input type="password" id="senha-nova" name="senha-nova" placeholder="">
-                            <p class="texto-senha-nova">Senhas fortes ajudam a manter sua conta protegida</p>
                             <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button>
-                            <p class="minimo-senha">Mínimo de 8 caracteres</p>
+                            <p class="minimo-senha">Mínimo de 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial.</p>
                             <p class="confirmar-senha-nova-modal">Confirmar senha nova</p>
                             <input type="password" id="confirmar-senha-nova" name="senha-nova" placeholder="">
                             <button type="button" id="botaoOlho1" aria-label="Alternar visibilidade da senha"><img id="iconeOlho1" src="../assets/img/olho-fechado.svg"></button>
                             <p class="titulo-autentificaca">Autentificação de dois fatores</p>
                             <p class="texto-autentificacao">Adicione uma camada extra de segurança à sua conta</p>
-                            <p class="autentificacao">Autentificação por aplicativo</p>
-                            <button class="ativar">Ativar</button>
-                            <button class="configurar">Configurar</button>
-                            <button class="salvar-senha">Salvar senha</button>
+                            <p class="autentificacao">Autentificação por aplicativo:</p>
+                            <button type="button" class="ativar">Ativar</button>
+                            <button type="button" class="configurar">Configurar</button>
+                            <button type="button" class="salvar-senha">Salvar senha</button>
+                            <p id="seguranca-status" role="status"></p>
                         </form>
                     </div>                    
                 </div>
 
                 <div class="secao" id="secao-notificacoes" style="display: none;">
-                    <h2 class="titulo-config">Notificações</h2>
+                    <h2 class="titulo-notificacoes">Notificações</h2>
                     <div class="modal-body" id="modal-body-notificacoes">
                         <p>Escolha quais novidades, estudos e comunicados você deseja receber por e-mail.</p>
                     </div>
@@ -102,7 +141,8 @@
                         </label>
                         </div>
                     </div>
-                    <button class="salvar-not">Salvar alterações</button>
+                    <button type="button" class="salvar-not">Salvar alterações</button>
+                    <p id="notificacoes-status" role="status"></p>
                 </div>
             </div>
         </div>
@@ -115,9 +155,10 @@
                 <div class="fundo-vermelho"></div>
                 <p class="excluir">Deseja encerrar permanentemente?</p>
                 <p class="texto-excluir">Se você quer apagar todos os seus dados, você pode
-                    <a href="../pages/index.html"> <u><strong>Excluir minha conta definitivamente</strong></u></a></p>
+                    <a href="#" id="excluir-conta"> <u><strong>Excluir minha conta definitivamente</strong></u></a></p>
+                <p id="excluir-conta-status" role="status"></p>
                 <button id="botao-cancelar" class="botao-cancelar">Cancelar</button>
-                <button id="botao-sair" class="botao-sair"><a href="../pages/index.html">Sair</a></button>    
+                <a href="../pages/index.html" id="botao-sair" class="botao-sair">Sair</a>
             </div>
         </div>
 
@@ -125,7 +166,7 @@
         <p class="Conceito"><a href="#topico2">Conceito</a></p>
         <p class="Objetivos"><a href="#topico3">Objetivos</a></p>
         <p class="Funcionalidades"><a href="#topico4">Funcionalidades</a></p>
-        <p class="Sobre_Nos"><a href="#topico5">Sobre nós</p>
+        <p class="Sobre_Nos"><a href="#topico5">Sobre nós</a></p>
         <p class="valores"><a href="#topico6">Nossos Valores</a></p>
     </div>
 
@@ -139,9 +180,11 @@
 
     <p class="Texto">Monitore, preveja e reduza o consumo de água da sua residência com inteligência artificial. Tudo em tempo real, no seu celular.</p>
 
-    <div class="retanguloComecar">
-        <div id="textoComecar">Começe agora!</div>
-    </div>
+    <a href="criar-conta.html">
+        <div class="retanguloComecar">
+            <div id="textoComecar">Começe agora!</div>
+        </div>
+    </a>
 
     <div class="carta1">
         <div class="conteudoCarta1">
@@ -385,6 +428,9 @@
         </div>
     </div>
 
+    <a href="criar-conta.html">
+        <div class="retangulo-comecar-parte-final"></div>
+    </a>
     <img src="../assets/img/parteFinal.svg" id="ParteFinal">
 
     <div class="Footer">
@@ -419,5 +465,8 @@
     </div>
 
     <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
+
+    <!-- NOVO: mede a logo da barra e dispara a transição -->
+    <script src="../assets/js/transicao-intro.js"></script>
 </body>
 </html>

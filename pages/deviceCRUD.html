@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delta - Dispositivos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/deviceCRUD.css">
+    <link rel="stylesheet" href="../assets/css/popupCRUD.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="logo-area">
+        <img src="../assets/img/LogoDeltaCRUD.png" alt="Logo Delta" id="logo">
+    </div>
+
+    <nav class="menu">
+        <a href="inicioCRUD.html" class="menu-item">Início</a>
+        <a href="userCRUD.html" class="menu-item">Usuários</a>
+        <a href="regionCRUD.html" class="menu-item">Região</a>
+        <a href="regionrateCRUD.html" class="menu-item">Taxa Regional</a>
+        <a href="propertyCRUD.html" class="menu-item">Propriedades</a>
+        <a href="deviceCRUD.html" class="menu-item active">Dispositivos</a>
+        <a href="adressCRUD.html" class="menu-item">Endereço</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="account">
+            <div class="avatar">
+                <i data-lucide="user"></i>
+            </div>
+
+            <span>admin123</span>
+        </div>
+
+        <a href="inicioCRUD.html" class="logout">
+
+            <i data-lucide="log-out"></i>
+
+            <span>Sair</span>
+
+        </a>
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+    <section class="crud-page" id="crudPage"></section>
+
+</main>
+
+<!-- Modal Overlay -->
+<div class="overlay" id="popupOverlay">
+    <div class="popup">
+        <button type="button" class="close" onclick="closePopup()">×</button>
+        
+        <!-- Conteúdo 1: Sucesso (Cadastro/Edição) -->
+        <div class="popup-content" id="popupSuccess">
+            <div class="popup-icon success-icon">✓</div>
+            <span class="popup-tag" id="popupSuccessTag">Dispositivos</span>
+            <h2 id="popupSuccessTitle">Cadastro concluído!</h2>
+            <p id="popupSuccessDesc">O registro foi realizado com sucesso no sistema Delta.</p>
+            
+            <button type="button" class="popup-primary" onclick="closePopup()">OK, Entendido</button>
+            <button type="button" class="popup-secondary" onclick="closePopup()">Voltar</button>
+        </div>
+
+        <!-- Conteúdo 2: Confirmação de Exclusão -->
+        <div class="popup-content" id="popupDelete">
+            <div class="popup-icon warning-icon">!</div>
+            <span class="popup-tag danger-tag">Excluir Registro</span>
+            <h2>Confirmar exclusão</h2>
+            <p>Você tem certeza que deseja excluir o registro selecionado?</p>
+            
+            <div class="selected-record">
+                <span>REGISTRO SELECIONADO</span>
+                <strong id="deleteRecordLabel">ID #--</strong>
+            </div>
+
+            <div class="delete-actions">
+                <button type="button" class="popup-secondary" onclick="closePopup()">Cancelar</button>
+                <button type="button" class="popup-danger" id="confirmDeleteBtn">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast de Notificação -->
+<div class="global-toast" id="globalToast">
+    <div class="toast-symbol" id="toastSymbol">✓</div>
+    <div>
+        <strong id="toastTitle">Sucesso!</strong>
+        <span id="toastMessage">Ação realizada com sucesso.</span>
+    </div>
+    <button type="button" onclick="hideToast()">×</button>
+</div>
+
+<script>
+
+lucide.createIcons();
+
+
+const KEY = "delta_dispositivos";
+
+const SAMPLE = [
+    "3",
+    "5",
+    "Sim",
+    "2026-11-21"
+];
+
+const TYPES = [
+    "number",
+    "number",
+    "select",
+    "date"
+];
+
+
+let records = JSON.parse(localStorage.getItem(KEY) || "null");
+
+let currentSearch = "";
+
+let editingId = null;
+let recordToDelete = null;
+
+
+if (!records) {
+
+    records = Array.from(
+        { length: 505 },
+        (_, i) => ({
+            id: i + 1,
+            values: [...SAMPLE]
+        })
+    );
+
+    save();
+}
+
+
+function save() {
+
+    localStorage.setItem(
+        KEY,
+        JSON.stringify(records)
+    );
+
+}
+
+
+function esc(v) {
+
+    return String(v ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+function fmt(v, i) {
+
+    if (TYPES[i] === "date" && v) {
+
+        const p = v.split("-");
+
+        return p.length === 3
+            ? p[2] + "/" + p[1] + "/" + p[0]
+            : v;
+
+    }
+
+    return v;
+
+}
+
+
+/* ================================
+   CONTROLE DE POP-UPS E TOASTS
+================================ */
+
+function showPopup(type, data = {}) {
+    const overlay = document.getElementById("popupOverlay");
+    const successContent = document.getElementById("popupSuccess");
+    const deleteContent = document.getElementById("popupDelete");
+
+    successContent.classList.remove("active");
+    deleteContent.classList.remove("active");
+
+    if (type === "success") {
+        document.getElementById("popupSuccessTitle").innerText = data.title || "Cadastro concluído!";
+        document.getElementById("popupSuccessDesc").innerText = data.desc || "Ação realizada com sucesso no sistema Delta.";
+        if (data.tag) document.getElementById("popupSuccessTag").innerText = data.tag;
+        
+        successContent.classList.add("active");
+    } else if (type === "delete") {
+        document.getElementById("deleteRecordLabel").innerText = `ID #${data.id}`;
+        deleteContent.classList.add("active");
+    }
+
+    document.body.classList.add("locked");
+    overlay.classList.add("show");
+}
+
+function closePopup() {
+    const overlay = document.getElementById("popupOverlay");
+    overlay.classList.remove("show");
+    document.body.classList.remove("locked");
+    recordToDelete = null;
+}
+
+function showToast(message, title = "Sucesso", type = "success") {
+    const toast = document.getElementById("globalToast");
+    const toastSymbol = document.getElementById("toastSymbol");
+    
+    toast.className = "global-toast show";
+    if (type === "edit") toast.classList.add("toast-edit");
+    if (type === "delete") toast.classList.add("toast-delete");
+
+    document.getElementById("toastTitle").innerText = title;
+    document.getElementById("toastMessage").innerText = message;
+    toastSymbol.innerText = type === "delete" ? "!" : "✓";
+
+    setTimeout(() => {
+        hideToast();
+    }, 4000);
+}
+
+function hideToast() {
+    const toast = document.getElementById("globalToast");
+    toast.classList.remove("show");
+}
+
+
+/* ================================
+   LISTA
+================================ */
+
+function render() {
+
+    const page = document.getElementById("crudPage");
+
+
+    /* Se estiver adicionando/editando */
+
+    if (editingId !== null) {
+
+        page.innerHTML = formPage(editingId);
+
+        lucide.createIcons();
+
+        return;
+
+    }
+
+
+    const q = currentSearch.toLowerCase();
+
+
+    const list = records.filter(r =>
+        String(r.id).includes(q) ||
+        r.values.some(v =>
+            String(v).toLowerCase().includes(q)
+        )
+    );
+
+
+    page.innerHTML = `
+
+        <header class="crud-header">
+
+            <div class="crud-title">
+
+                <h1>Dispositivos</h1>
+
+                <p>Registros e Dados dos Dispositivos</p>
+
+            </div>
+
+            <div class="crud-header-right">
+
+                <div class="crud-total">
+
+                    <span>Total de Registros:</span>
+
+                    <strong>${records.length}</strong>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="crud-toolbar">
+
+            <div class="crud-search-area">
+
+                <div class="crud-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Buscar"
+                        value="${esc(currentSearch)}"
+                    >
+
+                </div>
+
+
+                <button
+                    class="crud-filter"
+                    type="button"
+                    title="Filtro"
+                >
+
+                    <i data-lucide="funnel"></i>
+
+                </button>
+
+            </div>
+
+
+            <button
+                class="crud-add"
+                type="button"
+                onclick="startCreate()"
+            >
+
+                <i data-lucide="circle-plus"></i>
+
+                Adicionar Dispositivo
+
+            </button>
+
+        </div>
+
+
+        <div class="crud-table-wrap">
+
+            <table class="crud-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>ID do Dispositivo</th>
+
+                        <th>ID da Propriedade</th>
+
+                        <th>Ativo</th>
+
+                        <th>Data de Instalação</th>
+
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    ${
+                        list.length
+
+                        ?
+
+                        list.map(r => `
+
+                            <tr>
+
+                                <td>${r.id}</td>
+
+                                ${r.values.map((v, i) => `
+
+                                    <td>
+                                        ${esc(fmt(v, i))}
+                                    </td>
+
+                                `).join("")}
+
+
+                                <td class="crud-actions-cell">
+
+                                    <button
+                                        class="crud-action"
+                                        onclick="editRecord(${r.id})"
+                                        title="Editar"
+                                    >
+
+                                        <i data-lucide="pencil"></i>
+
+                                    </button>
+
+
+                                    <button
+                                        class="crud-action delete"
+                                        onclick="deleteRecord(${r.id})"
+                                        title="Excluir"
+                                    >
+
+                                        <i data-lucide="trash-2"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        `).join("")
+
+                        :
+
+                        `
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="crud-empty"
+                                >
+                                    Nenhum registro encontrado.
+                                </td>
+
+                            </tr>
+
+                        `
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    `;
+
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            currentSearch = this.value;
+
+            render();
+
+
+            const input =
+                document.getElementById("searchInput");
+
+
+            input.focus();
+
+
+            input.setSelectionRange(
+                input.value.length,
+                input.value.length
+            );
+
+        }
+    );
+
+
+    lucide.createIcons();
+
+}
+
+
+/* ================================
+   FORMULÁRIO
+================================ */
+
+function formPage(id) {
+
+    const editing = id !== 0;
+
+
+    const record = editing
+        ? records.find(r => r.id === id)
+        : null;
+
+
+    const values = record
+        ? record.values
+        : Array(4).fill("");
+
+
+    return `
+
+        <div class="crud-form-page">
+
+
+            <header class="crud-form-header">
+
+                <div>
+
+                    <h1>
+                        ${editing
+                            ? "Editar Dispositivo"
+                            : "Adicionar Dispositivo"
+                        }
+                    </h1>
+
+                    <p>
+                        Registros e Dados dos Dispositivos
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <form
+                class="crud-form-card"
+                onsubmit="saveForm(event, ${id})"
+            >
+
+
+                <div class="form-title">
+
+                    ${editing
+                        ? "Editar dados do dispositivo"
+                        : "Novo Dispositivo"
+                    }
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="crud-field">
+
+                        <label for="f0">
+                            ID do Dispositivo
+                        </label>
+
+                        <input
+                            id="f0"
+                            type="number"
+                            value="${esc(values[0])}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="crud-field">
+
+                        <label for="f1">
+                            ID da Propriedade
+                        </label>
+
+                        <input
+                            id="f1"
+                            type="number"
+                            value="${esc(values[1])}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="crud-field">
+
+                        <label for="f2">
+                            Ativo
+                        </label>
+
+                        <select id="f2" required>
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option
+                                value="Sim"
+                                ${values[2] === "Sim" ? "selected" : ""}
+                            >
+                                Sim
+                            </option>
+
+                            <option
+                                value="Não"
+                                ${values[2] === "Não" ? "selected" : ""}
+                            >
+                                Não
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="crud-field">
+
+                        <label for="f3">
+                            Data de Instalação
+                        </label>
+
+                        <input
+                            id="f3"
+                            type="date"
+                            value="${esc(values[3])}"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="crud-form-actions">
+
+
+                    <button
+                        type="button"
+                        class="crud-cancel"
+                        onclick="cancelForm()"
+                    >
+                        Cancelar
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="crud-save"
+                    >
+
+                        ${editing
+                            ? "Salvar alterações"
+                            : "Adicionar Dispositivo"
+                        }
+
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ================================
+   ADICIONAR
+================================ */
+
+function startCreate() {
+
+    editingId = 0;
+
+    render();
+
+}
+
+
+/* ================================
+   EDITAR
+================================ */
+
+function editRecord(id) {
+
+    editingId = Number(id);
+
+    render();
+
+}
+
+
+/* ================================
+   CANCELAR
+================================ */
+
+function cancelForm() {
+
+    editingId = null;
+
+    render();
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* ================================
+   SALVAR
+================================ */
+
+function saveForm(event, id) {
+
+    event.preventDefault();
+
+
+    const values = [
+
+        document.getElementById("f0").value,
+
+        document.getElementById("f1").value,
+
+        document.getElementById("f2").value,
+
+        document.getElementById("f3").value
+
+    ];
+
+
+    if (values.some(v => !v.trim())) {
+
+        alert("Preencha todos os campos.");
+
+        return;
+
+    }
+
+    const isEdit = id !== 0;
+
+    if (id === 0) {
+
+        const nextId =
+            records.length
+                ? Math.max(...records.map(r => r.id)) + 1
+                : 1;
+
+
+        records.push({
+
+            id: nextId,
+
+            values: values
+
+        });
+
+    }
+
+    else {
+
+        const record =
+            records.find(r => r.id === id);
+
+
+        if (record) {
+
+            record.values = values;
+
+        }
+
+    }
+
+
+    save();
+
+
+    editingId = null;
+
+    render();
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+    // Exibe Pop-up e Toast
+    showPopup("success", {
+        title: isEdit ? "Alterações salvas!" : "Cadastro concluído!",
+        desc: isEdit 
+            ? "Os dados do dispositivo foram atualizados com sucesso no sistema Delta."
+            : "O novo dispositivo foi cadastrado com sucesso no sistema Delta.",
+        tag: "Dispositivos"
+    });
+
+    showToast(
+        isEdit ? "Registro atualizado com sucesso no sistema." : "Registro adicionado com sucesso.",
+        isEdit ? "ALTERAÇÕES SALVAS" : "CADASTRO CONCLUÍDO",
+        isEdit ? "edit" : "success"
+    );
+
+}
+
+
+/* ================================
+   EXCLUIR
+================================ */
+
+function deleteRecord(id) {
+
+    recordToDelete = id;
+
+    // Abre o modal de confirmação
+    showPopup("delete", { id: id });
+
+    // Ação ao clicar em "Confirmar Exclusão"
+    document.getElementById("confirmDeleteBtn").onclick = function () {
+        if (recordToDelete !== null) {
+            records = records.filter(r => r.id !== recordToDelete);
+
+            save();
+
+            closePopup();
+
+            render();
+
+            showToast(
+                "Registro excluído com sucesso da base de dados.",
+                "REGISTRO EXCLUÍDO",
+                "delete"
+            );
+        }
+    };
+
+}
+
+
+render();
+
+</script>
+
+</body>
+</html>

@@ -354,10 +354,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return topico.dataset.secao.replace('subtitulo-', 'secao-');
   }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const ativo = document.querySelector('.topico.active');
-    if (ativo) moverIndicador(ativo);
-  });
+  const topicoAtivo = document.querySelector('.topico.active');
+  if (topicoAtivo) moverIndicador(topicoAtivo);
 
   topicos.forEach(topico => {
     topico.addEventListener('click', () => {
@@ -381,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const botaoCloseMenor = document.getElementById('close-modal-menor');
   const botaoCancelar = document.getElementById('botao-cancelar');
   const botaoSair = document.getElementById('botao-sair');
-  const botaoAbrir = document.getElementById('sair-da-conta');
+  const botaoAbrir = document.getElementById('borda');
 
   function toggleModalMenor() {
     fadeMenor.classList.toggle('hide');
@@ -408,39 +406,53 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeMenor.addEventListener('click', toggleModalMenor);
   }
   
-  const botaoOlho = document.getElementById('botaoOlho');
-  const inputSenha = document.getElementById('senha-nova');
-  const iconeOlho = document.getElementById('iconeOlho')
+  const camposSenha = [
+    { botao: document.getElementById('botaoOlho'), input: document.getElementById('senha-nova'), icone: document.getElementById('iconeOlho') },
+    { botao: document.getElementById('botaoOlho1'), input: document.getElementById('confirmar-senha-nova'), icone: document.getElementById('iconeOlho1') },
+  ];
 
-    botaoOlho.addEventListener('click',()=>{
-        if(inputSenha.type === 'password'){
-            inputSenha.type = 'text';
+  camposSenha.forEach(({ botao, input, icone }) => {
+    botao?.addEventListener('click', () => {
+      const mostrar = input.type === 'password';
+      input.type = mostrar ? 'text' : 'password';
+      icone.src = mostrar ? '../assets/img/olho-aberto.svg' : '../assets/img/olho-fechado.svg';
+      icone.alt = mostrar ? 'Ocultar senha' : 'Mostrar senha';
+    });
+  });
 
-            iconeOlho.src = '../assets/img/olho-aberto.svg';
-            iconeOlho.alt = 'Ocultar senha';
-        }else{
-            inputSenha.type = 'password';
+  const formPerfil = document.getElementById('config-perfil');
+  const statusPerfil = document.getElementById('perfil-status');
+  const nomePerfil = document.getElementById('nome');
+  const emailPerfil = document.getElementById('email');
+  const perfilSalvo = JSON.parse(localStorage.getItem('delta_perfil') || '{}');
+  if (perfilSalvo.nome) nomePerfil.value = perfilSalvo.nome;
+  if (perfilSalvo.email) emailPerfil.value = perfilSalvo.email;
 
-            iconeOlho.src = '../assets/img/olho-fechado.svg';
-            iconeOlho.alt = 'Mostrar senha';
-        }
-    })
+  formPerfil?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!formPerfil.reportValidity()) return;
+    localStorage.setItem('delta_perfil', JSON.stringify({ nome: nomePerfil.value.trim(), email: emailPerfil.value.trim() }));
+    statusPerfil.textContent = 'Dados salvos neste navegador.';
+  });
 
-  const botaoOlho1 = document.getElementById('botaoOlho1');
-  const inputSenha1 = document.getElementById('confirmar-senha-nova');
-  const iconeOlho1 = document.getElementById('iconeOlho1')
+  const statusSeguranca = document.getElementById('seguranca-status');
+  document.querySelectorAll('.ativar, .configurar, .salvar-senha').forEach((botao) => {
+    botao.addEventListener('click', () => {
+      statusSeguranca.textContent = 'Esta ação precisa ser conectada ao serviço de conta.';
+    });
+  });
 
-    botaoOlho1.addEventListener('click',()=>{
-        if(inputSenha1.type === 'password'){
-            inputSenha1.type = 'text';
+  const statusNotificacoes = document.getElementById('notificacoes-status');
+  const camposNotificacao = [...document.querySelectorAll('#relatorio, #novidade, #evento')];
+  const preferencias = JSON.parse(localStorage.getItem('delta_notificacoes') || 'null');
+  if (preferencias) camposNotificacao.forEach((campo) => { campo.checked = Boolean(preferencias[campo.id]); });
+  document.querySelector('.salvar-not')?.addEventListener('click', () => {
+    localStorage.setItem('delta_notificacoes', JSON.stringify(Object.fromEntries(camposNotificacao.map((campo) => [campo.id, campo.checked]))));
+    statusNotificacoes.textContent = 'Preferências salvas neste navegador.';
+  });
 
-            iconeOlho1.src = '../assets/img/olho-aberto.svg';
-            iconeOlho1.alt = 'Ocultar senha';
-        }else{
-            inputSenha1.type = 'password';
-
-            iconeOlho1.src = '../assets/img/olho-fechado.svg';
-            iconeOlho1.alt = 'Mostrar senha';
-        }
-    })
+  document.getElementById('excluir-conta')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    document.getElementById('excluir-conta-status').textContent = 'A exclusão precisa ser conectada ao serviço de conta.';
+  });
 });

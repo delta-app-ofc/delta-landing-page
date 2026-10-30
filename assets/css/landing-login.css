@@ -23,6 +23,26 @@ body {
   overflow-x: hidden;
 }
 
+/* Faz o fundo sair suavemente ao chegar da animação; a barra e a logo ficam visíveis. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: #0B2156;
+  pointer-events: none;
+  animation: sair-fundo-intro 700ms ease-out forwards;
+}
+
+@keyframes sair-fundo-intro {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation-duration: 1ms; }
+}
+
 html {
   scrollbar-color: #0088ff transparent;
   scrollbar-width: thin; 
@@ -38,25 +58,6 @@ html {
   height: 78px;
   align-items: center;
   display: flex;
-}
-
-.Delta {
-  position: sticky;
-  color: #FEFEFE;
-  font-family: "Talina DEMO", sans-serif;
-  font-size: 47.998px;
-  font-weight: 400;
-  z-index: 1000;
-  left: 50px;
-}
-
-#LogoDelta {
-  position: absolute;
-  left: 148px;
-  width: 36.001px;
-  height: 33.861px;
-  z-index: 1002;
-  display: block;
 }
 
 .Cadastrar {
@@ -678,7 +679,7 @@ html {
 
 .cartao1:hover, .cartao2:hover, .cartao3:hover,
 .cartao4:hover, .cartao5:hover, .cartao6:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   z-index: 20;
 }
 
@@ -1125,12 +1126,6 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1100px;
-  height: 600px;
-  max-width: 90%;
-  padding: 1.2rem;
-  border-radius: 20px;
-  background-color: #FAFAFA;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 1100;
   transition: 0.3s ease-in-out;
@@ -1163,40 +1158,89 @@ html {
 
 .titulo-minha-conta{
   position: absolute;
-  color: #515151;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 37px;
+  color: #FAFAFA;
+  font-family: Unbounded;
+  font-size: 35px;
   font-style: normal;
   font-weight: 600;
-  line-height: 121.882%; 
-  letter-spacing: -0.37px;
+  line-height: 123.981%;
+  letter-spacing: -0.35px;
   z-index: 2;
-  top:26px;
+  top:142px;
   left: 25px;
-  width: 241px;
+  width: 314px;
   height: 40px;
 }
 
 .titulo-config{
   position: absolute;
-  left: 330px;
+  left: 430px;
   color: #383A3D;
-  text-align: center;
-  font-family: Montserrat;
+  font-family: Unbounded;
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
-  line-height: 121.882%;
+  line-height: 123.981%; 
   letter-spacing: -0.3px;
-  top:24px;
+  top:134px;
   z-index: 2;
 }
 
+.titulo-notificacoes{
+  position: absolute;
+  left: 430px;
+  color: #383A3D;
+  font-family: Unbounded;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 123.981%; 
+  letter-spacing: -0.3px;
+  top:73px;
+  z-index: 2;
+}
+
+#modal-body-notificacoes{
+  top:117px;
+  color: #242424;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 121.882%; 
+  letter-spacing: -0.45px;
+}
+
+.titulo-seguranca{
+  position: absolute;
+  left: 430px;
+  color: #383A3D;
+  font-family: Unbounded;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 123.981%; 
+  letter-spacing: -0.3px;
+  top:84px;
+  z-index: 2;
+}
+
+#modal-body-seguranca{
+  top:127px;
+}
+
 .sair-da-conta{
-  color:#FB5A5D;
-  margin-top:250px;
-  margin-left:45px;
+  color: #FAFAFA;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FAFAFA;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 121.882%; 
+  letter-spacing: -0.25px;
+  margin-top:170px;
+  margin-left:70px;
   cursor:pointer;
   display: block;   
   width: fit-content; 
@@ -1204,20 +1248,21 @@ html {
 
 .lixeira{
   position: absolute;
-  bottom:14px;
-  left:6px;
+  bottom:2px;
+  left:33px;
 }
 
-.retangulo-modal{
+#borda{
   position: absolute;
-  z-index: 1;
-  height: 600px;
-  width: 297px;
-  top:0;
-  left:0;
-  background-color: #F1F5F9;
-  border-radius: 20px 0 0 20px;
-  border: 1px solid #515151;
+  width: 237px;
+  height: 47px;
+  border-radius: 8px;
+  border: 1px solid #FFF;
+  background: rgba(0, 88, 219, 0.00);
+  z-index:2;
+  top:330px;
+  left:15px;
+  cursor:pointer;
 }
 
 .modal-body{
@@ -1227,16 +1272,16 @@ html {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 121.882%; 
-  letter-spacing: -0.15px;
+  line-height: 121.882%; /* 18.282px */
+  letter-spacing: -0.45px;
   z-index: 2;
-  left:350px;
-  top:81px;
+  left:430px;
+  top:187px;
 }
 
 .subtitulos-modal{
-  position: relative;
-  color: #64748B;
+  position: absolute;
+  color: #FAFAFA;
   font-family: Montserrat;
   font-size: 25px;
   font-style: normal;
@@ -1244,7 +1289,7 @@ html {
   line-height: 121.882%; 
   letter-spacing: -0.25px;
   left:10px;
-  top:96px;
+  top:210px;
   line-height: 2.25;
   z-index: 2;
 }
@@ -1254,7 +1299,7 @@ html {
   left: -15px;
   width: 220px;
   border-radius: 8px;
-  background-color: #91B6ED;
+  background: #0058DB66;
   z-index: 0;
   transition: top 0.4s ease, height 0.4s ease; 
 }
@@ -1262,7 +1307,7 @@ html {
 .topico {
   position: relative; 
   z-index: 1;
-  color: #4d5562;
+  color: #fafafa;
   cursor: pointer;
   transition: color 0.2s ease;
   display: block;   
@@ -1272,9 +1317,13 @@ html {
   cursor:pointer; 
 }
 
-.subtitulos-modal .topico.active {
-  color: #0342A1;
+.active{
+  color: #FAFAFA;
+  font-family: Unbounded;
+  font-size: 25px;
+  font-style: normal;
   font-weight: 500;
+  letter-spacing: -0.25px;
 }
 
 .sub-perfil{
@@ -1292,32 +1341,31 @@ html {
 
 .nome-modal{
   position: absolute;
-  color: #515151;
+  color: #003E9B;
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 121.882%; 
   letter-spacing: -0.2px;
-  margin-top:90px;
+  margin-top:30px;
 }
 
 #nome {
   font-size: 22px;
   font-weight: 200;
   z-index: 15;
-  width: 666px;
+  width: 569px;
   height: 57px;
   border-radius: 8px;
   border:2px solid #a0a0a0;
   outline: none;
-  margin-top:120px;
-  padding-left: 15px;
+  margin-top:60px;
 }
 
 .email-modal{
   position: absolute;
-  color: #515151;
+  color: #003E9B;
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
@@ -1333,7 +1381,7 @@ html {
   z-index: 15;
   top: 20.5rem; 
   right: 10rem; 
-  width: 666px;
+  width: 569px;
   height: 57px;
   border-radius: 8px;
   border:2px solid #a0a0a0;
@@ -1362,7 +1410,7 @@ html {
   letter-spacing: -0.18px;
   cursor: pointer;
   right:20px;
-  top:460px;
+  top:360px;
   border:none;
 }
 
@@ -1372,31 +1420,45 @@ html {
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 121.882%; 
+  line-height: 121.882%;
   letter-spacing: -0.2px;
   position: absolute;
-  left:339px;
-  top:132px;
+  left:429px;
+  top:140px;
+  width: 233px;
+  height: 28px;
 }
 
 .email-cadastrado{
   position: absolute;
+  top: 170px;
+  left:429px;
+  border-radius: 8px;
+  background: #D8D8D8;
+  width: 583px;
+  height: 37px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
   color: #404040;
   font-family: Montserrat;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  line-height: 121.882%;
+  line-height: 121.882%; 
   letter-spacing: -0.15px;
-  top:165px;
-  left:362px;
-  border-radius: 8px;
-  background: #D8D8D8;
-  width: 233px;
-  height: 24px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  margin-left:0;
+}
+
+.email-cadastrado span{
+  color: #404040;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 121.882%; 
+  letter-spacing: -0.15px;
+  left:10px;
 }
 
 .tipos-not{
@@ -1408,8 +1470,8 @@ html {
   line-height: 121.882%; 
   letter-spacing: -0.2px;
   position: absolute;
-  left:339px;
-  top:214px;
+  left:429px;
+  top:230px;
 }
 
 .texto-not{
@@ -1421,8 +1483,8 @@ html {
   font-weight: 400;
   line-height: 121.882%;
   letter-spacing: -0.15px;
-  left:361px;
-  top:245px;
+  left:429px;
+  top:255px;
 }
 
 #relatorio{
@@ -1434,7 +1496,7 @@ html {
   gap: 30px;
   position: absolute;
   top: 300px;
-  right: 190px;
+  left: 429px;
   color: #515151;
   font-family: 'Montserrat', sans-serif;
   font-size: 17px;
@@ -1503,26 +1565,26 @@ html {
 
 .senha-nova-modal{
   position: absolute;
-  color: #515151;
+  color: #003E9B;
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 121.882%; 
   letter-spacing: -0.2px;
-  margin-top:50px;
+  margin-top:20px;
 }
 
 .confirmar-senha-nova-modal{
   position: absolute;
-  color: #515151;
+  color: #003E9B;
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 121.882%; 
   letter-spacing: -0.2px;
-  margin-top:200px;
+  margin-top:140px;
 }
 
 .texto-senha-nova{
@@ -1542,20 +1604,22 @@ html {
 
 .minimo-senha{
   position:absolute;
-  width: 100%;
-  color: #242424;
+  width: 492px;
+  height: 11px;
+  color: #003E9B;
   font-family: Montserrat;
-  font-size: 15px;
+  font-size: 11px;
   font-style: normal;
   font-weight: 300;
-  line-height: 121.882%;
-  letter-spacing: -0.15px;
-  top:180px;
+  line-height: 121.882%; 
+  letter-spacing: -0.11px;
+  margin-top:105px;
+  margin-left:1px;
 }
 
 #senha-nova{
   position: absolute;
-  top:120px;
+  margin-top:50px;
   border-radius: 8px;
   border: 1px solid #A6A6A6;
   background: #FBFBFB;
@@ -1568,33 +1632,32 @@ html {
 
 #confirmar-senha-nova{
   position: absolute;
-  top:250px;
+  margin-top:170px;
   border-radius: 8px;
   border: 1px solid #A6A6A6;
   background: #FBFBFB;
   width: 500px;
   height: 50px;
   font-size: 20px;
-  padding-left: 15px;
   outline: none;
 }
 
 .titulo-autentificaca{
   position: absolute;
-  color: #515151;
+  color: #003E9B;
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 121.882%; 
   letter-spacing: -0.2px;
-  top:330px;
+  margin-top:240px;
 }
 
 .texto-autentificacao {
   position:absolute;
   width: 100%;
-  color: #242424;
+  color: #003e9b;
   text-align: center;
   font-family: Montserrat;
   font-size: 15px;
@@ -1603,19 +1666,19 @@ html {
   line-height: 121.882%;
   letter-spacing: -0.15px;
   left:-32px;
-  top:355px;
+  margin-top:270px;
 }
 
 .autentificacao{
   position: absolute;
-  color: #727171;
+  color: #0157D9;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 121.882%; 
-  letter-spacing: -0.18px;
-  top:395px;
+  line-height: 121.882%;
+  letter-spacing: -0.2px;
+  margin-top:300px;
 }
 
 .ativar{
@@ -1632,8 +1695,7 @@ html {
   background: #D3E9FE;
   width: 117px;
   height: 30px;
-  top:391px;
-  left:280px;
+  margin-top:335px;
   cursor:pointer;
   transition: ease-in-out 0.25s;
 }
@@ -1652,8 +1714,8 @@ html {
   background: #FBFBFB;
   width: 162px;
   height: 30px;
-  top:391px;
-  left:410px;
+  margin-top:335px;
+  left:135px;
   cursor: pointer;
   transition: ease-in-out 0.25s;
 }
@@ -1684,8 +1746,8 @@ html {
   width: 164px;
   height: 33px;
   border:none;
-  top:460px;
-  right:-270px;
+  top:415px;
+  right:-180px;
 }
 
 #modal-menor{
@@ -1792,6 +1854,8 @@ html {
   bottom:16px;
   right:25px;
   cursor:pointer;
+  align-content: center;
+  text-align: center;
 }
 
 .fundo-vermelho{
@@ -1889,23 +1953,23 @@ a{
 }
 
 #botaoOlho{
-    position: absolute;
-    z-index:50;
-    top:134px;
-    right:-17px;
-    border:none;
-    background: transparent;
-    cursor: pointer;
+  position: absolute;
+  z-index:50;
+  margin-top:65px;
+  right:-17px;
+  border:none;
+  background: transparent;
+  cursor: pointer;
 }
 
 #botaoOlho1{
-    position: absolute;
-    z-index:50;
-    top:264px;
-    right:-17px;
-    border:none;
-    background: transparent;
-    cursor: pointer;
+  position: absolute;
+  z-index:50;
+  margin-top:185px;
+  right:-17px;
+  border:none;
+  background: transparent;
+  cursor: pointer;
 }
 
 #nome:focus, #email:focus, #nova-senha:focus,#confirmar-nova-senha:focus {
@@ -2000,4 +2064,44 @@ a{
   .card-section .botao-avancar {
     transition-duration: 0.01s;
   }
+}
+
+.botao-topo {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.botao-logo {
+  display: flex;
+  align-items: center; 
+  position: relative; 
+  margin-left: 50px;
+}
+
+.Delta {
+  color: #FEFEFE;
+  font-family: "Talina DEMO", sans-serif;
+  font-size: 47.998px;
+  font-weight: 400;
+  z-index: 1000;
+}
+
+#LogoDelta {
+  width: 36.001px;
+  height: 33.861px;
+  z-index: 1002;
+  display: block;
+  margin-left: -6px;
+}
+
+.retangulo-comecar-parte-final{
+  position: absolute;
+  width: 323px;
+  height: 50.319px;
+  border-radius: 18px;
+  cursor:pointer;
+  z-index: 30;
+  top: 6134.5px;
+  left:261.5px;
 }

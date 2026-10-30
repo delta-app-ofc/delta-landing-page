@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta</title>
+    <link rel="stylesheet" href="../assets/css/animacao.css">
+</head>
+<body class="intro-ativa">
+
+    <!-- ===== INTRO ===== -->
+    <div class="animacao">
+        <div class="pulso"></div>
+        <p class="texto-slogan">Cada gota controlada</p>
+    </div>
+
+    <!-- A marca fica FORA do .animacao para continuar na tela
+         (no canto superior esquerdo) depois que a intro some -->
+    <div class="marca">
+        <div class="texto">DELT</div>
+        <div class="logo">
+            <div class="triangulo"></div>
+            <div class="gota"></div>
+        </div>
+    </div>
+
+    <script>
+        const intro = document.querySelector('.animacao');
+        intro.addEventListener('animationend', (e) => {
+            if (e.animationName === 'sumir-intro') {
+                document.body.classList.remove('intro-ativa');
+                intro.remove();
+                window.setTimeout(() => {
+                    sessionStorage.setItem('vindoDaIntro', '1');   // NOVO
+                    window.location.href = 'landing-login.html';
+                }, 550);
+            }
+        });
+    </script>
+</body>
+</html>
