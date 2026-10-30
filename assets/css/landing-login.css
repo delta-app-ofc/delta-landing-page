@@ -23,6 +23,26 @@ body {
   overflow-x: hidden;
 }
 
+/* Faz o fundo sair suavemente ao chegar da animação; a barra e a logo ficam visíveis. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: #0B2156;
+  pointer-events: none;
+  animation: sair-fundo-intro 700ms ease-out forwards;
+}
+
+@keyframes sair-fundo-intro {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation-duration: 1ms; }
+}
+
 html {
   scrollbar-color: #0088ff transparent;
   scrollbar-width: thin; 

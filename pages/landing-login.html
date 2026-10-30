@@ -4,10 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Delta</title>
+
+    <script>
+      try {
+        if (sessionStorage.getItem('vindoDaIntro')) {
+          sessionStorage.removeItem('vindoDaIntro');
+          document.documentElement.classList.add('vem-da-intro');
+          setTimeout(function () {
+            document.documentElement.classList.remove('vem-da-intro', 'intro-pronta');
+            var p = document.querySelector('.ponte'); if (p) p.remove();
+          }, 4000);
+        }
+      } catch (e) {}
+    </script>
+
+    <!-- NOVO: carrega fonte e imagens antes, para o primeiro frame sair certo -->
+    <link rel="preload" as="font" type="font/otf" href="../assets/fontes/talina-demo.regular.otf" crossorigin>
+    <link rel="preload" as="image" href="../assets/img/triangulo.svg">
+    <link rel="preload" as="image" href="../assets/img/gota.svg">
+
     <link rel="stylesheet" href="../assets/css/landing-login.css">
+    <!-- NOVO: precisa vir DEPOIS do landing-login.css -->
+    <link rel="stylesheet" href="../assets/css/transicao-intro.css">
+
     <script src="../assets/js/script-landing-login.js"></script>
 </head>
 <body>
+
+    <!-- NOVO: cópia da logo da intro (usada só na transição) -->
+    <div class="ponte" aria-hidden="true">
+        <div class="pm-marca">
+            <div class="pm-texto">DELT</div>
+            <div class="pm-logo">
+                <div class="pm-triangulo"></div>
+                <div class="pm-gota"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="barra-fixa">
         <a href="#topico1" class="botao-topo">
             <div class="botao-logo">
@@ -431,5 +465,8 @@
     </div>
 
     <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
+
+    <!-- NOVO: mede a logo da barra e dispara a transição -->
+    <script src="../assets/js/transicao-intro.js"></script>
 </body>
 </html>
