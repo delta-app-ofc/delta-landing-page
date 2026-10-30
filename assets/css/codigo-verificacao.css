@@ -143,3 +143,11 @@ a {
   top: 70px;
   width: 5%;
 }
+
+.tempo{
+  color:#003E9B;
+  margin-bottom: 30px;
+  margin-top:-20px;
+  font-family: Montserrat;
+  font-weight: 400;
+}
