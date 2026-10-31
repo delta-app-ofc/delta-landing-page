@@ -1,6 +1,3 @@
-/* ==========================================================
-   1) CARROSSEL DE VALORES
-   ========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const secao = document.querySelector('.card-section');
   const lista = document.getElementById('lista-card');
@@ -91,9 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* ==========================================================
-   2) CARTAS INICIAIS (-35%, 24h, +5)
-   ========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const cartas = [
     document.querySelector('.carta1'),
@@ -157,9 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
   desenhar();
 });
 
-/* ==========================================================
-   3) CENÁRIO / SOLUÇÃO (guiado pelo scroll)
-   ========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const gatilho = document.querySelector('.tituloConceito');
 
@@ -228,9 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* ==========================================================
-   4) CARTÕES DE OBJETIVOS E FUNCIONALIDADES (guiado pelo scroll)
-   ========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const limitar = (v) => Math.min(Math.max(v, 0), 1);
   const suavizar = (t) => t < 0.5
@@ -311,27 +299,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* ==========================================================
-   5) MODAL "MINHA CONTA" (código original, sem alterações)
-   ========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const abrirModalBtn = document.querySelector('#minha-conta');
   const fecharModalBtn = document.querySelector('#close-modal');
   const modal = document.querySelector("#modal");
   const fade = document.querySelector("#fade");
-  const toggleModal = () => {
-    modal.classList.toggle("hide");
-    fade.classList.toggle("hide");
+  const abrirModal = () => {
+    if (!modal || !fade) return;
+    modal.classList.remove("hide");
+    fade.classList.remove("hide");
+    abrirModalBtn?.setAttribute("aria-expanded", "true");
   };
-   [abrirModalBtn, fecharModalBtn, fade].forEach((elemento) => {
-    if (elemento) {
-      elemento.addEventListener("click", () => toggleModal());
-    }
-    });
+  const fecharModal = () => {
+    if (!modal || !fade) return;
+    modal.classList.add("hide");
+    fade.classList.add("hide");
+    abrirModalBtn?.setAttribute("aria-expanded", "false");
+  };
 
-    modal.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
+  abrirModalBtn?.addEventListener("click", abrirModal);
+  modal?.addEventListener("click", (e) => e.stopPropagation());
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && !modal.classList.contains("hide")) fecharModal();
+  });
 
 
 
@@ -435,24 +425,76 @@ document.addEventListener('DOMContentLoaded', () => {
     statusPerfil.textContent = 'Dados salvos neste navegador.';
   });
 
-  const statusSeguranca = document.getElementById('seguranca-status');
-  document.querySelectorAll('.ativar, .configurar, .salvar-senha').forEach((botao) => {
-    botao.addEventListener('click', () => {
-      statusSeguranca.textContent = 'Esta ação precisa ser conectada ao serviço de conta.';
+  const camposModal = modal.querySelectorAll('input');
+  const estadoSalvo = new Map();
+  let alterado = false;
+
+  const fadeConfirmar = document.getElementById('fade-confirmar');
+  const modalConfirmar = document.getElementById('modal-confirmar');
+  const botaoCloseConfirmar = document.getElementById('close-modal-confirmar');
+  const botaoContinuar = document.getElementById('botao-continuar');
+  const botaoDescartar = document.getElementById('botao-descartar');
+  const botaoSalvarFechar = document.getElementById('botao-salvar-fechar');
+
+  function guardarEstado() {
+    camposModal.forEach((campo) => {
+      estadoSalvo.set(campo, campo.type === 'checkbox' ? campo.checked : campo.value);
     });
+    alterado = false;
+  }
+
+  function restaurarEstado() {
+    camposModal.forEach((campo) => {
+      const valor = estadoSalvo.get(campo);
+      if (campo.type === 'checkbox') campo.checked = valor;
+      else campo.value = valor;
+    });
+    alterado = false;
+  }
+
+  guardarEstado();
+  formPerfil?.addEventListener('submit', guardarEstado);
+
+  function toggleModalConfirmar() {
+    fadeConfirmar.classList.toggle('hide');
+    modalConfirmar.classList.toggle('hide');
+  }
+
+  function tentarFecharModal() {
+    if (alterado) {
+      toggleModalConfirmar();
+    } else {
+      fecharModal();
+    }
+  }
+
+  [fecharModalBtn, fade].forEach((elemento) => {
+    elemento?.addEventListener('click', tentarFecharModal);
   });
 
-  const statusNotificacoes = document.getElementById('notificacoes-status');
-  const camposNotificacao = [...document.querySelectorAll('#relatorio, #novidade, #evento')];
-  const preferencias = JSON.parse(localStorage.getItem('delta_notificacoes') || 'null');
-  if (preferencias) camposNotificacao.forEach((campo) => { campo.checked = Boolean(preferencias[campo.id]); });
-  document.querySelector('.salvar-not')?.addEventListener('click', () => {
-    localStorage.setItem('delta_notificacoes', JSON.stringify(Object.fromEntries(camposNotificacao.map((campo) => [campo.id, campo.checked]))));
-    statusNotificacoes.textContent = 'Preferências salvas neste navegador.';
+  camposModal.forEach((campo) => {
+    campo.addEventListener('input', () => { alterado = true; });
+    campo.addEventListener('change', () => { alterado = true; });
   });
 
-  document.getElementById('excluir-conta')?.addEventListener('click', (event) => {
-    event.preventDefault();
-    document.getElementById('excluir-conta-status').textContent = 'A exclusão precisa ser conectada ao serviço de conta.';
+  botaoContinuar?.addEventListener('click', toggleModalConfirmar);
+  botaoCloseConfirmar?.addEventListener('click', toggleModalConfirmar);
+  fadeConfirmar?.addEventListener('click', toggleModalConfirmar);
+
+  botaoDescartar?.addEventListener('click', () => {
+    restaurarEstado();
+    toggleModalConfirmar();
+    fecharModal();
+  });
+
+  botaoSalvarFechar?.addEventListener('click', () => {
+    if (!formPerfil.checkValidity()) {
+      toggleModalConfirmar();
+      formPerfil.reportValidity();
+      return;
+    }
+    formPerfil.requestSubmit();
+    toggleModalConfirmar();
+    fecharModal();
   });
 });

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-
 @import url('https://fonts.bunny.net/css?family=poppins:400,500,700');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
@@ -23,7 +21,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Faz o fundo sair suavemente ao chegar da animação; a barra e a logo ficam visíveis. */
 body::before {
   content: "";
   position: fixed;
@@ -364,7 +361,6 @@ html {
   color: #FAFAFA; 
 }
 
-/* Estado inicial das cartas: o JS controla o resto conforme o scroll */
 .carta1, .carta2, .carta3 {
   opacity: 0;
   transform: translateY(220px);
@@ -438,7 +434,6 @@ html {
   transform: translateX(-50%);
 }
 
-/* ===== Cenário e Solução (estado inicial da animação de entrada) ===== */
 
 .retanguloCenario, .retanguloSolucao {
   position: absolute;
@@ -456,7 +451,7 @@ html {
   left: 0;
   border-radius: 0 44.5px 0 0;
   background: #306AE5;
-  transform: translateX(-120%);   /* começa fora da tela, à esquerda */
+  transform: translateX(-120%);
 }
 
 .retanguloSolucao {
@@ -464,7 +459,7 @@ html {
   top: 1950px;
   border-radius: 44.5px 0 0 0;
   background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
-  transform: translateX(120%);    /* começa fora da tela, à direita */
+  transform: translateX(120%);
 }
 
 .retanguloCenario2, .retanguloSolucao2 {
@@ -695,7 +690,6 @@ html {
   z-index: 4;
 }
 
-/* Ícones (posições relativas ao cartão) */
 #relogio, #sino, #grafico, #lista, #robo, #papel {
   position: absolute;
   z-index: 5;
@@ -708,7 +702,6 @@ html {
 #robo    { left: 25px; }
 #papel   { left: 22px; }
 
-/* Títulos dos cartões */
 .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,.tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
   position: absolute;
   top: 40px;
@@ -728,7 +721,6 @@ html {
 .tituloCardChatbot       { left: 91px; }
 .tituloCardHistorico     { left: 96px; }
 
-/* Textos dos cartões */
 .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,.informacoesCardMetas, .informacoesCardChatbot,.informacoesCardHistorico {
   position: absolute;
   top: 70px;
@@ -1108,7 +1100,6 @@ html {
   color:#FAFAFA;
 }
 
-/* -----------------------MODAL-----------------------------*/ 
 #fade {
   position: fixed;
   top: 0;
@@ -1272,7 +1263,7 @@ html {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 121.882%; /* 18.282px */
+  line-height: 121.882%;
   letter-spacing: -0.45px;
   z-index: 2;
   left:430px;
@@ -1361,6 +1352,7 @@ html {
   border:2px solid #a0a0a0;
   outline: none;
   margin-top:60px;
+  padding-left: 15px;
 }
 
 .email-modal{
@@ -1440,6 +1432,7 @@ html {
   display:flex;
   justify-content: flex-start;
   align-items: center;
+  padding-left: 15px;
   color: #404040;
   font-family: Montserrat;
   font-size: 15px;
@@ -1448,17 +1441,6 @@ html {
   line-height: 121.882%; 
   letter-spacing: -0.15px;
   margin-left:0;
-}
-
-.email-cadastrado span{
-  color: #404040;
-  font-family: Montserrat;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 121.882%; 
-  letter-spacing: -0.15px;
-  left:10px;
 }
 
 .tipos-not{
@@ -1639,6 +1621,7 @@ html {
   width: 500px;
   height: 50px;
   font-size: 20px;
+  padding-left: 15px;
   outline: none;
 }
 
@@ -1980,26 +1963,17 @@ a{
   border-color: #003E9B;
 }
 
-/* ==========================================================
-   Estado inicial dos cartões de Objetivos e Funcionalidades
-   (o JS controla a opacidade e o "translate" conforme o scroll)
-   ========================================================== */
 .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia,
 .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
   opacity: 0;
   will-change: translate, opacity;
 }
 
-/* ==========================================================
-   CARROSSEL DE VALORES: animações
-   (fica no final para sobrescrever as regras .card e .card img acima)
-   ========================================================== */
 
 .lista-card {
   will-change: transform;
 }
 
-/* Cartões inativos ficam menores, apagados e levemente desfocados */
 .card {
   opacity: 0.25;
   transform: scale(0.82);
@@ -2105,3 +2079,78 @@ a{
   top: 6134.5px;
   left:261.5px;
 }
+
+
+#fade-confirmar {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 16, 48, 0.62);
+  z-index: 20;
+}
+
+#modal-confirmar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(500px, 90vw);
+  box-sizing: border-box;
+  padding: 32px;
+  background: #e4eaf7;
+  border-top: 6px solid #0a2a80;
+  border-radius: 14px;
+  color: #1a2a5e;
+  z-index: 21;
+}
+
+#modal-confirmar.hide,
+#fade-confirmar.hide {
+  display: none;
+}
+
+#close-modal-confirmar {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: 0;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icone-confirmar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0a2a80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin-right: 16px;
+}
+
+.texto-confirmar h3 { margin: 0; font-size: 20px; }
+.texto-confirmar p  { margin: 8px 0 0; font-size: 13px; line-height: 1.55; }
+
+.botoes-confirmar {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 28px;
+}
+
+.botoes-confirmar button {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#botao-descartar      { border: 1px solid #b3261e; background: transparent; color: #b3261e; }
+#botao-continuar      { border: 1px solid #0a2a80; background: #fff; color: #0a2a80; }
+#botao-salvar-fechar  { border: 0; background: #0a2a80; color: #fff; }

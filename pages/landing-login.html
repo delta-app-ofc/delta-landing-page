@@ -18,20 +18,17 @@
       } catch (e) {}
     </script>
 
-    <!-- NOVO: carrega fonte e imagens antes, para o primeiro frame sair certo -->
     <link rel="preload" as="font" type="font/otf" href="../assets/fontes/talina-demo.regular.otf" crossorigin>
     <link rel="preload" as="image" href="../assets/img/triangulo.svg">
     <link rel="preload" as="image" href="../assets/img/gota.svg">
 
     <link rel="stylesheet" href="../assets/css/landing-login.css">
-    <!-- NOVO: precisa vir DEPOIS do landing-login.css -->
     <link rel="stylesheet" href="../assets/css/transicao-intro.css">
 
     <script src="../assets/js/script-landing-login.js"></script>
 </head>
 <body>
 
-    <!-- NOVO: cópia da logo da intro (usada só na transição) -->
     <div class="ponte" aria-hidden="true">
         <div class="pm-marca">
             <div class="pm-texto">DELT</div>
@@ -50,11 +47,11 @@
             </div>
         </a>
 
-        <button id="minha-conta" class="minha-conta">Minha Conta</button>
+        <button id="minha-conta" class="minha-conta" type="button" aria-haspopup="dialog" aria-controls="modal" aria-expanded="false">Minha Conta</button>
 
         <div id="fade" class="hide"></div>
-        <div id="modal" class="hide">
-            <button id="close-modal">&times;</button>
+        <div id="modal" class="hide" role="dialog" aria-modal="true" aria-label="Minha conta">
+            <button id="close-modal" type="button" aria-label="Fechar">&times;</button>
             <img id="modal-svg" src="../assets/img/Configura%C3%A7%C3%B5es%20-%20Perfil.svg" alt="Configurações da conta: perfil">
             <div class="titulo-minha-conta">Minha conta</div>
             <div class="retangulo-modal"></div>
@@ -96,13 +93,7 @@
                             <p class="confirmar-senha-nova-modal">Confirmar senha nova</p>
                             <input type="password" id="confirmar-senha-nova" name="senha-nova" placeholder="">
                             <button type="button" id="botaoOlho1" aria-label="Alternar visibilidade da senha"><img id="iconeOlho1" src="../assets/img/olho-fechado.svg"></button>
-                            <p class="titulo-autentificaca">Autentificação de dois fatores</p>
-                            <p class="texto-autentificacao">Adicione uma camada extra de segurança à sua conta</p>
-                            <p class="autentificacao">Autentificação por aplicativo:</p>
-                            <button type="button" class="ativar">Ativar</button>
-                            <button type="button" class="configurar">Configurar</button>
                             <button type="button" class="salvar-senha">Salvar senha</button>
-                            <p id="seguranca-status" role="status"></p>
                         </form>
                     </div>                    
                 </div>
@@ -144,6 +135,25 @@
                     <button type="button" class="salvar-not">Salvar alterações</button>
                     <p id="notificacoes-status" role="status"></p>
                 </div>
+            </div>
+
+            <div id="fade-confirmar" class="hide"></div>
+            <div id="modal-confirmar" class="hide" role="alertdialog" aria-labelledby="titulo-confirmar">
+            <button id="close-modal-confirmar" aria-label="Fechar">×</button>
+            <div class="icone-confirmar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.01"/>
+                </svg>
+            </div>
+            <div class="texto-confirmar">
+                <h3 id="titulo-confirmar">Alterações não salvas</h3>
+                <p>Você fez mudanças que ainda não foram salvas. Se fechar agora, elas serão perdidas.</p>
+            </div>
+            <div class="botoes-confirmar">
+                <button id="botao-descartar" type="button">Descartar</button>
+                <button id="botao-continuar" type="button">Continuar editando</button>
+                <button id="botao-salvar-fechar" type="button">Salvar alterações</button>
+            </div>
             </div>
         </div>
 
@@ -466,7 +476,6 @@
 
     <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
 
-    <!-- NOVO: mede a logo da barra e dispara a transição -->
     <script src="../assets/js/transicao-intro.js"></script>
 </body>
 </html>
