@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar em sua Conta</title>
+    <link rel="stylesheet" href="../assets/css/entrar.css">
+</head>
+<body>
+    <img src="../assets/img/login.svg" class="fundo-svg" alt="Fundo">
+    <a href="javascript:history.back()"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
+
+    <div class="gota">
+        <div class="titulo">Cada gota</div>
+        <div class="inteligentemente">inteligentemente</div>
+        <div class="titulo1">controlada</div>
+        <img src="../assets/img/gluh-run.svg" class="glub" alt="Mascote Glub">
+    </div>
+
+    <div class="botoes">
+        <a href="entrar-usuario.html" class="usuario1">Usuário</a>
+        <a href="entrar-adm.html" class="adm">Administrador</a>
+    </div>
+
+    <div class="entrar">Entrar</div>
+
+        <label for="email" class="tituloEmail">Email</label>
+        <input type="email" id="email" placeholder="Digite seu email" required data-required>
+
+        <label for="senha" class="tituloSenha">Senha</label>
+        <div class="campo-senha">
+            <input type="password" id="senha" placeholder="Digite sua senha" required data-required>
+            <button type="button" id="botaoOlho">
+                <img src="../assets/img/olho-fechado.svg" id="iconeOlho" alt="Mostrar/Ocultar Senha">
+            </button>
+        </div>
+
+        <a href="email-verificacao.html" class="esqueceu" id="texto-azul">Esqueceu a senha?</a>
+
+        <button type="button" class="criar-conta" data-next="animacao.html">Entrar</button>
+    <p class="criar">Não possui uma conta? <a href="../pages/criar-conta.html"><u><strong>Registre-se</strong></u></a></p>
+
+    <script src="../assets/js/script-criar-conta.js"></script>
+</body>
+</html>

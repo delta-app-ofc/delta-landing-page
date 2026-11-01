@@ -6,6 +6,41 @@ const suavizar = (t) => t < 0.5
   ? 4 * t * t * t
   : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
+window.addEventListener('pageshow', function(event) {
+  if (event.persisted || (performance.navigation && performance.navigation.type === 2)) {
+    window.scrollTo(0, 0);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const botaoMenu = document.getElementById('botao-menu');
+  const menu = document.getElementById('menu-navegacao');
+  if (!botaoMenu || !menu) return;
+
+  function fecharMenu() {
+    menu.classList.remove('aberto');
+    botaoMenu.setAttribute('aria-expanded', 'false');
+    botaoMenu.setAttribute('aria-label', 'Abrir menu de navegação');
+  }
+
+  botaoMenu.addEventListener('click', () => {
+    const aberto = botaoMenu.getAttribute('aria-expanded') !== 'true';
+    botaoMenu.setAttribute('aria-expanded', String(aberto));
+    botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+    menu.classList.toggle('aberto', aberto);
+  });
+
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', fecharMenu));
+
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !botaoMenu.contains(event.target)) fecharMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') fecharMenu();
+  });
+});
+
 
 /* ==========================================================
    1) CARROSSEL DE VALORES
@@ -177,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { el: document.querySelector('.retanguloSolucao2'), dir:  1, inicio: 0.4 },
   ].filter(item => item.el);
 
-  const DISTANCIA = 500;     
+  const DISTANCIA = window.innerWidth <= 1439 ? 320 : 500;
   const JANELA = 0.5;         
   const DESLOCAMENTO = 120;  
   const ANTECEDENCIA = 0.8;

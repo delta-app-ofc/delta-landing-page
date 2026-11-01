@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 </head>
 <body>
     <img src="../assets/img/codigo.svg" class="fundo-svg" alt="Fundo decorativo">
+    <a href="entrar-conta.html"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
 
     <div class="container">
         <h1 class="titulo">Qual é o e-mail da conta?</h1>
@@ -15,7 +16,8 @@
 
         <input type="email" id="email" name="email" placeholder="Email" required>
 
-        <a href="codigo-verificacao.html" class="enviar-codigo">Enviar código</a>
+        <button type="button" class="enviar-codigo" data-next="codigo-verificacao.html" data-email-form>Enviar c&oacute;digo</button>
     </div>
+    <script src="../assets/js/script-recuperar-conta.js"></script>
 </body>
 </html>

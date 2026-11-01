@@ -101,7 +101,7 @@ body {
   font-size: calc(20 * var(--u));
   font-weight: 700;
   z-index: 15;
-  top: calc(220 * var(--u));
+  top: calc(250 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -111,7 +111,7 @@ body {
   font-size: calc(18 * var(--u));
   font-weight: 500;
   z-index: 15;
-  top: calc(250 * var(--u));
+  top: calc(280 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -129,7 +129,7 @@ body {
   font-size: calc(20 * var(--u));
   font-weight: 700;
   z-index: 15;
-  top: calc(320 * var(--u));
+  top: calc(350 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -137,7 +137,7 @@ body {
 .campo-senha {
   position: absolute;
   z-index: 15;
-  top: calc(350 * var(--u));
+  top: calc(380 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -189,7 +189,7 @@ body {
 
 .esqueceu,.esqueceu:visited {
   position: absolute;
-  top: calc(415 * var(--u));
+  top: calc(445 * var(--u));
   left: calc(822 * var(--u));
   z-index: 15;
   font-family: Montserrat, sans-serif;
@@ -210,7 +210,7 @@ body {
   font-size: calc(21 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(450 * var(--u));
+  top: calc(480 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -235,7 +235,7 @@ a:visited {
   font-size: calc(16 * var(--u));
   font-weight: 400;
   z-index: 15;
-  top: calc(520 * var(--u));
+  top: calc(550 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   text-align: center;
@@ -303,36 +303,59 @@ a:visited {
     margin: 24px 24px 4px;
     font-size: clamp(26px, 8vw, 36px);
     text-align: center;
+    order: 1;
   }
 
-  #form-login {
+  .botoes {
+    position: static;
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    gap: 12px;
+    width: calc(100% - 48px);
     max-width: 360px;
-    margin: 0 auto;
-    padding: 0 16px;
+    margin: 8px auto 0;
+    order: 2;
+  }
+
+  .botoes a {
+    position: static;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 0;
+    height: 44px;
+    padding: 0 8px;
+    border-radius: 10px;
+    font-size: clamp(11px, 3.5vw, 14px);
+    letter-spacing: 0;
   }
 
   .tituloEmail {
     position: static;
     font-family: Montserrat, sans-serif;
-    width: 100%;
+    width: calc(100% - 48px);
+    max-width: 360px;
+    align-self: center;
     font-size: calc(30 * var(--u));
     font-weight: 700;
     z-index: 15;
     top: calc(220 * var(--u));
     left: calc(822 * var(--u));
     color: #003E9B;
+    order: 3;
   }
 
   #email {
     position: static;
-    width: 100%;
+    width: calc(100% - 48px);
+    max-width: 360px;
     height: 44px;
+    align-self: center;
     font-size: 15px;
     border-radius: 10px;
     padding-left: 12px;
+    order: 4;
 
   }
 
@@ -346,15 +369,22 @@ a:visited {
     left: calc(822 * var(--u));
     color: #003E9B;
     padding-top: 20px;
+    width: calc(100% - 48px);
+    max-width: 360px;
+    align-self: center;
+    order: 5;
   }
 
   .campo-senha {
     position: relative;
     top: auto;
     left: auto;
-    width: 100%;
+    width: calc(100% - 48px);
+    max-width: 360px;
     height: 44px;
     margin-top: 0;
+    align-self: center;
+    order: 6;
   }
 
   #senha {
@@ -388,25 +418,126 @@ a:visited {
   .esqueceu {
     position: static;
     display: block;
+    width: calc(100% - 48px);
+    max-width: 360px;
+    align-self: center;
     font-size: 13px;
     margin-top: 8px;
     text-align: left;
+    order: 7;
   }
 
   .criar-conta {
     position: static;
-    width: 100%;
+    width: calc(100% - 48px);
+    max-width: 360px;
     height: 46px;
     margin-top: 20px;
     font-size: 16px;
     border-radius: 10px;
+    align-self: center;
+    order: 8;
   }
 
   .criar {
     position: static;
-    width: 100%;
+    width: calc(100% - 48px);
+    max-width: 360px;
+    align-self: center;
     text-align: center;
     font-size: 14px;
     margin: 16px 0 32px;
+    order: 9;
   }
+}
+
+.usuario{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(820 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(200 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #306BE5;
+  border-style:none;
+  cursor:pointer;
+}
+
+.usuario1{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(820 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(200 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #6d9ede;
+  border-style:none;
+  cursor:pointer;
+}
+
+.adm{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(1025 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(220 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #306BE5;
+  border-style:none;
+  cursor:pointer;
+}
+
+.adm1{
+  position: absolute;
+  top: calc(150 * var(--u));
+  left: calc(1025 * var(--u));
+  z-index: 15;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: calc(22 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 123.981%; 
+  letter-spacing: calc(-0.22 * var(--u));
+  width: calc(220 * var(--u));
+  height: calc(70 * var(--u));
+  border-radius: calc(15 * var(--u));
+  background: #6d9ede;
+  border-style:none;
+  cursor:pointer;
+}
+
+.botoes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }

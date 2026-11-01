@@ -299,95 +299,6 @@ body {
   color: red;
 }
 
-.usuario{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(820 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(200 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #306BE5;
-  border-style:none;
-  cursor:pointer;
-}
-
-.usuario1{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(820 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(200 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #6d9ede;
-  border-style:none;
-  cursor:pointer;
-}
-
-.adm{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(1025 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(220 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #306BE5;
-  border-style:none;
-  cursor:pointer;
-}
-
-.adm1{
-  position: absolute;
-  top: calc(150 * var(--u));
-  left: calc(1025 * var(--u));
-  z-index: 15;
-  color: #FFF;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: calc(22 * var(--u));
-  font-style: normal;
-  font-weight: 700;
-  line-height: 123.981%; 
-  letter-spacing: calc(-0.22 * var(--u));
-  width: calc(220 * var(--u));
-  height: calc(70 * var(--u));
-  border-radius: calc(15 * var(--u));
-  background: #6d9ede;
-  border-style:none;
-  cursor:pointer;
-}
-
-.usuario:hover, .adm:hover {
-  background: #6d9ede;
-  transition: background-color 0.5s ease;
-}
-
 @media (max-width: 480px), (max-aspect-ratio: 4/3) {
   html {
   overflow-y: auto;
@@ -444,62 +355,33 @@ body {
   text-align: center;
   }
 
-  .botoes {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  max-width: 400px;
-  margin: 12px auto 0;
-  padding: 0 24px;
-  }
-
-  .botoes a {
-  flex: 1;
-  min-width: 0;
-  }
-
-  .usuario,
-  .adm,.usuario1,
-  .adm1 {
-  position: static;
-  width: 100%;
-  height: 44px;
-  padding: 0 4px;
-  border-radius: 12px;
-  font-size: clamp(11px, 3.4vw, 15px);
-  letter-spacing: 0;
-  }
-
-  #form-cadastro {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
   .tituloNome, .tituloEmail, .tituloSenha, .container-lembrar {
   position: static;
   font-size: 15px;
   margin-top: 6px;
+  width: calc(100% - 48px);
+  max-width: 400px;
+  align-self: center;
   }
 
-  #nome, #email, .criar-conta {
+  #nome, #email, .campo-senha, .criar-conta {
   position: static;
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 400px;
   height: 44px;
   font-size: 16px;
   border-radius: 10px;
+  align-self: center;
   }
 
   .campo-senha {
     position: relative;
     top: auto;
     left: auto;
-    width: 100%;
+    width: calc(100% - 48px);
+    max-width: 400px;
     height: auto;
+    align-self: center;
   }
 
   #senha{
@@ -543,7 +425,7 @@ body {
 
   .criar-conta {
     font-size: 18px;
-    width: 100%;
+    width: calc(100% - 48px);
     max-width: 400px;
     margin-top: 15px;
     align-self: center;

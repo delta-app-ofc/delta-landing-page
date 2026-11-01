@@ -8,7 +8,7 @@
 </head>
 <body>
     <img src="../assets/img/login.svg" class="fundo-svg" alt="Fundo">
-    <a href="../pages/index.html"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
+    <a href="entrar-conta.html"><img src="../assets/img/voltar.svg" class="voltar" alt="Voltar"></a>
 
     <div class="gota">
         <div class="titulo">Cada gota</div>
@@ -17,27 +17,25 @@
         <img src="../assets/img/gluh-run.svg" class="glub" alt="Mascote Glub">
     </div>
 
-    <div class="recuperar-titulo">Recupere sua senha</div>
+    <div class="recuperar-titulo">Crie uma nova senha</div>
 
         <label for="senha-nova" class="tituloSenhaNova">Senha nova</label>
         <div class="campo-senha1">
-            <input type="password" id="senha-nova" placeholder="Digite sua senha nova">
-            <button type="button" id="botaoOlho1" class="botaoOlho">
+            <input type="password" id="senha-nova" placeholder="Digite sua senha nova" required>
+            <button type="button" id="botaoOlho1" class="botaoOlho" data-toggle-password="senha-nova">
                 <img src="../assets/img/olho-fechado.svg" id="iconeOlho1" class="iconeOlho" alt="Mostrar/Ocultar Senha">
             </button>
         </div>
 
         <label for="confirmar-senha" class="tituloConfirmarSenha">Confirme sua senha nova</label>
         <div class="campo-senha2">
-            <input type="password" id="confirmar-senha" placeholder="Digite a senha novamente">
-            <button type="button" id="botaoOlho2" class="botaoOlho">
+            <input type="password" id="confirmar-senha" placeholder="Digite a senha novamente" required>
+            <button type="button" id="botaoOlho2" class="botaoOlho" data-toggle-password="confirmar-senha">
                 <img src="../assets/img/olho-fechado.svg" id="iconeOlho2" class="iconeOlho" alt="Mostrar/Ocultar Senha">
             </button>
         </div>
 
-        <a href="email-verificacao.html">
-            <button type="submit" class="avancar">Avançar</button>
-        </a>
+        <button type="button" class="avancar" data-next="entrar-conta.html" data-password-form>Salvar senha</button>
 
     <script src="../assets/js/script-recuperar-conta.js"></script>
 </body>

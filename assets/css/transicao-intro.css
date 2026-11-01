@@ -1,0 +1,164 @@
+/* ==========================================================
+   transicao-intro.css   (versão com @keyframes)
+   Carregar DEPOIS do landing-login.css.
+
+   Só age quando a landing foi aberta pela intro
+   (o <html> recebe "vem-da-intro"). Quando o JS termina de medir
+   a logo real, ele adiciona "intro-pronta" e TODAS as animações
+   abaixo rodam por keyframes, na mesma linha do tempo:
+
+     0.00s → 0.65s  cópia da logo desliza até a logo da barra
+     0.00s → 0.60s  barra azul entra em fade
+     0.00s → 0.70s  cortina azul-escura some
+     0.65s → 0.80s  troca cópia → logo real (crossfade)
+   ========================================================== */
+
+/* ---------- Valores que o JS preenche (estes são só reserva) ---------- */
+.ponte {
+  --w48: 100px;   /* largura do texto "DELT" da barra (.Delta). Só usada se o JS não rodar. */
+  --k: 1.1215;    /* escala final da cópia */
+  --tx: calc(50px - var(--k) * (94px - 0.4458 * var(--w48)));
+  --ty: calc(39px - var(--k) * (60px - 0.0116 * 100vh));
+}
+
+/* ---------- Estado inicial (igual ao último frame da intro) ---------- */
+
+/* cortina azul-escura (continuação do fundo da intro) */
+body::before {
+  display: none;
+  animation: none;
+}
+html.vem-da-intro body::before {
+  display: block;
+  opacity: 1;
+}
+
+/* barra e logo real começam invisíveis */
+html.vem-da-intro .barra-fixa  { opacity: 0; }
+html.vem-da-intro .botao-logo  { opacity: 0; }
+
+/* cópia da logo da intro, no último frame */
+.ponte {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1200;            /* acima da barra (1000) */
+  pointer-events: none;
+  transform-origin: 0 0;
+}
+html.vem-da-intro .ponte { display: block; }
+
+.pm-marca {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  transform: translate(calc(-50vw + 110px), calc(-50vh + 60px)) scale(.4);
+}
+
+.pm-texto {
+  position: absolute;
+  left: 50%;
+  top: 47.1%;
+  transform: translate(calc(-50% - 40px), -50%);
+  color: #FAFAFA;
+  font-family: "Talina DEMO", sans-serif;
+  font-size: 107px;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.pm-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 97.279px;
+  height: 95.832px;
+  margin-top: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(calc(-50% + 100px), -50%) scale(0.4);
+}
+
+.pm-triangulo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/triangulo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  scale: 1.9 2;
+}
+
+.pm-gota {
+  position: absolute;
+  width: 49.248px;
+  height: 67.018px;
+  background-image: url('../img/gota.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: -18px;
+  translate: 0 0;
+  scale: 1.9 2;
+}
+
+/* ---------- Animações (disparadas por "intro-pronta") ---------- */
+
+html.intro-pronta .ponte {
+  animation:
+    ponte-ajustar .65s cubic-bezier(.65, 0, .35, 1) forwards,
+    ponte-sumir   .15s ease .65s forwards;
+}
+
+html.intro-pronta .botao-logo {
+  animation: logo-real-aparecer .15s ease .65s forwards;
+}
+
+html.intro-pronta .barra-fixa {
+  animation: barra-entrar .6s ease forwards;
+}
+
+html.intro-pronta body::before {
+  animation: cortina-sair .7s ease-out forwards;
+}
+
+/* ================= KEYFRAMES ================= */
+
+/* a cópia da logo encaixa exatamente sobre a logo da barra */
+@keyframes ponte-ajustar {
+  from { transform: translate(0px, 0px) scale(1); }
+  to   { transform: translate(var(--tx), var(--ty)) scale(var(--k)); }
+}
+
+/* a cópia some, revelando a logo real por baixo */
+@keyframes ponte-sumir {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* a logo real aparece no mesmo instante */
+@keyframes logo-real-aparecer {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes barra-entrar {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes cortina-sair {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.intro-pronta .ponte,
+  html.intro-pronta .botao-logo,
+  html.intro-pronta .barra-fixa,
+  html.intro-pronta body::before {
+    animation-duration: .01s;
+    animation-delay: 0s;
+  }
+}
