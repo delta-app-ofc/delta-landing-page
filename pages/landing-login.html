@@ -40,12 +40,32 @@
     </div>
 
     <div class="barra-fixa">
+        <button class="botao-menu" id="botao-menu" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-navegacao">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <a href="#topico1" class="botao-topo">
             <div class="botao-logo">
                 <p class="Delta">DELT</p>
                 <img src="../assets/img/LogoDelta.svg" id="LogoDelta" alt="Logo Delta">
             </div>
         </a>
+
+        <nav class="menu-navegacao" id="menu-navegacao" aria-label="Navegação da página">
+            <a href="#topico1">Início</a>
+            <a href="#topico2">Conceito</a>
+            <a href="#topico3">Objetivos</a>
+            <a href="#topico4">Funcionalidades</a>
+            <a href="#topico5">Sobre nós</a>
+            <a href="#topico6">Nossos valores</a>
+        </nav>
+
+        <div class="auth-acoes">
+            <a href="entrar-conta.html">Entrar</a>
+            <a class="acao-cadastrar" href="criar-conta.html">Cadastrar</a>
+        </div>
 
         <button id="minha-conta" class="minha-conta" type="button" aria-haspopup="dialog" aria-controls="modal" aria-expanded="false">Minha Conta</button>
 
@@ -85,15 +105,15 @@
                     <h2 class="titulo-seguranca">Segurança</h2>
                     <div class="modal-body" id="modal-body-seguranca">
                         <p>Gerencie suas credenciais e os métodos de acesso à sua conta.</p>
-                        <form>
+                        <form id="form-seguranca">
                             <p class="senha-nova-modal">Digite sua senha nova</p>
-                            <input type="password" id="senha-nova" name="senha-nova" placeholder="">
+                            <input type="password" id="senha-nova" name="senha-nova" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" title="Use ao menos 8 caracteres, com letra maiúscula, minúscula, número e caractere especial." required placeholder="">
                             <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button>
                             <p class="minimo-senha">Mínimo de 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial.</p>
                             <p class="confirmar-senha-nova-modal">Confirmar senha nova</p>
-                            <input type="password" id="confirmar-senha-nova" name="senha-nova" placeholder="">
+                            <input type="password" id="confirmar-senha-nova" name="confirmar-senha-nova" minlength="8" required placeholder="">
                             <button type="button" id="botaoOlho1" aria-label="Alternar visibilidade da senha"><img id="iconeOlho1" src="../assets/img/olho-fechado.svg"></button>
-                            <button type="button" class="salvar-senha">Salvar senha</button>
+                            <button type="submit" class="salvar-senha">Salvar alterações</button>
                         </form>
                     </div>                    
                 </div>
@@ -155,6 +175,12 @@
                 <button id="botao-salvar-fechar" type="button">Salvar alterações</button>
             </div>
             </div>
+        </div>
+
+        <div id="popup-salvo" class="popup-salvo" role="status" aria-live="polite" hidden>
+            <span class="popup-salvo-icone" aria-hidden="true">✓</span>
+            <span id="popup-salvo-mensagem">Informações salvas com sucesso!</span>
+            <button id="fechar-popup-salvo" type="button" aria-label="Fechar confirmação">×</button>
         </div>
 
         <div class="hide" id="fade-menor" ></div>
@@ -233,7 +259,7 @@
         </div>
     </div>
 
-    <div> <img src="../assets/img/FundoOndaGradiente.svg" id="FundoAzulOndaGradiente">
+    <div class="delta-section"> <img src="../assets/img/FundoOndaGradiente.svg" id="FundoAzulOndaGradiente">
         <div class="O-Delta">O DELTA</div>
         <div class="textoDelta">O Projeto Delta é uma solução inteligente que conecta<br>
             dispositivos IoT diretamente ao seu hidrômetro para<br>
@@ -246,7 +272,7 @@
         <div class="Iphone"> <img src="../assets/img/IphoneAPP.svg"></div>
     </div>
     
-    <div>
+    <div class="concept-section">
         <img src="../assets/img/FundoAzulClaroOnda.svg" id="FundoAzulClaroOnda">
         
         <p class="tituloConceito" id="topico2">CONCEITO</p>
@@ -268,7 +294,7 @@
         </div>
     </div>
 
-    <div> <img src="../assets/img/FundoAzulCurvadoGradiente.svg" id="FundoAzulCurvado">
+    <div class="objective-section"> <img src="../assets/img/FundoAzulCurvadoGradiente.svg" id="FundoAzulCurvado">
         <p class="tituloObjetivos" id="topico3">OBJETIVOS</p>
         <div class="cartaoReducao">
             <img src="../assets/img/Hidrometro.svg" id="hidrometro">
@@ -299,7 +325,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="functionality-section">
         <img src="../assets/img/FundoAzulClaroOnda2.svg" id="FundoAzulClaroOnda2">
         <p class="tituloFuncionalidades" id="topico4">FUNCIONALIDADES</p>
 
@@ -472,9 +498,9 @@
             <li><a href="../pages/termos.html">Termos de uso</a></li>
             <li><a href="../pages/politicas.html">Política de privacidade</a></li>
         </ul>
-    </div>
 
-    <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
+        <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
+    </div>
 
     <script src="../assets/js/transicao-intro.js"></script>
 </body>

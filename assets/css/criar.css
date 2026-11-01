@@ -299,13 +299,6 @@ body {
   color: red;
 }
 
-.botoes a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
 @media (max-width: 480px), (max-aspect-ratio: 4/3) {
   html {
   overflow-y: auto;
@@ -362,66 +355,33 @@ body {
   text-align: center;
   }
 
-  .botoes {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  max-width: 400px;
-  margin: 12px auto 0;
-  padding: 0 24px;
-  }
-
-  .botoes a {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  }
-
-  .usuario,
-  .adm,.usuario1,
-  .adm1 {
-  position: static;
-  width: 100%;
-  height: 44px;
-  padding: 0 4px;
-  border-radius: 12px;
-  font-size: clamp(11px, 3.4vw, 15px);
-  letter-spacing: 0;
-  }
-
-  #form-cadastro {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
   .tituloNome, .tituloEmail, .tituloSenha, .container-lembrar {
   position: static;
   font-size: 15px;
   margin-top: 6px;
+  width: calc(100% - 48px);
+  max-width: 400px;
+  align-self: center;
   }
 
-  #nome, #email, .criar-conta {
+  #nome, #email, .campo-senha, .criar-conta {
   position: static;
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 400px;
   height: 44px;
   font-size: 16px;
   border-radius: 10px;
+  align-self: center;
   }
 
   .campo-senha {
     position: relative;
     top: auto;
     left: auto;
-    width: 100%;
+    width: calc(100% - 48px);
+    max-width: 400px;
     height: auto;
+    align-self: center;
   }
 
   #senha{
@@ -465,7 +425,7 @@ body {
 
   .criar-conta {
     font-size: 18px;
-    width: 100%;
+    width: calc(100% - 48px);
     max-width: 400px;
     margin-top: 15px;
     align-self: center;

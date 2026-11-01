@@ -493,3 +493,211 @@ a{
   display: block;
   margin-left: -50px;
 }
+@media (max-width: 1000px) {
+  .barra-fixa {
+    height: 64px;
+    padding: 0 12px;
+  }
+
+  .botao-logo {
+    margin-left: 0;
+  }
+
+  .Delta {
+    font-size: 34px;
+  }
+
+  #LogoDelta {
+    left: 105px;
+    width: 28px;
+    height: auto;
+  }
+
+  .Cadastrar {
+    top: 18px;
+    right: 12px;
+    width: 96px;
+    height: 28px;
+  }
+
+  .Entrar {
+    top: 22px;
+    right: 120px;
+    font-size: 12px;
+  }
+
+  .logo1, .logo2 {
+    display: none;
+  }
+
+  .titulo {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: calc(100% - 32px);
+    margin: 92px auto 8px;
+    font-size: clamp(25px, 7vw, 42px);
+    letter-spacing: -0.5px;
+  }
+
+  .informacoes {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: calc(100% - 40px);
+    margin: 0 auto 22px;
+    font-size: clamp(14px, 3.8vw, 18px);
+  }
+
+  .retangulo-termo {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: calc(100% - 24px);
+    height: auto;
+    margin: 0 auto 24px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .retangulo-resumo {
+    position: relative;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .resumo {
+    font-size: 14px;
+  }
+
+  .titulo-indice {
+    margin: 24px 0 8px;
+    font-size: 16px;
+  }
+
+  #topicos-indice {
+    column-count: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .topico1, .topico2, .topico3, .topico4, .topico5, .topico6, .topico7,
+  .topico8, .topico9, .topico10, .topico11, .topico12, .topico13 {
+    margin: 26px 0 0;
+    font-size: clamp(16px, 4.5vw, 19px);
+    overflow-wrap: anywhere;
+  }
+
+  .informacoes-topico1, .informacoes-topico2, .informacoes-topico3, .informacoes-topico4,
+  .informacoes-topico5, .informacoes-topico6, .informacoes-topico7, .informacoes-topico8,
+  .informacoes-topico9, .informacoes-topico10, .informacoes-topico11, .informacoes-topico12,
+  .informacoes-topico13 {
+    width: 100%;
+    margin: 8px 0 0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .informacoes-topico1 strong, .informacoes-topico2 strong, .informacoes-topico3 strong,
+  .informacoes-topico4 strong, .informacoes-topico5 strong, .informacoes-topico6 strong,
+  .informacoes-topico7 strong, .informacoes-topico8 strong, .informacoes-topico9 strong,
+  .informacoes-topico10 strong, .informacoes-topico11 strong, .informacoes-topico12 strong,
+  .informacoes-topico13 strong {
+    font-size: inherit;
+  }
+
+  .retangulo-termo ul {
+    width: auto;
+    margin: 8px 0 0;
+    padding-left: 22px;
+    font-size: 14px;
+  }
+
+  .tabela-politica {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    overflow-x: auto;
+    font-size: 12px;
+  }
+
+  .tabela-politica th, .tabela-politica td {
+    min-width: 110px;
+    padding: 9px 8px;
+  }
+
+  .Footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+    padding: 28px 20px 36px;
+    background: #0B2156;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  #logo {
+    position: static;
+    width: 150px;
+    height: auto;
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .textoFooter {
+    position: static;
+    width: auto;
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .coluna1, .coluna2, .coluna3 {
+    position: static;
+    min-width: 0;
+    margin: 0;
+    color: #FAFAFA;
+    overflow-wrap: anywhere;
+  }
+
+  .coluna1 li, .coluna2 li, .coluna3 li {
+    white-space: normal;
+  }
+
+  .direitos {
+    position: static;
+    margin: 0;
+    padding: 12px 16px;
+    background: #0B2156;
+    color: #FAFAFA;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .tabela-politica {
+    font-size: 11px;
+  }
+
+  .tabela-politica th, .tabela-politica td {
+    min-width: 96px;
+  }
+
+  .Footer {
+    grid-template-columns: 1fr;
+  }
+}

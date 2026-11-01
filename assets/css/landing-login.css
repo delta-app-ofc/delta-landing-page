@@ -57,6 +57,12 @@ html {
   display: flex;
 }
 
+.botao-menu,
+.menu-navegacao,
+.auth-acoes {
+  display: none;
+}
+
 .Cadastrar {
   position: absolute;
   right: 44px;
@@ -396,7 +402,7 @@ html {
   height: 1250px;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 500;
   color: #FAFAFA;
   left: 83px;
   right: 0;
@@ -785,6 +791,12 @@ html {
   flex-shrink: 0;
 }
 
+.foto > img {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
 .grupo {
   display: flex;
   align-items: flex-start;
@@ -810,13 +822,18 @@ html {
 }
 
 #lucasTexto {
-  max-width: 100%;
-  height: auto;
+  width: 115px;
   margin-top: 1px;
 }
 
+#lucasTexto img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 #lucasFoto {
-  transform: rotate(-45deg);
+  transform: none;
 }
 
 .fotosCarrossel:hover {
@@ -1720,6 +1737,7 @@ html {
   border-radius: 8px;
   background: #0047B2;
   color: #FAFAFA;
+  cursor: pointer;
   font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
@@ -1940,6 +1958,7 @@ a{
   z-index:50;
   margin-top:65px;
   right:-17px;
+  transform: translateX(20px);
   border:none;
   background: transparent;
   cursor: pointer;
@@ -1950,6 +1969,7 @@ a{
   z-index:50;
   margin-top:185px;
   right:-17px;
+  transform: translateX(20px);
   border:none;
   background: transparent;
   cursor: pointer;
@@ -2154,3 +2174,1603 @@ a{
 #botao-descartar      { border: 1px solid #b3261e; background: transparent; color: #b3261e; }
 #botao-continuar      { border: 1px solid #0a2a80; background: #fff; color: #0a2a80; }
 #botao-salvar-fechar  { border: 0; background: #0a2a80; color: #fff; }
+@media (max-width: 1100px) {
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .barra-fixa {
+    height: 86px;
+    min-height: 86px;
+  }
+
+  .botao-logo {
+    margin-left: 12px;
+  }
+
+  .Delta {
+    font-size: 34px;
+  }
+
+  #LogoDelta {
+    left: auto;
+    width: 28px;
+    height: auto;
+  }
+
+  .Cadastrar, .minha-conta {
+    top: 10px;
+    right: 12px;
+    width: 108px;
+    height: 28px;
+  }
+
+  .Entrar {
+    top: 15px;
+    right: 132px;
+  }
+
+  .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
+    position: absolute;
+    top: 56px;
+    height: 20px;
+    width: auto;
+    font-size: clamp(8px, 2.5vw, 11px);
+    white-space: nowrap;
+  }
+
+  .Inicio { left: 2%; }
+  .Conceito { left: 17%; }
+  .Objetivos { left: 33%; }
+  .Funcionalidades { left: 49%; }
+  .Sobre_Nos { left: 73%; }
+  .valores { left: 88%; }
+
+  .FundoGradiente {
+    height: 1250px;
+  }
+
+  .titulo1, .titulo2, .tituloPrincipal, .Texto, .retanguloComecar,
+  .carta1, .carta2, .carta3 {
+    position: relative;
+    inset: auto;
+    transform: none;
+    height: auto;
+  }
+
+  .titulo1 {
+    width: auto;
+    margin: 126px 20px 0;
+    font-size: clamp(21px, 7vw, 34px);
+  }
+
+  .tituloPrincipal {
+    width: auto;
+    margin: 0 20px;
+    font-size: clamp(27px, 8vw, 48px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .titulo2 {
+    width: auto;
+    margin: 0 20px;
+    font-size: clamp(21px, 7vw, 34px);
+    text-align: right;
+  }
+
+  #LogoTransparente {
+    display: none;
+  }
+
+  .Texto {
+    width: auto;
+    margin: 24px 24px 0;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .retanguloComecar {
+    width: min(303px, calc(100% - 48px));
+    min-height: 56px;
+    margin: 20px auto 28px;
+  }
+
+  .carta1, .carta2, .carta3 {
+    width: min(340px, calc(100% - 32px));
+    min-height: 210px;
+    margin: 12px auto 0;
+    padding: 28px 18px;
+    border-radius: 28px;
+  }
+
+  .conteudoCarta1, .conteudoCarta2, .conteudoCarta3 {
+    width: 100%;
+  }
+
+  .textoCarta1, .textoCarta2, .textoCarta3 {
+    margin-top: 24px;
+  }
+
+  #FundoAzulOndaGradiente, .FundoAzulClaroOnda, #FundoAzulCurvado,
+  #FundoAzulClaroOnda2, .fundo-planos {
+    display: none;
+  }
+
+  .O-Delta, .textoDelta, .Iphone {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .O-Delta {
+    margin: 52px 20px 12px;
+    font-size: clamp(34px, 10vw, 54px);
+  }
+
+  .textoDelta {
+    margin: 0 24px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .Iphone {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+  }
+
+  .Iphone img {
+    width: min(70vw, 300px);
+    height: auto;
+  }
+
+  .tituloConceito, .tituloObjetivos, .tituloFuncionalidades, .titulo-planos,
+  .tituloNossaEquipe, .NossosValores {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: auto;
+    margin: 48px 16px 20px;
+    font-size: clamp(25px, 7vw, 42px);
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .retanguloCenario, .retanguloSolucao, .retanguloCenario2, .retanguloSolucao2 {
+    position: relative;
+    inset: auto;
+    width: calc(100% - 28px);
+    height: auto;
+    min-height: 64px;
+    margin: 12px auto;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .retanguloCenario2, .retanguloSolucao2 {
+    min-height: 120px;
+  }
+
+  .conteudoCenario, .conteudoSolucao {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .miniTituloCenario, .miniTituloSolucao {
+    font-size: clamp(22px, 6vw, 30px);
+  }
+
+  .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
+    position: relative;
+    inset: auto;
+    width: calc(100% - 32px);
+    height: auto;
+    min-height: 330px;
+    margin: 14px auto;
+    padding-bottom: 20px;
+  }
+
+  .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
+    width: auto;
+    height: auto;
+    margin: 140px 20px 0;
+    font-size: 14px;
+  }
+
+  .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: calc(100% - 32px);
+    height: 150px;
+    margin: 12px auto;
+  }
+
+  #frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  #relogio, #sino, #grafico, #lista, #robo, #papel {
+    left: 18px;
+    top: 28px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
+  .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
+    left: 68px;
+    top: 24px;
+    width: calc(100% - 82px);
+    font-size: 15px;
+  }
+
+  .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
+  .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
+    left: 68px;
+    top: 58px;
+    width: calc(100% - 82px);
+    font-size: 13px;
+  }
+
+  .retangulo1, .retangulo2, .retangulo3 {
+    position: relative;
+    inset: auto;
+    width: min(420px, calc(100% - 32px));
+    height: auto;
+    min-height: 500px;
+    margin: 14px auto;
+    padding: 28px 22px;
+  }
+
+  .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
+    font-size: 16px;
+  }
+
+  .titulo-essencial, .titulo-gestao, .titulo-premium {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .preco1, .preco2, .preco3 {
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .mensal {
+    font-size: 19px;
+  }
+
+  .tituloNossaEquipe {
+    top: auto;
+    left: auto;
+  }
+
+  .carrossel {
+    top: auto;
+    overflow: hidden;
+  }
+
+  .grupo {
+    gap: 20px;
+    padding-right: 20px;
+  }
+
+  .foto img {
+    display: block;
+    width: min(65vw, 180px);
+    height: auto;
+  }
+
+  .FundoAzulCurvadoGradiente {
+    position: relative;
+    margin-top: 48px;
+    padding: 38px 22px;
+    background: #0B2156;
+  }
+
+  #fundoCurvadoGradiente, #corpoGlub, #bracoGlub, #gotaMaior, #gotaMenor {
+    display: none;
+  }
+
+  .sobreNos, .textoSobreNos {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .sobreNos {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  .textoSobreNos {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .card-section {
+    margin-top: 20px;
+    padding-bottom: 24px;
+  }
+
+  .Valores {
+    width: 100%;
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .retangulo-comecar-parte-final {
+    position: relative;
+    display: block;
+    inset: auto;
+    width: min(323px, calc(100% - 48px));
+    height: 52px;
+    margin: 20px auto 0;
+  }
+
+  #ParteFinal {
+    position: relative;
+    display: block;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: -52px auto 24px;
+    pointer-events: none;
+  }
+
+  .Footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+    padding: 28px 20px 36px;
+    background: #0B2156;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  #logo {
+    position: static;
+    width: 150px;
+    height: auto;
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .textoFooter {
+    position: static;
+    width: auto;
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .coluna1, .coluna2, .coluna3 {
+    position: static;
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .coluna1 li, .coluna2 li, .coluna3 li {
+    white-space: normal;
+  }
+
+  .direitos {
+    position: static;
+    margin: 0;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 420px) {
+  .Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores {
+    font-size: 8px;
+  }
+
+  .tituloPrincipal {
+    font-size: clamp(24px, 7.6vw, 34px);
+  }
+
+  .retangulo1, .retangulo2, .retangulo3 {
+    padding: 24px 18px;
+  }
+
+  .Footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.popup-salvo {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100vw - 32px);
+  padding: 14px 16px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 12px;
+  background: #0B2156;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 24%);
+  color: #fff;
+  font: 600 14px Poppins, sans-serif;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.popup-salvo[hidden] { display: none; }
+
+.popup-salvo.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup-salvo-icone {
+  display: grid;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: #397FFC;
+  font-size: 17px;
+}
+
+#fechar-popup-salvo {
+  margin-left: 4px;
+  padding: 0 2px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .popup-salvo {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    justify-content: center;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  #modal {
+    width: 1100px;
+    height: 600px;
+    transform: translate(-50%, -50%) scale(0.82);
+  }
+}
+
+@media (max-width: 920px) and (min-width: 761px) {
+  #modal {
+    transform: translate(-50%, -50%) scale(0.68);
+  }
+}
+
+@media (max-width: 760px) {
+  #modal {
+    width: calc(100vw - 24px);
+    height: min(86vh, 620px);
+    min-height: min(360px, calc(100vh - 24px));
+    max-height: calc(100vh - 24px);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  #modal-svg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  #close-modal {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 5;
+    color: #383A3D;
+    font-size: 28px;
+  }
+
+  .titulo-minha-conta {
+    top: 15%;
+    left: 2%;
+    width: 35%;
+    height: auto;
+    font-size: clamp(14px, 4vw, 20px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .subtitulos-modal {
+    left: 1%;
+    top: 31%;
+    width: 35%;
+    font-size: clamp(12px, 3.5vw, 16px);
+    line-height: 2.2;
+  }
+
+  .topico, .active {
+    max-width: 100%;
+    padding: 0 6px;
+    font-size: inherit;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .sair-da-conta {
+    margin: 0;
+    padding: 0 6px;
+    font-size: clamp(10px, 2.9vw, 14px);
+    line-height: 1.4;
+  }
+
+  #borda {
+    top: 73%;
+    left: 1%;
+    width: 35%;
+    height: 34px;
+  }
+
+  .lixeira {
+    bottom: 3%;
+    left: 27%;
+    width: 16px;
+    height: auto;
+  }
+
+  .conteudo {
+    position: absolute;
+    top: 12%;
+    right: 2%;
+    bottom: 4%;
+    left: 40%;
+    width: auto;
+    min-width: 0;
+  }
+
+  .secao {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    min-width: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    padding: 0 4px 12px;
+  }
+
+  .titulo-config, .titulo-seguranca, .titulo-notificacoes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding-right: 8px;
+    box-sizing: border-box;
+    font-size: clamp(14px, 3.8vw, 20px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .modal-body, #modal-body-notificacoes, #modal-body-seguranca {
+    top: 18%;
+    left: 0;
+    width: 100%;
+    font-size: clamp(12px, 3.1vw, 14px);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .modal-body {
+    height: 78%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  #modal-body-notificacoes {
+    height: auto;
+    max-height: 24%;
+    overflow: auto;
+  }
+
+  #modal-body-perfil form, #modal-body-seguranca form {
+    position: relative;
+    margin-top: 12px;
+  }
+
+  .nome-modal, .email-modal, .senha-nova-modal, .confirmar-senha-nova-modal {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: block;
+    margin: 10px 0 4px;
+    font-size: clamp(12px, 3.2vw, 15px);
+  }
+
+  #modal input:not([type="checkbox"]) {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    height: 40px;
+    margin: 0 0 8px;
+    padding: 0 8px;
+    font-size: clamp(12px, 3.1vw, 14px);
+  }
+
+  .minimo-senha {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px;
+    clear: both;
+    font-size: clamp(10px, 2.5vw, 11px);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  #botaoOlho, #botaoOlho1 {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    float: right;
+    margin: -42px 6px 6px 0;
+    z-index: 4;
+  }
+
+  .salvar, .salvar-senha, .salvar-not {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    display: block;
+    width: 100%;
+    height: 34px;
+    margin: 10px 0;
+    font-size: clamp(11px, 3vw, 14px);
+  }
+
+  .titulo-notificacoes {
+    top: 0;
+  }
+
+  #modal-body-notificacoes {
+    top: 12%;
+  }
+
+  .subtitulo-email, .email-cadastrado, .tipos-not, .texto-not, .container-caixas {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 8px 0;
+    font-size: clamp(12px, 3vw, 14px);
+    overflow-wrap: anywhere;
+  }
+
+  .subtitulo-email {
+    margin-top: clamp(90px, 35vw, 135px);
+  }
+
+  .email-cadastrado {
+    min-height: 32px;
+    height: auto;
+    padding: 6px 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .container-caixas {
+    gap: 8px;
+  }
+
+  .container-caixas label {
+    padding-left: 8px;
+  }
+
+  .container-caixas input[type="checkbox"] {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
+    display: none;
+  }
+
+  .botao-menu {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1102;
+  }
+
+  .botao-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: #FAFAFA;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .botao-menu[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+  .botao-menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .botao-menu[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+
+  .botao-logo { margin-left: 64px; }
+
+  #LogoDelta {
+    position: static;
+    order: -1;
+    flex: 0 0 28px;
+    width: 28px;
+    height: auto;
+    margin: 0 6px 0 0;
+  }
+
+  .auth-acoes { display: none; }
+
+  .minha-conta {
+    display: flex;
+    top: 50%;
+    right: 44px;
+    transform: translateY(-50%);
+  }
+
+  .menu-navegacao {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 12px;
+    z-index: 1101;
+    display: none;
+    width: min(260px, calc(100vw - 24px));
+    padding: 8px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 12px;
+    background: #0B2156;
+    box-shadow: 0 12px 28px rgb(0 0 0 / 24%);
+  }
+
+  .menu-navegacao.aberto { display: grid; }
+
+  .menu-navegacao a {
+    padding: 11px 14px;
+    border-radius: 7px;
+    color: #FAFAFA;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .menu-navegacao a:hover,
+  .menu-navegacao a:focus-visible { background: #306AE5; outline: none; }
+}
+
+/* Ajustes responsivos compartilhados com a landing sem login. */
+@media (max-width: 1100px) {
+  .barra-fixa {
+    z-index: 1000;
+  }
+
+  .delta-section {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.8fr);
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    gap: 12px 24px;
+    min-height: 520px;
+    margin-top: 0;
+    padding: 78px clamp(24px, 6vw, 80px) 42px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #306AE5 0%, #003E9B 100%);
+  }
+
+  #FundoAzulOndaGradiente {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .delta-section > .O-Delta,
+  .delta-section > .textoDelta,
+  .delta-section > .Iphone {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    margin: 0;
+    text-align: left;
+  }
+
+  .delta-section > .O-Delta {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    font-size: clamp(42px, 7vw, 88px);
+  }
+
+  .delta-section > .textoDelta {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    font-size: clamp(16px, 2vw, 28px);
+    line-height: 1.6;
+  }
+
+  .delta-section > .textoDelta br,
+  .textoSobreNos br {
+    display: none;
+  }
+
+  .delta-section > .Iphone {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .delta-section > .Iphone img {
+    width: min(100%, 280px);
+    height: auto;
+  }
+
+  .concept-section {
+    position: relative;
+    isolation: isolate;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    row-gap: 0;
+    margin-top: clamp(-120px, -8vw, -44px);
+    padding-top: clamp(44px, 8vw, 120px);
+    padding-bottom: clamp(40px, 5vw, 72px);
+    overflow: hidden;
+  }
+
+  .concept-section::before {
+    content: "";
+    position: absolute;
+    inset: clamp(45px, 12vw, 170px) 0 0;
+    z-index: 0;
+    background: #E0E8F6;
+    pointer-events: none;
+  }
+
+  #FundoAzulClaroOnda {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .concept-section > :not(#FundoAzulClaroOnda) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .tituloConceito, .tituloObjetivos, .tituloFuncionalidades,
+  .tituloNossaEquipe, .NossosValores {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: auto;
+    margin: 48px 16px 20px;
+    font-size: clamp(25px, 7vw, 42px);
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .tituloConceito {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin: 0 16px 56px;
+    scroll-margin-top: 112px;
+  }
+
+  .retanguloCenario, .retanguloSolucao,
+  .retanguloCenario2, .retanguloSolucao2 {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 12px clamp(16px, 3vw, 50px);
+    will-change: transform, opacity;
+  }
+
+  .retanguloCenario {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    justify-self: start;
+    width: min(240px, 100%);
+    min-height: 64px;
+    border-radius: 0 40px 0 0;
+  }
+
+  .retanguloCenario2 {
+    grid-column: 1 / 10;
+    grid-row: 3;
+    width: 114%;
+    min-height: 120px;
+    border-radius: 0 76px 76px 0;
+    background: linear-gradient(90deg, #306AE5 0%, #003E9B 100%);
+  }
+
+  .retanguloSolucao {
+    grid-column: 9 / -1;
+    grid-row: 4;
+    justify-self: end;
+    width: min(240px, 100%);
+    min-height: 64px;
+    margin-top: 44px;
+    border-radius: 40px 0 0 0;
+    background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
+  }
+
+  .retanguloSolucao2 {
+    grid-column: 4 / -1;
+    grid-row: 5;
+    justify-self: end;
+    width: 114%;
+    min-height: 120px;
+    border-radius: 76px 0 0 76px;
+    background: linear-gradient(90deg, #306AE5 0%, #003E9B 100%);
+  }
+
+  .conteudoCenario, .conteudoSolucao {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: clamp(15px, 1.8vw, 23px);
+    line-height: 1.5;
+  }
+
+  .conteudoCenario { text-align: left; }
+  .conteudoSolucao { text-align: right; }
+
+  .miniTituloCenario, .miniTituloSolucao {
+    font-size: clamp(24px, 3.6vw, 44px);
+    text-align: center;
+  }
+
+  .objective-section {
+    position: relative;
+    isolation: isolate;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 14px;
+    padding: clamp(140px, 19vw, 210px) 18px clamp(90px, 10vw, 140px);
+    background: linear-gradient(180deg, #064BB7 0%, #002256 100%);
+  }
+
+  .objective-section::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: clamp(90px, 16.2vw, 150px);
+    z-index: 0;
+    border-radius: 0 0 50% 50% / 0 0 30% 30%;
+    background: #E0E8F6;
+    pointer-events: none;
+  }
+
+  .objective-section::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: -50px;
+    z-index: 1;
+    width: 120%;
+    height: 110px;
+    border-radius: 50% 50% 0 0 / 55% 55% 0 0;
+    background: #E0E8F6;
+    pointer-events: none;
+  }
+
+  #FundoAzulCurvado { display: none; }
+
+  .objective-section > :not(#FundoAzulCurvado) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .objective-section > .tituloObjetivos {
+    position: relative;
+    inset: auto;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: auto;
+    margin: 0 16px 24px;
+    transform: none;
+  }
+
+  .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: 330px;
+    margin: 0;
+    padding-bottom: 20px;
+  }
+
+  #hidrometro, #monitoramento, #eficiencia {
+    top: 24px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
+    top: 22px;
+    left: 72px;
+    width: calc(100% - 88px);
+    margin: 0;
+    font-size: clamp(14px, 1.6vw, 20px);
+    line-height: 1.25;
+  }
+
+  .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
+    width: auto;
+    height: auto;
+    margin: 92px 16px 0;
+    font-size: clamp(11px, 1.2vw, 15px);
+    line-height: 1.45;
+  }
+
+  .functionality-section {
+    position: relative;
+    isolation: isolate;
+    z-index: 4;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 32px 20px 40px;
+    margin-bottom: 100px;
+    background: #E0E8F6;
+  }
+
+  .functionality-section::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    left: 0;
+    z-index: 0;
+    height: 200px;
+    background: url("../img/onda-funcionalidades-azul.svg") center / 100% 100% no-repeat;
+    pointer-events: none;
+  }
+
+  #FundoAzulClaroOnda2 {
+    display: block;
+    position: absolute;
+    inset: 0 auto auto 0;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .functionality-section > :not(#FundoAzulClaroOnda2) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .functionality-section > .tituloFuncionalidades {
+    grid-column: 1 / -1;
+    margin: 0 0 8px;
+    scroll-margin-top: 112px;
+  }
+
+  .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: 190px;
+    margin: 0;
+    border-radius: 18px;
+    background: #FFF;
+    box-shadow: 0 5px 18px rgb(11 33 86 / 8%);
+  }
+
+  #frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  #relogio, #sino, #grafico, #lista, #robo, #papel {
+    top: 28px;
+    left: 18px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
+  .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
+    top: 24px;
+    left: 68px;
+    width: calc(100% - 82px);
+    font-size: 15px;
+  }
+
+  .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
+  .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
+    top: 92px;
+    left: 68px;
+    width: calc(100% - 82px);
+    font-size: 13px;
+  }
+
+  .carrossel-section {
+    position: relative;
+    min-height: clamp(260px, 34vw, 340px);
+    margin-bottom: clamp(20px, 4vw, 48px);
+  }
+
+  .carrossel {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .FundoAzulCurvadoGradiente {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    column-gap: clamp(16px, 4vw, 64px);
+    width: 100%;
+    min-height: clamp(680px, 68vw, 920px);
+    margin-top: clamp(72px, 8vw, 110px);
+    padding: clamp(72px, 8vw, 124px) clamp(28px, 6vw, 110px) clamp(56px, 6vw, 96px);
+    overflow: hidden;
+    background: transparent;
+  }
+
+  #fundoCurvadoGradiente {
+    display: block;
+    position: absolute;
+    top: -55%;
+    left: -2%;
+    z-index: -1;
+    width: 152%;
+    min-height: clamp(680px, 90vw, 980px);
+    object-fit: fill;
+    object-position: center;
+    pointer-events: none;
+  }
+
+  .FundoAzulCurvadoGradiente .sobreNos,
+  .FundoAzulCurvadoGradiente .textoSobreNos {
+    position: relative;
+    inset: auto;
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    z-index: 2;
+  }
+
+  .FundoAzulCurvadoGradiente .sobreNos {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    align-self: end;
+    width: max-content;
+    max-width: 100%;
+    white-space: nowrap;
+    font-size: clamp(30px, 5.8vw, 110px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .FundoAzulCurvadoGradiente .textoSobreNos {
+    grid-row: 2;
+    align-self: start;
+    margin-top: clamp(24px, 4vw, 56px);
+    font-size: clamp(15px, 1.65vw, 30px);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+
+  #corpoGlub {
+    display: block;
+    position: absolute;
+    top: 15%;
+    right: 9%;
+    z-index: 2;
+    width: min(33vw, 490px);
+    height: auto;
+  }
+
+  #bracoGlub {
+    display: block;
+    position: absolute;
+    top: 20%;
+    right: 38%;
+    z-index: 1;
+    width: min(7vw, 105px);
+    height: auto;
+  }
+
+  #gotaMaior, #gotaMenor {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: auto;
+  }
+
+  #gotaMaior { top: 25%; right: 45%; width: min(5vw, 66px); }
+  #gotaMenor { top: 30%; right: 45%; width: min(4vw, 52px); }
+
+  .card-section {
+    position: relative;
+    width: calc(100% - clamp(32px, 8vw, 112px));
+    max-width: 1400px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 24px;
+  }
+
+  .card-section .icone { width: 70px; height: auto; }
+  .card-section .botao-voltar { left: clamp(6px, 1.5vw, 18px); }
+  .card-section .botao-avancar { right: clamp(6px, 1.5vw, 18px); }
+
+  .NossosValores { margin: -142px 16px 12px; }
+
+  #ParteFinal {
+    margin-bottom: 72px;
+  }
+
+  .Footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+    padding: 28px 20px clamp(72px, 10vw, 120px);
+    background: #0B2156;
+  }
+
+  .Footer::before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: url("../img/footer-onda.svg") left top / 246px 90px repeat-x;
+    pointer-events: none;
+  }
+
+  #footer { display: none; }
+
+  #logo {
+    position: static;
+    width: 100px;
+    height: auto;
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .textoFooter {
+    position: static;
+    width: auto;
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .coluna1, .coluna2, .coluna3 {
+    position: static;
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .coluna1 li, .coluna2 li, .coluna3 li { white-space: normal; }
+
+  .direitos {
+    position: static;
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .retangulo-comecar-parte-final {
+    position: relative;
+    display: block;
+    inset: auto;
+    width: min(323px, calc(100% - 48px));
+    height: 52px;
+    margin: 20px auto 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .delta-section {
+    grid-template-columns: minmax(0, 1.35fr) minmax(120px, 0.65fr);
+    gap: 8px;
+    min-height: 400px;
+    padding: 78px 16px 38px;
+  }
+
+  .delta-section > .textoDelta {
+    font-size: clamp(11px, 3vw, 14px);
+    line-height: 1.5;
+  }
+
+  .delta-section > .Iphone img { width: 100%; }
+
+  .concept-section {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-top: 64px;
+  }
+
+  .retanguloCenario { grid-column: 1 / 7; }
+  .retanguloCenario2 { grid-column: 1 / 12; width: 100%; }
+  .retanguloSolucao { grid-column: 7 / -1; }
+  .retanguloSolucao2 { grid-column: 2 / -1; width: 100%; }
+
+  .objective-section {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .objective-section > .tituloObjetivos {
+    position: absolute;
+    inset: 0 auto auto 0;
+    grid-column: auto;
+    grid-row: auto;
+    width: calc(100vw - 24px);
+    margin: 0;
+  }
+
+  .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
+    min-height: 310px;
+    scroll-snap-align: start;
+  }
+
+  .functionality-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 28px 12px 34px;
+  }
+
+  .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 { height: 170px; }
+
+  #relogio, #sino, #grafico, #lista, #robo, #papel {
+    top: 24px;
+    left: 12px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
+  .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
+    top: 18px;
+    left: 52px;
+    width: calc(100% - 58px);
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
+  .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
+    top: 66px;
+    left: 52px;
+    width: calc(100% - 58px);
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .FundoAzulCurvadoGradiente {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    min-height: clamp(680px, 68vw, 920px);
+  }
+
+  .FundoAzulCurvadoGradiente .sobreNos {
+    font-size: clamp(30px, 5.8vw, 110px);
+  }
+
+  .FundoAzulCurvadoGradiente .textoSobreNos {
+    font-size: clamp(15px, 1.65vw, 30px);
+  }
+
+  .Footer { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
+    display: none;
+  }
+
+  .botao-menu {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1102;
+  }
+
+  .botao-logo {
+    margin-left: 64px;
+  }
+
+  .botao-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: #FAFAFA;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .botao-menu[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+  .botao-menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .botao-menu[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+
+  .menu-navegacao {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 12px;
+    z-index: 1101;
+    display: none;
+    width: min(260px, calc(100vw - 24px));
+    padding: 8px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 12px;
+    background: #0B2156;
+    box-shadow: 0 12px 28px rgb(0 0 0 / 24%);
+  }
+
+  .menu-navegacao.aberto { display: grid; }
+
+  .menu-navegacao a {
+    padding: 11px 14px;
+    border-radius: 7px;
+    color: #FAFAFA;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .menu-navegacao a:hover,
+  .menu-navegacao a:focus-visible {
+    background: #306AE5;
+    outline: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .carta1, .carta2, .carta3 {
+    position: relative;
+    inset: auto;
+    display: inline-flex;
+    vertical-align: top;
+    width: calc((100vw - 68px) / 3);
+    height: 210px;
+    min-height: 0;
+    margin: 12px 0 0 12px;
+    padding: 24px 10px;
+    border-radius: 24px 24px 0 0;
+    box-sizing: border-box;
+  }
+
+  .conteudoCarta1, .conteudoCarta2, .conteudoCarta3 {
+    width: 100%;
+  }
+
+  .Numero, .horas, .Numero2 {
+    font-size: clamp(28px, 6.5vw, 58px);
+  }
+
+  .textoCarta1, .textoCarta2, .textoCarta3 {
+    width: 100%;
+    margin-top: 20px;
+    font-size: clamp(8px, 1.4vw, 14px);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+}

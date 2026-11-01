@@ -16,6 +16,21 @@
             </div>
         </a>
 
+        <button class="botao-menu" id="botao-menu" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-navegacao">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu-navegacao" id="menu-navegacao" aria-label="Navegação da página">
+            <a href="#topico1">Início</a>
+            <a href="#topico2">Conceito</a>
+            <a href="#topico3">Objetivos</a>
+            <a href="#topico4">Funcionalidades</a>
+            <a href="#topico5">Sobre nós</a>
+            <a href="#topico6">Nossos valores</a>
+        </nav>
+
         <a href="criar-conta.html">
         <div class="Cadastrar">
             <p id="cadastrar">Cadastrar</p>
@@ -84,7 +99,7 @@
         </div>
     </div>
 
-    <div> <img src="../assets/img/FundoOndaGradiente.svg" id="FundoAzulOndaGradiente">
+    <section class="delta-section"> <img src="../assets/img/FundoOndaGradiente.svg" id="FundoAzulOndaGradiente" alt="">
         <div class="O-Delta">O DELTA</div>
         <div class="textoDelta">O Projeto Delta é uma solução inteligente que conecta<br>
             dispositivos IoT diretamente ao seu hidrômetro para<br>
@@ -95,9 +110,9 @@
             acessível na palma da sua mão.
         </div>
         <div class="Iphone"> <img src="../assets/img/IphoneAPP.svg"></div>
-    </div>
+    </section>
     
-    <div>
+    <div class="concept-section">
         <img src="../assets/img/FundoAzulClaroOnda.svg" class="FundoAzulClaroOnda" >
         
         <p class="tituloConceito" id="topico2">CONCEITO</p>
@@ -118,7 +133,7 @@
         </div>
     </div>
 
-    <div> <img src="../assets/img/FundoAzulCurvadoGradiente.svg" id="FundoAzulCurvado">
+    <section class="objective-section"> <img src="../assets/img/FundoAzulCurvadoGradiente.svg" id="FundoAzulCurvado" alt="">
         <p class="tituloObjetivos" id="topico3">OBJETIVOS</p>
         <div class="cartaoReducao">
             <img src="../assets/img/Hidrometro.svg" id="hidrometro">
@@ -147,9 +162,10 @@
                 •Gerar relatórios e análises estratégicas.
             </p>
         </div>
-    </div>
+    </section>
 
-    <img src="../assets/img/FundoAzulClaroOnda2.svg" id="FundoAzulClaroOnda2">
+    <section class="functionality-section">
+    <img src="../assets/img/FundoAzulClaroOnda2.svg" id="FundoAzulClaroOnda2" alt="">
     
     <p class="tituloFuncionalidades" id="topico4">FUNCIONALIDADES</p>
 
@@ -195,7 +211,10 @@
         <p class="informacoesCardHistorico">Consulte relatórios e histórico de<br> consumo detalhado.</p>
     </div>
 
-    <img src="../assets/img/fundo-planos.svg" class="fundo-planos">
+    </section>
+
+    <section class="plans-section">
+    <img src="../assets/img/fundo-planos.svg" class="fundo-planos" alt="">
     <p class="titulo-planos">NOSSOS PLANOS</p>
 
     <div class="retangulo1">
@@ -266,6 +285,8 @@
         <p class="preco1">R$ 350,00</p>
         <p class="mensal">mensalmente</p>
     </div>
+
+    </section>
 
     <p class="tituloNossaEquipe">NOSSA EQUIPE</p>
 
@@ -384,8 +405,8 @@
             <li><a href="../pages/termos.html">Termos de uso</a></li>
             <li><a href="../pages/politicas.html">Política de privacidade</a></li>
         </ul>
-    </div>
 
-    <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
+        <p class="direitos">© 2026 Projeto Delta. Todos os direitos reservados.</p>
+    </div>
 </body>
 </html>

@@ -129,3 +129,34 @@ body {
   right: 70px;
   top: 70px;
 }
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 24px;
+  }
+
+  #telefone, #data, .concluir-cadastro {
+    width: 100%;
+    max-width: 506px;
+  }
+
+  #telefone, #data {
+    height: 56px;
+    padding-left: 16px;
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  #telefone::placeholder, #data:invalid::-webkit-datetime-edit {
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  .concluir-cadastro {
+    height: 56px;
+  }
+
+  .voltar {
+    top: 20px;
+    right: 20px;
+  }
+}

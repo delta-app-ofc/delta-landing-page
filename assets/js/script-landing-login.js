@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
     { el: document.querySelector('.retanguloSolucao2'), dir:  1, inicio: 0.4 },
   ];
 
-  const DISTANCIA = 500;    
-  const JANELA = 0.5;        
+  const DISTANCIA = 400;
+  const JANELA = 0.48;
   const DESLOCAMENTO = 120; 
-  const ANTECEDENCIA = 0.8; 
+  const ANTECEDENCIA = 0.9;
   const limitar = (v) => Math.min(Math.max(v, 0), 1);
   const suavizar = (t) => t < 0.5
     ? 4 * t * t * t
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function loop() {
-    atual += (alvo - atual) * 0.08;
+    atual += (alvo - atual) * 0.1;
 
     if (Math.abs(alvo - atual) < 0.001) atual = alvo;
     desenhar();
@@ -312,6 +312,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const fecharModal = () => {
     if (!modal || !fade) return;
+    modal.querySelectorAll('input, textarea, select').forEach((campo) => {
+      if (campo.type === 'checkbox' || campo.type === 'radio') campo.checked = false;
+      else campo.value = '';
+      campo.setCustomValidity('');
+    });
+    modal.querySelectorAll('[role="status"]').forEach((status) => { status.textContent = ''; });
     modal.classList.add("hide");
     fade.classList.add("hide");
     abrirModalBtn?.setAttribute("aria-expanded", "false");
@@ -414,6 +420,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusPerfil = document.getElementById('perfil-status');
   const nomePerfil = document.getElementById('nome');
   const emailPerfil = document.getElementById('email');
+  const formSeguranca = document.getElementById('form-seguranca');
+  const senhaNova = document.getElementById('senha-nova');
+  const confirmarSenhaNova = document.getElementById('confirmar-senha-nova');
+  const popupSalvo = document.getElementById('popup-salvo');
+  const fecharPopupSalvo = document.getElementById('fechar-popup-salvo');
+  const mensagemPopupSalvo = document.getElementById('popup-salvo-mensagem');
+  let timerPopupSalvo;
+
+  function mostrarPopupSalvo(mensagem = 'Informações salvas com sucesso!') {
+    if (!popupSalvo) return;
+    window.clearTimeout(timerPopupSalvo);
+    if (mensagemPopupSalvo) mensagemPopupSalvo.textContent = mensagem;
+    popupSalvo.hidden = false;
+    popupSalvo.classList.add('visivel');
+    timerPopupSalvo = window.setTimeout(() => {
+      popupSalvo.classList.remove('visivel');
+      popupSalvo.hidden = true;
+    }, 3500);
+  }
+
+  fecharPopupSalvo?.addEventListener('click', () => {
+    window.clearTimeout(timerPopupSalvo);
+    popupSalvo.hidden = true;
+    popupSalvo.classList.remove('visivel');
+  });
+
   const perfilSalvo = JSON.parse(localStorage.getItem('delta_perfil') || '{}');
   if (perfilSalvo.nome) nomePerfil.value = perfilSalvo.nome;
   if (perfilSalvo.email) emailPerfil.value = perfilSalvo.email;
@@ -423,6 +455,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!formPerfil.reportValidity()) return;
     localStorage.setItem('delta_perfil', JSON.stringify({ nome: nomePerfil.value.trim(), email: emailPerfil.value.trim() }));
     statusPerfil.textContent = 'Dados salvos neste navegador.';
+    mostrarPopupSalvo();
+  });
+
+  confirmarSenhaNova?.addEventListener('input', () => confirmarSenhaNova.setCustomValidity(''));
+  senhaNova?.addEventListener('input', () => confirmarSenhaNova.setCustomValidity(''));
+  formSeguranca?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    confirmarSenhaNova.setCustomValidity(
+      senhaNova.value === confirmarSenhaNova.value ? '' : 'As senhas não coincidem.'
+    );
+    if (!formSeguranca.reportValidity()) return;
+
+    localStorage.setItem('delta_senha_atualizada_em', new Date().toISOString());
+    formSeguranca.reset();
+    confirmarSenhaNova.setCustomValidity('');
+    mostrarPopupSalvo('Senha alterada com sucesso!');
   });
 
   const camposModal = modal.querySelectorAll('input');
@@ -496,5 +544,34 @@ document.addEventListener('DOMContentLoaded', () => {
     formPerfil.requestSubmit();
     toggleModalConfirmar();
     fecharModal();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const botaoMenu = document.getElementById('botao-menu');
+  const menu = document.getElementById('menu-navegacao');
+  if (!botaoMenu || !menu) return;
+
+  function fecharMenu() {
+    menu.classList.remove('aberto');
+    botaoMenu.setAttribute('aria-expanded', 'false');
+    botaoMenu.setAttribute('aria-label', 'Abrir menu de navegação');
+  }
+
+  botaoMenu.addEventListener('click', () => {
+    const aberto = botaoMenu.getAttribute('aria-expanded') !== 'true';
+    botaoMenu.setAttribute('aria-expanded', String(aberto));
+    botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+    menu.classList.toggle('aberto', aberto);
+  });
+
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', fecharMenu));
+
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !botaoMenu.contains(event.target)) fecharMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') fecharMenu();
   });
 });

@@ -102,3 +102,48 @@ body {
 .sair:hover{
     background: #002b6b;
 }
+
+@media (max-width: 760px) {
+  body {
+    padding: 24px 16px;
+  }
+
+  .retangulo {
+    width: min(100%, 560px);
+    height: auto;
+    min-height: 320px;
+    padding: clamp(20px, 6vw, 36px);
+    border-width: 5px;
+    border-radius: 24px;
+  }
+
+  .texto {
+    margin-top: 18px;
+    font-size: clamp(20px, 5vw, 30px);
+    line-height: 1.4;
+  }
+
+  .texto span {
+    font-size: clamp(18px, 4.5vw, 26px);
+  }
+
+  .login {
+    width: min(55vw, 220px);
+    height: auto;
+    margin-top: 28px;
+  }
+
+  .sair {
+    width: 100%;
+    max-width: 420px;
+    height: 56px;
+    margin-top: 32px;
+    font-size: clamp(15px, 4vw, 20px);
+  }
+
+  .voltar {
+    top: 20px;
+    right: 20px;
+    width: 32px;
+  }
+}
