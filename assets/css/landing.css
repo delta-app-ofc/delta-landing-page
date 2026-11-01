@@ -22,7 +22,6 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
-
 html {
   scrollbar-color: #0088ff transparent;
   scrollbar-width: thin; 
@@ -543,7 +542,7 @@ html {
 #FundoAzulCurvado {
   position: absolute;
   z-index: 4;
-  height: 750px;
+  height: 780px;
   top: 2300px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -579,10 +578,10 @@ html {
 }
 
 .cartaoReducao { 
-  margin-left: 80px; 
+  margin-left: 120px; 
 }
 .cartaoMonitoramento { 
-  margin-left: 543px; 
+  margin-left: 560px; 
 }
 .cartaoEficiencia { 
   margin-left: 1000px; 
@@ -633,7 +632,7 @@ html {
   top: 3000px;
   left: 0;
   right: 0;
-  height: 710px;
+  height: 740px;
 }
 
 .tituloFuncionalidades {
@@ -663,12 +662,12 @@ html {
   transform-origin: center center;
 }
 
-.cartao1 { left: 79px;  top: 3260px; }
-.cartao2 { left: 514px; top: 3260px; }
-.cartao3 { left: 949px; top: 3260px; }
-.cartao4 { left: 79px;  top: 3450px; }
-.cartao5 { left: 514px; top: 3450px; }
-.cartao6 { left: 949px; top: 3450px; }
+.cartao1 { left: 125px;  top: 3260px; }
+.cartao2 { left: 560px; top: 3260px; }
+.cartao3 { left: 995px; top: 3260px; }
+.cartao4 { left: 125px;  top: 3450px; }
+.cartao5 { left: 560px; top: 3450px; }
+.cartao6 { left: 995px; top: 3450px; }
 
 .cartao1::after, .cartao2::after, .cartao3::after,
 .cartao4::after, .cartao5::after, .cartao6::after {
@@ -1006,6 +1005,7 @@ html {
 
 .Footer{
   position: absolute;
+  font-family: 'Poppins', sans-serif;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -1055,7 +1055,7 @@ html {
 .direitos{
   position: absolute;
   z-index: 5;
-  top:7735px;
+  top:780px;
   right:60px;
   margin-bottom: 10px;
   color:#FAFAFA;
@@ -1248,7 +1248,7 @@ a{
   border-radius: 12px;
   background: #FAFAFA;
   top: 3890px;
-  left: 70px;
+  left: 110px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1327,7 +1327,7 @@ a{
   border-radius: 12px;
   background: #FAFAFA;
   top: 3890px;
-  left: 530px;
+  left: 550px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -2263,6 +2263,7 @@ a{
     left: auto;
     flex: 0 0 auto;
     width: max-content;
+    margin: 0;
     line-height: 1;
     white-space: nowrap;
   }
@@ -2270,7 +2271,7 @@ a{
   #LogoDelta {
     position: static;
     left: auto;
-    order: -1;
+    order: 0;
     flex: 0 0 28px;
     width: 28px;
     height: auto;

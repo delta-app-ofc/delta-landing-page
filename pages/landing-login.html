@@ -18,6 +18,15 @@
       } catch (e) {}
     </script>
 
+    <script src="../assets/js/mock-database.js"></script>
+    <script>
+      if (window.DeltaDB?.getCurrent()?.role !== 'user') {
+        try { sessionStorage.removeItem('vindoDaIntro'); } catch (e) {}
+        document.documentElement.classList.remove('vem-da-intro', 'intro-pronta');
+        window.location.replace('entrar-conta.html');
+      }
+    </script>
+
     <link rel="preload" as="font" type="font/otf" href="../assets/fontes/talina-demo.regular.otf" crossorigin>
     <link rel="preload" as="image" href="../assets/img/triangulo.svg">
     <link rel="preload" as="image" href="../assets/img/gota.svg">
@@ -26,6 +35,7 @@
     <link rel="stylesheet" href="../assets/css/transicao-intro.css">
 
     <script src="../assets/js/script-landing-login.js"></script>
+    <link rel="icon" type="image/png" href="../assets/img/FaviconDelta.png">
 </head>
 <body>
 
@@ -92,9 +102,9 @@
                         <p>Gerencie suas informações pessoais e dados cadastrais.</p>
                         <form id="config-perfil">
                             <p class="nome-modal">Nome</p>
-                            <input type="text" id="nome" name="nome" placeholder="">
+                            <input type="text" id="nome" name="nome" placeholder="" required>
                             <p class="email-modal">Email</p>
-                            <input type="email" id="email" name="email" placeholder="">
+                            <input type="email" id="email" name="email" placeholder="" required>
                             <button type="submit" class="salvar">Salvar alterações</button>
                         <p id="perfil-status" role="status"></p>
                         </form>
@@ -107,12 +117,12 @@
                         <p>Gerencie suas credenciais e os métodos de acesso à sua conta.</p>
                         <form id="form-seguranca">
                             <p class="senha-nova-modal">Digite sua senha nova</p>
-                            <input type="password" id="senha-nova" name="senha-nova" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" title="Use ao menos 8 caracteres, com letra maiúscula, minúscula, número e caractere especial." required placeholder="">
-                            <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button>
+                            <div class="campo-senha-config"><input type="password" id="senha-nova" name="senha-nova" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" title="Use ao menos 8 caracteres, com letra maiúscula, minúscula, número e caractere especial." required placeholder="">
+                            <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button></div>
                             <p class="minimo-senha">Mínimo de 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial.</p>
                             <p class="confirmar-senha-nova-modal">Confirmar senha nova</p>
-                            <input type="password" id="confirmar-senha-nova" name="confirmar-senha-nova" minlength="8" required placeholder="">
-                            <button type="button" id="botaoOlho1" aria-label="Alternar visibilidade da senha"><img id="iconeOlho1" src="../assets/img/olho-fechado.svg"></button>
+                            <div class="campo-senha-config"><input type="password" id="confirmar-senha-nova" name="confirmar-senha-nova" minlength="8" required placeholder="">
+                            <button type="button" id="botaoOlho1" aria-label="Alternar visibilidade da senha"><img id="iconeOlho1" src="../assets/img/olho-fechado.svg"></button></div>
                             <button type="submit" class="salvar-senha">Salvar alterações</button>
                         </form>
                     </div>                    

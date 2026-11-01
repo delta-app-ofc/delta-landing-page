@@ -24,26 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
         mensagemSenha.style.color = valida ? 'green' : 'red';
     });
 
-    botaoAcao?.addEventListener('click', (event) => {
-        const campos = [...document.querySelectorAll('[data-required]')];
-        const campoInvalido = campos.find((campo) => !campo.value.trim() || !campo.checkValidity());
-        if (campoInvalido) {
-            event.preventDefault();
-            campoInvalido.reportValidity();
-            campoInvalido.focus();
-            return;
-        }
-
-        if (botaoAcao.hasAttribute('data-validate-password') && !regexSenha.test(inputSenha.value)) {
-            event.preventDefault();
-            if (mensagemSenha) {
-                mensagemSenha.textContent = 'Senha inválida. Verifique os requisitos.';
-                mensagemSenha.style.color = 'red';
-            }
-            inputSenha.focus();
-            return;
-        }
-
-        window.location.assign(botaoAcao.dataset.next);
-    });
 });

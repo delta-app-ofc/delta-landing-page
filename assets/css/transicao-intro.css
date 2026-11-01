@@ -13,12 +13,15 @@
      0.65s → 0.80s  troca cópia → logo real (crossfade)
    ========================================================== */
 
-/* ---------- Valores que o JS preenche (estes são só reserva) ---------- */
+/* ---------- Valores medidos pelo JS, com reserva para fallback ---------- */
 .ponte {
-  --w48: 100px;   /* largura do texto "DELT" da barra (.Delta). Só usada se o JS não rodar. */
-  --k: 1.1215;    /* escala final da cópia */
-  --tx: calc(50px - var(--k) * (94px - 0.4458 * var(--w48)));
-  --ty: calc(39px - var(--k) * (60px - 0.0116 * 100vh));
+  --ty: 0px;
+  --logo-shift: 100px;
+  --texto-offset: 40px;
+  --marca-final-x: 110px;
+  --marca-final-y: 60px;
+  --k: 1;
+  --tx: 0px;
 }
 
 /* ---------- Estado inicial (igual ao último frame da intro) ---------- */
@@ -52,14 +55,14 @@ html.vem-da-intro .ponte { display: block; }
   position: absolute;
   inset: 0;
   transform-origin: 50% 50%;
-  transform: translate(calc(-50vw + 110px), calc(-50vh + 60px)) scale(.4);
+  transform: translate(calc(-50vw + var(--marca-final-x)), calc(-50dvh + var(--marca-final-y))) scale(.4);
 }
 
 .pm-texto {
   position: absolute;
   left: 50%;
   top: 47.1%;
-  transform: translate(calc(-50% - 40px), -50%);
+  transform: translate(calc(-50% - var(--texto-offset)), -50%);
   color: #FAFAFA;
   font-family: "Talina DEMO", sans-serif;
   font-size: 107px;
@@ -78,7 +81,7 @@ html.vem-da-intro .ponte { display: block; }
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(calc(-50% + 100px), -50%) scale(0.4);
+  transform: translate(calc(-50% + var(--logo-shift)), -50%) scale(.72);
 }
 
 .pm-triangulo {
@@ -88,39 +91,57 @@ html.vem-da-intro .ponte { display: block; }
   background-image: url('../img/triangulo.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  scale: 1.9 2;
 }
 
 .pm-gota {
   position: absolute;
-  width: 49.248px;
-  height: 67.018px;
+  left: 50%;
+  width: 50%;
+  height: 70%;
   background-image: url('../img/gota.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  bottom: -18px;
+  bottom: 1%;
+  transform: translateX(-50%);
   translate: 0 0;
-  scale: 1.9 2;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .ponte {
+    --texto-offset: 24px;
+    --marca-final-x: clamp(55px, 14vw, 80px);
+    --marca-final-y: clamp(32px, 7dvh, 48px);
+  }
+
+  .pm-texto { font-size: clamp(42px, 15vw, 64px); }
+
+  .pm-logo {
+    width: clamp(64px, 18vw, 78px);
+    height: clamp(64px, 18vw, 78px);
+    margin-top: -18px;
+  }
+
 }
 
 /* ---------- Animações (disparadas por "intro-pronta") ---------- */
 
 html.intro-pronta .ponte {
   animation:
-    ponte-ajustar .65s cubic-bezier(.65, 0, .35, 1) forwards,
-    ponte-sumir   .15s ease .65s forwards;
+    ponte-ajustar .78s cubic-bezier(.22, .8, .2, 1) forwards,
+    ponte-sumir   .18s ease .78s forwards;
 }
 
 html.intro-pronta .botao-logo {
-  animation: logo-real-aparecer .15s ease .65s forwards;
+  animation: logo-real-aparecer .18s ease .78s forwards;
 }
 
 html.intro-pronta .barra-fixa {
-  animation: barra-entrar .6s ease forwards;
+  animation: barra-entrar .96s cubic-bezier(.22, .8, .2, 1) forwards;
 }
 
 html.intro-pronta body::before {
-  animation: cortina-sair .7s ease-out forwards;
+  animation: cortina-sair .42s ease-out .54s forwards;
 }
 
 /* ================= KEYFRAMES ================= */

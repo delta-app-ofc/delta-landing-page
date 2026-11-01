@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar em sua Conta</title>
     <link rel="stylesheet" href="../assets/css/entrar.css">
+    <link rel="icon" type="image/png" href="../assets/img/FaviconDelta.png">
 </head>
 <body>
     <img src="../assets/img/login.svg" class="fundo-svg" alt="Fundo">
@@ -37,9 +38,11 @@
 
         <a href="email-verificacao.html" class="esqueceu" id="texto-azul">Esqueceu a senha?</a>
 
-        <button type="button" class="criar-conta" data-next="inicioCRUD.html">Entrar</button>
+        <button type="button" class="criar-conta" data-auth-role="admin" data-next="inicioCRUD.html">Entrar</button>
     <p class="criar">Não possui uma conta? <a href="../pages/criar-conta.html"><u><strong>Registre-se</strong></u></a></p>
 
+    <script src="../assets/js/mock-database.js"></script>
+    <script src="../assets/js/mock-app.js"></script>
     <script src="../assets/js/script-criar-conta.js"></script>
 </body>
 </html>

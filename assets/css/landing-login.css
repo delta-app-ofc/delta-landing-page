@@ -547,7 +547,7 @@ html {
 #FundoAzulCurvado {
   position: absolute;
   z-index: 4;
-  height: 750px;
+  height: 780px;
   top: 2300px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -583,10 +583,10 @@ html {
 }
 
 .cartaoReducao { 
-  margin-left: 80px; 
+  margin-left: 120px; 
 }
 .cartaoMonitoramento { 
-  margin-left: 543px; 
+  margin-left: 560px; 
 }
 .cartaoEficiencia { 
   margin-left: 1000px; 
@@ -631,7 +631,7 @@ html {
   top: 3000px;
   left: 0;
   right: 0;
-  height: 710px;
+  height: 740px;
 }
 
 .tituloFuncionalidades {
@@ -660,12 +660,12 @@ html {
   transition: transform 0.3s ease;
 }
 
-.cartao1 { left: 79px;  top: 3260px; }
-.cartao2 { left: 514px; top: 3260px; }
-.cartao3 { left: 949px; top: 3260px; }
-.cartao4 { left: 79px;  top: 3450px; }
-.cartao5 { left: 514px; top: 3450px; }
-.cartao6 { left: 949px; top: 3450px; }
+.cartao1 { left: 125px;  top: 3260px; }
+.cartao2 { left: 560px; top: 3260px; }
+.cartao3 { left: 995px; top: 3260px; }
+.cartao4 { left: 125px;  top: 3450px; }
+.cartao5 { left: 560px; top: 3450px; }
+.cartao6 { left: 995px; top: 3450px; }
 
 .cartao1::after, .cartao2::after, .cartao3::after,.cartao4::after, .cartao5::after, .cartao6::after {
   content: '';
@@ -758,7 +758,7 @@ html {
   line-height: normal;
   letter-spacing: -1.4px;
   z-index: 5;
-  top: 3780px;
+  top: 3820px;
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
@@ -909,7 +909,7 @@ html {
   right: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  top:5150px;
+  top:5200px;
 }
 
 .card-section{
@@ -917,7 +917,7 @@ html {
   width: 100%;
   max-width: 100vw; 
   margin:0 auto;
-  margin-top:4300px;
+  margin-top:4350px;
 
 }
 
@@ -1031,7 +1031,7 @@ html {
   position: absolute;
   height: 283px;
   width: 1376px;
-  top: 6150px;
+  top: 6100px;
   right: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1047,6 +1047,7 @@ html {
 
 .Footer{
   position: absolute;
+  font-family: 'Poppins', sans-serif;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -1111,7 +1112,7 @@ html {
 .direitos{
   position: absolute;
   z-index: 5;
-  top:6900px;
+  top:780px;
   right:60px;
   margin-bottom: 10px;
   color:#FAFAFA;
@@ -1361,7 +1362,8 @@ html {
 
 #nome {
   font-size: 22px;
-  font-weight: 200;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
   z-index: 15;
   width: 569px;
   height: 57px;
@@ -1386,7 +1388,8 @@ html {
 
 #email {
   font-size: 22px;
-  font-weight: 200;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
   z-index: 15;
   top: 20.5rem; 
   right: 10rem; 
@@ -2174,7 +2177,7 @@ a{
 #botao-descartar      { border: 1px solid #b3261e; background: transparent; color: #b3261e; }
 #botao-continuar      { border: 1px solid #0a2a80; background: #fff; color: #0a2a80; }
 #botao-salvar-fechar  { border: 0; background: #0a2a80; color: #fff; }
-@media (max-width: 1100px) {
+@media (max-width: 1439px) {
   html, body {
     width: 100%;
     overflow-x: hidden;
@@ -2918,6 +2921,99 @@ a{
     width: 20px;
     height: 20px;
   }
+
+  #modal {
+    z-index: 1200;
+    background: #0B2156;
+  }
+
+  #close-modal {
+    color: #FAFAFA;
+  }
+
+  #modal-svg {
+    display: none;
+  }
+
+  .titulo-minha-conta {
+    top: 12px;
+    left: 14px;
+    width: auto;
+    height: auto;
+    font-size: 17px;
+  }
+
+  .subtitulos-modal {
+    position: absolute;
+    top: 44px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 4px;
+    width: auto;
+    line-height: 1.3;
+  }
+
+  .indicador, #borda, .lixeira {
+    display: none;
+  }
+
+  .topico, .active {
+    padding: 4px 6px;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .sair-da-conta {
+    margin: 0 0 0 auto;
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .conteudo {
+    top: 80px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .secao {
+    padding: 12px;
+    border-radius: 10px;
+    background: #E0E8F6;
+  }
+
+  .titulo-config, .titulo-seguranca, .titulo-notificacoes {
+    position: relative;
+    inset: auto;
+    margin: 0 0 12px;
+    padding: 0;
+    color: #383A3D;
+    font-size: 16px;
+  }
+
+  .modal-body, #modal-body-notificacoes, #modal-body-seguranca {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0 0 12px;
+    overflow: visible;
+    font-size: 12px;
+  }
+
+  .subtitulo-email {
+    margin: 0 0 6px;
+  }
+
+  #secao-notificacoes .container-caixas {
+    position: relative;
+    inset: auto;
+    margin: 12px 0;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -2960,11 +3056,11 @@ a{
 
   #LogoDelta {
     position: static;
-    order: -1;
+    order: 0;
     flex: 0 0 28px;
     width: 28px;
     height: auto;
-    margin: 0 6px 0 0;
+    margin: 0 0 0 6px;
   }
 
   .auth-acoes { display: none; }
@@ -3005,8 +3101,79 @@ a{
   .menu-navegacao a:focus-visible { background: #306AE5; outline: none; }
 }
 
+@media (max-width: 760px) {
+  #modal-menor {
+    width: calc(100vw - 24px);
+    max-width: none;
+    height: auto;
+    min-height: 350px;
+    max-height: calc(100dvh - 24px);
+    padding: 24px 20px 68px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .conteudo-modal-menor {
+    position: static;
+  }
+
+  .sair-conta-titulo,
+  .texto-sair,
+  .excluir,
+  .texto-excluir {
+    position: relative;
+    inset: auto;
+    width: auto;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .sair-conta-titulo {
+    margin-bottom: 8px;
+    font-size: clamp(19px, 5.5vw, 23px);
+  }
+
+  .texto-sair {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .fundo-vermelho {
+    top: 112px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    height: 142px;
+  }
+
+  .excluir {
+    z-index: 2;
+    margin-top: 22px;
+    font-size: clamp(16px, 4.5vw, 19px);
+    line-height: 1.25;
+  }
+
+  .texto-excluir {
+    z-index: 2;
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .botao-cancelar,
+  .botao-sair {
+    bottom: 16px;
+    width: calc(50% - 28px);
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .botao-cancelar { left: 16px; }
+  .botao-sair { right: 16px; }
+}
+
 /* Ajustes responsivos compartilhados com a landing sem login. */
-@media (max-width: 1100px) {
+@media (max-width: 1439px) {
   .barra-fixa {
     z-index: 1000;
   }
@@ -3772,5 +3939,263 @@ a{
     font-size: clamp(8px, 1.4vw, 14px);
     line-height: 1.35;
     overflow-wrap: anywhere;
+  }
+}
+
+
+/* Segurança: formulário em fluxo contínuo, alinhado ao Perfil. */
+#modal-body-seguranca {
+  top: 127px;
+  width: 620px;
+  max-width: calc(100vw - 460px);
+}
+
+#modal-body-seguranca > p {
+  margin: 0 0 24px;
+}
+
+#form-seguranca {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  max-width: 569px;
+  margin: 0;
+}
+
+#form-seguranca .senha-nova-modal,
+#form-seguranca .confirmar-senha-nova-modal {
+  position: static;
+  display: block;
+  margin: 8px 0 0;
+  color: #003E9B;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+
+#form-seguranca .campo-senha-config {
+  position: relative;
+  width: 100%;
+}
+
+#form-seguranca .campo-senha-config input {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 57px;
+  margin: 0;
+  padding: 0 56px 0 16px;
+  border: 1px solid #A6A6A6;
+  border-radius: 10px;
+  background: #FBFBFB;
+  color: #242424;
+  font: 400 20px Montserrat, sans-serif;
+  outline: none;
+}
+
+#form-seguranca .campo-senha-config input:focus {
+  border-color: #003E9B;
+}
+
+#form-seguranca #botaoOlho,
+#form-seguranca #botaoOlho1 {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+#form-seguranca .minimo-senha {
+  position: static;
+  width: 100%;
+  height: auto;
+  margin: -3px 0 8px;
+  color: #5E86C5;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+#form-seguranca .salvar-senha {
+  position: static;
+  align-self: flex-end;
+  width: 200px;
+  height: 40px;
+  margin: 16px 0 0;
+  border: 0;
+  border-radius: 8px;
+  background: #0047B2;
+  color: #FAFAFA;
+  font: 600 15px Montserrat, sans-serif;
+  cursor: pointer;
+}
+
+#form-seguranca .salvar-senha:hover {
+  background: #003E9B;
+}
+
+@media (max-width: 760px) {
+  #modal-body-seguranca {
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #form-seguranca {
+    max-width: 100%;
+  }
+
+  #form-seguranca .senha-nova-modal,
+  #form-seguranca .confirmar-senha-nova-modal {
+    font-size: clamp(12px, 3.2vw, 15px);
+  }
+
+  #modal #form-seguranca .campo-senha-config input {
+    position: static;
+    width: 100%;
+    height: 42px;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 44px 0 10px;
+    font-size: 14px;
+  }
+
+  #modal #form-seguranca #botaoOlho,
+  #modal #form-seguranca #botaoOlho1 {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    left: auto;
+    float: none;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+
+  #form-seguranca .minimo-senha {
+    font-size: 11px;
+  }
+
+  #form-seguranca .salvar-senha {
+    align-self: stretch;
+    width: 100%;
+  }
+}
+
+
+/* Ajuste final: Segurança usa a mesma hierarquia e alinhamento de Perfil. */
+.titulo-seguranca {
+  top: 134px;
+  left: 430px;
+}
+
+#modal-body-seguranca {
+  top: 187px;
+  width: 620px;
+  max-width: calc(100vw - 460px);
+}
+
+#modal-body-seguranca > p {
+  margin: 0;
+}
+
+#form-seguranca {
+  position: static;
+  max-width: 569px;
+  min-height: 410px;
+  padding-top: 30px;
+}
+
+#form-seguranca .senha-nova-modal,
+#form-seguranca .confirmar-senha-nova-modal {
+  margin: 0 0 8px;
+}
+
+#form-seguranca .confirmar-senha-nova-modal {
+  margin-top: 26px;
+}
+
+#form-seguranca .salvar-senha {
+  position: absolute;
+  top: 360px;
+  right: 20px;
+  align-self: auto;
+  width: 233px;
+  height: 33px;
+  margin: 0;
+  font-size: 18px;
+}
+
+@media (max-width: 760px) {
+  .titulo-seguranca {
+    position: relative;
+    inset: auto;
+    margin: 0 0 12px;
+    font-size: 16px;
+  }
+
+  #modal-body-seguranca {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #form-seguranca {
+    min-height: 0;
+    padding-top: 8px;
+  }
+
+  #form-seguranca .confirmar-senha-nova-modal {
+    margin-top: 12px;
+  }
+
+  #form-seguranca .salvar-senha {
+    position: static;
+    align-self: stretch;
+    width: 100%;
+    height: 34px;
+    margin: 10px 0;
+  }
+}
+
+
+/* Mantém os três botões de salvar no mesmo ponto do modal. */
+#modal .salvar,
+#modal .salvar-senha,
+#modal .salvar-not {
+  position: fixed;
+  top: auto;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  width: 233px;
+  height: 33px;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  #modal .salvar,
+  #modal .salvar-senha,
+  #modal .salvar-not {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 34px;
+    margin: 10px 0;
   }
 }

@@ -306,17 +306,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const fade = document.querySelector("#fade");
   const abrirModal = () => {
     if (!modal || !fade) return;
+    if (window.DeltaDB && !window.DeltaDB.getCurrent()) {
+      window.location.assign('entrar-conta.html');
+      return;
+    }
     modal.classList.remove("hide");
     fade.classList.remove("hide");
     abrirModalBtn?.setAttribute("aria-expanded", "true");
   };
   const fecharModal = () => {
     if (!modal || !fade) return;
-    modal.querySelectorAll('input, textarea, select').forEach((campo) => {
-      if (campo.type === 'checkbox' || campo.type === 'radio') campo.checked = false;
-      else campo.value = '';
-      campo.setCustomValidity('');
-    });
+    modal.querySelectorAll('input, textarea, select').forEach((campo) => campo.setCustomValidity(''));
     modal.querySelectorAll('[role="status"]').forEach((status) => { status.textContent = ''; });
     modal.classList.add("hide");
     fade.classList.add("hide");
@@ -376,17 +376,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const botaoCancelar = document.getElementById('botao-cancelar');
   const botaoSair = document.getElementById('botao-sair');
   const botaoAbrir = document.getElementById('borda');
+  const linkSairConta = document.getElementById('sair-da-conta');
 
   function toggleModalMenor() {
     fadeMenor.classList.toggle('hide');
     modalMenor.classList.toggle('hide');
   }
 
-  if (botaoAbrir) {
-    botaoAbrir.addEventListener('click', toggleModalMenor);
-  }
+  [botaoAbrir, linkSairConta].forEach((elemento) => {
+    elemento?.addEventListener('click', toggleModalMenor);
+  });
 
   if (botaoSair) {
+    botaoSair.addEventListener('click', () => window.DeltaDB?.logout());
     botaoSair.addEventListener('click', toggleModalMenor); 
   }
 
@@ -446,15 +448,33 @@ document.addEventListener('DOMContentLoaded', () => {
     popupSalvo.classList.remove('visivel');
   });
 
-  const perfilSalvo = JSON.parse(localStorage.getItem('delta_perfil') || '{}');
-  if (perfilSalvo.nome) nomePerfil.value = perfilSalvo.nome;
-  if (perfilSalvo.email) emailPerfil.value = perfilSalvo.email;
+  const contaAtual = window.DeltaDB?.getCurrent();
+  let perfilSalvo = {};
+  try { perfilSalvo = JSON.parse(localStorage.getItem('delta_perfil') || '{}'); } catch (_) {}
+  if (contaAtual) {
+    nomePerfil.value = contaAtual.name || '';
+    emailPerfil.value = contaAtual.email || '';
+  } else {
+    if (perfilSalvo.nome) nomePerfil.value = perfilSalvo.nome;
+    if (perfilSalvo.email) emailPerfil.value = perfilSalvo.email;
+  }
 
   formPerfil?.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!formPerfil.reportValidity()) return;
-    localStorage.setItem('delta_perfil', JSON.stringify({ nome: nomePerfil.value.trim(), email: emailPerfil.value.trim() }));
-    statusPerfil.textContent = 'Dados salvos neste navegador.';
+    const perfil = { nome: nomePerfil.value.trim(), email: emailPerfil.value.trim() };
+    if (contaAtual && window.DeltaDB) {
+      const resultado = window.DeltaDB.updateAccount(contaAtual.id, { name: perfil.nome, email: perfil.email });
+      if (!resultado.ok) {
+        emailPerfil.setCustomValidity(resultado.message);
+        emailPerfil.reportValidity();
+        emailPerfil.addEventListener('input', () => emailPerfil.setCustomValidity(''), { once: true });
+        return;
+      }
+    }
+    localStorage.setItem('delta_perfil', JSON.stringify(perfil));
+    if (statusPerfil) statusPerfil.textContent = 'Dados salvos neste navegador.';
+    if (emailNotificacoes) emailNotificacoes.textContent = perfil.email;
     mostrarPopupSalvo();
   });
 
@@ -467,10 +487,50 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     if (!formSeguranca.reportValidity()) return;
 
+    if (contaAtual && window.DeltaDB) {
+      window.DeltaDB.updateAccount(contaAtual.id, { password: senhaNova.value });
+    }
     localStorage.setItem('delta_senha_atualizada_em', new Date().toISOString());
     formSeguranca.reset();
     confirmarSenhaNova.setCustomValidity('');
     mostrarPopupSalvo('Senha alterada com sucesso!');
+  });
+
+  const emailNotificacoes = document.querySelector('.email-cadastrado');
+  const controlesNotificacoes = { relatorio: 'reports', novidade: 'news', evento: 'events' };
+  let preferenciasSalvas = {};
+  try { preferenciasSalvas = JSON.parse(localStorage.getItem('delta_notificacoes') || '{}'); } catch (_) {}
+  if (emailNotificacoes && contaAtual) emailNotificacoes.textContent = contaAtual.email;
+  Object.entries(controlesNotificacoes).forEach(([id, chave]) => {
+    const checkbox = document.getElementById(id);
+    if (checkbox) checkbox.checked = Boolean(contaAtual?.notifications?.[chave] ?? preferenciasSalvas[chave]);
+  });
+
+  document.querySelector('.salvar-not')?.addEventListener('click', () => {
+    const preferencias = {};
+    Object.entries(controlesNotificacoes).forEach(([id, chave]) => {
+      preferencias[chave] = Boolean(document.getElementById(id)?.checked);
+    });
+    localStorage.setItem('delta_notificacoes', JSON.stringify(preferencias));
+    if (contaAtual && window.DeltaDB) window.DeltaDB.updateAccount(contaAtual.id, { notifications: preferencias });
+    const status = document.getElementById('notificacoes-status');
+    if (status) status.textContent = 'Preferências salvas neste navegador.';
+  });
+
+  document.getElementById('excluir-conta')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    const status = document.getElementById('excluir-conta-status');
+    if (!contaAtual || !window.DeltaDB) {
+      if (status) status.textContent = 'Entre na sua conta para realizar esta ação.';
+      return;
+    }
+    if (!window.confirm('Deseja excluir permanentemente esta conta e os dados locais associados?')) return;
+    const resultado = window.DeltaDB.deleteAccount(contaAtual.id);
+    if (!resultado.ok) {
+      if (status) status.textContent = resultado.message;
+      return;
+    }
+    window.location.assign('../pages/index.html');
   });
 
   const camposModal = modal.querySelectorAll('input');

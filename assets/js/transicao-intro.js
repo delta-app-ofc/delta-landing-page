@@ -22,6 +22,12 @@
 
   if (!ponte || !logoReal || !textoReal) { limpar(); return; }
 
+  try {
+    const deslocamentoLogo = sessionStorage.getItem('deltaIntroLogoShift');
+    if (deslocamentoLogo) ponte.style.setProperty('--logo-shift', deslocamentoLogo);
+    sessionStorage.removeItem('deltaIntroLogoShift');
+  } catch (_) {}
+
   // quando o último keyframe termina, remove tudo
   ponte.addEventListener('animationend', (e) => {
     if (e.animationName === 'ponte-sumir') limpar();

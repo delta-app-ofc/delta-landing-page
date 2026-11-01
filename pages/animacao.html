@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta</title>
+    <script src="../assets/js/mock-database.js"></script>
+    <script>
+        if (window.DeltaDB?.getCurrent()?.role !== 'user') {
+            window.location.replace('entrar-conta.html');
+        }
+    </script>
+    <link rel="preload" as="font" type="font/otf" href="../assets/fontes/talina-demo.regular.otf" crossorigin>
     <link rel="stylesheet" href="../assets/css/animacao.css">
+    <link rel="icon" type="image/png" href="../assets/img/FaviconDelta.png">
 </head>
 <body class="intro-ativa">
 
@@ -14,8 +22,8 @@
         <p class="texto-slogan">Cada gota controlada</p>
     </div>
 
-    <!-- A marca fica FORA do .animacao para continuar na tela
-         (no canto superior esquerdo) depois que a intro some -->
+    <!-- A marca fica fora da camada de fundo para seguir até o cabeçalho
+         durante a transição para landing-login.html. -->
     <div class="marca">
         <div class="texto">DELT</div>
         <div class="logo">
@@ -26,14 +34,38 @@
 
     <script>
         const intro = document.querySelector('.animacao');
+        const marca = document.querySelector('.marca');
+        const textoMarca = document.querySelector('.texto');
+        const logoMarca = document.querySelector('.logo');
+
+        async function ajustarMarca() {
+            try { await document.fonts.ready; } catch (_) {}
+            if (!marca || !textoMarca || !logoMarca) return;
+
+            const estilos = getComputedStyle(marca);
+            const deslocamentoTexto = parseFloat(estilos.getPropertyValue('--texto-offset')) || 40;
+            const espaco = parseFloat(estilos.getPropertyValue('--marca-gap')) || 12;
+            const escalaFinal = 0.72;
+            const deslocamentoLogo = textoMarca.offsetWidth / 2
+                - deslocamentoTexto
+                + espaco
+                + logoMarca.offsetWidth * escalaFinal / 2;
+
+            marca.style.setProperty('--logo-shift', `${deslocamentoLogo}px`);
+            try { sessionStorage.setItem('deltaIntroLogoShift', `${deslocamentoLogo}px`); } catch (_) {}
+        }
+
+        ajustarMarca();
+        window.addEventListener('resize', ajustarMarca);
+
         intro.addEventListener('animationend', (e) => {
             if (e.animationName === 'sumir-intro') {
                 document.body.classList.remove('intro-ativa');
                 intro.remove();
                 window.setTimeout(() => {
-                    sessionStorage.setItem('vindoDaIntro', '1');   // NOVO
+                    try { sessionStorage.setItem('vindoDaIntro', '1'); } catch (_) {}
                     window.location.href = 'landing-login.html';
-                }, 550);
+                }, 100);
             }
         });
     </script>

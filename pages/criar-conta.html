@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar sua conta</title>
     <link rel="stylesheet" href="../assets/css/criar.css">
+    <link rel="icon" type="image/png" href="../assets/img/FaviconDelta.png">
 </head>
 <body>
     <img src="../assets/img/login.svg" class="fundo-svg">
@@ -33,9 +34,11 @@
         <input type="checkbox" id="lembrar-mim" name="lembrar">
         <label for="lembrar-mim">Lembrar de mim</label>
     </div>
-    <button type="button" class="criar-conta" data-next="concluir-cadastro.html" data-validate-password>Criar</button>
+    <button type="button" class="criar-conta" data-next="codigo-verificacao.html?flow=signup-email" data-validate-password>Criar</button>
 
     <p class="login">Já tem uma conta? Faça <a href="../pages/entrar-conta.html"><u><strong>login</strong></u></a></p>
+    <script src="../assets/js/mock-database.js"></script>
+    <script src="../assets/js/mock-app.js"></script>
     <script src="../assets/js/script-criar-conta.js"></script>
 </body>
 </html>
