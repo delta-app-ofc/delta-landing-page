@@ -1,4 +1,4 @@
-/* Fluxos locais de cadastro, autenticação e recuperação de senha. */
+﻿/* Fluxos locais de cadastro, autenticação e recuperação de senha. */
 document.addEventListener('DOMContentLoaded', () => {
   const db = window.DeltaDB;
   if (!db) return;
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const missing = fields.find((field) => !field.value.trim() || !field.checkValidity());
       if (missing) return missing.reportValidity();
       const result = db.finishSignup({
-        phone: document.getElementById('telefone').value.trim(),
+        phone: document.getElementById('telefone')?.value.trim() || '',
         birthDate: document.getElementById('data').value
       });
       if (!result.ok) return window.alert(result.message);
@@ -201,3 +201,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.logout')?.addEventListener('click', () => db.logout());
   }
 });
+
