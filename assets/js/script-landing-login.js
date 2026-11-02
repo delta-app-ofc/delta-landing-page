@@ -431,6 +431,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const formSeguranca = document.getElementById('form-seguranca');
   const senhaNova = document.getElementById('senha-nova');
   const confirmarSenhaNova = document.getElementById('confirmar-senha-nova');
+  const regrasSenhaNova = {
+    tamanho: (valor) => valor.length >= 8,
+    letras: (valor) => /[a-z]/.test(valor) && /[A-Z]/.test(valor),
+    'numero-simbolo': (valor) => /\d/.test(valor) && /[^A-Za-z\d]/.test(valor)
+  };
+  function atualizarRegrasSenhaNova() {
+    document.querySelectorAll('#form-seguranca .regras-senha [data-regra]').forEach((item) => {
+      const regra = regrasSenhaNova[item.dataset.regra];
+      const atendida = Boolean(senhaNova?.value && regra && regra(senhaNova.value));
+      item.classList.toggle('atendido', atendida);
+      item.setAttribute('aria-checked', String(atendida));
+    });
+  }
+  senhaNova?.addEventListener('input', atualizarRegrasSenhaNova);
+  atualizarRegrasSenhaNova();
   const popupSalvo = document.getElementById('popup-salvo');
   const fecharPopupSalvo = document.getElementById('fechar-popup-salvo');
   const mensagemPopupSalvo = document.getElementById('popup-salvo-mensagem');
@@ -485,9 +500,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   confirmarSenhaNova?.addEventListener('input', () => confirmarSenhaNova.setCustomValidity(''));
-  senhaNova?.addEventListener('input', () => confirmarSenhaNova.setCustomValidity(''));
+  senhaNova?.addEventListener('input', () => {
+    senhaNova.setCustomValidity('');
+    confirmarSenhaNova.setCustomValidity('');
+  });
   formSeguranca?.addEventListener('submit', (event) => {
     event.preventDefault();
+    const senhaForte = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+    senhaNova.setCustomValidity(
+      senhaForte.test(senhaNova.value) ? '' : 'Use pelo menos 8 caracteres, com maiúscula, minúscula, número e símbolo.'
+    );
     confirmarSenhaNova.setCustomValidity(
       senhaNova.value === confirmarSenhaNova.value ? '' : 'As senhas não coincidem.'
     );
@@ -498,6 +520,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     localStorage.setItem('delta_senha_atualizada_em', new Date().toISOString());
     formSeguranca.reset();
+    atualizarRegrasSenhaNova();
+    senhaNova.setCustomValidity('');
     confirmarSenhaNova.setCustomValidity('');
     mostrarPopupSalvo('Senha alterada com sucesso!');
   });
@@ -532,17 +556,41 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarPopupSalvo('Preferências de notificação salvas!');
   });
 
-  document.getElementById('excluir-conta')?.addEventListener('click', (event) => {
+  const linkExcluirConta = document.getElementById('excluir-conta');
+  const fadeExcluirConta = document.getElementById('fade-excluir-conta');
+  const modalExcluirConta = document.getElementById('modal-excluir-conta');
+  const botaoCancelarExclusao = document.getElementById('botao-cancelar-exclusao');
+  const botaoConfirmarExclusao = document.getElementById('botao-confirmar-exclusao');
+  const fecharConfirmacaoExclusao = document.getElementById('fechar-confirmar-exclusao');
+
+  function fecharConfirmacaoDeExclusao() {
+    fadeExcluirConta?.classList.add('hide');
+    modalExcluirConta?.classList.add('hide');
+  }
+
+  linkExcluirConta?.addEventListener('click', (event) => {
     event.preventDefault();
-    const status = document.getElementById('excluir-conta-status');
     if (!contaAtual || !window.DeltaDB) {
+      const status = document.getElementById('excluir-conta-status');
       if (status) status.textContent = 'Entre na sua conta para realizar esta ação.';
       return;
     }
-    if (!window.confirm('Deseja excluir permanentemente esta conta e os dados locais associados?')) return;
+    fadeExcluirConta?.classList.remove('hide');
+    modalExcluirConta?.classList.remove('hide');
+    botaoConfirmarExclusao?.focus();
+  });
+
+  [botaoCancelarExclusao, fecharConfirmacaoExclusao, fadeExcluirConta].forEach((elemento) => {
+    elemento?.addEventListener('click', fecharConfirmacaoDeExclusao);
+  });
+
+  botaoConfirmarExclusao?.addEventListener('click', () => {
+    const erro = document.getElementById('erro-confirmar-exclusao');
+    botaoConfirmarExclusao.disabled = true;
     const resultado = window.DeltaDB.deleteAccount(contaAtual.id);
     if (!resultado.ok) {
-      if (status) status.textContent = resultado.message;
+      if (erro) erro.textContent = resultado.message || 'Não foi possível excluir a conta.';
+      botaoConfirmarExclusao.disabled = false;
       return;
     }
     window.location.assign('../pages/index.html');

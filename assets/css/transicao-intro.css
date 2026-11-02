@@ -1,4 +1,4 @@
-/* ==========================================================
+﻿/* ==========================================================
    transicao-intro.css   (versão com @keyframes)
    Carregar DEPOIS do landing-login.css.
 
@@ -15,25 +15,25 @@
 
 /* ---------- Valores medidos pelo JS, com reserva para fallback ---------- */
 .ponte {
-  --ty: 0px;
-  --logo-shift: 100px;
-  --texto-offset: 40px;
-  --marca-final-x: 110px;
-  --marca-final-y: 60px;
-  --k: 1;
-  --tx: 0px;
+    --ty: 0px;
+    --logo-shift: 100px;
+    --texto-offset: 40px;
+    --marca-final-x: 110px;
+    --marca-final-y: 60px;
+    --k: 1;
+    --tx: 0px;
 }
 
 /* ---------- Estado inicial (igual ao último frame da intro) ---------- */
 
 /* cortina azul-escura (continuação do fundo da intro) */
 body::before {
-  display: none;
-  animation: none;
+    display: none;
+    animation: none;
 }
 html.vem-da-intro body::before {
-  display: block;
-  opacity: 1;
+    display: block;
+    opacity: 1;
 }
 
 /* barra e logo real começam invisíveis */
@@ -42,144 +42,150 @@ html.vem-da-intro .botao-logo  { opacity: 0; }
 
 /* cópia da logo da intro, no último frame */
 .ponte {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1200;            /* acima da barra (1000) */
-  pointer-events: none;
-  transform-origin: 0 0;
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1200;            /* acima da barra (1000) */
+    pointer-events: none;
+    transform-origin: 0 0;
 }
 html.vem-da-intro .ponte { display: block; }
 
 .pm-marca {
-  position: absolute;
-  inset: 0;
-  transform-origin: 50% 50%;
-  transform: translate(calc(-50vw + var(--marca-final-x)), calc(-50dvh + var(--marca-final-y))) scale(.4);
+    position: absolute;
+    inset: 0;
+    transform-origin: 50% 50%;
+    transform: translate(calc(-50vw + var(--marca-final-x)), calc(-50dvh + var(--marca-final-y))) scale(.4);
 }
 
 .pm-texto {
-  position: absolute;
-  left: 50%;
-  top: 47.1%;
-  transform: translate(calc(-50% - var(--texto-offset)), -50%);
-  color: #FAFAFA;
-  font-family: "Talina DEMO", sans-serif;
-  font-size: 107px;
-  font-weight: 400;
-  line-height: normal;
-  white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    top: 47.1%;
+    transform: translate(calc(-50% - var(--texto-offset)), -50%);
+    color: #FAFAFA;
+    font-family: "Talina DEMO", sans-serif;
+    font-size: 107px;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
 }
 
 .pm-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 97.279px;
-  height: 95.832px;
-  margin-top: -25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translate(calc(-50% + var(--logo-shift)), -50%) scale(.72);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 97.279px;
+    height: 95.832px;
+    margin-top: -25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(calc(-50% + var(--logo-shift)), -50%) scale(.72);
 }
 
 .pm-triangulo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url('../img/triangulo.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/triangulo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .pm-gota {
-  position: absolute;
-  left: 50%;
-  width: 50%;
-  height: 70%;
-  background-image: url('../img/gota.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  bottom: 1%;
-  transform: translateX(-50%);
-  translate: 0 0;
-  background-position: center;
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 70%;
+    background-image: url('../img/gota.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 1%;
+    transform: translateX(-50%);
+    translate: 0 0;
+    background-position: center;
 }
 
 @media (max-width: 600px) {
-  .ponte {
-    --texto-offset: 24px;
-    --marca-final-x: clamp(55px, 14vw, 80px);
-    --marca-final-y: clamp(32px, 7dvh, 48px);
-  }
+    .ponte {
+        --texto-offset: 24px;
+        --marca-final-x: clamp(55px, 14vw, 80px);
+        --marca-final-y: clamp(32px, 7dvh, 48px);
+    }
 
-  .pm-texto { font-size: clamp(42px, 15vw, 64px); }
+    .pm-texto { font-size: clamp(42px, 15vw, 64px); }
 
-  .pm-logo {
-    width: clamp(64px, 18vw, 78px);
-    height: clamp(64px, 18vw, 78px);
-    margin-top: -18px;
-  }
+    .pm-logo {
+        width: clamp(64px, 18vw, 78px);
+        height: clamp(64px, 18vw, 78px);
+        margin-top: -18px;
+    }
 
 }
 
 /* ---------- Animações (disparadas por "intro-pronta") ---------- */
 
 html.intro-pronta .ponte {
-  animation:
-    ponte-ajustar .78s cubic-bezier(.22, .8, .2, 1) forwards,
-    ponte-sumir   .18s ease .78s forwards;
+    animation:
+            ponte-ajustar .78s cubic-bezier(.22, .8, .2, 1) forwards,
+            ponte-sumir   .18s ease .78s forwards;
 }
 
 html.intro-pronta .botao-logo {
-  animation: logo-real-aparecer .18s ease .78s forwards;
+    animation: logo-real-aparecer .18s ease .78s forwards;
 }
 
 html.intro-pronta .barra-fixa {
-  animation: barra-entrar .96s cubic-bezier(.22, .8, .2, 1) forwards;
+    animation: barra-entrar .96s cubic-bezier(.22, .8, .2, 1) forwards;
 }
 
 html.intro-pronta body::before {
-  animation: cortina-sair .42s ease-out .54s forwards;
+    animation: cortina-sair .42s ease-out .54s forwards;
 }
 
 /* ================= KEYFRAMES ================= */
 
 /* a cópia da logo encaixa exatamente sobre a logo da barra */
 @keyframes ponte-ajustar {
-  from { transform: translate(0px, 0px) scale(1); }
-  to   { transform: translate(var(--tx), var(--ty)) scale(var(--k)); }
+    from { transform: translate(0px, 0px) scale(1); }
+    to   { transform: translate(var(--tx), var(--ty)) scale(var(--k)); }
 }
 
 /* a cópia some, revelando a logo real por baixo */
 @keyframes ponte-sumir {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 /* a logo real aparece no mesmo instante */
 @keyframes logo-real-aparecer {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @keyframes barra-entrar {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @keyframes cortina-sair {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.intro-pronta .ponte,
-  html.intro-pronta .botao-logo,
-  html.intro-pronta .barra-fixa,
-  html.intro-pronta body::before {
-    animation-duration: .01s;
-    animation-delay: 0s;
-  }
+    html.intro-pronta .ponte,
+    html.intro-pronta .botao-logo,
+    html.intro-pronta .barra-fixa,
+    html.intro-pronta body::before {
+        animation-duration: .01s;
+        animation-delay: 0s;
+    }
+}
+
+/* Aproxima o s�mbolo (tri�ngulo e gota) da palavra durante a transi��o. */
+.ponte { --logo-shift: 82px; }
+@media (max-width: 600px) {
+    .ponte { --logo-shift: 68px; }
 }
