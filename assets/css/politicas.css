@@ -765,3 +765,56 @@ a{
     grid-template-columns: 1fr;
   }
 }
+.voltar-final-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px 42px;
+  margin-top: 20px;
+}
+
+.voltar-final {
+  display: inline-flex;
+  min-width: 180px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #003E9B;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.voltar-final:hover { background: #306BE5; }
+
+
+/* Tipografia consistente no rodapé */
+.Footer,
+.Footer p,
+.Footer ul,
+.Footer li,
+.Footer a,
+.Footer h3,
+.direitos {
+  font-family: 'Poppins', sans-serif;
+}
+
+.Footer .coluna1 h3,
+.Footer .coluna2 h3,
+.Footer .coluna3 h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.Footer .coluna1 li,
+.Footer .coluna2 li,
+.Footer .coluna3 li,
+.Footer .coluna1 a,
+.Footer .coluna2 a,
+.Footer .coluna3 a {
+  font-size: 15px;
+  font-weight: 400;
+}
+

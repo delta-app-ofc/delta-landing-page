@@ -309,7 +309,7 @@ html {
   z-index: 2; 
 }
 .carta2 { 
-  left: 557px; 
+  left: 600px; 
   z-index: 3; 
 }
 .carta3 { 
@@ -1292,7 +1292,7 @@ a{
   width: 100%;
 }
 
-.texto-retangulo1 li {
+.texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
   margin-bottom: 6px;
 }
 
@@ -1371,10 +1371,6 @@ a{
   width: 100%;
 }
 
-.texto-retangulo1 li {
-  margin-bottom: 6px;
-}
-
 .preco2 {
   color: #0B2156;
   font-family: Unbounded, sans-serif;
@@ -1448,10 +1444,6 @@ a{
   padding-left: 20px;
   margin: 0;
   width: 100%;
-}
-
-.texto-retangulo3 li {
-  margin-bottom: 6px;
 }
 
 .preco3 {
@@ -2789,3 +2781,62 @@ a{
     min-height: 310px;
   }
 }
+
+
+/* Nossos planos: tr�s cart�es centralizados no desktop */
+@media (min-width: 1001px) {
+  .plans-section {
+    position: absolute;
+    top: 3500px;
+    left: 0;
+    width: 100%;
+    height: 1065px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, min(423px, calc((100vw - 100px) / 3))));
+    justify-content: center;
+    align-content: start;
+    column-gap: clamp(18px, 2.43vw, 35px);
+  }
+  .plans-section .fundo-planos { top: 0; left: 0; width: 100%; height: auto; }
+  .plans-section > .titulo-planos {
+    position: absolute;
+    top: 260px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    transform: none;
+  }
+  .plans-section > .retangulo1,
+  .plans-section > .retangulo2,
+  .plans-section > .retangulo3 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 556px;
+    margin: 390px 0 0;
+  }
+  .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li { margin-bottom: 26px; }
+  .plans-section .parte-cima {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+  .plans-section .gluh1,
+  .plans-section .gluh2,
+  .plans-section .gluh3 {
+    flex: 0 0 65px;
+    width: 65px;
+    height: 59px;
+    object-fit: fill;
+  }
+  .plans-section .gluh3 {
+    flex-basis: 79px;
+    width: 79px;
+    height: 77px;
+    object-fit: contain;
+    transform: translateY(-15px);
+  }
+}
+

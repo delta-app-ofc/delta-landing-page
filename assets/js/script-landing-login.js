@@ -512,9 +512,18 @@ document.addEventListener('DOMContentLoaded', () => {
       preferencias[chave] = Boolean(document.getElementById(id)?.checked);
     });
     localStorage.setItem('delta_notificacoes', JSON.stringify(preferencias));
-    if (contaAtual && window.DeltaDB) window.DeltaDB.updateAccount(contaAtual.id, { notifications: preferencias });
+    if (contaAtual && window.DeltaDB) {
+      const resultado = window.DeltaDB.updateAccount(contaAtual.id, { notifications: preferencias });
+      if (!resultado.ok) {
+        const statusErro = document.getElementById('notificacoes-status');
+        if (statusErro) statusErro.textContent = resultado.message;
+        return;
+      }
+    }
     const status = document.getElementById('notificacoes-status');
-    if (status) status.textContent = 'Preferências salvas neste navegador.';
+    if (status) status.textContent = '';
+    guardarEstado();
+    mostrarPopupSalvo('Preferências de notificação salvas!');
   });
 
   document.getElementById('excluir-conta')?.addEventListener('click', (event) => {

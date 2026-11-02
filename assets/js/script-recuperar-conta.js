@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const mostrar = input.type === 'password';
             input.type = mostrar ? 'text' : 'password';
-            icone.src = mostrar ? '../assets/img/olho-aberto.svg' : '../assets/img/olho-fechado.svg';
-            icone.alt = mostrar ? 'Ocultar senha' : 'Mostrar senha';
+            icone.src = mostrar ? '../assets/img/olho-fechado.svg' : '../assets/img/olho-aberto.svg';
+            icone.alt = '';
+            botao.setAttribute('aria-label', mostrar ? 'Ocultar senha' : 'Mostrar senha');
         });
     });
 
@@ -31,6 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const botao = document.querySelector('[data-next]');
+    const senhaNova = document.getElementById('senha-nova');
+    const regrasSenha = {
+        tamanho: (valor) => valor.length >= 8,
+        maiuscula: (valor) => /[A-Z]/.test(valor),
+        numero: (valor) => /\d/.test(valor),
+    };
+
+    function atualizarRegrasSenha() {
+        if (!senhaNova) return;
+        document.querySelectorAll('.requisitos-senha [data-regra]').forEach((item) => {
+            const regra = regrasSenha[item.dataset.regra];
+            item.classList.toggle('atendido', Boolean(regra && regra(senhaNova.value)));
+        });
+    }
+
+    senhaNova?.addEventListener('input', atualizarRegrasSenha);
+    atualizarRegrasSenha();
     botao?.addEventListener('click', (event) => {
         if (botao.hasAttribute('data-profile-form')) {
             const campos = [...document.querySelectorAll('[data-required]')];
@@ -60,12 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (botao.hasAttribute('data-password-form')) {
-            const senha = document.getElementById('senha-nova');
+            const senha = senhaNova;
             const confirmacao = document.getElementById('confirmar-senha');
-            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+            const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
             if (!senha.value || !regex.test(senha.value)) {
                 event.preventDefault();
-                senha.setCustomValidity('Use pelo menos 8 caracteres, com letras maiúsculas e minúsculas, número e símbolo.');
+                senha.setCustomValidity('A senha deve ter pelo menos 8 caracteres, uma letra mai\u00FAscula e um n\u00FAmero.');
                 senha.reportValidity();
                 senha.addEventListener('input', () => senha.setCustomValidity(''), { once: true });
                 senha.focus();

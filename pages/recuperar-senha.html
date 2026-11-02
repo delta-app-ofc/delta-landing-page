@@ -14,29 +14,36 @@
     <div class="gota">
         <div class="titulo">Cada gota</div>
         <div class="inteligentemente">inteligentemente</div>
-        <div class="titulo1">controlada</div>
+        <div class="titulo1">controlada.</div>
         <img src="../assets/img/gluh-run.svg" class="glub" alt="Mascote Glub">
     </div>
 
-    <div class="recuperar-titulo">Crie uma nova senha</div>
+    <main class="form-recuperar">
+        <h1 class="recuperar-titulo">Recupere<br>sua senha</h1>
 
         <label for="senha-nova" class="tituloSenhaNova">Senha nova</label>
         <div class="campo-senha1">
-            <input type="password" id="senha-nova" placeholder="Digite sua senha nova" required>
-            <button type="button" id="botaoOlho1" class="botaoOlho" data-toggle-password="senha-nova">
-                <img src="../assets/img/olho-fechado.svg" id="iconeOlho1" class="iconeOlho" alt="Mostrar/Ocultar Senha">
+            <input type="password" id="senha-nova" placeholder="Digite a senha nova" required>
+            <button type="button" id="botaoOlho1" class="botaoOlho" data-toggle-password="senha-nova" aria-label="Mostrar senha">
+                <img src="../assets/img/olho-aberto.svg" id="iconeOlho1" class="iconeOlho" alt="">
             </button>
         </div>
+        <ul class="requisitos-senha" aria-label="Requisitos da senha">
+            <li data-regra="tamanho">Pelo menos 8 caracteres</li>
+            <li data-regra="maiuscula">Uma letra maiúscula</li>
+            <li data-regra="numero">Um número</li>
+        </ul>
 
-        <label for="confirmar-senha" class="tituloConfirmarSenha">Confirme sua senha nova</label>
+        <label for="confirmar-senha" class="tituloConfirmarSenha">Confirme a senha nova</label>
         <div class="campo-senha2">
             <input type="password" id="confirmar-senha" placeholder="Digite a senha novamente" required>
-            <button type="button" id="botaoOlho2" class="botaoOlho" data-toggle-password="confirmar-senha">
-                <img src="../assets/img/olho-fechado.svg" id="iconeOlho2" class="iconeOlho" alt="Mostrar/Ocultar Senha">
+            <button type="button" id="botaoOlho2" class="botaoOlho" data-toggle-password="confirmar-senha" aria-label="Mostrar senha">
+                <img src="../assets/img/olho-aberto.svg" id="iconeOlho2" class="iconeOlho" alt="">
             </button>
         </div>
 
         <button type="button" class="avancar" data-next="entrar-conta.html" data-password-form>Salvar senha</button>
+    </main>
 
     <script src="../assets/js/mock-database.js"></script>
     <script src="../assets/js/mock-app.js"></script>

@@ -2,6 +2,7 @@
 
 :root {
   --u: clamp(0.5px, calc(100vw / 1440), 1.2px);
+  --v: clamp(0.5px, min(calc(100vw / 1440), calc(100vh / 1024)), 1.2px);
 }
 
 * {
@@ -85,7 +86,7 @@ body {
 .recuperar-titulo {
   position: absolute;
   z-index: 10;
-  top: calc(70 * var(--u));
+  top: calc(180 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   text-align: center;
@@ -101,7 +102,7 @@ body {
   font-size: calc(18 * var(--u));
   font-weight: 700;
   z-index: 15;
-  top: calc(150 * var(--u));
+  top: calc(260 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -109,7 +110,7 @@ body {
 .campo-senha1 {
   position: absolute;
   z-index: 15;
-  top: calc(180 * var(--u));
+  top: calc(290 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -136,7 +137,7 @@ body {
   font-size: calc(18 * var(--u));
   font-weight: 700;
   z-index: 15;
-  top: calc(245 * var(--u));
+  top: calc(355 * var(--u));
   left: calc(822 * var(--u));
   color: #003E9B;
 }
@@ -144,7 +145,7 @@ body {
 .campo-senha2 {
   position: absolute;
   z-index: 15;
-  top: calc(275 * var(--u));
+  top: calc(385 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -172,7 +173,7 @@ body {
   font-size: calc(21 * var(--u));
   font-weight: 600;
   z-index: 15;
-  top: calc(355 * var(--u));
+  top: calc(465 * var(--u));
   left: calc(820 * var(--u));
   width: calc(420 * var(--u));
   height: calc(48 * var(--u));
@@ -215,9 +216,153 @@ body {
   display: block;
 }
 
+/* Layout da etapa final de recuperação, seguindo a referência visual. */
+.gota {
+  top: calc(225 * var(--v));
+  left: calc(25 * var(--u));
+}
+
+.titulo {
+  padding-top: 0;
+}
+
+.glub {
+  left: calc(85 * var(--u));
+  top: calc(230 * var(--v));
+  width: calc(480 * var(--u));
+}
+
+.voltar {
+  right: calc(26 * var(--u));
+  top: calc(22 * var(--v));
+  width: calc(40 * var(--u));
+}
+
+.form-recuperar {
+  position: absolute;
+  z-index: 10;
+  top: calc(186 * var(--v));
+  left: calc(843 * var(--u));
+  width: calc(484 * var(--u));
+  display: flex;
+  flex-direction: column;
+  color: #003E9B;
+  font-family: Montserrat, sans-serif;
+}
+
+.etapa-recuperacao {
+  margin: 0 0 calc(22 * var(--v));
+  text-align: center;
+  font-size: calc(22 * var(--v));
+  font-weight: 700;
+}
+
+.form-recuperar .recuperar-titulo {
+  position: static;
+  width: 100%;
+  margin: 0 0 calc(68 * var(--v));
+  transform: none;
+  text-align: center;
+  font-size: calc(52 * var(--v));
+  line-height: 1.18;
+}
+
+.form-recuperar .tituloSenhaNova,
+.form-recuperar .tituloConfirmarSenha {
+  position: static;
+  margin-left: calc(2 * var(--u));
+  font-size: calc(20 * var(--v));
+  line-height: 1.2;
+}
+
+.form-recuperar .campo-senha1,
+.form-recuperar .campo-senha2 {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  height: calc(69 * var(--v));
+  margin-top: calc(4 * var(--v));
+}
+
+.form-recuperar #senha-nova,
+.form-recuperar #confirmar-senha {
+  border: 2px solid #0047B2;
+  border-radius: calc(14 * var(--v));
+  background: #FAFCFF;
+  padding-left: calc(16 * var(--u));
+  padding-right: calc(58 * var(--u));
+  font-size: calc(20 * var(--v));
+}
+
+.form-recuperar #senha-nova:focus,
+.form-recuperar #confirmar-senha:focus {
+  border-color: #003E9B;
+}
+
+.form-recuperar #senha-nova::placeholder,
+.form-recuperar #confirmar-senha::placeholder {
+  color: #003E9B;
+  opacity: 0.65;
+}
+
+.requisitos-senha {
+  display: grid;
+  gap: calc(2 * var(--v));
+  list-style: none;
+  margin: calc(8 * var(--v)) 0 calc(22 * var(--v)) calc(4 * var(--u));
+  padding: 0;
+  color: #456AAB;
+  font-size: calc(16 * var(--v));
+  line-height: 1.2;
+}
+
+.requisitos-senha li::before {
+  content: "";
+  display: inline-block;
+  width: calc(13 * var(--v));
+  height: calc(13 * var(--v));
+  margin-right: calc(8 * var(--u));
+  border: 2px solid #456AAB;
+  border-radius: 50%;
+  vertical-align: calc(-1 * var(--v));
+}
+
+.requisitos-senha li.atendido::before {
+  background: #003E9B;
+  box-shadow: inset 0 0 0 calc(3 * var(--v)) #E0E8F6;
+}
+
+.form-recuperar .botaoOlho {
+  right: calc(20 * var(--u));
+  padding: 0;
+}
+
+.form-recuperar .iconeOlho {
+  width: calc(32 * var(--v));
+  filter: brightness(0) saturate(100%) invert(16%) sepia(96%) saturate(2456%) hue-rotate(204deg) brightness(91%) contrast(104%);
+}
+
+.form-recuperar .avancar {
+  position: static;
+  width: 100%;
+  height: calc(70 * var(--v));
+  margin-top: calc(90 * var(--v));
+  border-radius: calc(14 * var(--v));
+  font-size: calc(28 * var(--v));
+}
+
 a {
   color: #FAFAFA;
   text-decoration: none;  
+}
+
+@media (min-width: 481px) and (min-aspect-ratio: 4/3) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 480px), (max-aspect-ratio: 4/3) {
@@ -369,5 +514,57 @@ a {
 
   .avancar {
     display: flex;
+  }
+
+  .form-recuperar {
+    position: static;
+    width: 100%;
+    padding: 0 24px 32px;
+  }
+
+  .form-recuperar .etapa-recuperacao {
+    margin: 20px 0 8px;
+    font-size: 16px;
+  }
+
+  .form-recuperar .recuperar-titulo {
+    margin: 0 0 24px;
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  .form-recuperar .tituloSenhaNova,
+  .form-recuperar .tituloConfirmarSenha {
+    width: 100%;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .form-recuperar .campo-senha1,
+  .form-recuperar .campo-senha2 {
+    width: 100%;
+    height: 48px;
+  }
+
+  .form-recuperar #senha-nova,
+  .form-recuperar #confirmar-senha {
+    font-size: 15px;
+  }
+
+  .requisitos-senha {
+    gap: 3px;
+    margin: 8px 0 18px 4px;
+    font-size: 13px;
+  }
+
+  .requisitos-senha li::before {
+    width: 12px;
+    height: 12px;
+    margin-right: 7px;
+  }
+
+  .form-recuperar .avancar {
+    height: 48px;
+    margin-top: 28px;
+    font-size: 18px;
   }
 }

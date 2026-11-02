@@ -1,4 +1,13 @@
+// Start fresh visits with both consent options unchecked; preserve state on browser Back.
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) return;
+    document.querySelectorAll('#lembrar-mim, #aceita-termos').forEach((checkbox) => {
+        checkbox.checked = false;
+    });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Set up the password visibility control and live strength feedback.
     const botaoOlho = document.getElementById('botaoOlho');
     const inputSenha = document.getElementById('senha');
     const iconeOlho = document.getElementById('iconeOlho');

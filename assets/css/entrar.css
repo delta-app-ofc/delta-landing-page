@@ -542,3 +542,44 @@ a:visited {
   justify-content: center;
   text-decoration: none;
 }
+
+/* Login tab states. */
+.usuario, .adm {
+  border: 0;
+  background: #306BE5;
+  color: #fff;
+}
+.usuario1, .adm1 {
+  border: 2px solid #003E9B;
+  background: #fff;
+  color: #003E9B;
+}
+.botoes a.usuario1, .botoes a.adm1 { color: #003E9B; }
+
+/* Desktop login form sizing and alignment. */
+@media (min-width: 769px) and (min-aspect-ratio: 4/3) {
+  body { --login-y: clamp(0.65px, min(calc(100vw / 1440), calc(100vh / 1024)), 1px); }
+  #email, #senha { border-color: #003E9B; background: #fff; }
+  .entrar { top: calc(158 * var(--login-y)); left: calc(840 * var(--u)); width: calc(486 * var(--u)); font-size: calc(52 * var(--login-y)); }
+  .botoes { position: absolute; inset: 0; z-index: 15; }
+  .botoes .usuario, .botoes .usuario1 {
+    top: calc(309 * var(--login-y)); left: calc(840 * var(--u));
+    width: calc(232 * var(--u)); height: calc(78 * var(--login-y));
+    border-radius: calc(15 * var(--login-y)); font-size: calc(22 * var(--login-y));
+  }
+  .botoes .adm, .botoes .adm1 {
+    top: calc(309 * var(--login-y)); left: calc(1092 * var(--u));
+    width: calc(232 * var(--u)); height: calc(78 * var(--login-y));
+    border-radius: calc(15 * var(--login-y)); font-size: calc(21 * var(--login-y));
+  }
+  .tituloEmail { top: calc(462 * var(--login-y)); left: calc(845 * var(--u)); font-size: calc(20 * var(--login-y)); }
+  #email { top: calc(490 * var(--login-y)); left: calc(842 * var(--u)); width: calc(484 * var(--u)); height: calc(69 * var(--login-y)); padding-left: calc(14 * var(--u)); font-size: calc(18 * var(--login-y)); }
+  .tituloSenha { top: calc(580 * var(--login-y)); left: calc(845 * var(--u)); font-size: calc(20 * var(--login-y)); }
+  .campo-senha { top: calc(608 * var(--login-y)); left: calc(842 * var(--u)); width: calc(484 * var(--u)); height: calc(69 * var(--login-y)); }
+  #senha { padding-left: calc(14 * var(--u)); font-size: calc(18 * var(--login-y)); }
+  #botaoOlho { right: calc(16 * var(--u)); }
+  #iconeOlho { width: calc(26 * var(--login-y)); }
+  .esqueceu { top: calc(700 * var(--login-y)); left: calc(845 * var(--u)); font-size: calc(20 * var(--login-y)); }
+  .criar-conta { top: calc(759 * var(--login-y)); left: calc(842 * var(--u)); width: calc(484 * var(--u)); height: calc(69 * var(--login-y)); border-radius: calc(15 * var(--login-y)); font-size: calc(26 * var(--login-y)); }
+  .criar { top: calc(839 * var(--login-y)); left: calc(842 * var(--u)); width: calc(484 * var(--u)); font-size: calc(18 * var(--login-y)); }
+}
