@@ -120,7 +120,11 @@
                             <p class="senha-nova-modal">Digite sua senha nova</p>
                             <div class="campo-senha-config"><input type="password" id="senha-nova" name="senha-nova" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" title="Use ao menos 8 caracteres, com letra maiúscula, minúscula, número e caractere especial." required placeholder="">
                             <button type="button" id="botaoOlho" aria-label="Alternar visibilidade da senha"><img id="iconeOlho" src="../assets/img/olho-fechado.svg"></button></div>
-                            <p class="minimo-senha">Mínimo de 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial.</p>
+                            <ul class="regras-senha regras-senha-seguranca" aria-label="Requisitos da senha">
+                                <li data-regra="tamanho">Pelo menos 8 caracteres</li>
+                                <li data-regra="letras">Uma letra maiúscula e minúscula</li>
+                                <li data-regra="numero-simbolo">Um número e caractere especial</li>
+                            </ul>
                             <p class="confirmar-senha-nova-modal">Confirmar senha nova</p>
                             <div class="campo-senha-config"><input type="password" id="confirmar-senha-nova" name="confirmar-senha-nova" minlength="8" required placeholder="">
                             <button type="button" id="botaoOlho1" aria-label="Alternar visibilidade da senha"><img id="iconeOlho1" src="../assets/img/olho-fechado.svg"></button></div>
@@ -206,6 +210,23 @@
                 <p id="excluir-conta-status" role="status"></p>
                 <button id="botao-cancelar" class="botao-cancelar">Cancelar</button>
                 <a href="../pages/index.html" id="botao-sair" class="botao-sair">Sair</a>
+            </div>
+        </div>
+
+        <div id="fade-excluir-conta" class="hide"></div>
+        <div id="modal-excluir-conta" class="hide" role="alertdialog" aria-modal="true" aria-labelledby="titulo-excluir-conta" aria-describedby="texto-confirmar-exclusao">
+            <button id="fechar-confirmar-exclusao" type="button" aria-label="Fechar">&times;</button>
+            <div class="icone-confirmar-exclusao" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3 2.5 20h19L12 3z"/><path d="M12 9v5m0 3h.01"/>
+                </svg>
+            </div>
+            <h2 id="titulo-excluir-conta">Atenção</h2>
+            <p id="texto-confirmar-exclusao">Deseja excluir permanentemente esta conta e os dados locais associados?</p>
+            <p id="erro-confirmar-exclusao" role="alert"></p>
+            <div class="botoes-confirmar-exclusao">
+                <button id="botao-confirmar-exclusao" type="button">Excluir</button>
+                <button id="botao-cancelar-exclusao" type="button">Cancelar</button>
             </div>
         </div>
 
