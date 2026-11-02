@@ -139,6 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function aoRolar() {
+    if (window.innerWidth <= 760) {
+      atual = alvo = 1;
+      desenhar();
+      rodando = false;
+      return;
+    }
     alvo = limitar(window.scrollY / DISTANCIA);
     if (!rodando) {
       rodando = true;

@@ -1,0 +1,177 @@
+/* Ajustes específicos de navegación, tablas y formularios em telas menores. */
+
+/* Em tablets, a navegação administrativa vira uma faixa rolável compacta. */
+@media (max-width: 850px) {
+  body:has(> .sidebar) > .sidebar {
+    position: relative;
+    inset: auto;
+    width: calc(100% - 24px);
+    height: auto;
+    min-height: 0;
+    margin: 12px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  body:has(> .sidebar) > .sidebar .logo-area {
+    height: 48px;
+  }
+
+  body:has(> .sidebar) > .sidebar .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 4px 0 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+
+  body:has(> .sidebar) > .sidebar .menu-item {
+    flex: 0 0 auto;
+    min-height: 40px;
+    white-space: nowrap;
+  }
+
+  body:has(> .sidebar) > .sidebar .sidebar-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  body:has(> .sidebar) > .sidebar .account {
+    min-width: 0;
+    padding-bottom: 0;
+  }
+
+  body:has(> .sidebar) > .main {
+    width: 100%;
+    margin: 0;
+    padding: 24px 16px 40px;
+  }
+
+  .crud-table-wrap:has(.crud-actions-cell) {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  .crud-table-wrap:has(.crud-actions-cell) th:last-child,
+  .crud-table-wrap:has(.crud-actions-cell) td.crud-actions-cell {
+    position: sticky;
+    right: 0;
+    z-index: 2;
+    min-width: 82px;
+    width: 82px;
+    white-space: nowrap;
+    background: #fff;
+    box-shadow: -8px 0 12px rgba(11, 33, 86, .10);
+  }
+
+  .crud-table-wrap:has(.crud-actions-cell) th:last-child {
+    z-index: 3;
+    background: #282e68;
+  }
+
+  .crud-table-wrap:has(.crud-actions-cell) .crud-actions-cell .crud-action {
+    display: inline-flex;
+    flex: 0 0 28px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  body:has(> .sidebar) > .sidebar {
+    padding: 12px;
+  }
+
+  body:has(> .sidebar) > .sidebar .menu {
+    gap: 6px;
+  }
+
+  body:has(> .sidebar) > .sidebar .menu-item {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
+  body:has(> .sidebar) > .main {
+    padding: 20px 12px 32px;
+  }
+}
+
+/* Código de verificação: seis campos cabem na largura do celular. */
+@media (max-width: 700px) {
+  body:has(.grupo-inputs) {
+    align-items: flex-start;
+  }
+
+  body:has(.grupo-inputs) .container,
+  body:has(.enviar-codigo) .container {
+    width: min(100% - 32px, 560px);
+    margin: 88px auto 24px;
+    padding: 12px 0;
+  }
+
+  body:has(.grupo-inputs) .grupo-inputs {
+    gap: clamp(4px, 2vw, 9px);
+    padding: 0;
+  }
+
+  body:has(.grupo-inputs) .codigo-input {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    flex: 1 1 0;
+    height: clamp(58px, 18vw, 88px);
+    border-width: 2px;
+    border-radius: 11px;
+    font-size: clamp(24px, 9vw, 40px);
+  }
+
+  body:has(.grupo-inputs) .voltar,
+  body:has(.enviar-codigo) .voltar {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  body:has(.enviar-codigo) #email,
+  body:has(.enviar-codigo) .enviar-codigo {
+    width: 100%;
+  }
+}
+
+/* Dá limite confortável ao conteúdo em monitores ultrawide. */
+@media (min-width: 1600px) {
+  body:has(> .sidebar) > .main {
+    width: min(1720px, calc(100vw - 310px));
+    margin-left: max(270px, calc((100vw + 265px - 1720px) / 2));
+    margin-right: auto;
+    padding-left: clamp(32px, 3vw, 64px);
+    padding-right: clamp(32px, 3vw, 64px);
+  }
+
+  body:has(> .sidebar) > .main .crud-page {
+    width: 100%;
+  }
+
+  body:has(.grupo-inputs) .container,
+  body:has(.enviar-codigo) .container {
+    max-width: 1040px;
+  }
+}
+
+@media (min-width: 2200px) {
+  body:has(> .sidebar) > .main {
+    width: min(1840px, calc(100vw - 310px));
+    margin-left: max(270px, calc((100vw + 265px - 1840px) / 2));
+  }
+}
