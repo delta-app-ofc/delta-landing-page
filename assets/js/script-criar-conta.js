@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const botaoOlho = document.getElementById('botaoOlho');
     const inputSenha = document.getElementById('senha');
     const iconeOlho = document.getElementById('iconeOlho');
-    const mensagemSenha = document.getElementById('mensagemSenha');
-    const botaoAcao = document.querySelector('[data-next]');
-    const regexSenha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
 
     botaoOlho?.addEventListener('click', () => {
         const mostrar = inputSenha.type === 'password';
@@ -24,13 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!inputSenha) return;
 
-    inputSenha.addEventListener('input', () => {
-        if (!mensagemSenha) return;
-        const valida = regexSenha.test(inputSenha.value);
-        mensagemSenha.textContent = !inputSenha.value ? '' : valida
-            ? 'Senha válida!'
-            : 'Mínimo de 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial.';
-        mensagemSenha.style.color = valida ? 'green' : 'red';
-    });
+    const regrasSenha = {
+        tamanho: (valor) => valor.length >= 8,
+        letras: (valor) => /[a-z]/.test(valor) && /[A-Z]/.test(valor),
+        'numero-simbolo': (valor) => /\d/.test(valor) && /[^A-Za-z\d]/.test(valor)
+    };
+
+    function atualizarRegrasSenha() {
+        document.querySelectorAll('.regras-senha [data-regra]').forEach((item) => {
+            const regra = regrasSenha[item.dataset.regra];
+            const atendida = Boolean(inputSenha.value && regra && regra(inputSenha.value));
+            item.classList.toggle('atendido', atendida);
+            item.setAttribute('aria-checked', String(atendida));
+        });
+    }
+
+    inputSenha.addEventListener('input', atualizarRegrasSenha);
+    atualizarRegrasSenha();
 
 });

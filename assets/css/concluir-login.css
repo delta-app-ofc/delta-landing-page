@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
 
 * {
   margin: 0;
@@ -170,4 +170,25 @@ body {
     top: 20px;
     right: 20px;
   }
+}
+
+/* Layout da etapa final do cadastro, alinhado à referência visual. */
+body { background-color: #e0e8f6; }
+.container { width: min(100% - 48px, 988px); max-width: none; padding: 0; margin-top: 72px; align-items: stretch; }
+.titulo { margin-bottom: 0; font-size: clamp(32px, 4vw, 52px); }
+.informacoes { max-width: none; margin: 0 0 28px; font-size: clamp(16px, 2vw, 24px); }
+.rotulo-data { align-self: flex-start; margin: 0 0 6px; color: #003e9b; font-size: 20px; font-weight: 700; }
+#data { width: 100%; height: 65px; margin: 0 0 30px; border: 2px solid #003e9b; background: #fff; font-size: 23px; }
+#data::-webkit-datetime-edit { color: #003e9b; }
+#data:invalid::-webkit-datetime-edit { opacity: .65; }
+.concluir-cadastro { width: 100%; height: 69px; border-radius: 15px; font-size: 26px; }
+.voltar { width: 76px; height: 76px; right: 5.8%; top: 29%; }
+@media (max-width: 600px) {
+  .container { width: calc(100% - 40px); margin-top: 30px; padding: 0; }
+  .titulo { font-size: clamp(30px, 9vw, 42px); }
+  .informacoes { margin-bottom: 24px; }
+  .rotulo-data { font-size: 16px; }
+  #data { width: 100%; height: 56px; margin-bottom: 20px; font-size: 18px; }
+  .concluir-cadastro { width: 100%; height: 58px; font-size: 18px; }
+  .voltar { width: 54px; height: 54px; top: 80px; right: 20px; }
 }

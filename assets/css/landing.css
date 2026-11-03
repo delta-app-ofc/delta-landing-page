@@ -2818,6 +2818,9 @@ a{
     margin: 390px 0 0;
   }
   .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li { margin-bottom: 26px; }
+  .plans-section .retangulo3 .parte-cima { transform: translateY(-10px); margin-bottom: -10px; }
+  .plans-section .retangulo3 .texto-retangulo3 { transform: translateY(-12px); margin-bottom: -12px; }
+  .plans-section .retangulo3 .texto-retangulo3 li { margin-bottom: 18px; }
   .plans-section .parte-cima {
     width: 100%;
     justify-content: center;
@@ -2839,4 +2842,3 @@ a{
     transform: translateY(-15px);
   }
 }
-

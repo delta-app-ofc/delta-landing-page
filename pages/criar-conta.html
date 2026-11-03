@@ -6,6 +6,7 @@
     <title>Criar sua conta</title>
     <link rel="stylesheet" href="../assets/css/criar.css">
     <link rel="icon" type="image/png" href="../assets/img/FaviconDelta.png">
+    <link rel="stylesheet" href="../assets/css/responsive-core.css">
 </head>
 <body>
     <img src="../assets/img/login.svg" class="fundo-svg">
@@ -36,9 +37,9 @@
         <p id="mensagemSenha"></p>
     </div>
     <ul class="regras-senha" aria-label="Requisitos da senha">
-        <li>Pelo menos 8 caracteres</li>
-        <li>Uma letra maiúscula</li>
-        <li>Um número</li>
+        <li data-regra="tamanho">Pelo menos 8 caracteres</li>
+        <li data-regra="letras">Uma letra maiúscula e minúscula</li>
+        <li data-regra="numero-simbolo">Um número e caractere especial</li>
     </ul>
     <div class="container-lembrar">
         <input type="checkbox" id="lembrar-mim" name="lembrar">
