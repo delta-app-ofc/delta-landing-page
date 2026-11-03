@@ -4,6 +4,8 @@
   const SESSION_KEY = 'delta_mock_session';
   const SIGNUP_KEY = 'delta_mock_signup';
   const RESET_KEY = 'delta_mock_password_reset';
+  const REMEMBERED_EMAIL_KEY = 'delta_mock_remembered_email';
+  const USERS_COLLECTION_KEY = 'delta_usuarios';
   const DEMO_ADMIN = {
     id: 'delta-demo-admin',
     name: 'Administrador Delta',
@@ -46,6 +48,85 @@
     localStorage.setItem(ACCOUNTS_KEY, JSON.stringify(list));
   }
 
+  // Coleções do banco simulado usadas pelas telas administrativas.
+  function readCollection(key) {
+    if (key === USERS_COLLECTION_KEY) return userRecords();
+    const value = readJson(key, null);
+    return Array.isArray(value) ? value : null;
+  }
+
+  function writeCollection(key, records) {
+    if (!Array.isArray(records)) throw new TypeError('A coleção deve ser uma lista.');
+    if (key === USERS_COLLECTION_KEY) return writeUserRecords(records);
+    localStorage.setItem(key, JSON.stringify(records));
+    return { ok: true };
+  }
+
+  function userRecords() {
+    return accounts().map((account, index) => ({
+      id: index + 1,
+      accountId: account.id,
+      values: [
+        account.name || '',
+        account.email || '',
+        '*******',
+        account.phone || '',
+        account.birthDate || '',
+        (account.createdAt || '').slice(0, 10),
+        account.active === false ? 'Não' : 'Sim',
+        account.role === 'admin' ? 'Sim' : 'Não',
+        account.role === 'manager' ? 'Sim' : 'Não'
+      ]
+    }));
+  }
+
+  function writeUserRecords(records) {
+    const currentAccounts = accounts();
+    const accountsById = new Map(currentAccounts.map((account) => [account.id, account]));
+    const nextAccounts = [];
+
+    for (const record of records) {
+      const values = record.values || [];
+      const existing = accountsById.get(record.accountId);
+      if (existing?.id === DEMO_ADMIN.id) {
+        nextAccounts.push(existing);
+        continue;
+      }
+
+      const email = String(values[1] || '').trim().toLowerCase();
+      const duplicate = nextAccounts.some((account) => account.email.toLowerCase() === email);
+      if (duplicate) return { ok: false, message: 'Este e-mail já está em uso.' };
+
+      const account = {
+        ...(existing || {}),
+        id: existing?.id || globalThis.crypto?.randomUUID?.() || `delta-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+        name: String(values[0] || '').trim(),
+        email,
+        password: existing && values[2] === '*******' ? existing.password : String(values[2] || ''),
+        phone: String(values[3] || '').trim(),
+        birthDate: values[4] || '',
+        createdAt: existing?.createdAt || (values[5] ? new Date(`${values[5]}T12:00:00`).toISOString() : new Date().toISOString()),
+        role: values[7] === 'Sim' ? 'admin' : 'user',
+        active: values[6] !== 'Não',
+        notifications: existing?.notifications || { reports: false, news: false, events: false }
+      };
+
+      record.accountId = account.id;
+      nextAccounts.push(account);
+    }
+
+    const demoAdmin = currentAccounts.find((account) => account.id === DEMO_ADMIN.id);
+    if (demoAdmin && !nextAccounts.some((account) => account.id === demoAdmin.id)) {
+      return { ok: false, message: 'A conta de demonstração não pode ser removida.' };
+    }
+    if (nextAccounts.some((account, index) => nextAccounts.some((other, otherIndex) =>
+      index !== otherIndex && other.email.toLowerCase() === account.email.toLowerCase()
+    ))) return { ok: false, message: 'Este e-mail já está em uso.' };
+
+    writeAccounts(nextAccounts);
+    return { ok: true };
+  }
+
   function publicAccount(account) {
     if (!account) return null;
     const { password, ...safeAccount } = account;
@@ -68,6 +149,15 @@
     (remember ? localStorage : sessionStorage).setItem(SESSION_KEY, value);
   }
 
+  function getRememberedEmail() {
+    return localStorage.getItem(REMEMBERED_EMAIL_KEY) || '';
+  }
+
+  function setRememberedEmail(email) {
+    if (email) localStorage.setItem(REMEMBERED_EMAIL_KEY, String(email).trim().toLowerCase());
+    else localStorage.removeItem(REMEMBERED_EMAIL_KEY);
+  }
+
   function login(email, password, role, remember = false) {
     const normalizedEmail = String(email || '').trim().toLowerCase();
     const account = accounts().find((item) =>
@@ -78,6 +168,7 @@
     );
     if (!account) return { ok: false, message: 'E-mail, senha ou tipo de conta incorretos.' };
     setSession(account, remember);
+    if (remember) setRememberedEmail(account.email);
     return { ok: true, account: publicAccount(account) };
   }
 
@@ -107,13 +198,14 @@
       role: 'user',
       active: true,
       createdAt: new Date().toISOString(),
+      acceptedTermsAt: draft.acceptedTerms ? new Date().toISOString() : null,
       notifications: { reports: false, news: false, events: false }
     };
 
     list.push(account);
     writeAccounts(list);
     setSession(account, draft.remember);
-    if (draft.remember) localStorage.setItem('delta_mock_remembered_email', account.email);
+    if (draft.remember) setRememberedEmail(account.email);
     sessionStorage.removeItem(SIGNUP_KEY);
     localStorage.removeItem(SIGNUP_KEY);
     return { ok: true, account: publicAccount(account) };
@@ -135,7 +227,9 @@
   function deleteAccount(id) {
     const list = accounts();
     if (id === DEMO_ADMIN.id) return { ok: false, message: 'A conta de demonstração não pode ser removida.' };
+    const account = list.find((item) => item.id === id);
     writeAccounts(list.filter((item) => item.id !== id));
+    if (account?.email === getRememberedEmail()) setRememberedEmail('');
     logout();
     localStorage.removeItem('delta_perfil');
     localStorage.removeItem('delta_notificacoes');
@@ -213,8 +307,12 @@
     updateAccount,
     deleteAccount,
     requestPasswordReset,
+    getRememberedEmail,
+    setRememberedEmail,
     getResetDetails,
     verifyResetCode,
-    resetPassword
+    resetPassword,
+    readCollection,
+    writeCollection
   };
 })();

@@ -5,661 +5,732 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Estilos do grupo: define a apresentação do regra @font-face. */
 @font-face {
-  font-family: 'Talina DEMO';
-  src: url('../fontes/talina-demo.regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Talina DEMO';
+    src: url('../fontes/talina-demo.regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+/* Estilos do grupo: define a apresentação do seletor body. */
 body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
+/* Estilos do grupo: define a apresentação do seletor html. */
 html {
-  scrollbar-color: #0088ff transparent;
-  scrollbar-width: thin; 
-  scroll-behavior: smooth;
+    scrollbar-color: #0088ff transparent;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .barra-fixa. */
 .barra-fixa {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: #397FFC;
-  width: 100%;
-  height: 78px;
-  align-items: center;
-  display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #397FFC;
+    width: 100%;
+    height: 78px;
+    align-items: center;
+    display: flex;
 }
 
 .botao-menu,
+/* Estilos do grupo: define a apresentação do seletor .menu-navegacao. */
 .menu-navegacao {
-  display: none;
+    display: none;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Delta. */
 .Delta {
-  position: sticky;
-  color: #FEFEFE;
-  font-family: "Talina DEMO", sans-serif;
-  font-size: 47.998px;
-  font-weight: 400;
-  z-index: 1000;
-  left: 50px;
+    position: sticky;
+    color: #FEFEFE;
+    font-family: "Talina DEMO", sans-serif;
+    font-size: 47.998px;
+    font-weight: 400;
+    z-index: 1000;
+    left: 50px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #LogoDelta. */
 #LogoDelta {
-  position: absolute;
-  left: 148px;
-  width: 36.001px;
-  height: 33.861px;
-  z-index: 1002;
-  display: block;
+    position: absolute;
+    left: 148px;
+    width: 36.001px;
+    height: 33.861px;
+    z-index: 1002;
+    display: block;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Cadastrar. */
 .Cadastrar {
-  position: absolute;
-  right: 44px;
-  width: 119px;
-  height: 29px;
-  background-color: #FAFAFA;
-  border-radius: 25px;
-  z-index: 1001;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-weight: bolder;
-  top:1.5rem;
+    position: absolute;
+    right: 44px;
+    width: 119px;
+    height: 29px;
+    background-color: #FAFAFA;
+    border-radius: 25px;
+    z-index: 1001;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    top:1.5rem;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #cadastrar. */
 #cadastrar {
-  color: #306AE5;
-  font-family: Poppins;
-  font-size: 13px;
-  font-weight: bolder;
-  letter-spacing: 0.39px;
-  z-index: 1001;
+    color: #306AE5;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: bolder;
+    letter-spacing: 0.39px;
+    z-index: 1001;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Entrar. */
 .Entrar {
-  position: absolute;
-  width: 44px;
-  height: 19px;
-  z-index: 1001;
-  color: #FAFAFA;
-  font-family: Poppins;
-  font-size: 13px;
-  font-weight: bolder;
-  align-items: center;
-  display: flex;
-  right: 183px;
-  top:1.9rem;
+    position: absolute;
+    width: 44px;
+    height: 19px;
+    z-index: 1001;
+    color: #FAFAFA;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: bolder;
+    align-items: center;
+    display: flex;
+    right: 183px;
+    top:1.9rem;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .minha-conta. */
 .minha-conta {
-  position: absolute;
-  right: 44px;
-  top: 1.5rem;
-  width: 119px;
-  height: 28px;
-  background-color: #FAFAFA;
-  border-radius: 25px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  opacity: 1;
-  transition: 0.4s;
+    position: absolute;
+    right: 44px;
+    top: 1.5rem;
+    width: 119px;
+    height: 28px;
+    background-color: #FAFAFA;
+    border-radius: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.4s;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #minha-conta. */
 #minha-conta {
-  color: #306AE5;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: bolder;
-  letter-spacing: 0.39px;
-  z-index: 1001;
+    color: #306AE5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: bolder;
+    letter-spacing: 0.39px;
+    z-index: 1001;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .minha-conta:hover. */
 .minha-conta:hover {
-  opacity: 0.85;
-} 
+    opacity: 0.85;
+}
 
+/* Estilos do grupo: define a apresentação do seletor .Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores. */
 .Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores{
-  position: fixed;
-  cursor: pointer;
-  color: #FAFAFA;
-  z-index: 1001;
-  font-family: Poppins;
-  font-weight: normal;
-  align-items: center;
-  display: flex;
-  font-size: 13px;
-  height: 20px;
-  top:1.8rem;
+    position: fixed;
+    cursor: pointer;
+    color: #FAFAFA;
+    z-index: 1001;
+    font-family: Poppins;
+    font-weight: normal;
+    align-items: center;
+    display: flex;
+    font-size: 13px;
+    height: 20px;
+    top:1.8rem;
 }
 
 .Conceito::after, .Objetivos::after, .Funcionalidades::after,
+/* Estilos do grupo: define a apresentação do seletor .Inicio::after, .Sobre_Nos::after, .valores::after. */
 .Inicio::after, .Sobre_Nos::after, .valores::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 0;
-  transform: translateX(-50%);
-  left: 50%;
-  height: 2px;
-  background-color: #FAFAFA;
-  transition: width 0.2s ease-in-out;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    height: 2px;
+    background-color: #FAFAFA;
+    transition: width 0.2s ease-in-out;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Conceito:hover::after, .Objetivos:hover::after, .Funcionalidades:hover::after, .Inicio:hover::after. */
 .Conceito:hover::after, .Objetivos:hover::after, .Funcionalidades:hover::after, .Inicio:hover::after, .Sobre_Nos:hover::after, .valores:hover::after{
-  width: 100%;
+    width: 100%;
 }
 
-.Inicio { 
-  width: 35px; 
-  left: 404px; 
+/* Estilos do grupo: define a apresentação do seletor .Inicio. */
+.Inicio {
+    width: 35px;
+    left: 404px;
 }
-.Conceito { 
-  width: 60px; 
-  left: 479px; 
+/* Estilos do grupo: define a apresentação do seletor .Conceito. */
+.Conceito {
+    width: 60px;
+    left: 479px;
 }
-.Objetivos { 
-  width: 62px; 
-  left: 579px; 
+/* Estilos do grupo: define a apresentação do seletor .Objetivos. */
+.Objetivos {
+    width: 62px;
+    left: 579px;
 }
-.Funcionalidades { 
-  width: 109px; 
-  left: 681px; 
+/* Estilos do grupo: define a apresentação do seletor .Funcionalidades. */
+.Funcionalidades {
+    width: 109px;
+    left: 681px;
 }
+/* Estilos do grupo: define a apresentação do seletor .Sobre_Nos. */
 .Sobre_Nos{
-  width: 66px; 
-  left: 830px; 
+    width: 66px;
+    left: 830px;
 }
+/* Estilos do grupo: define a apresentação do seletor .valores. */
 .valores{
-  width: 100px; 
-  left: 936px; 
+    width: 100px;
+    left: 936px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .FundoGradiente. */
 .FundoGradiente {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 862px;
-  background: linear-gradient(180deg, #0166FF 19.73%, #B6D1FF 65.27%, #E0E8F6 100%);
-  z-index: 1;
-  display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 862px;
+    background: linear-gradient(180deg, #0166FF 19.73%, #B6D1FF 65.27%, #E0E8F6 100%);
+    z-index: 1;
+    display: block;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .titulo1, .titulo2. */
 .titulo1, .titulo2 {
-  position: absolute;
-  height: 50px;
-  font-family: 'Unbounded', sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 40px;
-  line-height: normal;
-  color: #FAFAFA;
-  z-index: 2;
+    position: absolute;
+    height: 50px;
+    font-family: 'Unbounded', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: normal;
+    color: #FAFAFA;
+    z-index: 2;
 }
 
-.titulo1 { 
-  width: 303px; 
-  left: 89px; 
-  top: 164px; 
+/* Estilos do grupo: define a apresentação do seletor .titulo1. */
+.titulo1 {
+    width: 303px;
+    left: 89px;
+    top: 164px;
 }
-.titulo2 { 
-  width: 367px; 
-  right: 165px; 
-  top: 323px; 
+/* Estilos do grupo: define a apresentação do seletor .titulo2. */
+.titulo2 {
+    width: 367px;
+    right: 165px;
+    top: 323px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloPrincipal. */
 .tituloPrincipal {
-  position: absolute;
-  width: 1265px;
-  height: 119px;
-  left: 95px;
-  top: 204px;
-  font-family: 'Unbounded', sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 96px;
-  line-height: normal;
-  color: #FAFAFA;
-  z-index: 2;
-  background: var(--TEXTO-MAIN, linear-gradient(90deg, #FFF 59.13%, rgba(255, 255, 255, 0.40) 100%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    position: absolute;
+    width: 1265px;
+    height: 119px;
+    left: 95px;
+    top: 204px;
+    font-family: 'Unbounded', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 96px;
+    line-height: normal;
+    color: #FAFAFA;
+    z-index: 2;
+    background: linear-gradient(90deg, #FFF 59.13%, rgba(255, 255, 255, 0.40) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #LogoTransparente. */
 #LogoTransparente {
-  position: absolute;
-  top: 140px;
-  left: 880px;
-  height: auto;
-  z-index: 3;
-  display: block;
+    position: absolute;
+    top: 140px;
+    left: 880px;
+    height: auto;
+    z-index: 3;
+    display: block;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Texto. */
 .Texto {
-  position: absolute;
-  width: 872px;
-  height: 66px;
-  left: 89px;
-  top: 326px;
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: normal;
-  color: #FAFAFA;
-  z-index: 2;
+    position: absolute;
+    width: 872px;
+    height: 66px;
+    left: 89px;
+    top: 326px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: normal;
+    color: #FAFAFA;
+    z-index: 2;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .retanguloComecar. */
 .retanguloComecar {
-  position: absolute;
-  width: 303px;
-  height: 65px;
-  left: 89px;
-  top: 420px;
-  border-radius: 18px;
-  background: #306BE5;
-  z-index: 2;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+    position: absolute;
+    width: 303px;
+    height: 65px;
+    left: 89px;
+    top: 420px;
+    border-radius: 18px;
+    background: #306BE5;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #textoComecar. */
 #textoComecar {
-  position: relative;
-  width: 160px;
-  height: 30px;
-  font-family: poppins, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  color: #FAFAFA;
-  z-index: 3;
+    position: relative;
+    width: 160px;
+    height: 30px;
+    font-family: poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FAFAFA;
+    z-index: 3;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .carta1, .carta2, .carta3. */
 .carta1, .carta2, .carta3 {
-  position: absolute;
-  width: 325px;
-  height: 246px;
-  top: 570px;
-  border-radius: 50px 50px 0 0;
-  background: #306BE5;
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px;
+    position: absolute;
+    width: 325px;
+    height: 246px;
+    top: 570px;
+    border-radius: 50px 50px 0 0;
+    background: #306BE5;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
 }
 
-.carta1 { 
-  left: 176px; 
-  z-index: 2; 
+/* Estilos do grupo: define a apresentação do seletor .carta1. */
+.carta1 {
+    left: 176px;
+    z-index: 2;
 }
-.carta2 { 
-  left: 600px; 
-  z-index: 3; 
+/* Estilos do grupo: define a apresentação do seletor .carta2. */
+.carta2 {
+    left: 600px;
+    z-index: 3;
 }
-.carta3 { 
-  right: 175px; 
-  z-index: 3; 
+/* Estilos do grupo: define a apresentação do seletor .carta3. */
+.carta3 {
+    right: 175px;
+    z-index: 3;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .conteudoCarta1, .conteudoCarta2, .conteudoCarta3. */
 .conteudoCarta1, .conteudoCarta2, .conteudoCarta3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Poppins;
-  font-size: 16.5px;
-  font-style:normal;
-  font-weight: 500;
-  line-height: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 16.5px;
+    font-style:normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Numero, .horas, .Numero2. */
 .Numero, .horas, .Numero2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 800;
-  font-size: 70px;
-  line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 1;
 }
 
-.menos { color: #6E96ED; 
-  margin-right: 2px; 
+.menos { color: #6E96ED;
+    margin-right: 2px;
 }
-.numero { 
-  color: #FAFAFA; 
+/* Estilos do grupo: define a apresentação do seletor .numero. */
+.numero {
+    color: #FAFAFA;
 }
-.porcentagem { 
-  color: #6E96ED; 
-  margin-left: 2px; 
+/* Estilos do grupo: define a apresentação do seletor .porcentagem. */
+.porcentagem {
+    color: #6E96ED;
+    margin-left: 2px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .textoCarta1, .textoCarta2, .textoCarta3. */
 .textoCarta1, .textoCarta2, .textoCarta3 {
-  width: 100%;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  color: #FAFAFA;
-  text-align: center;
-  margin-top: 38px;
-  line-height: 1.3;
+    width: 100%;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #FAFAFA;
+    text-align: center;
+    margin-top: 38px;
+    line-height: 1.3;
 }
 
-.mais { 
-  color: #6E96ED;
-   margin-right: 2px; 
-  }
-.numero2 { 
-  color: #FAFAFA; 
+/* Estilos do grupo: define a apresentação do seletor .mais. */
+.mais {
+    color: #6E96ED;
+    margin-right: 2px;
+}
+/* Estilos do grupo: define a apresentação do seletor .numero2. */
+.numero2 {
+    color: #FAFAFA;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .carta1, .carta2, .carta3. */
 .carta1, .carta2, .carta3 {
-  opacity: 0;
-  transform: translateY(220px);
-  will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(220px);
+    will-change: transform, opacity;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #FundoAzulOndaGradiente. */
 #FundoAzulOndaGradiente {
-  position: absolute;
-  height: 1250px;
-  left: 0;
-  right: 0;
-  top: 580px;
-  z-index: 3;
+    position: absolute;
+    height: 1250px;
+    left: 0;
+    right: 0;
+    top: 580px;
+    z-index: 3;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .O-Delta. */
 .O-Delta {
-  position: absolute;
-  width: 100%;
-  height: 1250px;
-  font-family: 'Unbounded', sans-serif;
-  font-size: 96px;
-  font-weight: 700;
-  color: #FAFAFA;
-  left: 83px;
-  right: 0;
-  top: 900px;
-  z-index: 4;
+    position: absolute;
+    width: 100%;
+    height: 1250px;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #FAFAFA;
+    left: 83px;
+    right: 0;
+    top: 900px;
+    z-index: 4;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .textoDelta. */
 .textoDelta {
-  position: absolute;
-  width: 100%;
-  height: 1250px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-  font-weight: 300;
-  color: #FAFAFA;
-  left: 83px;
-  right: 0;
-  top: 1060px;
-  z-index: 4;
+    position: absolute;
+    width: 100%;
+    height: 1250px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #FAFAFA;
+    left: 83px;
+    right: 0;
+    top: 1060px;
+    z-index: 4;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Iphone. */
 .Iphone {
-  position: absolute;
-  right: 83px;
-  top: 865px;
-  z-index: 4;
+    position: absolute;
+    right: 83px;
+    top: 865px;
+    z-index: 4;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .FundoAzulClaroOnda. */
 .FundoAzulClaroOnda {
-  position: absolute;
-  height: 1100px;
-  left: 0;
-  right: 0;
-  top: 1350px;
-  z-index: 2;
-  align-items: center;
-  display: flex;
+    position: absolute;
+    height: 1100px;
+    left: 0;
+    right: 0;
+    top: 1350px;
+    z-index: 2;
+    align-items: center;
+    display: flex;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloConceito. */
 .tituloConceito {
-  position: absolute;
-  font-family: 'Unbounded', sans-serif;
-  font-size: 70px;
-  font-weight: 800;
-  color: #003E9B;
-  top: 1600px;
-  z-index: 4;
-  left: 50%;
-  transform: translateX(-50%);
+    position: absolute;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+    color: #003E9B;
+    top: 1600px;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+/* Estilos do grupo: define a apresentação do seletor .retanguloCenario, .retanguloSolucao. */
 .retanguloCenario, .retanguloSolucao {
-  position: absolute;
-  width: 279px;
-  height: 89px;
-  top: 1750px;
-  z-index: 10;
-  display: flex;
-  opacity: 0;
-  will-change: transform;
-  justify-content: center;
-  align-content: center;
+    position: absolute;
+    width: 279px;
+    height: 89px;
+    top: 1750px;
+    z-index: 10;
+    display: flex;
+    opacity: 0;
+    will-change: transform;
+    justify-content: center;
+    align-content: center;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .miniTituloCenario,.miniTituloSolucao. */
 .miniTituloCenario,.miniTituloSolucao{
-  color: #FAFAFA;
-  font-family: Unbounded;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: -0.8px;
-  align-content: center;
-  }
+    color: #FAFAFA;
+    font-family: Unbounded;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    align-content: center;
+}
 
+/* Estilos do grupo: define a apresentação do seletor .retanguloCenario. */
 .retanguloCenario {
-  position: relative;
-  left: 0;
-  border-radius: 0 44.5px 0 0;
-  background: #306AE5;
-  transform: translateX(-120%);
-  align-content: center;
+    position: relative;
+    left: 0;
+    border-radius: 0 44.5px 0 0;
+    background: #306AE5;
+    transform: translateX(-120%);
+    align-content: center;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .retanguloSolucao. */
 .retanguloSolucao {
-  right: 0;
-  top: 1950px;
-  border-radius: 44.5px 0 0 0;
-  background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
-  transform: translateX(120%);
+    right: 0;
+    top: 1950px;
+    border-radius: 44.5px 0 0 0;
+    background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
+    transform: translateX(120%);
 }
 
+/* Estilos do grupo: define a apresentação do seletor .retanguloCenario2, .retanguloSolucao2. */
 .retanguloCenario2, .retanguloSolucao2 {
-  position: absolute;
-  width: 1064px;
-  height: 150px;
-  z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  will-change: transform, opacity;
+    position: absolute;
+    width: 1064px;
+    height: 150px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    will-change: transform, opacity;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .retanguloCenario2. */
 .retanguloCenario2 {
-  left: 0;
-  top: 1835px;
-  border-radius: 0 90px 90px 0;
-  background: linear-gradient(88deg, #306AE5 37.24%, #003E9B 91.25%);
-  transform: translateX(-120%);
+    left: 0;
+    top: 1835px;
+    border-radius: 0 90px 90px 0;
+    background: linear-gradient(88deg, #306AE5 37.24%, #003E9B 91.25%);
+    transform: translateX(-120%);
 }
 
+/* Estilos do grupo: define a apresentação do seletor .retanguloSolucao2. */
 .retanguloSolucao2 {
-  right: 0;
-  top: 2035px;
-  border-radius: 90px 0 0 90px;
-  background: linear-gradient(140deg, #306AE5 38%, #003E9B 100%);
-  transform: translateX(120%);
+    right: 0;
+    top: 2035px;
+    border-radius: 90px 0 0 90px;
+    background: linear-gradient(140deg, #306AE5 38%, #003E9B 100%);
+    transform: translateX(120%);
 }
 
+/* Estilos do grupo: define a apresentação do seletor .conteudoCenario. */
 .conteudoCenario {
-  width: 914px;
-  height: 76.416px;
-  color: #FAFAFA;
-  font-family: Poppins;
-  font-size: 21px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 149.978%;
-  letter-spacing: 0.63px;
-  display: flex;
-  margin-bottom: 25px;
-  margin-right: 70px;
+    width: 914px;
+    height: 76.416px;
+    color: #FAFAFA;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 149.978%;
+    letter-spacing: 0.63px;
+    display: flex;
+    margin-bottom: 25px;
+    margin-right: 70px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .conteudoSolucao. */
 .conteudoSolucao {
-  width: 965px;
-  height: 112.742px;
-  color: #FFF;
-  text-align: right;
-  font-family: Poppins;
-  font-size: 21px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 149.978%;
-  letter-spacing: 0.63px;
-  margin-top: 25px;
-  margin-left: 25px;
+    width: 965px;
+    height: 112.742px;
+    color: #FFF;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 149.978%;
+    letter-spacing: 0.63px;
+    margin-top: 25px;
+    margin-left: 25px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #FundoAzulCurvado. */
 #FundoAzulCurvado {
-  position: absolute;
-  z-index: 4;
-  height: 780px;
-  top: 2300px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    position: absolute;
+    z-index: 4;
+    height: 780px;
+    top: 2300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloObjetivos. */
 .tituloObjetivos {
-  position: absolute;
-  color: #FAFAFA;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: 70px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  top: 2450px;
-  z-index: 4;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+    position: absolute;
+    color: #FAFAFA;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    top: 2450px;
+    z-index: 4;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia. */
 .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
-  position: absolute;
-  width: 408px;
-  height: 346px;
-  flex-shrink: 0;
-  border-radius: 12px;
-  background: #ECF2FB;
-  z-index: 5;
-  top: 2550px;
+    position: absolute;
+    width: 408px;
+    height: 346px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #ECF2FB;
+    z-index: 5;
+    top: 2550px;
 }
 
-.cartaoReducao { 
-  margin-left: 120px; 
+/* Estilos do grupo: define a apresentação do seletor .cartaoReducao. */
+.cartaoReducao {
+    margin-left: 120px;
 }
-.cartaoMonitoramento { 
-  margin-left: 560px; 
+/* Estilos do grupo: define a apresentação do seletor .cartaoMonitoramento. */
+.cartaoMonitoramento {
+    margin-left: 560px;
 }
-.cartaoEficiencia { 
-  margin-left: 1000px; 
+/* Estilos do grupo: define a apresentação do seletor .cartaoEficiencia. */
+.cartaoEficiencia {
+    margin-left: 1000px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #hidrometro, #monitoramento, #eficiencia. */
 #hidrometro, #monitoramento, #eficiencia {
-  position: absolute;
-  z-index: 6;
-  margin-left: 28px;
-  margin-top: 34px;
+    position: absolute;
+    z-index: 6;
+    margin-left: 28px;
+    margin-top: 34px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloReducao, .tituloMonitoramento, .tituloEficiencia. */
 .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
-  color: #0B2156;
-  font-family: Poppins;
-  font-size: 23px;
-  font-style: normal;
-  font-weight: 700;
-  position: absolute;
-  z-index: 6;
-  margin-left: 28px;
-  margin-top: 86.26px;
+    color: #0B2156;
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    z-index: 6;
+    margin-left: 28px;
+    margin-top: 86.26px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia. */
 .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
-  width: 337px;
-  height: 163px;
-  color: #616E80;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 149.978%;
-  letter-spacing: 0.45px;
-  margin-left: 24px;
-  margin-top: 140px;
+    width: 337px;
+    height: 163px;
+    color: #616E80;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 149.978%;
+    letter-spacing: 0.45px;
+    margin-left: 24px;
+    margin-top: 140px;
 }
 
 .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia,
+/* Estilos do grupo: define a apresentação do seletor .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6. */
 .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
-  will-change: transform, opacity;
-  transform: translateZ(0); 
+    will-change: transform, opacity;
+    transform: translateZ(0);
 }
 
+/* Estilos do grupo: define a apresentação do seletor #FundoAzulClaroOnda2. */
 #FundoAzulClaroOnda2 {
-  position: absolute;
-  z-index: 3;
-  top: 3000px;
-  left: 0;
-  right: 0;
-  height: 740px;
+    position: absolute;
+    z-index: 3;
+    top: 3000px;
+    left: 0;
+    right: 0;
+    height: 740px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloFuncionalidades. */
 .tituloFuncionalidades {
-  position: absolute;
-  color: #003E9B;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: 70px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: -1.4px;
-  top: 3150px;
-  z-index: 4;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+    position: absolute;
+    color: #003E9B;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1.4px;
+    top: 3150px;
+    z-index: 4;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6. */
 .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
-  position: absolute;
-  width: 411px;
-  z-index: 4;
-  cursor: default;
-  transition: transform 0.3s ease, scale 0.3s ease, z-index 0.3s ease;
-  transform-origin: center center;
+    position: absolute;
+    width: 411px;
+    z-index: 4;
+    cursor: default;
+    transition: transform 0.3s ease, scale 0.3s ease, z-index 0.3s ease;
+    transform-origin: center center;
 }
 
 .cartao1 { left: 125px;  top: 3260px; }
@@ -670,2175 +741,2477 @@ html {
 .cartao6 { left: 995px; top: 3450px; }
 
 .cartao1::after, .cartao2::after, .cartao3::after,
+/* Estilos do grupo: define a apresentação do seletor .cartao4::after, .cartao5::after, .cartao6::after. */
 .cartao4::after, .cartao5::after, .cartao6::after {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border: 4px solid transparent;
-  border-radius: 25px;
-  z-index: 10;
-  pointer-events: none;
-  transition: border-color 0.3s ease;
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border: 4px solid transparent;
+    border-radius: 25px;
+    z-index: 10;
+    pointer-events: none;
+    transition: border-color 0.3s ease;
 }
 
 .cartao1:hover, .cartao2:hover, .cartao3:hover,
+/* Estilos do grupo: define a apresentação do seletor .cartao4:hover, .cartao5:hover, .cartao6:hover. */
 .cartao4:hover, .cartao5:hover, .cartao6:hover {
-  scale: 1.05;
-  z-index: 20; 
+    scale: 1.05;
+    z-index: 20;
 }
 
 .cartao1:hover::after, .cartao2:hover::after, .cartao3:hover::after,
+/* Estilos do grupo: define a apresentação do seletor .cartao4:hover::after, .cartao5:hover::after, .cartao6:hover::after. */
 .cartao4:hover::after, .cartao5:hover::after, .cartao6:hover::after {
-  border-color: #306AE5;
+    border-color: #306AE5;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #frame1, #frame2, #frame3, #frame4, #frame5, #frame6. */
 #frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  z-index: 4;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 4;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #relogio, #sino, #grafico, #lista, #robo, #papel. */
 #relogio, #sino, #grafico, #lista, #robo, #papel {
-  position: absolute;
-  z-index: 5;
-  left: 25px;
-  top: 60px;
+    position: absolute;
+    z-index: 5;
+    left: 25px;
+    top: 60px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,.tituloCardMetas, .tituloCardChatbo. */
 .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,.tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
-  position: absolute;
-  left: 86px;
-  top: 40px;
-  z-index: 5;
-  color: #0B2156;
-  font-family: Poppins;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+    position: absolute;
+    left: 86px;
+    top: 40px;
+    z-index: 5;
+    color: #0B2156;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,.informacoesCardMeta. */
 .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,.informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
-  position: absolute;
-  left: 86px;
-  top: 70px;
-  z-index: 5;
-  color: #616E80;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+    position: absolute;
+    left: 86px;
+    top: 70px;
+    z-index: 5;
+    color: #616E80;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloNossaEquipe. */
 .tituloNossaEquipe {
-  position: relative;
-  color: #003E9B;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: 70px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: -1.4px;
-  z-index: 5;
-  top: 4600px;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
+    position: relative;
+    color: #003E9B;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1.4px;
+    z-index: 5;
+    top: 4600px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
 }
 
+/* Estilos do grupo: define a apresentação do seletor .carrossel-section. */
 .carrossel-section {
-  width: 100%;
+    width: 100%;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .carrossel. */
 .carrossel {
-  position: relative;
-  width: 100%;
-  max-width: 100vw; 
-  display: flex;
-  align-items: center;
-  z-index: 5;
-  top: 4600px; 
-  overflow: hidden; 
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    top: 4600px;
+    overflow: hidden;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .fotosCarrossel. */
 .fotosCarrossel {
-  display: flex;
-  width: max-content; 
-  padding: 10px 0;
-  animation: rolarCarrossel 20s linear infinite;
-  will-change: transform; 
+    display: flex;
+    width: max-content;
+    padding: 10px 0;
+    animation: rolarCarrossel 20s linear infinite;
+    will-change: transform;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .foto. */
 .foto {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .foto > img. */
 .foto > img {
-  display: block;
-  width: 180px;
-  height: auto;
+    display: block;
+    width: 180px;
+    height: auto;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .grupo. */
 .grupo {
-  display: flex;
-  align-items: flex-start;
-  gap: 70px; 
-  padding-right: 70px; 
-  flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    padding-right: 70px;
+    flex-shrink: 0;
 }
 
+/* Estilos do grupo: define a apresentação do regra @keyframes rolarCarrossel. */
 @keyframes rolarCarrossel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+    /* Estilos do grupo: define a apresentação do seletor 0%. */
+    0% {
+        transform: translateX(0);
+    }
+    /* Estilos do grupo: define a apresentação do seletor 100%. */
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
+/* Estilos do grupo: define a apresentação do seletor #lucas. */
 #lucas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #lucasTexto. */
 #lucasTexto {
-  width: 115px;
-  margin-top: 1px;
+    width: 115px;
+    margin-top: 1px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #lucasTexto img. */
 #lucasTexto img {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #lucasFoto. */
 #lucasFoto {
-  transform: none;
+    transform: none;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .fotosCarrossel:hover. */
 .fotosCarrossel:hover {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #fundoCurvadoGradiente. */
 #fundoCurvadoGradiente {
-  position: absolute;
-  right: 0px;
-  left: -60px;
-  height: 1400px;
-  top: 4950px;
+    position: absolute;
+    right: 0px;
+    left: -60px;
+    height: 1400px;
+    top: 4950px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #corpoGlub. */
 #corpoGlub{
-  position: absolute;
-  right:100px;
-  height: auto;
-  top:5320px;
-  z-index:2;
-  opacity: 1;
+    position: absolute;
+    right:100px;
+    height: auto;
+    top:5320px;
+    z-index:2;
+    opacity: 1;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #bracoGlub. */
 #bracoGlub{
-  position: absolute;
-  right:520px;
-  height: auto;
-  top:5380px;
-  z-index:1;
-  opacity: 1;
-  transform-origin: 80% 90%;
-  animation: acenar 1.3s ease-in-out infinite alternate;
+    position: absolute;
+    right:520px;
+    height: auto;
+    top:5380px;
+    z-index:1;
+    opacity: 1;
+    transform-origin: 80% 90%;
+    animation: acenar 1.3s ease-in-out infinite alternate;
 }
 
+/* Estilos do grupo: define a apresentação do regra @keyframes acenar. */
 @keyframes acenar {
+    /* Estilos do grupo: define a apresentação do seletor 0%. */
     0% {
         transform: rotate(-2deg);
     }
 
+    /* Estilos do grupo: define a apresentação do seletor 100%. */
     100% {
         transform: rotate(20deg);
     }
 }
 
+/* Estilos do grupo: define a apresentação do seletor #gotaMaior. */
 #gotaMaior{
-  position: absolute;
-  right:602px;
-  height: auto;
-  top:5550px;
-  z-index:2;
+    position: absolute;
+    right:602px;
+    height: auto;
+    top:5550px;
+    z-index:2;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #gotaMenor. */
 #gotaMenor{
-  position: absolute;
-  right:613px;
-  height: auto;
-  top:5605px;
-  z-index:2;
+    position: absolute;
+    right:613px;
+    height: auto;
+    top:5605px;
+    z-index:2;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .NossosValores. */
 .NossosValores{
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  color: #003E9B;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: 70px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: -1.4px;
-  right: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top:6000px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    color: #003E9B;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1.4px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top:6000px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card-section. */
 .card-section{
-  position: relative;
-  width: 100%;
-  max-width: 100vw; 
-  margin:0 auto;
-  margin-top:5610px;
-  
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    margin:0 auto;
+    margin-top:5610px;
+
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Valores. */
 .Valores {
-  overflow: hidden;
-  width: 100%;
+    overflow: hidden;
+    width: 100%;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .lista-card. */
 .lista-card{
-  display: flex;
-  margin:0;
-  padding:0;
-  list-style: none;
+    display: flex;
+    margin:0;
+    padding:0;
+    list-style: none;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card. */
 .card{
-  flex: 0 0 100%;
-  min-width: 100%;
+    flex: 0 0 100%;
+    min-width: 100%;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card img. */
 .card img {
-  width: 97%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+    width: 97%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .botao-voltar, .botao-avancar. */
 .botao-voltar, .botao-avancar {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 0;
-  cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .botao-voltar { left: 20px; }
 .botao-avancar { right: 20px; }
 
+/* Estilos do grupo: define a apresentação do seletor .icone. */
 .icone {
-  display: block;
-  pointer-events: none;
+    display: block;
+    pointer-events: none;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .icone-botao. */
 .icone-botao {
-  display: block;
+    display: block;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .sobreNos. */
 .sobreNos {
-  position: absolute;
-  color: #FAFAFA;
-  font-family: Unbounded;
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -1.8px;
-  z-index: 2;
-  top: 5300px;
-  left: 87px;
+    position: absolute;
+    color: #FAFAFA;
+    font-family: Unbounded;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.8px;
+    z-index: 2;
+    top: 5300px;
+    left: 87px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .textoSobreNos. */
 .textoSobreNos {
-  position: absolute;
-  color: #FAFAFA;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 149.978%;
-  letter-spacing: 0.72px;
-  left: 87px;
-  top: 5460px;
-  z-index: 3;
-  width: 680px;
-  height: 273px;
+    position: absolute;
+    color: #FAFAFA;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 149.978%;
+    letter-spacing: 0.72px;
+    left: 87px;
+    top: 5460px;
+    z-index: 3;
+    width: 680px;
+    height: 273px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #ParteFinal. */
 #ParteFinal {
-  position: absolute;
-  height: 283px;
-  width: 1376px;
-  top: 6900px;
-  right: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    height: 283px;
+    width: 1376px;
+    top: 6900px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+/* Estilos do grupo: define a apresentação do seletor #footer. */
 #footer{
-  position: absolute;
-  right: 0;
-  left:-100px;
-  height: 650px;
-  margin-top:400px;
+    position: absolute;
+    right: 0;
+    left:-100px;
+    height: 650px;
+    margin-top:400px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .Footer. */
 .Footer{
-  position: absolute;
-  font-family: 'Poppins', sans-serif;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .coluna1, .coluna2, .coluna3. */
 .coluna1, .coluna2, .coluna3{
-  position: absolute;
-  z-index: 5;
-  margin-top:570px;
-  left:503px;
-  margin-bottom: 10px;
-  color:#FAFAFA;
-  line-height: 2;
-  list-style: none;
+    position: absolute;
+    z-index: 5;
+    margin-top:570px;
+    left:503px;
+    margin-bottom: 10px;
+    color:#FAFAFA;
+    line-height: 2;
+    list-style: none;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .coluna2. */
 .coluna2{
-  left: 778px;
+    left: 778px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .coluna3. */
 .coluna3{
-  left: 1129px;
+    left: 1129px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .coluna1 li,.coluna2 li,.coluna3 li. */
 .coluna1 li,.coluna2 li,.coluna3 li{
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
+/* Estilos do grupo: define a apresentação do seletor #logo. */
 #logo{
-  position: absolute;
-  z-index: 5;
-  width: auto;
-  height: auto;
-  left:37px;
-  margin-top: 480px;
+    position: absolute;
+    z-index: 5;
+    width: auto;
+    height: auto;
+    left:37px;
+    margin-top: 480px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .textoFooter. */
 .textoFooter{
-  position: absolute;
-  width: 291px;
-  z-index: 5;
-  left:40px;
-  margin-top:570px;
-  color:#FAFAFA;
+    position: absolute;
+    width: 291px;
+    z-index: 5;
+    left:40px;
+    margin-top:570px;
+    color:#FAFAFA;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .direitos. */
 .direitos{
-  position: absolute;
-  z-index: 5;
-  top:780px;
-  right:60px;
-  margin-bottom: 10px;
-  color:#FAFAFA;
+    position: absolute;
+    z-index: 5;
+    top:780px;
+    right:60px;
+    margin-bottom: 10px;
+    color:#FAFAFA;
 }
 
+/* Estilos do grupo: define a apresentação do seletor a:visited. */
 a:visited {
-  color: #FAFAFA;
-  text-decoration: none;
+    color: #FAFAFA;
+    text-decoration: none;
 }
+/* Estilos do grupo: define a apresentação do seletor a. */
 a{
-  color: #FAFAFA;
-  text-decoration: none;
+    color: #FAFAFA;
+    text-decoration: none;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .NossosValores. */
 .NossosValores{
-  scroll-margin-top: 65px; 
+    scroll-margin-top: 65px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloConceito. */
 .tituloConceito{
-  scroll-margin-top: 90px;
+    scroll-margin-top: 90px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .FundoGradiente. */
 .FundoGradiente{
-  scroll-margin-top: 0px;
+    scroll-margin-top: 0px;
 }
+/* Estilos do grupo: define a apresentação do seletor .tituloObjetivos. */
 .tituloObjetivos{
-  scroll-margin-top: 150px;
+    scroll-margin-top: 150px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .tituloFuncionalidades. */
 .tituloFuncionalidades{
-  scroll-margin-top:160px;
+    scroll-margin-top:160px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .sobreNos. */
 .sobreNos{
-  scroll-margin-top:150px;
+    scroll-margin-top:150px;
 }
+/* Estilos do grupo: define a apresentação do seletor #botaoOlho. */
 #botaoOlho{
-  position: absolute;
-  z-index:20;
-  top:468px;
-  right:180px;
-  border:none;
-  background: transparent;
-  cursor: pointer;
+    position: absolute;
+    z-index:20;
+    top:468px;
+    right:180px;
+    border:none;
+    background: transparent;
+    cursor: pointer;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .lista-card. */
 .lista-card {
-  will-change: transform;
+    will-change: transform;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card. */
 .card {
-  opacity: 0.25;
-  transform: scale(0.82);
-  filter: blur(4px);
-  perspective: 1200px;
-  transition: opacity 0.7s ease,
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.7s ease;
+    opacity: 0.25;
+    transform: scale(0.82);
+    filter: blur(4px);
+    perspective: 1200px;
+    transition: opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s ease;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card.ativo. */
 .card.ativo {
-  opacity: 1;
-  transform: scale(1);
-  filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card img. */
 .card img {
-  transition: transform 0.25s ease-out, filter 0.7s ease;
-  will-change: transform;
+    transition: transform 0.25s ease-out, filter 0.7s ease;
+    will-change: transform;
 }
 
 
 .lista-card.sem-transicao .card,
+/* Estilos do grupo: define a apresentação do seletor .lista-card.sem-transicao .card img. */
 .lista-card.sem-transicao .card img {
-  transition: none;
+    transition: none;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card-section .Valores. */
 .card-section .Valores {
-  opacity: 0;
-  transform: translateY(80px) scale(0.94);
-  transition: opacity 0.9s ease,
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    transform: translateY(80px) scale(0.94);
+    transition: opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card-section .botao-voltar,
+/* Estilos do grupo: define a apresentação do seletor .card-section .botao-avancar. */
 .card-section .botao-avancar {
-  opacity: 0;
-  transition: opacity 0.9s ease 0.3s, scale 0.2s ease;
+    opacity: 0;
+    transition: opacity 0.9s ease 0.3s, scale 0.2s ease;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .card-section.visivel .Valores. */
 .card-section.visivel .Valores {
-  opacity: 1;
-  transform: none;
+    opacity: 1;
+    transform: none;
 }
 
 .card-section.visivel .botao-voltar,
+/* Estilos do grupo: define a apresentação do seletor .card-section.visivel .botao-avancar. */
 .card-section.visivel .botao-avancar {
-  opacity: 1;
+    opacity: 1;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .botao-voltar:hover, .botao-avancar:hover. */
 .botao-voltar:hover, .botao-avancar:hover {
-  scale: 1.12;
+    scale: 1.12;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .botao-voltar:active, .botao-avancar:active. */
 .botao-voltar:active, .botao-avancar:active {
-  scale: 0.92;
+    scale: 0.92;
 }
 
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (prefers-reduced-motion: reduce). */
 @media (prefers-reduced-motion: reduce) {
-  .card,
-  .card img,
-  .card-section .Valores,
-  .card-section .botao-voltar,
-  .card-section .botao-avancar {
-    transition-duration: 0.01s;
-  }
+    .card,
+    .card img,
+    .card-section .Valores,
+    .card-section .botao-voltar,
+    /* Estilos do grupo: define a apresentação do seletor .card-section .botao-avancar. */
+    .card-section .botao-avancar {
+        transition-duration: 0.01s;
+    }
 }
 
+/* Estilos do grupo: define a apresentação do seletor .botao-topo. */
 .botao-topo {
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .botao-logo. */
 .botao-logo {
-  display: flex;
-  align-items: center; 
-  position: relative; 
-  margin-left: 50px;
-}
-
-.Delta {
-  color: #FEFEFE;
-  font-family: "Talina DEMO", sans-serif;
-  font-size: 47.998px;
-  font-weight: 400;
-  z-index: 1000;
-}
-
-#LogoDelta {
-  width: 36.001px;
-  height: 33.861px;
-  z-index: 1002;
-  display: block;
-  margin-left: -50px;
-}
-
-.retangulo-comecar-parte-final{
-  position: absolute;
-  width: 323px;
-  height: 50.319px;
-  border-radius: 18px;
-  cursor:pointer;
-  z-index: 30;
-  top: 6884.5px;
-  left:261.5px;
-}
-
-.fundo-planos{
-  position:absolute;
-  z-index:2;
-  top:3500px;
-  width: 100%;
-  left:0;
-}
-
-.titulo-planos{
-  position: absolute;
-  z-index: 3;
-  top:3800px;
-  width: 100%;
-  color: #FAFAFA;
-  text-align: center;
-  font-family: Unbounded;
-  font-size: 70px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: -1.4px;
-  right: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.retangulo1 {
-  position: absolute;
-  z-index: 3;
-  width: 423px;
-  height: 556px;
-  border-radius: 12px;
-  background: #FAFAFA;
-  top: 3890px;
-  left: 110px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px 35px;
-  box-sizing: border-box;
-  gap: 20px;
-}
-
-.parte-cima {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.gluh1 {
-  width: 64.862px;
-  height: 58.792px;
-  object-fit: contain;
-}
-
-.titulo-essencial {
-  color: #306BE5;
-  font-family: Unbounded, sans-serif;
-  font-size: 35px;
-  font-weight: 800;
-  letter-spacing: -0.7px;
-  margin: 0;
-}
-
-.texto-retangulo1 {
-  color: #494A4C;
-  text-wrap-style: balance;
-  font-family: Poppins;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: -0.4px;
-  padding-left: 20px;
-  margin: 0;
-  width: 100%;
-}
-
-.texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
-  margin-bottom: 6px;
-}
-
-.preco1 {
-  color: #0B2156;
-  font-family: Unbounded, sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: -0.8px;
-  margin-top: auto;
-  line-height: 1;
-  text-align: center;
-  width: 100%;
-}
-
-.mensal {
-  color: #306BE5;
-  font-family: Unbounded, sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.48px;
-  margin-top: -10px;
-  text-align: center;
-  width: 100%;
-}
-
-.retangulo2 {
-  position: absolute;
-  z-index: 3;
-  width: 423px;
-  height: 556px;
-  border-radius: 12px;
-  background: #FAFAFA;
-  top: 3890px;
-  left: 550px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px 35px;
-  box-sizing: border-box;
-  gap: 20px;
-}
-
-.parte-cima {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.gluh2 {
-  width: 64.862px;
-  height: 58.792px;
-  object-fit: contain;
-}
-
-.titulo-gestao {
-  color: #306BE5;
-  font-family: Unbounded, sans-serif;
-  font-size: 35px;
-  font-weight: 800;
-  letter-spacing: -0.7px;
-  margin: 0;
-}
-
-.texto-retangulo2 {
-  color: #494A4C;
-  text-wrap-style: balance;
-  font-family: Poppins;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: -0.4px;
-  padding-left: 20px;
-  margin: 0;
-  width: 100%;
-}
-
-.preco2 {
-  color: #0B2156;
-  font-family: Unbounded, sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: -0.8px;
-  margin-top: auto;
-  line-height: 1;
-  text-align: center;
-  width: 100%;
-}
-
-.mensal {
-  color: #306BE5;
-  font-family: Unbounded, sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.48px;
-  margin-top: -10px;
-  text-align: center;
-  width: 100%;
-}
-
-.retangulo3 {
-  position: absolute;
-  z-index: 3;
-  width: 423px;
-  height: 556px;
-  border-radius: 12px;
-  background: #FAFAFA;
-  top: 3890px;
-  left: 990px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px 35px;
-  box-sizing: border-box;
-  gap: 20px;
-}
-
-.parte-cima {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.gluh3 {
-  width: 64.862px;
-  height: 58.792px;
-  object-fit: contain;
-}
-
-.titulo-premium {
-  color: #306BE5;
-  font-family: Unbounded, sans-serif;
-  font-size: 35px;
-  font-weight: 800;
-  letter-spacing: -0.7px;
-  margin: 0;
-}
-
-.texto-retangulo3 {
-  color: #494A4C;
-  text-wrap-style: balance;
-  font-family: Poppins;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: -0.4px;
-  padding-left: 20px;
-  margin: 0;
-  width: 100%;
-}
-
-.preco3 {
-  color: #0B2156;
-  font-family: Unbounded, sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: -0.8px;
-  margin-top: auto;
-  line-height: 1;
-  text-align: center;
-  width: 100%;
-}
-
-.mensal {
-  color: #306BE5;
-  font-family: Unbounded, sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.48px;
-  margin-top: -10px;
-  text-align: center;
-  width: 100%;
-}
-@media (max-width: 1439px) {
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  body {
-    background-color: #E0E8F6;
-  }
-
-  .barra-fixa {
-    height: 86px;
-    min-height: 86px;
-  }
-
-  .botao-logo {
-    margin-left: 12px;
-  }
-
-  .Delta {
-    font-size: 34px;
-  }
-
-  #LogoDelta {
-    left: auto;
-    width: 28px;
-    height: auto;
-  }
-
-  .Cadastrar, .minha-conta {
-    top: 10px;
-    right: 12px;
-    width: 108px;
-    height: 28px;
-  }
-
-  .Entrar {
-    top: 15px;
-    right: 132px;
-  }
-
-  .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
-    position: absolute;
-    top: 56px;
-    height: 20px;
-    width: auto;
-    font-size: clamp(8px, 2.5vw, 11px);
-    white-space: nowrap;
-  }
-
-  .Inicio { left: 2%; }
-  .Conceito { left: 17%; }
-  .Objetivos { left: 33%; }
-  .Funcionalidades { left: 49%; }
-  .Sobre_Nos { left: 73%; }
-  .valores { left: 88%; }
-
-  .FundoGradiente {
-    height: 1250px;
-  }
-
-  .titulo1, .titulo2, .tituloPrincipal, .Texto, .retanguloComecar,
-  .carta1, .carta2, .carta3 {
-    position: relative;
-    inset: auto;
-    transform: none;
-    height: auto;
-  }
-
-  .titulo1 {
-    width: auto;
-    margin: 126px 20px 0;
-    font-size: clamp(21px, 7vw, 34px);
-  }
-
-  .tituloPrincipal {
-    width: auto;
-    margin: 0 20px;
-    font-size: clamp(27px, 8vw, 48px);
-    line-height: 1.15;
-    overflow-wrap: anywhere;
-  }
-
-  .titulo2 {
-    width: auto;
-    margin: 0 20px;
-    font-size: clamp(21px, 7vw, 34px);
-    text-align: right;
-  }
-
-  #LogoTransparente {
-    display: none;
-  }
-
-  .Texto {
-    width: auto;
-    margin: 24px 24px 0;
-    font-size: 16px;
-    line-height: 1.55;
-  }
-
-  .retanguloComecar {
-    width: min(303px, calc(100% - 48px));
-    min-height: 56px;
-    margin: 20px auto 28px;
-  }
-
-  .carta1, .carta2, .carta3 {
-    display: inline-flex;
-    vertical-align: top;
-    width: calc((100vw - 72px) / 3);
-    min-height: 185px;
-    margin: 12px 0 0 12px;
-    padding: 24px 8px;
-    border-radius: 24px 24px 0 0;
-  }
-
-  .conteudoCarta1, .conteudoCarta2, .conteudoCarta3 {
-    width: 100%;
-  }
-
-  .textoCarta1, .textoCarta2, .textoCarta3 {
-    margin-top: 20px;
-    font-size: clamp(9px, 2.5vw, 13px);
-    line-height: 1.35;
-  }
-
-  .Numero, .horas, .Numero2 {
-    font-size: clamp(30px, 9vw, 58px);
-  }
-
-  #FundoAzulClaroOnda2, .fundo-planos {
-    display: none;
-  }
-
-  .functionality-section {
-    position: relative;
-    isolation: isolate;
-    z-index: 4;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    padding: 32px 20px 40px;
-    background: #E0E8F6;
-  }
-
-  .functionality-section > .tituloFuncionalidades {
-    position: relative;
-    z-index: 5;
-    grid-column: 1 / -1;
-    margin: 0 0 8px;
-    scroll-margin-top: 112px;
-  }
-
-  .plans-section {
-    position: relative;
-    isolation: isolate;
-    z-index: 3;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 18px;
-    padding-right: 36px;
-    padding-left: 20px;
-    padding-top: 240px;
-    padding-bottom: 120px;
-    background: linear-gradient(180deg, #064BB7 0%, #002256 100%);
-  }
-
-  .plans-section::before {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto;
-    height: 74vw;
-    z-index: 0;
-    background: #E0E8F6;
-    mask: url('../img/fundo-planos.svg') center -56vw / 100% auto no-repeat;
-    -webkit-mask: url('../img/fundo-planos.svg') center -56vw / 100% auto no-repeat;
-    pointer-events: none;
-  }
-
-  .plans-section::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: calc(80px - 63vw);
-    z-index: 1;
-    width: 100%;
-    height: 63vw;
-    background: url('../img/FundoAzulClaroOnda.svg') top center / 100% 100% no-repeat;
-    pointer-events: none;
-  }
-
-  .plans-section > :not(.fundo-planos) {
-    position: relative;
-    z-index: 1;
-  }
-
-  .plans-section .fundo-planos {
-    display: none;
-  }
-
-  .plans-section > .titulo-planos {
-    grid-column: 1 / -1;
-    width: auto;
-    margin: 0 16px 8px;
-  }
-
-  .objective-section {
-    position: relative;
-    isolation: isolate;
-    z-index: 3;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 14px;
-    padding-top: clamp(140px, 19vw, 210px);
-    padding-bottom: clamp(90px, 10vw, 140px);
-    background: linear-gradient(180deg, #064BB7 0%, #002256 100%);
-  }
-
-  .objective-section::before {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto;
-    height: clamp(90px, 16.2vw, 150px);
-    z-index: 0;
-    border-radius: 0 0 50% 50% / 0 0 30% 30%;
-    background: #E0E8F6;
-    pointer-events: none;
-  }
-
-  .objective-section::after {
-    content: '';
-    position: absolute;
-    left: -10%;
-    bottom: -50px;
-    z-index: 1;
-    width: 120%;
-    height: 110px;
-    border-radius: 50% 50% 0 0 / 55% 55% 0 0;
-    background: #E0E8F6;
-    pointer-events: none;
-  }
-
-  #FundoAzulCurvado {
-    display: none;
-  }
-
-  .objective-section > :not(#FundoAzulCurvado) {
-    position: relative;
-    z-index: 2;
-  }
-
-  .objective-section > .tituloObjetivos {
-    position: relative;
-    inset: auto;
-    grid-column: 1 / -1;
-    grid-row: 1;
-    width: auto;
-    margin: 0 16px 24px;
-    transform: none;
-  }
-
-  .objective-section > .cartaoReducao {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .objective-section > .cartaoMonitoramento {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .objective-section > .cartaoEficiencia {
-    grid-column: 3;
-    grid-row: 2;
-  }
-
-  .delta-section {
-    position: relative;
-    isolation: isolate;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.8fr);
-    grid-template-rows: auto 1fr;
-    align-items: center;
-    gap: 12px 24px;
-    min-height: 520px;
-    margin-top: 0;
-    padding: 78px clamp(24px, 6vw, 80px) 42px;
-    overflow: hidden;
-    background: linear-gradient(180deg, #306AE5 0%, #003E9B 100%);
-  }
-
-  #FundoAzulOndaGradiente {
-    display: block;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.35;
-    pointer-events: none;
-  }
-
-  .O-Delta, .textoDelta, .Iphone {
-    position: relative;
-    inset: auto;
-    z-index: 1;
-    width: auto;
-    height: auto;
-    margin: 0;
-    text-align: left;
-  }
-
-  .O-Delta {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: end;
-    font-size: clamp(42px, 7vw, 88px);
-  }
-
-  .textoDelta {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-    font-size: clamp(16px, 2vw, 28px);
-    line-height: 1.6;
-  }
-
-  .textoDelta br {
-    display: none;
-  }
-
-  .Iphone {
-    grid-column: 2;
-    grid-row: 1 / span 2;
     display: flex;
-    justify-content: center;
     align-items: center;
-  }
-
-  .Iphone img {
-    width: min(100%, 280px);
-    height: auto;
-  }
-
-  .concept-section {
     position: relative;
-    isolation: isolate;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    row-gap: 0;
-    margin-top: clamp(-120px, -8vw, -44px);
-    padding-top: clamp(44px, 8vw, 120px);
-    padding-bottom: clamp(40px, 5vw, 72px);
-    overflow: hidden;
-  }
-
-  .concept-section::before {
-    content: '';
-    position: absolute;
-    inset: clamp(45px, 12vw, 170px) 0 0;
-    z-index: 0;
-    background: #E0E8F6;
-    pointer-events: none;
-  }
-
-  .FundoAzulClaroOnda {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-  }
-
-  .concept-section > :not(.FundoAzulClaroOnda) {
-    position: relative;
-    z-index: 2;
-  }
-
-  .tituloConceito, .tituloObjetivos, .tituloFuncionalidades, .titulo-planos,
-  .tituloNossaEquipe, .NossosValores {
-    position: relative;
-    inset: auto;
-    transform: none;
-    width: auto;
-    margin: 48px 16px 20px;
-    font-size: clamp(25px, 7vw, 42px);
-    text-align: center;
-    overflow-wrap: anywhere;
-  }
-
-  .tituloConceito {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    margin: 0 16px 56px;
-    scroll-margin-top: 112px;
-  }
-
-  .retanguloCenario, .retanguloSolucao, .retanguloCenario2, .retanguloSolucao2 {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 12px clamp(16px, 3vw, 50px);
-    will-change: transform, opacity;
-  }
-
-  .retanguloCenario {
-    grid-column: 1 / 5;
-    grid-row: 2;
-    justify-self: start;
-    width: min(240px, 100%);
-    min-height: 64px;
-    margin-top: 0;
-    border-radius: 0 40px 0 0;
-  }
-
-  .retanguloCenario2 {
-    grid-column: 1 / 10;
-    grid-row: 3;
-    width: 114%;
-    min-height: 120px;
-    border-radius: 0 76px 76px 0;
-    background: linear-gradient(90deg, #306AE5 0%, #003E9B 100%);
-  }
-
-  .retanguloSolucao {
-    grid-column: 9 / -1;
-    grid-row: 4;
-    justify-self: end;
-    width: min(240px, 100%);
-    min-height: 64px;
-    margin-top: 44px;
-    border-radius: 40px 0 0 0;
-    background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
-  }
-
-  .retanguloSolucao2 {
-    grid-column: 4 / -1;
-    grid-row: 5;
-    width: 114%;
-    justify-self: end;
-    min-height: 120px;
-    border-radius: 76px 0 0 76px;
-    background: linear-gradient(90deg, #306AE5 0%, #003E9B 100%);
-  }
-
-  .conteudoCenario, .conteudoSolucao {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    font-size: clamp(15px, 1.8vw, 23px);
-    line-height: 1.5;
-  }
-
-  .conteudoCenario {
-    text-align: left;
-  }
-
-  .conteudoSolucao {
-    text-align: right;
-  }
-
-  .miniTituloCenario, .miniTituloSolucao {
-    font-size: clamp(24px, 3.6vw, 44px);
-    text-align: center;
-  }
-
-  .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: auto;
-    min-height: 330px;
-    margin: 0;
-    padding-bottom: 20px;
-  }
-
-  .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
-    width: auto;
-    height: auto;
-    margin: 172px 20px 0;
-    font-size: 14px;
-  }
-
-  .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
-    position: relative;
-    inset: auto;
-    display: block;
-    width: 100%;
-    height: 190px;
-    margin: 0;
-    border-radius: 18px;
-    background: #FFF;
-    box-shadow: 0 5px 18px rgb(11 33 86 / 8%);
-  }
-
-  #frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-  }
-
-  #relogio, #sino, #grafico, #lista, #robo, #papel {
-    left: 18px;
-    top: 28px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
-  .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
-    left: 68px;
-    top: 24px;
-    width: calc(100% - 82px);
-    font-size: 15px;
-  }
-
-  .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
-  .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
-    left: 68px;
-    top: 92px;
-    width: calc(100% - 82px);
-    font-size: 13px;
-  }
-
-  .retangulo1, .retangulo2, .retangulo3 {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    flex: 0 0 auto;
-    margin: 0;
-    padding: 28px 18px;
-    gap: 16px;
-  }
-
-  .texto-retangulo1 br, .texto-retangulo2 br, .texto-retangulo3 br {
-    display: none;
-  }
-
-  .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
-    margin-bottom: 10px;
-    line-height: 1.4;
-  }
-
-  .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
-    font-size: 16px;
-  }
-
-  .titulo-essencial, .titulo-gestao, .titulo-premium {
-    min-width: 0;
-    font-size: clamp(20px, 2.5vw, 26px);
-    line-height: 1.2;
-    overflow-wrap: anywhere;
-  }
-
-  .parte-cima {
-    width: 100%;
-    min-width: 0;
-    gap: 10px;
-  }
-
-  .gluh1, .gluh2, .gluh3 {
-    width: 54px;
-    height: 54px;
-    flex: 0 0 54px;
-  }
-
-  .preco1, .preco2, .preco3 {
-    font-size: clamp(30px, 8vw, 38px);
-  }
-
-  .mensal {
-    font-size: 19px;
-  }
-
-  .tituloNossaEquipe {
-    top: auto;
-    left: auto;
-  }
-
-  .carrossel {
-    top: auto;
-    overflow: hidden;
-  }
-
-  .grupo {
-    gap: 20px;
-    padding-right: 20px;
-  }
-
-  .foto img {
-    display: block;
-    width: min(65vw, 180px);
-    height: auto;
-  }
-
-  .FundoAzulCurvadoGradiente {
-    position: relative;
-    margin-top: 48px;
-    padding: 38px 22px;
-    background: #0B2156;
-  }
-
-  #fundoCurvadoGradiente, #corpoGlub, #bracoGlub, #gotaMaior, #gotaMenor {
-    display: none;
-  }
-
-  .sobreNos, .textoSobreNos {
-    position: relative;
-    inset: auto;
-    width: auto;
-    height: auto;
-    margin: 0;
-  }
-
-  .sobreNos {
-    font-size: clamp(28px, 8vw, 48px);
-  }
-
-  .textoSobreNos {
-    margin-top: 18px;
-    font-size: 16px;
-  }
-
-  .card-section {
-    margin-top: 20px;
-    padding-bottom: 24px;
-  }
-
-  .Valores {
-    width: 100%;
-  }
-
-  .card img {
-    width: 100%;
-  }
-
-  .retangulo-comecar-parte-final {
-    position: relative;
-    display: block;
-    inset: auto;
-    width: min(323px, calc(100% - 48px));
-    height: 52px;
-    margin: 20px auto 0;
-  }
-
-  #ParteFinal {
-    position: relative;
-    display: block;
-    inset: auto;
-    transform: none;
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    margin: -52px auto 72px;
-    pointer-events: none;
-  }
-
-  .Footer {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 14px;
-    padding: 28px 20px clamp(72px, 10vw, 120px);
-    background: #0B2156;
-  }
-
-  .Footer::before {
-    content: "";
-    position: absolute;
-    top: -55px;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background: url("../img/footer-onda.svg") left top / 246px 90px repeat-x;
-    pointer-events: none;
-  }
-
-  #footer {
-    display: none;
-  }
-
-  #logo {
-    position: static;
-    width: 100px;
-    height: auto;
-    grid-column: 1 / -1;
-    margin: 0;
-  }
-
-  .textoFooter {
-    position: static;
-    width: auto;
-    grid-column: 1 / -1;
-    margin: 0;
-  }
-
-  .coluna1, .coluna2, .coluna3 {
-    position: static;
-    min-width: 0;
-    margin: 0;
-    overflow-wrap: anywhere;
-  }
-
-  .coluna1 li, .coluna2 li, .coluna3 li {
-    white-space: normal;
-  }
-
-  .direitos {
-    position: static;
-    grid-column: 1 / -1;
-    margin: 0;
-    padding: 12px 16px;
-    text-align: center;
-    font-size: 12px;
-  }
-
-  #modal {
-    width: calc(100vw - 24px);
-    max-width: 620px;
-    max-height: calc(100vh - 24px);
-    overflow: auto;
-  }
+    margin-left: 50px;
 }
 
-@media (max-width: 760px) {
-  .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
-    display: none;
-  }
+/* Estilos do grupo: define a apresentação do seletor .Delta. */
+.Delta {
+    color: #FEFEFE;
+    font-family: "Talina DEMO", sans-serif;
+    font-size: 47.998px;
+    font-weight: 400;
+    z-index: 1000;
+}
 
-  .botao-menu {
+/* Estilos do grupo: define a apresentação do seletor #LogoDelta. */
+#LogoDelta {
+    width: 36.001px;
+    height: 33.861px;
+    z-index: 1002;
+    display: block;
+    margin-left: -50px;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .retangulo-comecar-parte-final. */
+.retangulo-comecar-parte-final{
     position: absolute;
-    top: 50%;
-    left: 12px;
-    right: auto;
+    width: 323px;
+    height: 50.319px;
+    border-radius: 18px;
+    cursor:pointer;
+    z-index: 30;
+    top: 6884.5px;
+    left:261.5px;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .fundo-planos. */
+.fundo-planos{
+    position:absolute;
+    z-index:2;
+    top:3500px;
+    width: 100%;
+    left:0;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .titulo-planos. */
+.titulo-planos{
+    position: absolute;
+    z-index: 3;
+    top:3800px;
+    width: 100%;
+    color: #FAFAFA;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1.4px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilos do grupo: define a apresentação do seletor .retangulo1. */
+.retangulo1 {
+    position: absolute;
+    z-index: 3;
+    width: 423px;
+    height: 556px;
+    border-radius: 12px;
+    background: #FAFAFA;
+    top: 3890px;
+    left: 110px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 42px;
-    height: 42px;
-    padding: 8px;
-    transform: translateY(-50%);
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    cursor: pointer;
-    z-index: 1102;
-  }
+    align-items: flex-start;
+    padding: 40px 35px;
+    box-sizing: border-box;
+    gap: 20px;
+}
 
-  .botao-logo {
+/* Estilos do grupo: define a apresentação do seletor .parte-cima. */
+.parte-cima {
     display: flex;
     align-items: center;
-    flex-direction: row;
-    gap: 6px;
-    margin-left: 0;
-  }
+    gap: 15px;
+}
 
-  .botao-topo {
-    position: absolute;
-    top: 50%;
-    left: 60px;
-    transform: translateY(-50%);
-  }
+/* Estilos do grupo: define a apresentação do seletor .gluh1. */
+.gluh1 {
+    width: 64.862px;
+    height: 58.792px;
+    object-fit: contain;
+}
 
-  .Delta {
-    position: static;
-    left: auto;
-    flex: 0 0 auto;
-    width: max-content;
+/* Estilos do grupo: define a apresentação do seletor .titulo-essencial. */
+.titulo-essencial {
+    color: #306BE5;
+    font-family: Unbounded, sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
     margin: 0;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .texto-retangulo1. */
+.texto-retangulo1 {
+    color: #494A4C;
+    text-wrap-style: balance;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+    padding-left: 20px;
+    margin: 0;
+    width: 100%;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li. */
+.texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
+    margin-bottom: 6px;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .preco1. */
+.preco1 {
+    color: #0B2156;
+    font-family: Unbounded, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-top: auto;
     line-height: 1;
-    white-space: nowrap;
-  }
-
-  #LogoDelta {
-    position: static;
-    left: auto;
-    order: 0;
-    flex: 0 0 28px;
-    width: 28px;
-    height: auto;
-    margin: 0;
-  }
-
-  .Entrar,
-  .Cadastrar {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .botao-menu span {
-    display: block;
+    text-align: center;
     width: 100%;
-    height: 2px;
-    border-radius: 2px;
-    background: #FAFAFA;
-    transition: transform 180ms ease, opacity 180ms ease;
-  }
+}
 
-  .botao-menu[aria-expanded="true"] span:first-child {
-    transform: translateY(7px) rotate(45deg);
-  }
+/* Estilos do grupo: define a apresentação do seletor .mensal. */
+.mensal {
+    color: #306BE5;
+    font-family: Unbounded, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.48px;
+    margin-top: -10px;
+    text-align: center;
+    width: 100%;
+}
 
-  .botao-menu[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .botao-menu[aria-expanded="true"] span:last-child {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  .menu-navegacao {
+/* Estilos do grupo: define a apresentação do seletor .retangulo2. */
+.retangulo2 {
     position: absolute;
-    top: calc(100% + 8px);
-    right: 12px;
-    z-index: 1101;
-    display: none;
-    width: min(260px, calc(100vw - 24px));
-    padding: 8px;
-    border: 1px solid rgb(255 255 255 / 20%);
+    z-index: 3;
+    width: 423px;
+    height: 556px;
     border-radius: 12px;
-    background: #0B2156;
-    box-shadow: 0 12px 28px rgb(0 0 0 / 24%);
-  }
-
-  .menu-navegacao.aberto {
-    display: grid;
-  }
-
-  .menu-navegacao a {
-    padding: 11px 14px;
-    border-radius: 7px;
-    color: #FAFAFA;
-    font-family: Poppins, sans-serif;
-    font-size: 14px;
-    text-decoration: none;
-  }
-
-  .menu-navegacao a:hover,
-  .menu-navegacao a:focus-visible {
-    background: #306AE5;
-    outline: none;
-  }
+    background: #FAFAFA;
+    top: 3890px;
+    left: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 35px;
+    box-sizing: border-box;
+    gap: 20px;
 }
 
-@media (max-width: 600px) {
-  .barra-fixa {
-    height: 96px;
-    min-height: 96px;
-  }
-
-  .botao-logo {
-    margin-left: 0;
-  }
-
-  .Delta {
-    font-size: 30px;
-  }
-
-  .Cadastrar, .minha-conta {
-    right: 10px;
-    width: 94px;
-  }
-
-  .Entrar {
-    right: 116px;
-  }
-
-  .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
-    top: 62px;
-    font-size: clamp(7px, 2.1vw, 10px);
-  }
-
-  .Inicio { left: 2%; }
-  .Conceito { left: 16%; }
-  .Objetivos { left: 32%; }
-  .Funcionalidades { left: 47%; }
-  .Sobre_Nos { left: 73%; }
-  .valores { left: 88%; }
-
-  .titulo1 {
-    margin-top: 126px;
-  }
-
-  .tituloPrincipal {
-    font-size: clamp(23px, 7.2vw, 42px);
-    overflow-wrap: normal;
-    word-break: normal;
-  }
-
-  .O-Delta {
-    font-size: clamp(26px, 8vw, 42px);
-  }
-
-  .retanguloCenario {
-    grid-column: 1 / 7;
-  }
-
-  .retanguloCenario2 {
-    grid-column: 1 / 12;
-    width: 100%;
-  }
-
-  .retanguloSolucao {
-    grid-column: 7 / -1;
-  }
-
-  .retanguloSolucao2 {
-    grid-column: 2 / -1;
-    width: 100%;
-  }
-
-  .objective-section {
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .objective-section > .tituloObjetivos {
-    position: absolute;
-    inset: 0 auto auto 0;
-    grid-column: auto;
-    grid-row: auto;
-    width: calc(100vw - 24px);
-    margin: 0;
-  }
-
-  .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
-    scroll-snap-align: start;
-  }
-
-  .functionality-section {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    padding: 28px 12px 34px;
-  }
-
-  .functionality-section > .cartao1,
-  .functionality-section > .cartao2,
-  .functionality-section > .cartao3,
-  .functionality-section > .cartao4,
-  .functionality-section > .cartao5,
-  .functionality-section > .cartao6 {
-    height: 170px;
-  }
-
-  .plans-section {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .plans-section > .titulo-planos {
-    position: absolute;
-    inset: 160px auto auto 0;
-    grid-column: auto;
-    width: calc(100vw - 24px);
-    margin: 0;
-  }
-
-  .plans-section > .retangulo1,
-  .plans-section > .retangulo2,
-  .plans-section > .retangulo3 {
-    scroll-snap-align: start;
-  }
-
-  #relogio, #sino, #grafico, #lista, #robo, #papel {
-    left: 12px;
-    top: 24px;
-    width: 32px;
-    height: 32px;
-  }
-
-  .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
-  .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
-    left: 52px;
-    top: 18px;
-    width: calc(100% - 58px);
-    font-size: 12px;
-    line-height: 1.25;
-  }
-
-  .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
-  .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
-    left: 52px;
-    top: 66px;
-    width: calc(100% - 58px);
-    font-size: 10px;
-    line-height: 1.3;
-  }
-
-  .delta-section {
-    grid-template-columns: minmax(0, 1.35fr) minmax(120px, 0.65fr);
-    gap: 8px;
-    min-height: 400px;
-    padding: 78px 16px 38px;
-  }
-
-  .textoDelta {
-    font-size: clamp(11px, 3vw, 14px);
-    line-height: 1.5;
-  }
-
-  .Iphone img {
-    width: 100%;
-  }
-
-  .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
-    right: 16px;
-    font-size: 19px;
-  }
-
-  .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
-    margin: 136px 18px 0;
-    font-size: 13px;
-    line-height: 1.55;
-  }
-
-  .card-section .botao-voltar { left: 8px; }
-  .card-section .botao-avancar { right: 8px; }
-  .icone { width: 36px; height: auto; }
-
-  .retangulo1, .retangulo2, .retangulo3 {
-    min-height: 0;
-  }
-
-  .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
-    font-size: 15px;
-    line-height: 1.3;
-  }
-
-  .tituloNossaEquipe, .titulo-planos, .NossosValores {
-    letter-spacing: -0.6px;
-  }
-}
-
-@media (max-width: 420px) {
-  .Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores {
-    font-size: 8px;
-  }
-
-  .tituloPrincipal {
-    font-size: clamp(24px, 7.6vw, 34px);
-  }
-
-  .retangulo1, .retangulo2, .retangulo3 {
-    padding: 24px 18px;
-  }
-
-  .Footer {
-    grid-template-columns: 1fr;
-  }
-
-  .textoDelta, .textoSobreNos {
-    font-size: 15px;
-  }
-
-  .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
-    height: 170px;
-  }
-
-  .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
-  .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
-    font-size: 13px;
-  }
-
-  .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
-  .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 760px) {
-  .plans-section {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .plans-section > .titulo-planos {
-    position: absolute;
-    inset: 160px auto auto 0;
-    grid-column: auto;
-    width: calc(100vw - 24px);
-    margin: 0;
-  }
-
-  .plans-section > .retangulo1,
-  .plans-section > .retangulo2,
-  .plans-section > .retangulo3 {
-    min-width: 0;
-    padding: 16px 8px;
-    gap: 10px;
-  }
-
-  .parte-cima {
+/* Estilos do grupo: define a apresentação do seletor .parte-cima. */
+.parte-cima {
+    display: flex;
     align-items: center;
-    flex-direction: row;
-    gap: 6px;
-  }
-
-  .gluh1, .gluh2, .gluh3 {
-    width: 34px;
-    height: 34px;
-    flex-basis: 34px;
-  }
-
-  .titulo-essencial, .titulo-gestao, .titulo-premium {
-    flex: 1 1 auto;
-    font-size: clamp(10px, 3.5vw, 18px);
-    overflow-wrap: anywhere;
-  }
-
-  .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
-    padding-left: 12px;
-    font-size: clamp(8px, 2.7vw, 12px);
-    letter-spacing: 0;
-  }
-
-  .preco1, .preco2, .preco3 {
-    font-size: clamp(12px, 4vw, 20px);
-    overflow-wrap: anywhere;
-  }
-
-  .mensal {
-    font-size: clamp(8px, 2.8vw, 12px);
-  }
+    gap: 15px;
 }
 
+/* Estilos do grupo: define a apresentação do seletor .gluh2. */
+.gluh2 {
+    width: 64.862px;
+    height: 58.792px;
+    object-fit: contain;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .titulo-gestao. */
+.titulo-gestao {
+    color: #306BE5;
+    font-family: Unbounded, sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    margin: 0;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .texto-retangulo2. */
+.texto-retangulo2 {
+    color: #494A4C;
+    text-wrap-style: balance;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+    padding-left: 20px;
+    margin: 0;
+    width: 100%;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .preco2. */
+.preco2 {
+    color: #0B2156;
+    font-family: Unbounded, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-top: auto;
+    line-height: 1;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .mensal. */
+.mensal {
+    color: #306BE5;
+    font-family: Unbounded, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.48px;
+    margin-top: -10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .retangulo3. */
+.retangulo3 {
+    position: absolute;
+    z-index: 3;
+    width: 423px;
+    height: 556px;
+    border-radius: 12px;
+    background: #FAFAFA;
+    top: 3890px;
+    left: 990px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 35px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .parte-cima. */
+.parte-cima {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .gluh3. */
+.gluh3 {
+    width: 64.862px;
+    height: 58.792px;
+    object-fit: contain;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .titulo-premium. */
+.titulo-premium {
+    color: #306BE5;
+    font-family: Unbounded, sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    margin: 0;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .texto-retangulo3. */
+.texto-retangulo3 {
+    color: #494A4C;
+    text-wrap-style: balance;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+    padding-left: 20px;
+    margin: 0;
+    width: 100%;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .preco3. */
+.preco3 {
+    color: #0B2156;
+    font-family: Unbounded, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-top: auto;
+    line-height: 1;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilos do grupo: define a apresentação do seletor .mensal. */
+.mensal {
+    color: #306BE5;
+    font-family: Unbounded, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.48px;
+    margin-top: -10px;
+    text-align: center;
+    width: 100%;
+}
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 1439px). */
 @media (max-width: 1439px) {
-  .objective-section {
-    padding-right: 18px;
-    padding-left: 18px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor html, body. */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
 
-  .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
-    min-height: 330px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor body. */
+    body {
+        background-color: #E0E8F6;
+    }
 
-  #hidrometro, #monitoramento, #eficiencia {
-    top: 24px;
-    left: 20px;
-    width: 44px;
-    height: 44px;
-    margin: 0;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .barra-fixa. */
+    .barra-fixa {
+        height: 86px;
+        min-height: 86px;
+    }
 
-  .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
-    top: 22px;
-    left: 72px;
-    width: calc(100% - 88px);
-    margin: 0;
-    font-size: clamp(14px, 1.6vw, 20px);
-    line-height: 1.25;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .botao-logo. */
+    .botao-logo {
+        margin-left: 12px;
+    }
 
-  .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
-    width: auto;
-    height: auto;
-    margin: 92px 16px 0;
-    font-size: clamp(11px, 1.2vw, 15px);
-    line-height: 1.45;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Delta. */
+    .Delta {
+        font-size: 34px;
+    }
 
-  .card-section {
-    width: calc(100% - clamp(32px, 8vw, 112px));
-    max-width: 1400px;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    /* Estilos do grupo: define a apresentação do seletor #LogoDelta. */
+    #LogoDelta {
+        left: auto;
+        width: 28px;
+        height: auto;
+    }
 
-  .card-section .icone {
-    width: 70px;
-    height: auto;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Cadastrar, .minha-conta. */
+    .Cadastrar, .minha-conta {
+        top: 10px;
+        right: 12px;
+        width: 108px;
+        height: 28px;
+    }
 
-  .card-section .botao-voltar {
-    left: clamp(6px, 1.5vw, 18px);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Entrar. */
+    .Entrar {
+        top: 15px;
+        right: 132px;
+    }
 
-  .card-section .botao-avancar {
-    right: clamp(6px, 1.5vw, 18px);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores. */
+    .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
+        position: absolute;
+        top: 56px;
+        height: 20px;
+        width: auto;
+        font-size: clamp(8px, 2.5vw, 11px);
+        white-space: nowrap;
+    }
 
-  .FundoAzulCurvadoGradiente {
-    position: relative;
-    isolation: isolate;
-    display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-    grid-template-rows: auto 1fr;
-    align-items: center;
-    column-gap: clamp(16px, 4vw, 64px);
-    width: 100%;
-    min-height: clamp(680px, 68vw, 920px);
-    margin-top: 24px;
-    padding: clamp(72px, 8vw, 124px) clamp(28px, 6vw, 110px) clamp(56px, 6vw, 96px);
-    overflow: hidden;
-    background: transparent;
-  }
+    .Inicio { left: 2%; }
+    .Conceito { left: 17%; }
+    .Objetivos { left: 33%; }
+    .Funcionalidades { left: 49%; }
+    .Sobre_Nos { left: 73%; }
+    .valores { left: 88%; }
 
-  #fundoCurvadoGradiente {
-    display: block;
-    position: absolute;
-    top: -55%;
-    left: -2%;
-    z-index: -1;
-    width: 152%;
-    min-height: clamp(680px, 90vw, 980px);
-    object-fit: fill;
-    object-position: center;
-    pointer-events: none;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .FundoGradiente. */
+    .FundoGradiente {
+        height: 1250px;
+    }
 
-  .sobreNos, .textoSobreNos {
-    position: relative;
-    inset: auto;
-    grid-column: 1;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    z-index: 2;
-  }
+    .titulo1, .titulo2, .tituloPrincipal, .Texto, .retanguloComecar,
+    /* Estilos do grupo: define a apresentação do seletor .carta1, .carta2, .carta3. */
+    .carta1, .carta2, .carta3 {
+        position: relative;
+        inset: auto;
+        transform: none;
+        height: auto;
+    }
 
-  .sobreNos {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    align-self: end;
-    width: max-content;
-    max-width: 100%;
-    white-space: nowrap;
-    font-size: clamp(30px, 5.8vw, 110px);
-    line-height: 1.08;
-    letter-spacing: -0.04em;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .titulo1. */
+    .titulo1 {
+        width: auto;
+        margin: 126px 20px 0;
+        font-size: clamp(21px, 7vw, 34px);
+    }
 
-  .NossosValores {
-    margin: -142px 16px 12px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .tituloPrincipal. */
+    .tituloPrincipal {
+        width: auto;
+        margin: 0 20px;
+        font-size: clamp(27px, 8vw, 48px);
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+    }
 
-  .textoSobreNos {
-    grid-row: 2;
-    align-self: start;
-    margin-top: clamp(24px, 4vw, 56px);
-    font-size: clamp(15px, 1.65vw, 30px);
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .titulo2. */
+    .titulo2 {
+        width: auto;
+        margin: 0 20px;
+        font-size: clamp(21px, 7vw, 34px);
+        text-align: right;
+    }
 
-  #corpoGlub {
-    display: block;
-    position: absolute;
-    top: 15%;
-    right: 9%;
-    z-index: 2;
-    width: min(33vw, 490px);
-    height: auto;
-  }
+    /* Estilos do grupo: define a apresentação do seletor #LogoTransparente. */
+    #LogoTransparente {
+        display: none;
+    }
 
-  #bracoGlub {
-    display: block;
-    position: absolute;
-    top: 20%;
-    right: 38%;
-    z-index: 1;
-    width: min(7vw, 105px);
-    height: auto;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Texto. */
+    .Texto {
+        width: auto;
+        margin: 24px 24px 0;
+        font-size: 16px;
+        line-height: 1.55;
+    }
 
-  #gotaMaior, #gotaMenor {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: auto;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .retanguloComecar. */
+    .retanguloComecar {
+        width: min(303px, calc(100% - 48px));
+        min-height: 56px;
+        margin: 20px auto 28px;
+    }
 
-  #gotaMaior {
-    top: 25%;
-    right: 45%;
-    width: min(5vw, 66px);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .carta1, .carta2, .carta3. */
+    .carta1, .carta2, .carta3 {
+        display: inline-flex;
+        vertical-align: top;
+        width: calc((100vw - 72px) / 3);
+        min-height: 185px;
+        margin: 12px 0 0 12px;
+        padding: 24px 8px;
+        border-radius: 24px 24px 0 0;
+    }
 
-  #gotaMenor {
-    top: 30%;
-    right: 45%;
-    width: min(4vw, 52px);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .conteudoCarta1, .conteudoCarta2, .conteudoCarta3. */
+    .conteudoCarta1, .conteudoCarta2, .conteudoCarta3 {
+        width: 100%;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoCarta1, .textoCarta2, .textoCarta3. */
+    .textoCarta1, .textoCarta2, .textoCarta3 {
+        margin-top: 20px;
+        font-size: clamp(9px, 2.5vw, 13px);
+        line-height: 1.35;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Numero, .horas, .Numero2. */
+    .Numero, .horas, .Numero2 {
+        font-size: clamp(30px, 9vw, 58px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #FundoAzulClaroOnda2, .fundo-planos. */
+    #FundoAzulClaroOnda2, .fundo-planos {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section. */
+    .functionality-section {
+        position: relative;
+        isolation: isolate;
+        z-index: 4;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        padding: 32px 20px 40px;
+        background: #E0E8F6;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section > .tituloFuncionalidades. */
+    .functionality-section > .tituloFuncionalidades {
+        position: relative;
+        z-index: 5;
+        grid-column: 1 / -1;
+        margin: 0 0 8px;
+        scroll-margin-top: 112px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section. */
+    .plans-section {
+        position: relative;
+        isolation: isolate;
+        z-index: 3;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 18px;
+        padding-right: 36px;
+        padding-left: 20px;
+        padding-top: 240px;
+        padding-bottom: 120px;
+        background: linear-gradient(180deg, #064BB7 0%, #002256 100%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section::before. */
+    .plans-section::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 auto;
+        height: 74vw;
+        z-index: 0;
+        background: #E0E8F6;
+        mask: url('/imagens/fundo-planos.svg') center -56vw / 100% auto no-repeat;
+        -webkit-mask: url('/imagens/fundo-planos.svg') center -56vw / 100% auto no-repeat;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section::after. */
+    .plans-section::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: calc(80px - 63vw);
+        z-index: 1;
+        width: 100%;
+        height: 63vw;
+        background: url('/imagens/FundoAzulClaroOnda.svg') top center / 100% 100% no-repeat;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > :not(.fundo-planos). */
+    .plans-section > :not(.fundo-planos) {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .fundo-planos. */
+    .plans-section .fundo-planos {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .titulo-planos. */
+    .plans-section > .titulo-planos {
+        grid-column: 1 / -1;
+        width: auto;
+        margin: 0 16px 8px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section. */
+    .objective-section {
+        position: relative;
+        isolation: isolate;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 14px;
+        padding-top: clamp(140px, 19vw, 210px);
+        padding-bottom: clamp(90px, 10vw, 140px);
+        background: linear-gradient(180deg, #064BB7 0%, #002256 100%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section::before. */
+    .objective-section::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 auto;
+        height: clamp(90px, 16.2vw, 150px);
+        z-index: 0;
+        border-radius: 0 0 50% 50% / 0 0 30% 30%;
+        background: #E0E8F6;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section::after. */
+    .objective-section::after {
+        content: '';
+        position: absolute;
+        left: -10%;
+        bottom: -50px;
+        z-index: 1;
+        width: 120%;
+        height: 110px;
+        border-radius: 50% 50% 0 0 / 55% 55% 0 0;
+        background: #E0E8F6;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #FundoAzulCurvado. */
+    #FundoAzulCurvado {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > :not(#FundoAzulCurvado). */
+    .objective-section > :not(#FundoAzulCurvado) {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .tituloObjetivos. */
+    .objective-section > .tituloObjetivos {
+        position: relative;
+        inset: auto;
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: auto;
+        margin: 0 16px 24px;
+        transform: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .cartaoReducao. */
+    .objective-section > .cartaoReducao {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .cartaoMonitoramento. */
+    .objective-section > .cartaoMonitoramento {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .cartaoEficiencia. */
+    .objective-section > .cartaoEficiencia {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .delta-section. */
+    .delta-section {
+        position: relative;
+        isolation: isolate;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.8fr);
+        grid-template-rows: auto 1fr;
+        align-items: center;
+        gap: 12px 24px;
+        min-height: 520px;
+        margin-top: 0;
+        padding: 78px clamp(24px, 6vw, 80px) 42px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #306AE5 0%, #003E9B 100%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #FundoAzulOndaGradiente. */
+    #FundoAzulOndaGradiente {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.35;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .O-Delta, .textoDelta, .Iphone. */
+    .O-Delta, .textoDelta, .Iphone {
+        position: relative;
+        inset: auto;
+        z-index: 1;
+        width: auto;
+        height: auto;
+        margin: 0;
+        text-align: left;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .O-Delta. */
+    .O-Delta {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: end;
+        font-size: clamp(42px, 7vw, 88px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoDelta. */
+    .textoDelta {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: start;
+        font-size: clamp(16px, 2vw, 28px);
+        line-height: 1.6;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoDelta br. */
+    .textoDelta br {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Iphone. */
+    .Iphone {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Iphone img. */
+    .Iphone img {
+        width: min(100%, 280px);
+        height: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .concept-section. */
+    .concept-section {
+        position: relative;
+        isolation: isolate;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        row-gap: 0;
+        margin-top: clamp(-120px, -8vw, -44px);
+        padding-top: clamp(44px, 8vw, 120px);
+        padding-bottom: clamp(40px, 5vw, 72px);
+        overflow: hidden;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .concept-section::before. */
+    .concept-section::before {
+        content: '';
+        position: absolute;
+        inset: clamp(45px, 12vw, 170px) 0 0;
+        z-index: 0;
+        background: #E0E8F6;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .FundoAzulClaroOnda. */
+    .FundoAzulClaroOnda {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .concept-section > :not(.FundoAzulClaroOnda). */
+    .concept-section > :not(.FundoAzulClaroOnda) {
+        position: relative;
+        z-index: 2;
+    }
+
+    .tituloConceito, .tituloObjetivos, .tituloFuncionalidades, .titulo-planos,
+    /* Estilos do grupo: define a apresentação do seletor .tituloNossaEquipe, .NossosValores. */
+    .tituloNossaEquipe, .NossosValores {
+        position: relative;
+        inset: auto;
+        transform: none;
+        width: auto;
+        margin: 48px 16px 20px;
+        font-size: clamp(25px, 7vw, 42px);
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .tituloConceito. */
+    .tituloConceito {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        margin: 0 16px 56px;
+        scroll-margin-top: 112px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloCenario, .retanguloSolucao, .retanguloCenario2, .retanguloSolucao2. */
+    .retanguloCenario, .retanguloSolucao, .retanguloCenario2, .retanguloSolucao2 {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 12px clamp(16px, 3vw, 50px);
+        will-change: transform, opacity;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloCenario. */
+    .retanguloCenario {
+        grid-column: 1 / 5;
+        grid-row: 2;
+        justify-self: start;
+        width: min(240px, 100%);
+        min-height: 64px;
+        margin-top: 0;
+        border-radius: 0 40px 0 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloCenario2. */
+    .retanguloCenario2 {
+        grid-column: 1 / 10;
+        grid-row: 3;
+        width: 114%;
+        min-height: 120px;
+        border-radius: 0 76px 76px 0;
+        background: linear-gradient(90deg, #306AE5 0%, #003E9B 100%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloSolucao. */
+    .retanguloSolucao {
+        grid-column: 9 / -1;
+        grid-row: 4;
+        justify-self: end;
+        width: min(240px, 100%);
+        min-height: 64px;
+        margin-top: 44px;
+        border-radius: 40px 0 0 0;
+        background: linear-gradient(95deg, #1E5ACA -10.15%, #0947A9 99.71%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloSolucao2. */
+    .retanguloSolucao2 {
+        grid-column: 4 / -1;
+        grid-row: 5;
+        width: 114%;
+        justify-self: end;
+        min-height: 120px;
+        border-radius: 76px 0 0 76px;
+        background: linear-gradient(90deg, #306AE5 0%, #003E9B 100%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .conteudoCenario, .conteudoSolucao. */
+    .conteudoCenario, .conteudoSolucao {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        font-size: clamp(15px, 1.8vw, 23px);
+        line-height: 1.5;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .conteudoCenario. */
+    .conteudoCenario {
+        text-align: left;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .conteudoSolucao. */
+    .conteudoSolucao {
+        text-align: right;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .miniTituloCenario, .miniTituloSolucao. */
+    .miniTituloCenario, .miniTituloSolucao {
+        font-size: clamp(24px, 3.6vw, 44px);
+        text-align: center;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia. */
+    .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        min-height: 330px;
+        margin: 0;
+        padding-bottom: 20px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia. */
+    .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
+        width: auto;
+        height: auto;
+        margin: 172px 20px 0;
+        font-size: 14px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6. */
+    .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
+        position: relative;
+        inset: auto;
+        display: block;
+        width: 100%;
+        height: 190px;
+        margin: 0;
+        border-radius: 18px;
+        background: #FFF;
+        box-shadow: 0 5px 18px rgb(11 33 86 / 8%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #frame1, #frame2, #frame3, #frame4, #frame5, #frame6. */
+    #frame1, #frame2, #frame3, #frame4, #frame5, #frame6 {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #relogio, #sino, #grafico, #lista, #robo, #papel. */
+    #relogio, #sino, #grafico, #lista, #robo, #papel {
+        left: 18px;
+        top: 28px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico. */
+    .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
+        left: 68px;
+        top: 24px;
+        width: calc(100% - 82px);
+        font-size: 15px;
+    }
+
+    .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico. */
+    .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
+        left: 68px;
+        top: 92px;
+        width: calc(100% - 82px);
+        font-size: 13px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retangulo1, .retangulo2, .retangulo3. */
+    .retangulo1, .retangulo2, .retangulo3 {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 28px 18px;
+        gap: 16px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1 br, .texto-retangulo2 br, .texto-retangulo3 br. */
+    .texto-retangulo1 br, .texto-retangulo2 br, .texto-retangulo3 br {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li. */
+    .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1, .texto-retangulo2, .texto-retangulo3. */
+    .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
+        font-size: 16px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .titulo-essencial, .titulo-gestao, .titulo-premium. */
+    .titulo-essencial, .titulo-gestao, .titulo-premium {
+        min-width: 0;
+        font-size: clamp(20px, 2.5vw, 26px);
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .parte-cima. */
+    .parte-cima {
+        width: 100%;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .gluh1, .gluh2, .gluh3. */
+    .gluh1, .gluh2, .gluh3 {
+        width: 54px;
+        height: 54px;
+        flex: 0 0 54px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .preco1, .preco2, .preco3. */
+    .preco1, .preco2, .preco3 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .mensal. */
+    .mensal {
+        font-size: 19px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .tituloNossaEquipe. */
+    .tituloNossaEquipe {
+        top: auto;
+        left: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .carrossel. */
+    .carrossel {
+        top: auto;
+        overflow: hidden;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .grupo. */
+    .grupo {
+        gap: 20px;
+        padding-right: 20px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .foto img. */
+    .foto img {
+        display: block;
+        width: min(65vw, 180px);
+        height: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .FundoAzulCurvadoGradiente. */
+    .FundoAzulCurvadoGradiente {
+        position: relative;
+        margin-top: 48px;
+        padding: 38px 22px;
+        background: #0B2156;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #fundoCurvadoGradiente, #corpoGlub, #bracoGlub, #gotaMaior, #gotaMenor. */
+    #fundoCurvadoGradiente, #corpoGlub, #bracoGlub, #gotaMaior, #gotaMenor {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .sobreNos, .textoSobreNos. */
+    .sobreNos, .textoSobreNos {
+        position: relative;
+        inset: auto;
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .sobreNos. */
+    .sobreNos {
+        font-size: clamp(28px, 8vw, 48px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoSobreNos. */
+    .textoSobreNos {
+        margin-top: 18px;
+        font-size: 16px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .card-section. */
+    .card-section {
+        margin-top: 20px;
+        padding-bottom: 24px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Valores. */
+    .Valores {
+        width: 100%;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .card img. */
+    .card img {
+        width: 100%;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retangulo-comecar-parte-final. */
+    .retangulo-comecar-parte-final {
+        position: relative;
+        display: block;
+        inset: auto;
+        width: min(323px, calc(100% - 48px));
+        height: 52px;
+        margin: 20px auto 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #ParteFinal. */
+    #ParteFinal {
+        position: relative;
+        display: block;
+        inset: auto;
+        transform: none;
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+        margin: -52px auto 72px;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Footer. */
+    .Footer {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 14px;
+        padding: 28px 20px clamp(72px, 10vw, 120px);
+        background: #0B2156;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Footer::before. */
+    .Footer::before {
+        content: "";
+        position: absolute;
+        top: -55px;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        background: url("/imagens/footer-onda.svg") left top / 246px 90px repeat-x;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #footer. */
+    #footer {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #logo. */
+    #logo {
+        position: static;
+        width: 100px;
+        height: auto;
+        grid-column: 1 / -1;
+        margin: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoFooter. */
+    .textoFooter {
+        position: static;
+        width: auto;
+        grid-column: 1 / -1;
+        margin: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .coluna1, .coluna2, .coluna3. */
+    .coluna1, .coluna2, .coluna3 {
+        position: static;
+        min-width: 0;
+        margin: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .coluna1 li, .coluna2 li, .coluna3 li. */
+    .coluna1 li, .coluna2 li, .coluna3 li {
+        white-space: normal;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .direitos. */
+    .direitos {
+        position: static;
+        grid-column: 1 / -1;
+        margin: 0;
+        padding: 12px 16px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #modal. */
+    #modal {
+        width: calc(100vw - 24px);
+        max-width: 620px;
+        max-height: calc(100vh - 24px);
+        overflow: auto;
+    }
 }
 
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 760px). */
+@media (max-width: 760px) {
+    /* Estilos do grupo: define a apresentação do seletor .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores. */
+    .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
+        display: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-menu. */
+    .botao-menu {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 8px;
+        transform: translateY(-50%);
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        cursor: pointer;
+        z-index: 1102;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-logo. */
+    .botao-logo {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 6px;
+        margin-left: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-topo. */
+    .botao-topo {
+        position: absolute;
+        top: 50%;
+        left: 60px;
+        transform: translateY(-50%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Delta. */
+    .Delta {
+        position: static;
+        left: auto;
+        flex: 0 0 auto;
+        width: max-content;
+        margin: 0;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #LogoDelta. */
+    #LogoDelta {
+        position: static;
+        left: auto;
+        order: 0;
+        flex: 0 0 28px;
+        width: 28px;
+        height: auto;
+        margin: 0;
+    }
+
+    .Entrar,
+    /* Estilos do grupo: define a apresentação do seletor .Cadastrar. */
+    .Cadastrar {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-menu span. */
+    .botao-menu span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background: #FAFAFA;
+        transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-menu[aria-expanded="true"] span:first-child. */
+    .botao-menu[aria-expanded="true"] span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-menu[aria-expanded="true"] span:nth-child(2). */
+    .botao-menu[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-menu[aria-expanded="true"] span:last-child. */
+    .botao-menu[aria-expanded="true"] span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .menu-navegacao. */
+    .menu-navegacao {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 12px;
+        z-index: 1101;
+        display: none;
+        width: min(260px, calc(100vw - 24px));
+        padding: 8px;
+        border: 1px solid rgb(255 255 255 / 20%);
+        border-radius: 12px;
+        background: #0B2156;
+        box-shadow: 0 12px 28px rgb(0 0 0 / 24%);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .menu-navegacao.aberto. */
+    .menu-navegacao.aberto {
+        display: grid;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .menu-navegacao a. */
+    .menu-navegacao a {
+        padding: 11px 14px;
+        border-radius: 7px;
+        color: #FAFAFA;
+        font-family: Poppins, sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .menu-navegacao a:hover,
+    /* Estilos do grupo: define a apresentação do seletor .menu-navegacao a:focus-visible. */
+    .menu-navegacao a:focus-visible {
+        background: #306AE5;
+        outline: none;
+    }
+}
+
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 600px). */
 @media (max-width: 600px) {
-  .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
-    min-height: 310px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .barra-fixa. */
+    .barra-fixa {
+        height: 96px;
+        min-height: 96px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .botao-logo. */
+    .botao-logo {
+        margin-left: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Delta. */
+    .Delta {
+        font-size: 30px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Cadastrar, .minha-conta. */
+    .Cadastrar, .minha-conta {
+        right: 10px;
+        width: 94px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Entrar. */
+    .Entrar {
+        right: 116px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores. */
+    .Inicio, .Conceito, .Objetivos, .Funcionalidades, .Sobre_Nos, .valores {
+        top: 62px;
+        font-size: clamp(7px, 2.1vw, 10px);
+    }
+
+    .Inicio { left: 2%; }
+    .Conceito { left: 16%; }
+    .Objetivos { left: 32%; }
+    .Funcionalidades { left: 47%; }
+    .Sobre_Nos { left: 73%; }
+    .valores { left: 88%; }
+
+    /* Estilos do grupo: define a apresentação do seletor .titulo1. */
+    .titulo1 {
+        margin-top: 126px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .tituloPrincipal. */
+    .tituloPrincipal {
+        font-size: clamp(23px, 7.2vw, 42px);
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .O-Delta. */
+    .O-Delta {
+        font-size: clamp(26px, 8vw, 42px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloCenario. */
+    .retanguloCenario {
+        grid-column: 1 / 7;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloCenario2. */
+    .retanguloCenario2 {
+        grid-column: 1 / 12;
+        width: 100%;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloSolucao. */
+    .retanguloSolucao {
+        grid-column: 7 / -1;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retanguloSolucao2. */
+    .retanguloSolucao2 {
+        grid-column: 2 / -1;
+        width: 100%;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section. */
+    .objective-section {
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .tituloObjetivos. */
+    .objective-section > .tituloObjetivos {
+        position: absolute;
+        inset: 0 auto auto 0;
+        grid-column: auto;
+        grid-row: auto;
+        width: calc(100vw - 24px);
+        margin: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia. */
+    .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
+        scroll-snap-align: start;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section. */
+    .functionality-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 28px 12px 34px;
+    }
+
+    .functionality-section > .cartao1,
+    .functionality-section > .cartao2,
+    .functionality-section > .cartao3,
+    .functionality-section > .cartao4,
+    .functionality-section > .cartao5,
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section > .cartao6. */
+    .functionality-section > .cartao6 {
+        height: 170px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section. */
+    .plans-section {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .titulo-planos. */
+    .plans-section > .titulo-planos {
+        position: absolute;
+        inset: 160px auto auto 0;
+        grid-column: auto;
+        width: calc(100vw - 24px);
+        margin: 0;
+    }
+
+    .plans-section > .retangulo1,
+    .plans-section > .retangulo2,
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .retangulo3. */
+    .plans-section > .retangulo3 {
+        scroll-snap-align: start;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #relogio, #sino, #grafico, #lista, #robo, #papel. */
+    #relogio, #sino, #grafico, #lista, #robo, #papel {
+        left: 12px;
+        top: 24px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico. */
+    .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
+        left: 52px;
+        top: 18px;
+        width: calc(100% - 58px);
+        font-size: 12px;
+        line-height: 1.25;
+    }
+
+    .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico. */
+    .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
+        left: 52px;
+        top: 66px;
+        width: calc(100% - 58px);
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .delta-section. */
+    .delta-section {
+        grid-template-columns: minmax(0, 1.35fr) minmax(120px, 0.65fr);
+        gap: 8px;
+        min-height: 400px;
+        padding: 78px 16px 38px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoDelta. */
+    .textoDelta {
+        font-size: clamp(11px, 3vw, 14px);
+        line-height: 1.5;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Iphone img. */
+    .Iphone img {
+        width: 100%;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .tituloReducao, .tituloMonitoramento, .tituloEficiencia. */
+    .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
+        right: 16px;
+        font-size: 19px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia. */
+    .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
+        margin: 136px 18px 0;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .card-section .botao-voltar { left: 8px; }
+    .card-section .botao-avancar { right: 8px; }
+    .icone { width: 36px; height: auto; }
+
+    /* Estilos do grupo: define a apresentação do seletor .retangulo1, .retangulo2, .retangulo3. */
+    .retangulo1, .retangulo2, .retangulo3 {
+        min-height: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1, .texto-retangulo2, .texto-retangulo3. */
+    .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .tituloNossaEquipe, .titulo-planos, .NossosValores. */
+    .tituloNossaEquipe, .titulo-planos, .NossosValores {
+        letter-spacing: -0.6px;
+    }
+}
+
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 420px). */
+@media (max-width: 420px) {
+    /* Estilos do grupo: define a apresentação do seletor .Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores. */
+    .Conceito, .Objetivos, .Funcionalidades, .Inicio, .Sobre_Nos, .valores {
+        font-size: 8px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .tituloPrincipal. */
+    .tituloPrincipal {
+        font-size: clamp(24px, 7.6vw, 34px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .retangulo1, .retangulo2, .retangulo3. */
+    .retangulo1, .retangulo2, .retangulo3 {
+        padding: 24px 18px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .Footer. */
+    .Footer {
+        grid-template-columns: 1fr;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoDelta, .textoSobreNos. */
+    .textoDelta, .textoSobreNos {
+        font-size: 15px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6. */
+    .cartao1, .cartao2, .cartao3, .cartao4, .cartao5, .cartao6 {
+        height: 170px;
+    }
+
+    .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico. */
+    .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
+        font-size: 13px;
+    }
+
+    .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico. */
+    .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
+        font-size: 11px;
+    }
+}
+
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 760px). */
+@media (max-width: 760px) {
+    /* Estilos do grupo: define a apresentação do seletor .plans-section. */
+    .plans-section {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .titulo-planos. */
+    .plans-section > .titulo-planos {
+        position: absolute;
+        inset: 160px auto auto 0;
+        grid-column: auto;
+        width: calc(100vw - 24px);
+        margin: 0;
+    }
+
+    .plans-section > .retangulo1,
+    .plans-section > .retangulo2,
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .retangulo3. */
+    .plans-section > .retangulo3 {
+        min-width: 0;
+        padding: 16px 8px;
+        gap: 10px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .parte-cima. */
+    .parte-cima {
+        align-items: center;
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .gluh1, .gluh2, .gluh3. */
+    .gluh1, .gluh2, .gluh3 {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .titulo-essencial, .titulo-gestao, .titulo-premium. */
+    .titulo-essencial, .titulo-gestao, .titulo-premium {
+        flex: 1 1 auto;
+        font-size: clamp(10px, 3.5vw, 18px);
+        overflow-wrap: anywhere;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1, .texto-retangulo2, .texto-retangulo3. */
+    .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
+        padding-left: 12px;
+        font-size: clamp(8px, 2.7vw, 12px);
+        letter-spacing: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .preco1, .preco2, .preco3. */
+    .preco1, .preco2, .preco3 {
+        font-size: clamp(12px, 4vw, 20px);
+        overflow-wrap: anywhere;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .mensal. */
+    .mensal {
+        font-size: clamp(8px, 2.8vw, 12px);
+    }
+}
+
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 1439px). */
+@media (max-width: 1439px) {
+    /* Estilos do grupo: define a apresentação do seletor .objective-section. */
+    .objective-section {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia. */
+    .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
+        min-height: 330px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #hidrometro, #monitoramento, #eficiencia. */
+    #hidrometro, #monitoramento, #eficiencia {
+        top: 24px;
+        left: 20px;
+        width: 44px;
+        height: 44px;
+        margin: 0;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .tituloReducao, .tituloMonitoramento, .tituloEficiencia. */
+    .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
+        top: 22px;
+        left: 72px;
+        width: calc(100% - 88px);
+        margin: 0;
+        font-size: clamp(14px, 1.6vw, 20px);
+        line-height: 1.25;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia. */
+    .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
+        width: auto;
+        height: auto;
+        margin: 92px 16px 0;
+        font-size: clamp(11px, 1.2vw, 15px);
+        line-height: 1.45;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .card-section. */
+    .card-section {
+        width: calc(100% - clamp(32px, 8vw, 112px));
+        max-width: 1400px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .card-section .icone. */
+    .card-section .icone {
+        width: clamp(36px, calc(7.8vw - 5px), 70px);
+        height: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .card-section .botao-voltar. */
+    .card-section .botao-voltar {
+        left: clamp(6px, 1.5vw, 18px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .card-section .botao-avancar. */
+    .card-section .botao-avancar {
+        right: clamp(6px, 1.5vw, 18px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .FundoAzulCurvadoGradiente. */
+    .FundoAzulCurvadoGradiente {
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        grid-template-rows: auto 1fr;
+        align-items: center;
+        column-gap: clamp(16px, 4vw, 64px);
+        width: 100%;
+        min-height: clamp(680px, 68vw, 920px);
+        margin-top: 24px;
+        padding: clamp(72px, 8vw, 124px) clamp(28px, 6vw, 110px) clamp(56px, 6vw, 96px);
+        overflow: hidden;
+        background: transparent;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #fundoCurvadoGradiente. */
+    #fundoCurvadoGradiente {
+        display: block;
+        position: absolute;
+        top: -55%;
+        left: -2%;
+        z-index: -1;
+        width: 152%;
+        min-height: clamp(680px, 90vw, 980px);
+        object-fit: fill;
+        object-position: center;
+        pointer-events: none;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .sobreNos, .textoSobreNos. */
+    .sobreNos, .textoSobreNos {
+        position: relative;
+        inset: auto;
+        grid-column: 1;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        z-index: 2;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .sobreNos. */
+    .sobreNos {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        align-self: end;
+        width: max-content;
+        max-width: 100%;
+        white-space: nowrap;
+        font-size: clamp(30px, 5.8vw, 110px);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .NossosValores. */
+    .NossosValores {
+        margin: -142px 16px 12px;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor .textoSobreNos. */
+    .textoSobreNos {
+        grid-row: 2;
+        align-self: start;
+        margin-top: clamp(24px, 4vw, 56px);
+        font-size: clamp(15px, 1.65vw, 30px);
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #corpoGlub. */
+    #corpoGlub {
+        display: block;
+        position: absolute;
+        top: 15%;
+        right: 9%;
+        z-index: 2;
+        width: min(33vw, 490px);
+        height: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #bracoGlub. */
+    #bracoGlub {
+        display: block;
+        position: absolute;
+        top: 20%;
+        right: 38%;
+        z-index: 1;
+        width: min(7vw, 105px);
+        height: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #gotaMaior, #gotaMenor. */
+    #gotaMaior, #gotaMenor {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        height: auto;
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #gotaMaior. */
+    #gotaMaior {
+        top: 25%;
+        right: 45%;
+        width: min(5vw, 66px);
+    }
+
+    /* Estilos do grupo: define a apresentação do seletor #gotaMenor. */
+    #gotaMenor {
+        top: 30%;
+        right: 45%;
+        width: min(4vw, 52px);
+    }
+}
+
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 600px). */
+@media (max-width: 600px) {
+    /* Estilos do grupo: define a apresentação do seletor .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia. */
+    .cartaoReducao, .cartaoMonitoramento, .cartaoEficiencia {
+        min-height: 310px;
+    }
 }
 
 
 /* Nossos planos: tr�s cart�es centralizados no desktop */
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (min-width: 1001px). */
 @media (min-width: 1001px) {
-  .plans-section {
-    position: absolute;
-    top: 3500px;
-    left: 0;
-    width: 100%;
-    height: 1065px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, min(423px, calc((100vw - 100px) / 3))));
-    justify-content: center;
-    align-content: start;
-    column-gap: clamp(18px, 2.43vw, 35px);
-  }
-  .plans-section .fundo-planos { top: 0; left: 0; width: 100%; height: auto; }
-  .plans-section > .titulo-planos {
-    position: absolute;
-    top: 260px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin: 0;
-    transform: none;
-  }
-  .plans-section > .retangulo1,
-  .plans-section > .retangulo2,
-  .plans-section > .retangulo3 {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    height: 556px;
-    margin: 390px 0 0;
-  }
-  .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li { margin-bottom: 26px; }
-  .plans-section .retangulo3 .parte-cima { transform: translateY(-10px); margin-bottom: -10px; }
-  .plans-section .retangulo3 .texto-retangulo3 { transform: translateY(-12px); margin-bottom: -12px; }
-  .plans-section .retangulo3 .texto-retangulo3 li { margin-bottom: 18px; }
-  .plans-section .parte-cima {
-    width: 100%;
-    justify-content: center;
-    gap: 15px;
-  }
-  .plans-section .gluh1,
-  .plans-section .gluh2,
-  .plans-section .gluh3 {
-    flex: 0 0 65px;
-    width: 65px;
-    height: 59px;
-    object-fit: fill;
-  }
-  .plans-section .gluh3 {
-    flex-basis: 79px;
-    width: 79px;
-    height: 77px;
-    object-fit: contain;
-    transform: translateY(-15px);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section. */
+    .plans-section {
+        position: absolute;
+        top: 3500px;
+        left: 0;
+        width: 100%;
+        height: 1065px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, min(423px, calc((100vw - 100px) / 3))));
+        justify-content: center;
+        align-content: start;
+        column-gap: clamp(18px, 2.43vw, 35px);
+    }
+    .plans-section .fundo-planos { top: 0; left: 0; width: 100%; height: auto; }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .titulo-planos. */
+    .plans-section > .titulo-planos {
+        position: absolute;
+        top: 260px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        transform: none;
+    }
+    .plans-section > .retangulo1,
+    .plans-section > .retangulo2,
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .retangulo3. */
+    .plans-section > .retangulo3 {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 556px;
+        margin: 390px 0 0;
+    }
+    .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li { margin-bottom: 26px; }
+    .plans-section .retangulo3 .parte-cima { transform: translateY(-10px); margin-bottom: -10px; }
+    .plans-section .retangulo3 .texto-retangulo3 { transform: translateY(-12px); margin-bottom: -12px; }
+    .plans-section .retangulo3 .texto-retangulo3 li { margin-bottom: 18px; }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .parte-cima. */
+    .plans-section .parte-cima {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+    .plans-section .gluh1,
+    .plans-section .gluh2,
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .gluh3. */
+    .plans-section .gluh3 {
+        flex: 0 0 65px;
+        width: 65px;
+        height: 59px;
+        object-fit: fill;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .gluh3. */
+    .plans-section .gluh3 {
+        flex-basis: 79px;
+        width: 79px;
+        height: 77px;
+        object-fit: contain;
+        transform: translateY(-15px);
+    }
 }

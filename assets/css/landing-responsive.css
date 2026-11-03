@@ -1,657 +1,735 @@
 /* Layout mobile das landing pages baseado na referência de 402 px. */
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 760px). */
 @media (max-width: 760px) {
-  body { overflow-x: hidden; }
+    body { overflow-x: hidden; }
 
-  .barra-fixa {
-    height: 140px;
-    min-height: 140px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .barra-fixa. */
+    .barra-fixa {
+        height: 140px;
+        min-height: 140px;
+    }
 
-  .botao-menu {
-    top: 108px;
-    left: 16px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .botao-menu. */
+    .botao-menu {
+        top: 108px;
+        left: 16px;
+    }
 
-  .botao-topo {
-    position: absolute;
-    top: 108px;
-    left: 58px;
-    transform: translateY(-50%);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .botao-topo. */
+    .botao-topo {
+        position: absolute;
+        top: 108px;
+        left: 58px;
+        transform: translateY(-50%);
+    }
 
-  .botao-logo { margin-left: 0; }
-  .Delta { font-size: 34px; }
-  #LogoDelta { width: 28px; }
+    .botao-logo { margin-left: 0; }
+    .Delta { font-size: 34px; }
+    #LogoDelta { width: 28px; }
 
-  .Cadastrar {
-    top: 108px;
-    right: 26px;
-    width: 72px;
-    height: 22px;
-    transform: translateY(-50%);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Cadastrar. */
+    .Cadastrar {
+        top: 108px;
+        right: 26px;
+        width: 72px;
+        height: 22px;
+        transform: translateY(-50%);
+    }
 
-  #cadastrar { font-size: 10px; }
+    #cadastrar { font-size: 10px; }
 
-  .Entrar {
-    top: 108px;
-    right: 105px;
-    width: 40px;
-    font-size: 10px;
-    transform: translateY(-50%);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Entrar. */
+    .Entrar {
+        top: 108px;
+        right: 105px;
+        width: 40px;
+        font-size: 10px;
+        transform: translateY(-50%);
+    }
 
-  .minha-conta {
-    top: 108px;
-    right: 18px;
-    width: 96px;
-    height: 28px;
-    transform: translateY(-50%);
-    font-size: 11px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .minha-conta. */
+    .minha-conta {
+        top: 108px;
+        right: 18px;
+        width: 96px;
+        height: 28px;
+        transform: translateY(-50%);
+        font-size: 11px;
+    }
 
-  /* Chamada principal e três indicadores na mesma faixa. */
-  .titulo1 {
-    height: auto;
-    margin: 172px 17px 0;
-    font-size: 18px;
-    line-height: 1.15;
-  }
+    /* Chamada principal e três indicadores na mesma faixa. */
+    /* Estilos do grupo: define a apresentação do seletor .titulo1. */
+    .titulo1 {
+        height: auto;
+        margin: 172px 17px 0;
+        font-size: 18px;
+        line-height: 1.15;
+    }
 
-  .tituloPrincipal {
-    width: auto;
-    margin: 0 17px;
-    font-size: clamp(21px, 7.1vw, 29px);
-    line-height: .92;
-    white-space: nowrap;
-    letter-spacing: -.04em;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .tituloPrincipal. */
+    .tituloPrincipal {
+        width: auto;
+        margin: 0 17px;
+        font-size: clamp(21px, 7.1vw, 29px);
+        line-height: .92;
+        white-space: nowrap;
+        letter-spacing: -.04em;
+    }
 
-  .titulo2 {
-    width: auto;
-    margin: 0 30px 0 17px;
-    font-size: clamp(18px, 5.6vw, 23px);
-    line-height: 1;
-    text-align: right;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .titulo2. */
+    .titulo2 {
+        width: auto;
+        margin: 0 30px 0 17px;
+        font-size: clamp(18px, 5.6vw, 23px);
+        line-height: 1;
+        text-align: right;
+    }
 
-  .Texto {
-    width: min(230px, calc(100% - 34px));
-    margin: 0 17px;
-    font-size: 11px;
-    line-height: 1.45;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .Texto. */
+    .Texto {
+        width: min(230px, calc(100% - 34px));
+        margin: 0 17px;
+        font-size: 11px;
+        line-height: 1.45;
+    }
 
-  .retanguloComecar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 116px;
-    min-height: 22px;
-    margin: 9px 17px 10px;
-    border-radius: 20px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .retanguloComecar. */
+    .retanguloComecar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 116px;
+        min-height: 22px;
+        margin: 9px 17px 10px;
+        border-radius: 20px;
+    }
 
-  #textoComecar {
-    position: static;
-    display: block;
-    width: auto;
-    height: auto;
-    margin: 0;
-    font-size: 10px;
-    line-height: 1.2;
-    text-align: center;
-    white-space: nowrap;
-  }
+    /* Estilos do grupo: define a apresentação do seletor #textoComecar. */
+    #textoComecar {
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.2;
+        text-align: center;
+        white-space: nowrap;
+    }
 
-  .carta1, .carta2, .carta3 {
-    display: inline-flex;
-    vertical-align: top;
-    width: calc((100vw - 42px) / 3);
-    height: 100px;
-    min-height: 100px;
-    margin: 9px 0 0 10px;
-    padding: 12px 5px 8px;
-    border-radius: 24px 24px 0 0;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .carta1, .carta2, .carta3. */
+    .carta1, .carta2, .carta3 {
+        display: inline-flex;
+        vertical-align: top;
+        width: calc((100vw - 42px) / 3);
+        height: 76px;
+        min-height: 100px;
+        margin: 9px 0 0 10px;
+        padding: 12px 5px 8px;
+        border-radius: 24px 24px 0 0;
+    }
 
-  .conteudoCarta1, .conteudoCarta2, .conteudoCarta3 { width: 100%; }
-  .Numero, .horas, .Numero2 { font-size: clamp(27px, 8vw, 35px); }
+    .conteudoCarta1, .conteudoCarta2, .conteudoCarta3 { width: 100%; }
+    .Numero, .horas, .Numero2 { font-size: clamp(27px, 8vw, 35px); }
 
-  .textoCarta1, .textoCarta2, .textoCarta3 {
-    width: 100%;
-    margin-top: 5px;
-    font-size: clamp(7px, 2.25vw, 9px);
-    line-height: 1.25;
-    overflow-wrap: anywhere;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .textoCarta1, .textoCarta2, .textoCarta3. */
+    .textoCarta1, .textoCarta2, .textoCarta3 {
+        width: 100%;
+        margin-top: 5px;
+        font-size: clamp(10px, 2.5vw, 11px);
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
 
-  /* Apresentação do produto: texto à esquerda, celular à direita. */
-  .delta-section {
-    grid-template-columns: minmax(0, 1.5fr) minmax(120px, .85fr);
-    grid-template-rows: auto 1fr;
-    gap: 8px 10px;
-    min-height: 240px;
-    padding: 19px 16px 34px;
-  }
+    /* Apresentação do produto: texto à esquerda, celular à direita. */
+    /* Estilos do grupo: define a apresentação do seletor .delta-section. */
+    .delta-section {
+        grid-template-columns: minmax(0, 1.5fr) minmax(120px, .85fr);
+        grid-template-rows: auto 1fr;
+        gap: 8px 10px;
+        min-height: 240px;
+        padding: 19px 16px 34px;
+    }
 
-  .delta-section > .O-Delta {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    font-size: clamp(25px, 7vw, 29px);
-    line-height: 1.1;
-    text-align: left;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .delta-section > .O-Delta. */
+    .delta-section > .O-Delta {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        font-size: clamp(25px, 7vw, 29px);
+        line-height: 1.1;
+        text-align: left;
+    }
 
-  .delta-section > .textoDelta {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-    font-size: clamp(10px, 2.9vw, 12px);
-    line-height: 1.45;
-    text-align: left;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .delta-section > .textoDelta. */
+    .delta-section > .textoDelta {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: start;
+        font-size: clamp(10px, 2.9vw, 12px);
+        line-height: 1.45;
+        text-align: left;
+    }
 
-  .delta-section > .Iphone {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    align-self: center;
-    justify-self: end;
-    width: min(100%, 132px);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .delta-section > .Iphone. */
+    .delta-section > .Iphone {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        align-self: center;
+        justify-self: end;
+        width: min(100%, 132px);
+    }
 
-  .delta-section > .Iphone img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .delta-section > .Iphone img. */
+    .delta-section > .Iphone img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 
-  /* Três cartões de objetivos permanecem visíveis lado a lado. */
-  .objective-section {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5px;
-    overflow: visible;
-    padding: 28px 6px 62px;
-  }
+    /* Três cartões de objetivos permanecem visíveis lado a lado. */
+    /* Estilos do grupo: define a apresentação do seletor .objective-section. */
+    .objective-section {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+        overflow: visible;
+        padding: 28px 6px 62px;
+    }
 
-  .objective-section > .tituloObjetivos {
-    position: relative;
-    inset: auto;
-    grid-column: 1 / -1;
-    grid-row: auto;
-    width: auto;
-    margin: 0 0 10px;
-    font-size: clamp(27px, 7.5vw, 32px);
-    line-height: 1.15;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .tituloObjetivos. */
+    .objective-section > .tituloObjetivos {
+        position: relative;
+        inset: auto;
+        grid-column: 1 / -1;
+        grid-row: auto;
+        width: auto;
+        margin: 0 0 10px;
+        font-size: clamp(27px, 7.5vw, 32px);
+        line-height: 1.15;
+    }
 
-  .objective-section > .cartaoReducao,
-  .objective-section > .cartaoMonitoramento,
-  .objective-section > .cartaoEficiencia {
-    position: relative;
-    inset: auto;
-    grid-column: auto;
-    grid-row: auto;
-    width: 100%;
-    height: 206px;
-    min-height: 206px;
-    margin: 0;
-    padding: 8px 6px;
-    border-radius: 13px;
-  }
+    .objective-section > .cartaoReducao,
+    .objective-section > .cartaoMonitoramento,
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .cartaoEficiencia. */
+    .objective-section > .cartaoEficiencia {
+        position: relative;
+        inset: auto;
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        height: 230px;
+        min-height: 230px;
+        margin: 0;
+        padding: 8px 6px;
+        border-radius: 13px;
+    }
 
-  #hidrometro, #monitoramento, #eficiencia {
-    top: 8px;
-    left: 10px;
-    width: 24px;
-    height: 24px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor #hidrometro, #monitoramento, #eficiencia. */
+    #hidrometro, #monitoramento, #eficiencia {
+        top: 8px;
+        left: 10px;
+        width: 24px;
+        height: 24px;
+    }
 
-  .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
-    top: 36px;
-    left: 6px;
-    width: calc(100% - 12px);
-    margin: 0;
-    font-size: clamp(8px, 2.45vw, 10px);
-    line-height: 1.05;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .tituloReducao, .tituloMonitoramento, .tituloEficiencia. */
+    .tituloReducao, .tituloMonitoramento, .tituloEficiencia {
+        top: 36px;
+        left: 6px;
+        width: calc(100% - 12px);
+        margin: 0;
+        font-size: clamp(10px, 2.8vw, 12px);
+        line-height: 1.05;
+    }
 
-  .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
-    position: absolute;
-    top: 60px;
-    right: 6px;
-    left: 6px;
-    width: auto;
-    height: auto;
-    margin: 0;
-    font-size: clamp(7px, 2.15vw, 8.5px);
-    line-height: 1.25;
-    letter-spacing: 0;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia. */
+    .informacoesReducao, .informacoesMonitoramento, .informacoesEficiencia {
+        position: absolute;
+        top: 60px;
+        right: 6px;
+        left: 6px;
+        width: auto;
+        height: auto;
+        margin: 0;
+        font-size: clamp(9px, 2.4vw, 10px);
+        line-height: 1.25;
+        letter-spacing: 0;
+    }
 
-  /* Funcionalidades em três colunas e duas linhas. */
-  .functionality-section {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px 4px;
-    padding: 28px 3px 34px;
-  }
+    /* Funcionalidades em três colunas e duas linhas. */
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section. */
+    .functionality-section {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px 4px;
+        padding: 28px 3px 34px;
+    }
 
-  .functionality-section > .tituloFuncionalidades {
-    grid-column: 1 / -1;
-    margin: 0 0 6px;
-    font-size: clamp(25px, 7.5vw, 32px);
-  }
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section > .tituloFuncionalidades. */
+    .functionality-section > .tituloFuncionalidades {
+        grid-column: 1 / -1;
+        margin: 0 0 6px;
+        font-size: clamp(25px, 7.5vw, 32px);
+    }
 
-  .functionality-section > .cartao1,
-  .functionality-section > .cartao2,
-  .functionality-section > .cartao3,
-  .functionality-section > .cartao4,
-  .functionality-section > .cartao5,
-  .functionality-section > .cartao6 {
-    width: 100%;
-    min-width: 0;
-    height: 76px;
-    margin: 0;
-    border-radius: 15px;
-  }
+    .functionality-section > .cartao1,
+    .functionality-section > .cartao2,
+    .functionality-section > .cartao3,
+    .functionality-section > .cartao4,
+    .functionality-section > .cartao5,
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section > .cartao6. */
+    .functionality-section > .cartao6 {
+        width: 100%;
+        min-width: 0;
+        height: 100px;
+        margin: 0;
+        border-radius: 15px;
+    }
 
-  #relogio, #sino, #grafico, #lista, #robo, #papel {
-    top: 8px;
-    left: 6px;
-    width: 25px;
-    height: 25px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor #relogio, #sino, #grafico, #lista, #robo, #papel. */
+    #relogio, #sino, #grafico, #lista, #robo, #papel {
+        top: 8px;
+        left: 6px;
+        width: 25px;
+        height: 25px;
+    }
 
-  .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
-  .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
-    top: 7px;
-    left: 36px;
-    width: calc(100% - 40px);
-    font-size: clamp(7px, 2.25vw, 9px);
-    line-height: 1.05;
-  }
+    .tituloCardMonitoramento, .tituloCardAlerta, .tituloCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico. */
+    .tituloCardMetas, .tituloCardChatbot, .tituloCardHistorico {
+        top: 7px;
+        left: 36px;
+        width: calc(100% - 40px);
+        font-size: clamp(10px, 2.7vw, 11px);
+        line-height: 1.05;
+    }
 
-  .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
-  .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
-    top: 37px;
-    left: 6px;
-    width: calc(100% - 12px);
-    font-size: clamp(6px, 1.9vw, 7.5px);
-    line-height: 1.15;
-  }
+    .informacoesCardMonitoramento, .informacoesCardAlerta, .informacoesCardPrevisao,
+    /* Estilos do grupo: define a apresentação do seletor .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico. */
+    .informacoesCardMetas, .informacoesCardChatbot, .informacoesCardHistorico {
+        top: 37px;
+        left: 6px;
+        width: calc(100% - 12px);
+        font-size: clamp(9px, 2.3vw, 10px);
+        line-height: 1.15;
+    }
 
-  /* Planos empilhados em cartões brancos como no mockup. */
-  .plans-section {
-    position: relative;
-    display: grid;
-    grid-template-columns: min(100%, 342px);
-    justify-content: center;
-    gap: 18px;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    padding: 30px 15px 46px;
-    overflow: hidden;
-  }
+    /* Planos empilhados em cartões brancos como no mockup. */
+    /* Estilos do grupo: define a apresentação do seletor .plans-section. */
+    .plans-section {
+        position: relative;
+        display: grid;
+        grid-template-columns: min(100%, 342px);
+        justify-content: center;
+        gap: 18px;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        padding: 30px 15px 46px;
+        overflow: hidden;
+    }
 
-  .plans-section > .titulo-planos {
-    position: relative;
-    inset: auto;
-    grid-column: 1;
-    width: auto;
-    margin: 0 0 4px;
-    font-size: clamp(26px, 7.5vw, 32px);
-    line-height: 1.15;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .titulo-planos. */
+    .plans-section > .titulo-planos {
+        position: relative;
+        inset: auto;
+        grid-column: 1;
+        width: auto;
+        margin: 0 0 4px;
+        font-size: clamp(26px, 7.5vw, 32px);
+        line-height: 1.15;
+    }
 
-  .plans-section > .retangulo1,
-  .plans-section > .retangulo2,
-  .plans-section > .retangulo3 {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    min-width: 0;
-    min-height: 278px;
-    height: auto;
-    margin: 0;
-    padding: 22px 25px;
-    gap: 10px;
-    border-radius: 17px;
-  }
+    .plans-section > .retangulo1,
+    .plans-section > .retangulo2,
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .retangulo3. */
+    .plans-section > .retangulo3 {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        min-width: 0;
+        min-height: 278px;
+        height: auto;
+        margin: 0;
+        padding: 22px 25px;
+        gap: 10px;
+        border-radius: 17px;
+    }
 
-  .plans-section .parte-cima {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-width: 0;
-    gap: 8px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .parte-cima. */
+    .plans-section .parte-cima {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        gap: 8px;
+    }
 
-  .plans-section .gluh1 {
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .gluh1. */
+    .plans-section .gluh1 {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
 
-  .plans-section .gluh2,
-  .plans-section .gluh3 { display: none; }
+    .plans-section .gluh2,
+    .plans-section .gluh3 { display: none; }
 
-  .titulo-essencial, .titulo-gestao, .titulo-premium {
-    min-width: 0;
-    font-size: clamp(22px, 6.5vw, 27px);
-    line-height: 1.15;
-    text-align: center;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .titulo-essencial, .titulo-gestao, .titulo-premium. */
+    .titulo-essencial, .titulo-gestao, .titulo-premium {
+        min-width: 0;
+        font-size: clamp(22px, 6.5vw, 27px);
+        line-height: 1.15;
+        text-align: center;
+    }
 
-  .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
-    width: 100%;
-    padding-left: 14px;
-    font-size: clamp(11px, 3vw, 12px);
-    line-height: 1.35;
-    letter-spacing: 0;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1, .texto-retangulo2, .texto-retangulo3. */
+    .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
+        width: 100%;
+        padding-left: 14px;
+        font-size: clamp(11px, 3vw, 12px);
+        line-height: 1.35;
+        letter-spacing: 0;
+    }
 
-  .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
-    margin-bottom: 2px;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li. */
+    .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
+        margin-bottom: 2px;
+    }
 
-  .preco1, .preco2, .preco3 {
-    margin-top: auto;
-    font-size: clamp(27px, 7.5vw, 32px);
-    line-height: 1;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .preco1, .preco2, .preco3. */
+    .preco1, .preco2, .preco3 {
+        margin-top: auto;
+        font-size: clamp(27px, 7.5vw, 32px);
+        line-height: 1;
+    }
 
-  .mensal { margin-top: -7px; font-size: 15px; }
+    .mensal { margin-top: -7px; font-size: 15px; }
 
-  .sobreNos { font-size: clamp(22px, 6.5vw, 26px); }
-  .textoSobreNos { font-size: clamp(10px, 2.9vw, 12px); line-height: 1.45; }
+    .sobreNos { font-size: clamp(22px, 6.5vw, 26px); }
+    .textoSobreNos { font-size: clamp(10px, 2.9vw, 12px); line-height: 1.45; }
 
-  /* Mantém Navegação e Documentos lado a lado no rodapé estreito. */
-  .Footer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .coluna3 { grid-column: 1 / -1; }
-  .direitos { grid-column: 1 / -1; }
+    /* Mantém Navegação e Documentos lado a lado no rodapé estreito. */
+    .Footer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .coluna3 { grid-column: 1 / -1; }
+    .direitos { grid-column: 1 / -1; }
 }
 
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 360px). */
 @media (max-width: 360px) {
-  .Entrar { right: 96px; }
-  .Cadastrar { right: 12px; width: 70px; }
-  .botao-topo { left: 54px; }
-  .carta1, .carta2, .carta3 { margin-left: 8px; width: calc((100vw - 34px) / 3); }
-  .objective-section { gap: 4px; padding-right: 4px; padding-left: 4px; }
-  .objective-section > .cartaoReducao,
-  .objective-section > .cartaoMonitoramento,
-  .objective-section > .cartaoEficiencia { padding-right: 4px; padding-left: 4px; }
+    .Entrar { right: 96px; }
+    .Cadastrar { right: 12px; width: 70px; }
+    .botao-topo { left: 54px; }
+    .carta1, .carta2, .carta3 { margin-left: 8px; width: calc((100vw - 34px) / 3); }
+    .objective-section { gap: 4px; padding-right: 4px; padding-left: 4px; }
+    .objective-section > .cartaoReducao,
+    .objective-section > .cartaoMonitoramento,
+    .objective-section > .cartaoEficiencia { padding-right: 4px; padding-left: 4px; }
 }
 
 /* Correções finais para manter o mockup dentro da largura real do celular. */
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 760px). */
 @media (max-width: 760px) {
-  .FundoGradiente { height: 445px !important; }
+    .FundoGradiente { height: 445px !important; }
 
-  .titulo1 { margin-top: 172px !important; }
-  .tituloPrincipal {
-    max-width: calc(100% - 34px);
-    margin-right: 17px !important;
-    font-size: clamp(20px, 6.9vw, 28px) !important;
-    white-space: normal !important;
-    overflow-wrap: normal;
-  }
-  .titulo2 {
-    width: calc(100% - 34px) !important;
-    margin: 0 17px !important;
-    font-size: clamp(17px, 5.2vw, 21px) !important;
-  }
+    .titulo1 { margin-top: 172px !important; }
+    /* Estilos do grupo: define a apresentação do seletor .tituloPrincipal. */
+    .tituloPrincipal {
+        max-width: calc(100% - 34px);
+        margin-right: 17px !important;
+        font-size: clamp(20px, 6.9vw, 28px) !important;
+        white-space: normal !important;
+        overflow-wrap: normal;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .titulo2. */
+    .titulo2 {
+        width: calc(100% - 34px) !important;
+        margin: 0 17px !important;
+        font-size: clamp(17px, 5.2vw, 21px) !important;
+    }
 
-  .carta1, .carta2, .carta3 {
-    position: relative !important;
-    z-index: 4 !important;
-    opacity: 1 !important;
-    transform: none !important;
-    width: calc((100vw - 40px) / 3) !important;
-    height: 100px !important;
-    min-height: 100px !important;
-    margin: 9px 0 0 10px !important;
-    padding: 12px 5px 8px !important;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .carta1, .carta2, .carta3. */
+    .carta1, .carta2, .carta3 {
+        position: relative !important;
+        z-index: 4 !important;
+        opacity: 1 !important;
+        transform: none !important;
+        width: calc((100vw - 40px) / 3) !important;
+        height: 100px !important;
+        min-height: 100px !important;
+        margin: 9px 0 0 10px !important;
+        padding: 12px 5px 8px !important;
+    }
 
-  .delta-section {
-    min-height: 300px !important;
-    padding-bottom: 56px !important;
-  }
-  .objective-section {
-    background: linear-gradient(110deg, #306AE5, #08275C) !important;
-    padding-top: 32px !important;
-    padding-bottom: 62px !important;
-  }
-  .objective-section::before { display: none !important; }
-  .objective-section > .tituloObjetivos {
-    color: #FAFAFA !important;
-    font-size: clamp(24px, 7vw, 29px) !important;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .delta-section. */
+    .delta-section {
+        min-height: 300px !important;
+        padding-bottom: 56px !important;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .objective-section. */
+    .objective-section {
+        background: linear-gradient(110deg, #306AE5, #08275C) !important;
+        padding-top: 32px !important;
+        padding-bottom: 62px !important;
+    }
+    .objective-section::before { display: none !important; }
+    /* Estilos do grupo: define a apresentação do seletor .objective-section > .tituloObjetivos. */
+    .objective-section > .tituloObjetivos {
+        color: #FAFAFA !important;
+        font-size: clamp(24px, 7vw, 29px) !important;
+    }
 
-  .functionality-section > .tituloFuncionalidades {
-    font-size: clamp(21px, 6.3vw, 26px) !important;
-    white-space: nowrap;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section > .tituloFuncionalidades. */
+    .functionality-section > .tituloFuncionalidades {
+        font-size: clamp(21px, 6.3vw, 26px) !important;
+        white-space: nowrap;
+    }
 
-  .plans-section { grid-template-columns: minmax(0, 342px) !important; }
-  .plans-section > .titulo-planos {
-    font-size: clamp(20px, 6vw, 24px) !important;
-    white-space: nowrap;
-  }
+    .plans-section { grid-template-columns: minmax(0, 342px) !important; }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .titulo-planos. */
+    .plans-section > .titulo-planos {
+        font-size: clamp(20px, 6vw, 24px) !important;
+        white-space: nowrap;
+    }
 
-  .sobreNos, .NossosValores { color: #003E9B !important; }
+    .sobreNos, .NossosValores { color: #003E9B !important; }
 }
 
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 420px). */
 @media (max-width: 420px) {
-  .Cadastrar { right: 26px !important; width: 72px !important; }
-  .Entrar { right: 105px !important; }
-  .tituloPrincipal { font-size: clamp(20px, 6.7vw, 27px) !important; }
-  .plans-section { grid-template-columns: minmax(0, calc(100vw - 60px)) !important; }
+    .Cadastrar { right: 26px !important; width: 72px !important; }
+    .Entrar { right: 105px !important; }
+    .tituloPrincipal { font-size: clamp(20px, 6.7vw, 27px) !important; }
+    .plans-section { grid-template-columns: minmax(0, calc(100vw - 60px)) !important; }
 }
 
 /* Evita reaproveitar offsets de desktop em equipe, sobre e valores. */
+/* Estilos do grupo: define a apresentação do bloco responsivo @media (max-width: 760px). */
 @media (max-width: 760px) {
-  .FundoAzulCurvadoGradiente {
-    position: relative !important;
-    isolation: isolate;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr) !important;
-    grid-template-rows: auto 1fr !important;
-    align-items: start;
-    gap: 12px 8px;
-    width: 100% !important;
-    min-height: 300px !important;
-    height: auto !important;
-    margin: 28px 0 0 !important;
-    padding: 34px 20px 44px !important;
-    overflow: hidden !important;
-    background: linear-gradient(115deg, #306AE5, #08275C) !important;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .FundoAzulCurvadoGradiente. */
+    .FundoAzulCurvadoGradiente {
+        position: relative !important;
+        isolation: isolate;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr) !important;
+        grid-template-rows: auto 1fr !important;
+        align-items: start;
+        gap: 12px 8px;
+        width: 100% !important;
+        min-height: 300px !important;
+        height: auto !important;
+        margin: 28px 0 0 !important;
+        padding: 34px 20px 44px !important;
+        overflow: hidden !important;
+        background: linear-gradient(115deg, #306AE5, #08275C) !important;
+    }
 
-  #fundoCurvadoGradiente { display: none !important; }
-  .FundoAzulCurvadoGradiente .sobreNos {
-    position: relative !important;
-    inset: auto !important;
-    grid-column: 1 / -1 !important;
-    grid-row: 1 !important;
-    width: auto !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    color: #FAFAFA !important;
-    font-size: clamp(23px, 7vw, 30px) !important;
-    line-height: 1.15;
-    white-space: normal !important;
-  }
+    #fundoCurvadoGradiente { display: none !important; }
+    /* Estilos do grupo: define a apresentação do seletor .FundoAzulCurvadoGradiente .sobreNos. */
+    .FundoAzulCurvadoGradiente .sobreNos {
+        position: relative !important;
+        inset: auto !important;
+        grid-column: 1 / -1 !important;
+        grid-row: 1 !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        color: #FAFAFA !important;
+        font-size: clamp(23px, 7vw, 30px) !important;
+        line-height: 1.15;
+        white-space: normal !important;
+    }
 
-  .FundoAzulCurvadoGradiente .textoSobreNos {
-    position: relative !important;
-    inset: auto !important;
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-    align-self: start;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 !important;
-    color: #FAFAFA !important;
-    font-size: clamp(10px, 2.8vw, 12px) !important;
-    line-height: 1.45 !important;
-    letter-spacing: 0 !important;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .FundoAzulCurvadoGradiente .textoSobreNos. */
+    .FundoAzulCurvadoGradiente .textoSobreNos {
+        position: relative !important;
+        inset: auto !important;
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        align-self: start;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        color: #FAFAFA !important;
+        font-size: clamp(10px, 2.8vw, 12px) !important;
+        line-height: 1.45 !important;
+        letter-spacing: 0 !important;
+    }
 
-  #corpoGlub {
-    display: block !important;
-    position: absolute !important;
-    top: 28% !important;
-    right: 3% !important;
-    width: min(38vw, 150px) !important;
-    height: auto !important;
-    z-index: 2;
-  }
-  #bracoGlub { display: none !important; }
-  #gotaMaior, #gotaMenor { display: block !important; }
+    /* Estilos do grupo: define a apresentação do seletor #corpoGlub. */
+    #corpoGlub {
+        display: block !important;
+        position: absolute !important;
+        top: 28% !important;
+        right: 3% !important;
+        width: min(38vw, 150px) !important;
+        height: auto !important;
+        z-index: 2;
+    }
+    #bracoGlub { display: block !important; top: 32% !important; right: 33% !important; }
+    #gotaMaior, #gotaMenor { display: block !important; }
 
-  .NossosValores {
-    position: relative !important;
-    inset: auto !important;
-    transform: none !important;
-    width: auto !important;
-    margin: 30px 16px 12px !important;
-    color: #003E9B !important;
-    font-size: clamp(23px, 6.8vw, 30px) !important;
-    white-space: normal;
-  }
+    /* Estilos do grupo: define a apresentação do seletor .NossosValores. */
+    .NossosValores {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        width: auto !important;
+        margin: 30px 16px 12px !important;
+        color: #003E9B !important;
+        font-size: clamp(23px, 6.8vw, 30px) !important;
+        white-space: normal;
+    }
 
-  html { scroll-padding-top: 155px; }
-  [id^="topico"] { scroll-margin-top: 155px; }
+    html { scroll-padding-top: 155px; }
+    [id^="topico"] { scroll-margin-top: 155px; }
 
-  /* Separa o fim da solução da faixa azul de objetivos, que começa em curva. */
-  .objective-section {
-    position: relative;
-    margin-top: 0 !important;
-    padding-top: 42px !important;
-    padding-bottom: 105px !important;
-    background: linear-gradient(110deg, #306AE5, #08275C) !important;
-  }
-  .objective-section::before {
-    content: "" !important;
-    display: block !important;
-    position: absolute;
-    inset: 0 0 auto;
-    height: 22px;
-    border-radius: 0 0 50% 50% / 0 0 70% 70%;
-    background: #E0E8F6;
-    z-index: 1;
-    pointer-events: none;
-  }
+    /* Separa o fim da solução da faixa azul de objetivos, que começa em curva. */
+    /* Estilos do grupo: define a apresentação do seletor .objective-section. */
+    .objective-section {
+        position: relative;
+        margin-top: 0 !important;
+        padding-top: 42px !important;
+        padding-bottom: 105px !important;
+        background: linear-gradient(110deg, #306AE5, #08275C) !important;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .objective-section::before. */
+    .objective-section::before {
+        content: "" !important;
+        display: block !important;
+        position: absolute;
+        inset: 0 0 auto;
+        height: 22px;
+        border-radius: 0 0 50% 50% / 0 0 70% 70%;
+        background: #E0E8F6;
+        z-index: 1;
+        pointer-events: none;
+    }
 
-  .objective-section > .cartaoReducao,
-  .objective-section > .cartaoMonitoramento,
-  .objective-section > .cartaoEficiencia,
-  .functionality-section > .cartao1,
-  .functionality-section > .cartao2,
-  .functionality-section > .cartao3,
-  .functionality-section > .cartao4,
-  .functionality-section > .cartao5,
-  .functionality-section > .cartao6 {
-    opacity: 1 !important;
-    transform: none !important;
-    translate: none !important;
-  }
+    .objective-section > .cartaoReducao,
+    .objective-section > .cartaoMonitoramento,
+    .objective-section > .cartaoEficiencia,
+    .functionality-section > .cartao1,
+    .functionality-section > .cartao2,
+    .functionality-section > .cartao3,
+    .functionality-section > .cartao4,
+    .functionality-section > .cartao5,
+    /* Estilos do grupo: define a apresentação do seletor .functionality-section > .cartao6. */
+    .functionality-section > .cartao6 {
+        opacity: 1 !important;
+        transform: none !important;
+        translate: none !important;
+    }
 
-  /* Cartões de planos conforme a versão mobile de referência. */
-  .plans-section {
-    grid-template-columns: minmax(0, min(85.5vw, 342px)) !important;
-    justify-content: center !important;
-    gap: clamp(11px, 4.5vw, 18px) !important;
-    padding: 62px 0 46px !important;
-  }
-  .plans-section::after { bottom: calc(26px - 63vw) !important; }
-  .plans-section > .titulo-planos {
-    font-size: clamp(18px, 5.8vw, 24px) !important;
-    line-height: 1.15;
-    margin: 0 0 -12px !important;
-    white-space: nowrap;
-  }
-  .plans-section::before {
-    height: 74vw !important;
-    mask-position: center -62vw !important;
-    -webkit-mask-position: center -62vw !important;
-  }
-  .plans-section > .retangulo1,
-  .plans-section > .retangulo2,
-  .plans-section > .retangulo3 {
-    width: 100% !important;
-    min-height: clamp(172px, 69.2vw, 278px) !important;
-    height: auto !important;
-    padding: clamp(14px, 6.2vw, 25px) !important;
-    gap: clamp(6px, 2.5vw, 10px) !important;
-    border-radius: 11px !important;
-  }
-  .plans-section .parte-cima {
-    justify-content: center;
-    gap: clamp(4px, 2vw, 8px);
-  }
-  .plans-section .gluh1,
-  .plans-section .gluh2,
-  .plans-section .gluh3 {
-    display: block !important;
-    flex: 0 0 clamp(24px, 10vw, 40px);
-    width: clamp(24px, 10vw, 40px);
-    height: clamp(24px, 10vw, 40px);
-    object-fit: contain;
-  }
-  .titulo-essencial, .titulo-gestao, .titulo-premium {
-    font-size: clamp(15px, 6.5vw, 26px) !important;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
-  }
-  .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
-    width: 100%;
-    padding-left: clamp(4px, 1.25vw, 5px) !important;
-    font-size: clamp(7px, 3vw, 12px) !important;
-    line-height: 1.3 !important;
-    letter-spacing: 0;
-  }
-  .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
-    margin-bottom: clamp(1px, .5vw, 2px) !important;
-    line-height: inherit;
-  }
-  .preco1, .preco2, .preco3 {
-    margin-top: auto !important;
-    font-size: clamp(20px, 8vw, 32px) !important;
-    line-height: 1;
-    white-space: nowrap;
-  }
-  .plans-section .mensal {
-    margin-top: -7px !important;
-    font-size: clamp(11px, 3.8vw, 15px) !important;
-    line-height: 1.1;
-  }
+    /* Cartões de planos conforme a versão mobile de referência. */
+    /* Estilos do grupo: define a apresentação do seletor .plans-section. */
+    .plans-section {
+        grid-template-columns: minmax(0, min(85.5vw, 342px)) !important;
+        justify-content: center !important;
+        gap: clamp(11px, 4.5vw, 18px) !important;
+        padding: 62px 0 46px !important;
+    }
+    .plans-section::after { bottom: calc(26px - 63vw) !important; }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .titulo-planos. */
+    .plans-section > .titulo-planos {
+        font-size: clamp(18px, 5.8vw, 24px) !important;
+        line-height: 1.15;
+        margin: 0 0 -12px !important;
+        white-space: nowrap;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section::before. */
+    .plans-section::before {
+        height: 74vw !important;
+        mask-position: center -62vw !important;
+        -webkit-mask-position: center -62vw !important;
+    }
+    .plans-section > .retangulo1,
+    .plans-section > .retangulo2,
+    /* Estilos do grupo: define a apresentação do seletor .plans-section > .retangulo3. */
+    .plans-section > .retangulo3 {
+        width: 100% !important;
+        min-height: clamp(172px, 69.2vw, 278px) !important;
+        height: auto !important;
+        padding: clamp(14px, 6.2vw, 25px) !important;
+        gap: clamp(6px, 2.5vw, 10px) !important;
+        border-radius: 11px !important;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .parte-cima. */
+    .plans-section .parte-cima {
+        justify-content: center;
+        gap: clamp(4px, 2vw, 8px);
+    }
+    .plans-section .gluh1,
+    .plans-section .gluh2,
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .gluh3. */
+    .plans-section .gluh3 {
+        display: block !important;
+        flex: 0 0 clamp(24px, 10vw, 40px);
+        width: clamp(24px, 10vw, 40px);
+        height: clamp(24px, 10vw, 40px);
+        object-fit: contain;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .titulo-essencial, .titulo-gestao, .titulo-premium. */
+    .titulo-essencial, .titulo-gestao, .titulo-premium {
+        font-size: clamp(15px, 6.5vw, 26px) !important;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1, .texto-retangulo2, .texto-retangulo3. */
+    .texto-retangulo1, .texto-retangulo2, .texto-retangulo3 {
+        width: 100%;
+        padding-left: clamp(4px, 1.25vw, 5px) !important;
+        font-size: clamp(7px, 3vw, 12px) !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li. */
+    .texto-retangulo1 li, .texto-retangulo2 li, .texto-retangulo3 li {
+        margin-bottom: clamp(1px, .5vw, 2px) !important;
+        line-height: inherit;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .preco1, .preco2, .preco3. */
+    .preco1, .preco2, .preco3 {
+        margin-top: auto !important;
+        font-size: clamp(20px, 8vw, 32px) !important;
+        line-height: 1;
+        white-space: nowrap;
+    }
+    /* Estilos do grupo: define a apresentação do seletor .plans-section .mensal. */
+    .plans-section .mensal {
+        margin-top: -7px !important;
+        font-size: clamp(11px, 3.8vw, 15px) !important;
+        line-height: 1.1;
+    }
 
-  .concept-section .miniTituloCenario,
-  .concept-section .miniTituloSolucao {
-    font-size: clamp(15px, 4.2vw, 17px) !important;
-  }
-  .concept-section .conteudoCenario,
-  .concept-section .conteudoSolucao {
-    font-size: clamp(10px, 2.8vw, 12px) !important;
-    line-height: 1.4;
-  }
+    .concept-section .miniTituloCenario,
+    /* Estilos do grupo: define a apresentação do seletor .concept-section .miniTituloSolucao. */
+    .concept-section .miniTituloSolucao {
+        font-size: clamp(15px, 4.2vw, 17px) !important;
+    }
+    .concept-section .conteudoCenario,
+    /* Estilos do grupo: define a apresentação do seletor .concept-section .conteudoSolucao. */
+    .concept-section .conteudoSolucao {
+        font-size: clamp(10px, 2.8vw, 12px) !important;
+        line-height: 1.4;
+    }
 
-  .concept-section .miniTituloCenario,
-  .concept-section .miniTituloSolucao {
-    font-size: clamp(20px, 5.6vw, 22px) !important;
-  }
-  .concept-section .conteudoCenario,
-  .concept-section .conteudoSolucao {
-    font-size: clamp(13px, 3.4vw, 14px) !important;
-  }
-  .concept-section > .retanguloCenario,
-  .concept-section > .retanguloSolucao {
-    min-height: 58px;
-  }
-  .concept-section > .retanguloCenario2,
-  .concept-section > .retanguloSolucao2 {
-    min-height: 110px;
-  }
+    .concept-section .miniTituloCenario,
+    /* Estilos do grupo: define a apresentação do seletor .concept-section .miniTituloSolucao. */
+    .concept-section .miniTituloSolucao {
+        font-size: clamp(20px, 5.6vw, 22px) !important;
+    }
+    .concept-section .conteudoCenario,
+    /* Estilos do grupo: define a apresentação do seletor .concept-section .conteudoSolucao. */
+    .concept-section .conteudoSolucao {
+        font-size: clamp(13px, 3.4vw, 14px) !important;
+    }
+    .concept-section > .retanguloCenario,
+    /* Estilos do grupo: define a apresentação do seletor .concept-section > .retanguloSolucao. */
+    .concept-section > .retanguloSolucao {
+        min-height: 58px;
+    }
+    .concept-section > .retanguloCenario2,
+    /* Estilos do grupo: define a apresentação do seletor .concept-section > .retanguloSolucao2. */
+    .concept-section > .retanguloSolucao2 {
+        min-height: 110px;
+    }
 }

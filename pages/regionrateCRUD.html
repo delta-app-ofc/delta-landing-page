@@ -85,7 +85,7 @@
         </div>
 
 
-        <a href="index.html" class="logout">
+        <a href="../index.html" class="logout">
 
             <i data-lucide="log-out"></i>
 
@@ -153,6 +153,8 @@
     <button type="button" onclick="hideToast()">×</button>
 </div>
 
+<script src="../assets/js/mock-database.js"></script>
+<script src="../assets/js/mock-crud-common.js"></script>
 <script>
 
 lucide.createIcons();
@@ -177,16 +179,13 @@ const TYPES = [
 ];
 
 
-let records =
-    JSON.parse(
-        localStorage.getItem(KEY) || "null"
-    );
+let records = DeltaDB.readCollection(KEY);
 
 
 let currentSearch = "";
 
 let editingId = null;
-let recordToDelete = null;
+window.recordToDelete = null;
 
 
 /* ================================
@@ -203,125 +202,9 @@ if (!records) {
         })
     );
 
-    save();
+    DeltaDB.writeCollection(KEY, records);
 
 }
-
-
-/* ================================
-   SALVAR
-================================ */
-
-function save() {
-
-    localStorage.setItem(
-        KEY,
-        JSON.stringify(records)
-    );
-
-}
-
-
-/* ================================
-   ESCAPAR TEXTO
-================================ */
-
-function esc(v) {
-
-    return String(v ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-}
-
-
-/* ================================
-   FORMATAR
-================================ */
-
-function fmt(v, i) {
-
-    if (
-        TYPES[i] === "date" &&
-        v
-    ) {
-
-        const p = v.split("-");
-
-        return p.length === 3
-            ? p[2] + "/" + p[1] + "/" + p[0]
-            : v;
-
-    }
-
-    return v;
-
-}
-
-
-/* ================================
-   CONTROLE DE POP-UPS E TOASTS
-================================ */
-
-function showPopup(type, data = {}) {
-    const overlay = document.getElementById("popupOverlay");
-    const successContent = document.getElementById("popupSuccess");
-    const deleteContent = document.getElementById("popupDelete");
-
-    successContent.classList.remove("active");
-    deleteContent.classList.remove("active");
-
-    if (type === "success") {
-        document.getElementById("popupSuccessTitle").innerText = data.title || "Cadastro concluído!";
-        document.getElementById("popupSuccessDesc").innerText = data.desc || "Ação realizada com sucesso no sistema Delta.";
-        if (data.tag) document.getElementById("popupSuccessTag").innerText = data.tag;
-        
-        successContent.classList.add("active");
-    } else if (type === "delete") {
-        document.getElementById("deleteRecordLabel").innerText = `ID #${data.id}`;
-        deleteContent.classList.add("active");
-    }
-
-    document.body.classList.add("locked");
-    overlay.classList.add("show");
-}
-
-function closePopup() {
-    const overlay = document.getElementById("popupOverlay");
-    overlay.classList.remove("show");
-    document.body.classList.remove("locked");
-    recordToDelete = null;
-}
-
-function showToast(message, title = "Sucesso", type = "success") {
-    const toast = document.getElementById("globalToast");
-    const toastSymbol = document.getElementById("toastSymbol");
-    
-    toast.className = "global-toast show";
-    if (type === "edit") toast.classList.add("toast-edit");
-    if (type === "delete") toast.classList.add("toast-delete");
-
-    document.getElementById("toastTitle").innerText = title;
-    document.getElementById("toastMessage").innerText = message;
-    toastSymbol.innerText = type === "delete" ? "!" : "✓";
-
-    setTimeout(() => {
-        hideToast();
-    }, 4000);
-}
-
-function hideToast() {
-    const toast = document.getElementById("globalToast");
-    toast.classList.remove("show");
-}
-
-
-/* ================================
-   RENDER
-================================ */
 
 function render() {
 
@@ -408,7 +291,7 @@ function render() {
                         id="searchInput"
                         type="text"
                         placeholder="Buscar"
-                        value="${esc(currentSearch)}"
+                        value="${DeltaCrud.escape(currentSearch)}"
                     >
 
                 </div>
@@ -487,7 +370,7 @@ function render() {
                                     (v, i) => `
 
                                     <td>
-                                        ${esc(fmt(v, i))}
+                                        ${DeltaCrud.escape(DeltaCrud.format(v, i, TYPES))}
                                     </td>
 
                                 `).join("")}
@@ -678,7 +561,7 @@ function formPage(id) {
                         <input
                             id="f0"
                             type="number"
-                            value="${esc(values[0])}"
+                            value="${DeltaCrud.escape(values[0])}"
                             required
                         >
 
@@ -695,7 +578,7 @@ function formPage(id) {
                             id="f1"
                             type="number"
                             step="0.01"
-                            value="${esc(values[1])}"
+                            value="${DeltaCrud.escape(values[1])}"
                             required
                         >
 
@@ -711,7 +594,7 @@ function formPage(id) {
                         <input
                             id="f2"
                             type="date"
-                            value="${esc(values[2])}"
+                            value="${DeltaCrud.escape(values[2])}"
                             required
                         >
 
@@ -727,7 +610,7 @@ function formPage(id) {
                         <input
                             id="f3"
                             type="date"
-                            value="${esc(values[3])}"
+                            value="${DeltaCrud.escape(values[3])}"
                             required
                         >
 
@@ -779,148 +662,12 @@ function formPage(id) {
    ADICIONAR
 ================================ */
 
-function startCreate() {
-
-    editingId = 0;
-
-    render();
-
-}
-
-
-/* ================================
-   EDITAR
-================================ */
-
-function editRecord(id) {
-
-    editingId = Number(id);
-
-    render();
-
-}
-
-
-/* ================================
-   CANCELAR
-================================ */
-
-function cancelForm() {
-
-    editingId = null;
-
-    render();
-
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-}
-
-
-/* ================================
-   SALVAR
-================================ */
-
 function saveForm(event, id) {
 
-    event.preventDefault();
+    const values = DeltaCrud.getRequiredFormValues(event, TYPES.length);
+    if (!values) return;
 
-
-    const values = [
-
-        document.getElementById("f0").value,
-
-        document.getElementById("f1").value,
-
-        document.getElementById("f2").value,
-
-        document.getElementById("f3").value
-
-    ];
-
-
-    if (
-        values.some(
-            v => !v.trim()
-        )
-    ) {
-
-        alert(
-            "Preencha todos os campos."
-        );
-
-        return;
-
-    }
-
-    const isEdit = id !== 0;
-
-    /* NOVO */
-
-    if (id === 0) {
-
-        const nextId =
-            records.length
-                ? Math.max(
-                    ...records.map(
-                        r => r.id
-                    )
-                ) + 1
-                : 1;
-
-
-        records.push({
-
-            id: nextId,
-
-            values: values
-
-        });
-
-    }
-
-
-    /* EDIÇÃO */
-
-    else {
-
-        const record =
-            records.find(
-                r => r.id === id
-            );
-
-
-        if (record) {
-
-            record.values =
-                values;
-
-        }
-
-    }
-
-
-    save();
-
-
-    editingId = null;
-
-    render();
-
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
+    const isEdit = DeltaCrud.saveRecord(id, values);
 
     // Exibe Pop-up e Toast
     showPopup("success", {
@@ -940,48 +687,11 @@ function saveForm(event, id) {
 }
 
 
-/* ================================
-   EXCLUIR
-================================ */
-
-function deleteRecord(id) {
-
-    recordToDelete = id;
-
-    // Abre o modal de confirmação
-    showPopup("delete", { id: id });
-
-    // Ação ao clicar em "Confirmar Exclusão"
-    document.getElementById("confirmDeleteBtn").onclick = function () {
-        if (recordToDelete !== null) {
-            records = records.filter(r => r.id !== recordToDelete);
-
-            save();
-
-            closePopup();
-
-            render();
-
-            showToast(
-                "Registro excluído com sucesso da base de dados.",
-                "REGISTRO EXCLUÍDO",
-                "delete"
-            );
-        }
-    };
-
-}
-
-
-/* ================================
-   INICIAR
-================================ */
 
 render();
 
 </script>
 
-    <script src="../assets/js/mock-database.js"></script>
     <script src="../assets/js/mock-app.js"></script>
 </body>
 </html>

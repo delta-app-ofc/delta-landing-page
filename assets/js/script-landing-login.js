@@ -469,33 +469,29 @@ document.addEventListener('DOMContentLoaded', () => {
     popupSalvo.classList.remove('visivel');
   });
 
-  const contaAtual = window.DeltaDB?.getCurrent();
-  let perfilSalvo = {};
-  try { perfilSalvo = JSON.parse(localStorage.getItem('delta_perfil') || '{}'); } catch (_) {}
+  let contaAtual = window.DeltaDB?.getCurrent();
   if (contaAtual) {
     nomePerfil.value = contaAtual.name || '';
     emailPerfil.value = contaAtual.email || '';
-  } else {
-    if (perfilSalvo.nome) nomePerfil.value = perfilSalvo.nome;
-    if (perfilSalvo.email) emailPerfil.value = perfilSalvo.email;
   }
 
   formPerfil?.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!formPerfil.reportValidity()) return;
-    const perfil = { nome: nomePerfil.value.trim(), email: emailPerfil.value.trim() };
-    if (contaAtual && window.DeltaDB) {
-      const resultado = window.DeltaDB.updateAccount(contaAtual.id, { name: perfil.nome, email: perfil.email });
-      if (!resultado.ok) {
-        emailPerfil.setCustomValidity(resultado.message);
-        emailPerfil.reportValidity();
-        emailPerfil.addEventListener('input', () => emailPerfil.setCustomValidity(''), { once: true });
-        return;
-      }
+    if (!contaAtual || !window.DeltaDB) return;
+    const resultado = window.DeltaDB.updateAccount(contaAtual.id, {
+      name: nomePerfil.value.trim(),
+      email: emailPerfil.value.trim()
+    });
+    if (!resultado.ok) {
+      emailPerfil.setCustomValidity(resultado.message);
+      emailPerfil.reportValidity();
+      emailPerfil.addEventListener('input', () => emailPerfil.setCustomValidity(''), { once: true });
+      return;
     }
-    localStorage.setItem('delta_perfil', JSON.stringify(perfil));
-    if (statusPerfil) statusPerfil.textContent = 'Dados salvos neste navegador.';
-    if (emailNotificacoes) emailNotificacoes.textContent = perfil.email;
+    contaAtual = resultado.account;
+    if (statusPerfil) statusPerfil.textContent = 'Dados salvos na conta Delta.';
+    if (emailNotificacoes) emailNotificacoes.textContent = contaAtual.email;
     mostrarPopupSalvo();
   });
 
@@ -515,10 +511,14 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     if (!formSeguranca.reportValidity()) return;
 
-    if (contaAtual && window.DeltaDB) {
-      window.DeltaDB.updateAccount(contaAtual.id, { password: senhaNova.value });
+    if (!contaAtual || !window.DeltaDB) return;
+    const resultado = window.DeltaDB.updateAccount(contaAtual.id, { password: senhaNova.value });
+    if (!resultado.ok) {
+      senhaNova.setCustomValidity(resultado.message);
+      senhaNova.reportValidity();
+      return;
     }
-    localStorage.setItem('delta_senha_atualizada_em', new Date().toISOString());
+    contaAtual = resultado.account;
     formSeguranca.reset();
     atualizarRegrasSenhaNova();
     senhaNova.setCustomValidity('');
@@ -528,12 +528,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const emailNotificacoes = document.querySelector('.email-cadastrado');
   const controlesNotificacoes = { relatorio: 'reports', novidade: 'news', evento: 'events' };
-  let preferenciasSalvas = {};
-  try { preferenciasSalvas = JSON.parse(localStorage.getItem('delta_notificacoes') || '{}'); } catch (_) {}
   if (emailNotificacoes && contaAtual) emailNotificacoes.textContent = contaAtual.email;
   Object.entries(controlesNotificacoes).forEach(([id, chave]) => {
     const checkbox = document.getElementById(id);
-    if (checkbox) checkbox.checked = Boolean(contaAtual?.notifications?.[chave] ?? preferenciasSalvas[chave]);
+    if (checkbox) checkbox.checked = Boolean(contaAtual?.notifications?.[chave]);
   });
 
   document.querySelector('.salvar-not')?.addEventListener('click', () => {
@@ -541,15 +539,14 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.entries(controlesNotificacoes).forEach(([id, chave]) => {
       preferencias[chave] = Boolean(document.getElementById(id)?.checked);
     });
-    localStorage.setItem('delta_notificacoes', JSON.stringify(preferencias));
-    if (contaAtual && window.DeltaDB) {
-      const resultado = window.DeltaDB.updateAccount(contaAtual.id, { notifications: preferencias });
-      if (!resultado.ok) {
-        const statusErro = document.getElementById('notificacoes-status');
-        if (statusErro) statusErro.textContent = resultado.message;
-        return;
-      }
+    if (!contaAtual || !window.DeltaDB) return;
+    const resultado = window.DeltaDB.updateAccount(contaAtual.id, { notifications: preferencias });
+    if (!resultado.ok) {
+      const statusErro = document.getElementById('notificacoes-status');
+      if (statusErro) statusErro.textContent = resultado.message;
+      return;
     }
+    contaAtual = resultado.account;
     const status = document.getElementById('notificacoes-status');
     if (status) status.textContent = '';
     guardarEstado();
@@ -593,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
       botaoConfirmarExclusao.disabled = false;
       return;
     }
-    window.location.assign('../pages/index.html');
+    window.location.assign('../index.html');
   });
 
   const camposModal = modal.querySelectorAll('input');

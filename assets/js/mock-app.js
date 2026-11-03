@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const signupCodeFlow = signupEmailCodeFlow;
   const emailInput = document.getElementById('email');
   if (['entrar-conta.html', 'entrar-usuario.html'].includes(page) && emailInput) {
-    emailInput.value = localStorage.getItem('delta_mock_remembered_email') || '';
+    emailInput.value = db.getRememberedEmail();
   }
   const clearValidity = (input) => input?.addEventListener('input', () => input.setCustomValidity(''));
   clearValidity(emailInput);
@@ -146,7 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
         phone: document.getElementById('telefone').value.trim(),
         email: emailInput.value.trim().toLowerCase(),
         password: password.value,
-        remember: Boolean(document.getElementById('lembrar-mim')?.checked)
+        remember: Boolean(document.getElementById('lembrar-mim')?.checked),
+        acceptedTerms: Boolean(document.getElementById('aceita-termos')?.checked)
       });
       navigate(button);
       return;

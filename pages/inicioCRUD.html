@@ -70,7 +70,7 @@
  
             </div>
  
-            <a href="index.html" class="logout">
+            <a href="../index.html" class="logout">
                 <i data-lucide="log-out"></i>
                 <span>Sair</span>
             </a>
@@ -129,6 +129,7 @@
     </main>
  
  
+    <script src="../assets/js/mock-database.js"></script>
     <script>
     lucide.createIcons();
  
@@ -141,9 +142,8 @@
  
     function getRecordCount(key, defaultCount) {
         try {
-            const savedRecords = localStorage.getItem(key);
-            if (savedRecords === null) return defaultCount;
-            const records = JSON.parse(savedRecords);
+            const records = DeltaDB.readCollection(key);
+            if (records === null) return defaultCount;
             return Array.isArray(records) ? records.length : defaultCount;
         } catch {
             return defaultCount;
@@ -172,7 +172,6 @@
     window.addEventListener("storage", updateDashboardChart);
 </script>
  
-    <script src="../assets/js/mock-database.js"></script>
     <script src="../assets/js/mock-app.js"></script>
 </body>
 </html>
