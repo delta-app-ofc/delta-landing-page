@@ -109,6 +109,8 @@ a {
   text-decoration: none;
 }
 
+.dica-codigo { color: #456b9f; font-size: 14px; text-align: center; }
+
 .reenviar-codigo strong{
   cursor:pointer;
 }
@@ -149,4 +151,22 @@ a {
   margin-top:-20px;
   font-family: Montserrat;
   font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  html, body { min-height: 100%; background: #E0E8F6; }
+  body { display: block; min-height: 100svh; }
+  .fundo-svg { position: fixed; inset: 0; width: 100%; height: 100svh; object-fit: cover; }
+  .voltar { position: absolute; top: 52px; right: 24px; width: 36px; }
+  .container { width: 100%; max-width: 430px; padding: 138px 24px 36px; }
+  .titulo { margin-bottom: 14px; font-size: clamp(21px, 5.8vw, 25px); }
+  .informacoes { margin-bottom: 24px; font-size: 14px; line-height: 1.3; }
+  .informacoes a { display: block; margin-top: 14px; font-weight: 700; }
+  .grupo-inputs { gap: 12px; margin-bottom: 20px; padding: 0; }
+  .codigo-input { flex: 0 1 60px; width: 60px; height: 72px; max-width: 60px; border: 2px solid #306BE5; border-radius: 30px; font-size: 28px; }
+  .codigo-input:focus { border-color: #003E9B; }
+  .tempo { margin: 0 0 14px; font-size: 13px; }
+  .confirmar { max-width: none; height: 52px; margin-bottom: 16px; border-radius: 15px; font-size: 16px; }
+  .reenviar-codigo { font-size: 14px; }
+  .dica-codigo { margin-top: 16px; font-size: 12px; line-height: 1.4; }
 }

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; width: 100%; }
+body { min-height: 100svh; display: grid; place-items: center; overflow: hidden; background: #E0E8F6; font-family: Montserrat, sans-serif; }
+.fundo-svg { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+.voltar { position: fixed; top: 52px; right: 24px; width: 36px; }
+.card-sucesso { width: min(354px, calc(100% - 48px)); padding: 28px 24px 24px; border: 4px solid #306BE5; border-radius: 28px; background: #fff; box-shadow: 0 8px 8px #0003; text-align: center; }
+.logo-delta { display: block; width: 100px; height: 34px; object-fit: contain; margin: 0 auto 16px; }
+h1 { margin-bottom: 12px; color: #003E9B; font: 700 22px Unbounded, sans-serif; }
+p { margin-bottom: 14px; font-size: 13px; font-style: italic; }
+.botao-entrar { display: flex; height: 52px; align-items: center; justify-content: center; border-radius: 15px; background: #003E9B; color: #fff; font: 700 16px Unbounded, sans-serif; text-decoration: none; }
+@media (min-width: 601px) { .voltar { top: 32px; right: 32px; width: 40px; } .card-sucesso { width: 506px; padding: 32px 28px 26px; } }

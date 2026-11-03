@@ -102,7 +102,7 @@
       name: draft.name.trim(),
       email: draft.email.trim().toLowerCase(),
       password: draft.password,
-      phone: details.phone.trim(),
+      phone: (draft.phone || details.phone || '').trim(),
       birthDate: details.birthDate,
       role: 'user',
       active: true,
@@ -156,7 +156,7 @@
     const account = accounts().find((item) => item.email.toLowerCase() === normalizedEmail && item.active !== false);
     if (!account) return { ok: false, message: 'Não encontramos uma conta com esse e-mail.' };
     sessionStorage.removeItem('delta_verified_reset_email');
-    const code = String(Math.floor(100000 + Math.random() * 900000));
+    const code = String(Math.floor(1000 + Math.random() * 9000));
     const reset = { email: account.email, code, expiresAt: Date.now() + 10 * 60 * 1000 };
     localStorage.setItem(RESET_KEY, JSON.stringify(reset));
     return { ok: true, code, expiresAt: reset.expiresAt };
@@ -167,6 +167,9 @@
     if (!reset || reset.expiresAt < Date.now()) {
       localStorage.removeItem(RESET_KEY);
       return { ok: false, message: 'O código expirou. Solicite outro.' };
+    }
+    if (reset.code !== String(code || '').trim()) {
+      return { ok: false, message: 'Código inválido. Confira o código enviado.' };
     }
     sessionStorage.setItem('delta_verified_reset_email', reset.email);
     return { ok: true, email: reset.email };

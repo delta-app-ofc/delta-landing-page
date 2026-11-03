@@ -34,13 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let resetTimerId;
+  function maskEmail(email) {
+    const [local = '', domain = ''] = String(email || '').split('@');
+    const visible = local.slice(-4);
+    return `${'*'.repeat(Math.max(8, local.length - visible.length))}${visible}${domain ? '@' + domain : ''}`;
+  }
+
   function updateCodePage() {
     const info = document.querySelector('.informacoes');
     const timer = document.querySelector('.tempo');
     const resend = document.querySelector('.reenviar-codigo');
     if (signupCodeFlow) {
       const draft = db.getSignupDraft();
-      if (info) info.textContent = 'Digite qualquer c\u00f3digo de 6 n\u00fameros enviado para ' + (draft?.email || '') + ' para continuar o cadastro.';
+      if (info) info.textContent = 'Digite qualquer código de 4 números enviado para ' + (draft?.email || '') + ' para continuar o cadastro.';
       if (timer) timer.hidden = true;
       if (resend) resend.hidden = true;
       const confirm = document.querySelector('[data-code-form]');
@@ -58,7 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (info) info.textContent = 'N\u00e3o h\u00e1 c\u00f3digo ativo. Volte e solicite um novo c\u00f3digo.';
       return;
     }
-    if (info) info.textContent = 'Modo de demonstra\u00e7\u00e3o - c\u00f3digo: ' + details.code + '. Conta: ' + details.email + '.';
+    if (info) {
+      const textNode = [...info.childNodes].find((node) => node.nodeType === Node.TEXT_NODE);
+      if (textNode) textNode.textContent = 'Código enviado para o e-mail: ' + maskEmail(details.email);
+    }
     if (!timer) return;
     clearInterval(resetTimerId);
     const updateTimer = () => {
@@ -134,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!strongPassword.test(password.value)) return invalid(password, 'Use pelo menos 8 caracteres, com maiúscula, minúscula, número e símbolo.');
       db.saveSignupDraft({
         name: document.getElementById('nome').value.trim(),
+        phone: document.getElementById('telefone').value.trim(),
         email: emailInput.value.trim().toLowerCase(),
         password: password.value,
         remember: Boolean(document.getElementById('lembrar-mim')?.checked)
@@ -147,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const missing = fields.find((field) => !field.value.trim() || !field.checkValidity());
       if (missing) return missing.reportValidity();
       const result = db.finishSignup({
-        phone: document.getElementById('telefone').value.trim(),
         birthDate: document.getElementById('data').value
       });
       if (!result.ok) return window.alert(result.message);

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const codigo = [...document.querySelectorAll('.codigo-input')];
+    codigo[0]?.focus({ preventScroll: true });
     codigo.forEach((campo, indice) => {
         campo.addEventListener('input', () => {
             campo.value = campo.value.replace(/\D/g, '').slice(-1);

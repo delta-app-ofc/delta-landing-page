@@ -13,20 +13,19 @@
 
     <div class="container">
         <h1 class="titulo">Insira o código abaixo:</h1>
-        <p class="informacoes">Código enviado para o e-mail: ******exemplo@gmail.confirmar <a href="email-verificacao.html"><strong>Alterar-email</strong></a></p>
+        <p class="informacoes">Código enviado para o e-mail: ******exemplo@gmail.confirmar <a href="email-verificacao.html"><strong>Alterar e-mail</strong></a></p>
 
         <div class="grupo-inputs">
-            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required>
-            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required>
-            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required>
-            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required>
-            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required>
-            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required>
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required aria-label="Primeiro dígito do código">
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required aria-label="Segundo dígito do código">
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required aria-label="Terceiro dígito do código">
+            <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="codigo-input" required aria-label="Quarto dígito do código">
         </div>
 
-        <p class="tempo">Esse código expira em 10:00</p>
-        <button type="button" class="confirmar" data-next="recuperar-senha.html" data-code-form>Confirmar</button>
+        <p class="tempo">O código expira em 10:00</p>
+        <button type="button" class="confirmar" data-next="recuperar-senha.html" data-code-form>Confirmar código</button>
         <p class="reenviar-codigo">Não recebeu o e-mail?<strong> Reenviar</strong></p>
+        <p class="dica-codigo">Dica: copie o código do e-mail e cole na primeira caixa.</p>
         
     </div>
     <script src="../assets/js/mock-database.js"></script>

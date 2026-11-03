@@ -130,6 +130,8 @@ body {
   top: 70px;
 }
 
+.data-label { display: block; align-self: flex-start; width: min(506px, 100%); margin: 0 auto 6px; color: #003E9B; text-align: left; font-size: 15px; font-weight: 700; }
+
 @media (max-width: 600px) {
   .container {
     width: 100%;
@@ -154,6 +156,15 @@ body {
   .concluir-cadastro {
     height: 56px;
   }
+
+  .data-label { width: 100%; margin-bottom: 2px; font-size: 14px; }
+
+  .container { max-width: 430px; padding: 24px; transform: translateY(-40px); }
+  .titulo { margin-top: 0; font-size: clamp(28px, 8vw, 34px); }
+  .informacoes { margin-bottom: 55px; font-size: 14px; }
+  #data { height: 52px; margin-bottom: 16px; border: 2px solid #0047B2; border-radius: 15px; background: #fff; font-size: 15px; }
+  #data::-webkit-calendar-picker-indicator { padding-right: 12px; }
+  .concluir-cadastro { height: 52px; border-radius: 15px; font-size: 16px; }
 
   .voltar {
     top: 20px;
